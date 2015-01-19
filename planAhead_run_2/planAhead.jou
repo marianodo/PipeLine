@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Mon Jan 19 12:22:34 2015
+# Process ID: 324
+# Log file: D:/Facu/Arquitectura de Computadoras/pipeline/planAhead_run_2/planAhead.log
+# Journal file: D:/Facu/Arquitectura de Computadoras/pipeline/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {D:/Facu/Arquitectura de Computadoras/pipeline/pa.fromNetlist.tcl}
+startgroup
+set_property package_pin T11 [get_ports {led[7]}]
+endgroup
+startgroup
+set_property package_pin R11 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin N11 [get_ports {led[5]}]
+endgroup
+startgroup
+set_property package_pin M11 [get_ports {led[4]}]
+endgroup
+startgroup
+set_property package_pin V15 [get_ports {led[3]}]
+endgroup
+startgroup
+set_property package_pin U15 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin V16 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin U16 [get_ports {led[0]}]
+endgroup
+startgroup
+set_property package_pin C4 [get_ports btn]
+endgroup
+save_constraints
