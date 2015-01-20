@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
 	input inBtn,
-	output [4:0] rd,rs,rt,
-	output [31:0] writeData,
+	output [4:0] rd,rs,rt,sa,
 	output [5:0] instReg
     );
 
@@ -39,8 +38,8 @@ wire [3:0] PcMux, Pc, PostPc;
 	);
 	
 	InstructionMem callInstruccionMem (
-	.inInstructionMem(Pc),
-	.rsReg(rs),
+	.inInstructionMem(Pc), //Entrada
+	.rsReg(rs), //Salidas
 	.rtReg(rt),
 	.rdReg(rd),
 	.saReg(sa),
