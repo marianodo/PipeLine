@@ -18,14 +18,26 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module addPc # (parameter tam=8)(
+module addPc # (parameter tam=5)(
 	input btn,
-	input [tam-1:0] inAddPc,
-	output reg [tam-1:0] outAddPc
+	input [3:0] inAddPc,
+	output reg [3:0] outAddPc
     );
+	 
+initial
+begin
+	outAddPc = 0;
+end
 always @(posedge btn)
 begin
-	outAddPc = inAddPc + 1;
+	if(outAddPc == 15)
+		begin
+			outAddPc = 0;
+		end
+	else
+		begin
+			outAddPc = inAddPc + 1;
+		end
 end
 
 endmodule

@@ -21,17 +21,27 @@
 module pipeline(
 input btn,
 input wire btnSelect,
-input wire [7:0] jmpAddr,
-output [7:0] led 
+input wire btnWRselect,
+input wire [3:0] jmpAddr,
+output [31:0] dataRd,
+output [31:0] dataRt 
   );
 parameter tam = 8;
 
 // s i g n a l s
-wire [tam-1:0] PostPc;
-wire [7:0] Pc;
-wire [tam-1:0] PcMux;
+wire [3:0] PostPc;
+wire [3:0] Pc;
+wire [3:0] PcMux;
+wire [4:0] rs;
+wire [4:0] rd;
+wire [4:0] rt;
+wire [4:0] sa;
+wire [5:0] instReg;
+wire [31:0] writeData;
+//wire wdSelect;
+//wire [31:0] dataRd, dataRt;
 reg select = 0; 
-reg [7:0] pcJmp;
+reg [31:0] pcJmp;
 
 
 // i n s t a n t i a t i o n s
@@ -47,17 +57,37 @@ reg [7:0] pcJmp;
 	.outPc(Pc)
 	);
 
-	InstructionMem callInstruccionMem (
-	.inInstructionMem(Pc),
-	.outInstructionMem(led)
-	);
-	
 	addPc callAddPc (
 	.btn(btn),
 	.inAddPc(Pc),
 	.outAddPc(PostPc)
 	);
+	
+	InstructionMem callInstruccionMem (
+	.inInstructionMem(Pc),
+	.rsReg(rs),
+	.rtReg(rt),
+	.rdReg(rd),
+	.saReg(sa),
+	.instRreg(instReg)
+	);
+	
+	
+	InstDecode callInstDecode (
+	.inInstDecodeRsReg(rs),
+	.inInstDecodeRtReg(rt),
+	.inInstDecodeRdReg(rd),
+	.inInstDecodeWriteData(writeData),
+	.WRInstDecode(btnWRselect),
+	.outInstDecodeRtReg(dataRt),
+	.outInstDecodeRdReg(dataRd)
+	);
+	
+	
+	
 
+	
+	
 
 
 endmodule

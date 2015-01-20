@@ -18,14 +18,13 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module program # (parameter tam=8)(
-input [tam-1:0] inPc,
-output reg [tam-1:0] outPc
+module Pc # (parameter tam=8)(
+input [3:0] inPc,
+output reg [3:0] outPc
     );
 initial
 	begin
 		outPc <= 0;
-
 	end
 always @(inPc)
 	begin

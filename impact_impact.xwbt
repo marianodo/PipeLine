@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=D:\Facu\Arquitectura de Computadoras\pipeline\impact.xsl
+OUTFILE=D:\Facu\Arquitectura de Computadoras\pipeline\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=D:\Facu\Arquitectura de Computadoras\pipeline
+LICENSE=iMPACT
+USER_INFO=iMPACT

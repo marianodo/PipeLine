@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.ncd
+OUTFILE=D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=D:\Facu\Arquitectura de Computadoras\pipeline
+LICENSE=WebPack
+USER_INFO=210790645_0_0_619

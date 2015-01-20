@@ -19,12 +19,15 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module muxPc # (parameter tam=8)( 
-input [tam-1:0] inMuxAddPc,
-input [tam-1:0] inMuxAddJmp,
+input [3:0] inMuxAddPc,
+input [3:0] inMuxAddJmp,
 input select,
-output reg [tam-1:0] outMuxPc
+output reg [3:0] outMuxPc
     );
-
+initial
+begin
+	outMuxPc = 0;
+end
 always @(*)
 begin
 	if(select)

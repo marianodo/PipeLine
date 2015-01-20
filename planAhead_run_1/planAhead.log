@@ -1,0 +1,88 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7
+# Build 321239 by xbuild on Fri Sep 27 19:31:35 MDT 2013
+# Start of session at: Fri Jan 16 15:25:18 2015
+# Process ID: 4240
+# Log file: D:/Facu/Arquitectura de Computadoras/pipeline/planAhead_run_1/planAhead.log
+# Journal file: D:/Facu/Arquitectura de Computadoras/pipeline/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -138 day(s)
+INFO: [Device 21-36] Loading parts and site information from D:/xilinxs/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/xilinxs/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/xilinxs/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {D:/Facu/Arquitectura de Computadoras/pipeline/pa.fromNetlist.tcl}
+# create_project -name pipeline -dir "D:/Facu/Arquitectura de Computadoras/pipeline/planAhead_run_1" -part xc6slx16csg324-3
+create_project: Time (s): elapsed = 00:00:14 . Memory (MB): peak = 391.742 ; gain = 29.340
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {D:/Facu/Arquitectura de Computadoras/pipeline} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "pipeline.ucf" [current_fileset -constrset]
+Adding file 'D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.ucf' to fileset 'constrs_1'
+# add_files [list {pipeline.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx16csg324-3
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design pipeline.ngc ...
+WARNING:NetListWriters:298 - No output is written to pipeline.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file pipeline.edif ...
+ngc2edif: Total memory usage is 61168 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/pipeline.data/cache/pipeline_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/pipeline.data/cache/pipeline_ngc_zx.edif]
+Loading clock regions from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+Loading clock buffers from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+Loading package pin functions from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+Loading io standards from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/xilinxs/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/xilinxs/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.ucf]
+Finished Parsing UCF File [D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: a34238ff
+link_design: Time (s): elapsed = 00:01:00 . Memory (MB): peak = 485.125 ; gain = 83.035
+startgroup
+set_property package_pin U16 [get_ports {outPc[0]}]
+endgroup
+startgroup
+set_property package_pin V16 [get_ports {outPc[1]}]
+endgroup
+startgroup
+set_property package_pin U15 [get_ports {outPc[2]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {outPc[2]}]]
+set_property is_loc_fixed true [get_ports [list  {outPc[2]}]]
+set_property is_loc_fixed false [get_ports [list  {outPc[2]}]]
+set_property is_loc_fixed true [get_ports [list  {outPc[2]}]]
+startgroup
+set_property package_pin L15 [get_ports clk]
+endgroup
+set_property is_loc_fixed false [get_ports [list  clk]]
+set_property is_loc_fixed true [get_ports [list  clk]]
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See D:/Facu/Arquitectura de Computadoras/pipeline\planAhead_pid4240.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Jan 16 15:39:23 2015...
+INFO: [Common 17-83] Releasing license: PlanAhead

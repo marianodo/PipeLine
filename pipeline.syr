@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.34 secs
  
 --> Reading design: pipeline.prj
@@ -111,6 +111,8 @@ Analyzing Verilog file "D:\Facu\Arquitectura de Computadoras\pipeline\muxPc.v" i
 Parsing module <muxPc>.
 Analyzing Verilog file "D:\Facu\Arquitectura de Computadoras\pipeline\InstructionMem.v" into library work
 Parsing module <InstructionMem>.
+Analyzing Verilog file "D:\Facu\Arquitectura de Computadoras\pipeline\InstDecode.v" into library work
+Parsing module <InstDecode>.
 Analyzing Verilog file "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v" into library work
 Parsing module <addPc>.
 Analyzing Verilog file "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" into library work
@@ -126,11 +128,15 @@ Elaborating module <muxPc>.
 
 Elaborating module <program>.
 
-Elaborating module <InstructionMem>.
-WARNING:HDLCompiler:91 - "D:\Facu\Arquitectura de Computadoras\pipeline\InstructionMem.v" Line 39: Signal <memory> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-
 Elaborating module <addPc>.
-WARNING:HDLCompiler:413 - "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v" Line 28: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v" Line 39: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <InstructionMem>.
+WARNING:HDLCompiler:1127 - "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" Line 71: Assignment to sa ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" Line 72: Assignment to instReg ignored, since the identifier is never used
+
+Elaborating module <InstDecode>.
+WARNING:HDLCompiler:634 - "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" Line 40: Net <writeData[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -139,6 +145,9 @@ WARNING:HDLCompiler:413 - "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v
 Synthesizing Unit <pipeline>.
     Related source file is "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v".
         tam = 8
+INFO:Xst:3210 - "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" line 66: Output port <saReg> of the instance <callInstruccionMem> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.v" line 66: Output port <instRreg> of the instance <callInstruccionMem> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <writeData> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <pipeline> synthesized.
@@ -157,39 +166,73 @@ Synthesizing Unit <program>.
 	no macro.
 Unit <program> synthesized.
 
+Synthesizing Unit <addPc>.
+    Related source file is "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v".
+        tam = 5
+    Found 4-bit register for signal <outAddPc>.
+    Found 4-bit adder for signal <inAddPc[3]_GND_4_o_add_2_OUT> created at line 39.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+Unit <addPc> synthesized.
+
 Synthesizing Unit <InstructionMem>.
     Related source file is "D:\Facu\Arquitectura de Computadoras\pipeline\InstructionMem.v".
-        tam = 8
-WARNING:Xst:647 - Input <inInstructionMem<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+        tam = 32
 WARNING:Xst:2999 - Signal 'memory', unconnected in block 'InstructionMem', is tied to its initial value.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <memory>, simulation mismatch.
-    Found 6x8-bit single-port Read Only RAM <Mram_memory> for signal <memory>.
+    Found 16x32-bit single-port Read Only RAM <Mram_memory> for signal <memory>.
     Summary:
 	inferred   1 RAM(s).
 Unit <InstructionMem> synthesized.
 
-Synthesizing Unit <addPc>.
-    Related source file is "D:\Facu\Arquitectura de Computadoras\pipeline\addPc.v".
-        tam = 8
-    Found 8-bit register for signal <outAddPc>.
-    Found 8-bit adder for signal <inAddPc[7]_GND_5_o_add_1_OUT> created at line 28.
+Synthesizing Unit <InstDecode>.
+    Related source file is "D:\Facu\Arquitectura de Computadoras\pipeline\InstDecode.v".
+WARNING:Xst:647 - Input <inInstDecodeRsReg<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <inInstDecodeRtReg<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit 16-to-1 multiplexer for signal <inInstDecodeRsReg[3]_register[15][31]_wide_mux_1_OUT<15>> created at line 51.
+    Found 1-bit 16-to-1 multiplexer for signal <inInstDecodeRtReg[3]_register[15][31]_wide_mux_2_OUT<15>> created at line 51.
+WARNING:Xst:737 - Found 1-bit latch for signal <outInstDecodeRsReg<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <outInstDecodeRtReg<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<0><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<1><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<2><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<3><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<4><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<5><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<6><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<7><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<8><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<9><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<10><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<11><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<12><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<13><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<14><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <register<15><31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 5-bit comparator lessequal for signal <n0004> created at line 60
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred   8 D-type flip-flop(s).
-Unit <addPc> synthesized.
+	inferred  18 Latch(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <InstDecode> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 6x8-bit single-port Read Only RAM                     : 1
+ 16x32-bit single-port Read Only RAM                   : 1
 # Adders/Subtractors                                   : 1
- 8-bit adder                                           : 1
+ 4-bit adder                                           : 1
 # Registers                                            : 1
- 8-bit register                                        : 1
-# Multiplexers                                         : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 4-bit register                                        : 1
+# Latches                                              : 18
+ 1-bit latch                                           : 18
+# Comparators                                          : 1
+ 5-bit comparator lessequal                            : 1
+# Multiplexers                                         : 3
+ 1-bit 16-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -197,6 +240,23 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1426 - The value init of the FF/Latch register<15>_31 hinder the constant cleaning in the block callInstDecode.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <register<12>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<14>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<13>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<11>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<10>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<7>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<9>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<8>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<6>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<5>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<2>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<4>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<3>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<1>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<0>_31> has a constant value of 0 in block <callInstDecode>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <InstructionMem>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_memory> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -204,7 +264,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_memory> will be implemented on LUTs 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 6-word x 8-bit                      |          |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <inInstructionMem> |          |
     |     diA            | connected to signal <GND>           |          |
@@ -217,32 +277,48 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 6x8-bit single-port distributed Read Only RAM         : 1
+ 16x32-bit single-port distributed Read Only RAM       : 1
 # Adders/Subtractors                                   : 1
- 8-bit adder                                           : 1
-# Registers                                            : 8
- Flip-Flops                                            : 8
-# Multiplexers                                         : 1
- 8-bit 2-to-1 multiplexer                              : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Comparators                                          : 1
+ 5-bit comparator lessequal                            : 1
+# Multiplexers                                         : 3
+ 1-bit 16-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch register<15>_31 hinder the constant cleaning in the block InstDecode.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <register<12>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<14>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<13>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<11>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<10>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<7>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<9>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<8>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<6>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<5>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<2>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<4>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<3>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<1>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <register<0>_31> has a constant value of 0 in block <InstDecode>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <callInstDecode/register<15>_31> has a constant value of 1 in block <pipeline>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <pipeline> ...
-
-Optimizing unit <addPc> ...
-WARNING:Xst:2677 - Node <callAddPc/outAddPc_7> of sequential type is unconnected in block <pipeline>.
-WARNING:Xst:2677 - Node <callAddPc/outAddPc_6> of sequential type is unconnected in block <pipeline>.
-WARNING:Xst:2677 - Node <callAddPc/outAddPc_5> of sequential type is unconnected in block <pipeline>.
-WARNING:Xst:2677 - Node <callAddPc/outAddPc_4> of sequential type is unconnected in block <pipeline>.
-WARNING:Xst:2677 - Node <callAddPc/outAddPc_3> of sequential type is unconnected in block <pipeline>.
+INFO:Xst:2261 - The FF/Latch <callInstDecode/outInstDecodeRsReg_15> in Unit <pipeline> is equivalent to the following FF/Latch, which will be removed : <callInstDecode/outInstDecodeRtReg_15> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 0.
+Latch callInstDecode/outInstDecodeRsReg_15 has been replicated 63 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -250,8 +326,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 3
- Flip-Flops                                            : 3
+# Registers                                            : 4
+ Flip-Flops                                            : 4
 
 =========================================================================
 
@@ -275,18 +351,20 @@ Top Level Output File Name         : pipeline.ngc
 Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 12
-#      GND                         : 1
 #      LUT2                        : 1
-#      LUT3                        : 4
-#      LUT5                        : 1
-#      LUT6                        : 5
-# FlipFlops/Latches                : 3
-#      FD                          : 3
-# Clock Buffers                    : 1
+#      LUT4                        : 1
+#      LUT5                        : 5
+#      LUT6                        : 3
+#      MUXF7                       : 2
+# FlipFlops/Latches                : 68
+#      FD                          : 4
+#      LDC_1                       : 64
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 12
-#      IBUF                        : 4
-#      OBUF                        : 8
+# IO Buffers                       : 70
+#      IBUF                        : 6
+#      OBUF                        : 64
 
 Device utilization summary:
 ---------------------------
@@ -295,23 +373,24 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               3  out of  18224     0%  
- Number of Slice LUTs:                   11  out of   9112     0%  
-    Number used as Logic:                11  out of   9112     0%  
+ Number of Slice Registers:               4  out of  18224     0%  
+ Number of Slice LUTs:                   10  out of   9112     0%  
+    Number used as Logic:                10  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     11
-   Number with an unused Flip Flop:       8  out of     11    72%  
-   Number with an unused LUT:             0  out of     11     0%  
-   Number of fully used LUT-FF pairs:     3  out of     11    27%  
-   Number of unique control sets:         1
+ Number of LUT Flip Flop pairs used:     10
+   Number with an unused Flip Flop:       6  out of     10    60%  
+   Number with an unused LUT:             0  out of     10     0%  
+   Number of fully used LUT-FF pairs:     4  out of     10    40%  
+   Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                          18
- Number of bonded IOBs:                  13  out of    232     5%  
+ Number of IOs:                          71
+ Number of bonded IOBs:                  71  out of    232    30%  
+    IOB Flip Flops/Latches:              64
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -334,7 +413,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-btn                                | BUFGP                  | 3     |
+btnWRselect                        | IBUF+BUFG              | 64    |
+btn                                | BUFGP                  | 4     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -345,10 +425,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 1.697ns (Maximum Frequency: 589.275MHz)
-   Minimum input arrival time before clock: 3.523ns
-   Maximum output required time after clock: 5.699ns
-   Maximum combinational path delay: 6.712ns
+   Minimum period: 2.486ns (Maximum Frequency: 402.269MHz)
+   Minimum input arrival time before clock: 3.567ns
+   Maximum output required time after clock: 3.648ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
@@ -356,87 +436,88 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'btn'
-  Clock period: 1.697ns (frequency: 589.275MHz)
-  Total number of paths / destination ports: 6 / 3
+  Clock period: 2.486ns (frequency: 402.269MHz)
+  Total number of paths / destination ports: 20 / 4
 -------------------------------------------------------------------------
-Delay:               1.697ns (Levels of Logic = 1)
-  Source:            callAddPc/outAddPc_2 (FF)
-  Destination:       callAddPc/outAddPc_2 (FF)
+Delay:               2.486ns (Levels of Logic = 2)
+  Source:            callAddPc/outAddPc_1 (FF)
+  Destination:       callAddPc/outAddPc_1 (FF)
   Source Clock:      btn rising
   Destination Clock: btn rising
 
-  Data Path: callAddPc/outAddPc_2 to callAddPc/outAddPc_2
+  Data Path: callAddPc/outAddPc_1 to callAddPc/outAddPc_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.447   0.943  callAddPc/outAddPc_2 (callAddPc/outAddPc_2)
-     LUT6:I3->O            1   0.205   0.000  callAddPc/Madd_inAddPc[7]_GND_5_o_add_1_OUT_xor<2>11 (callAddPc/inAddPc[7]_GND_5_o_add_1_OUT<2>)
-     FD:D                      0.102          callAddPc/outAddPc_2
+     FD:C->Q               7   0.447   0.878  callAddPc/outAddPc_1 (callAddPc/outAddPc_1)
+     LUT5:I3->O            3   0.203   0.651  callAddPc/Madd_inAddPc[3]_GND_4_o_add_2_OUT_xor<1>11 (callAddPc/inAddPc[3]_GND_4_o_add_2_OUT<1>)
+     LUT5:I4->O            1   0.205   0.000  callAddPc/outAddPc_1_rstpot (callAddPc/outAddPc_1_rstpot)
+     FD:D                      0.102          callAddPc/outAddPc_1
     ----------------------------------------
-    Total                      1.697ns (0.754ns logic, 0.943ns route)
-                                       (44.4% logic, 55.6% route)
+    Total                      2.486ns (0.957ns logic, 1.529ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'btnWRselect'
+  Total number of paths / destination ports: 768 / 128
+-------------------------------------------------------------------------
+Offset:              3.547ns (Levels of Logic = 4)
+  Source:            btnSelect (PAD)
+  Destination:       callInstDecode/outInstDecodeRsReg_15 (LATCH)
+  Destination Clock: btnWRselect rising
+
+  Data Path: btnSelect to callInstDecode/outInstDecodeRsReg_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   1.089  btnSelect_IBUF (btnSelect_IBUF)
+     LUT5:I0->O            3   0.203   0.651  callAddPc/Madd_inAddPc[3]_GND_4_o_add_2_OUT_xor<1>11 (callAddPc/inAddPc[3]_GND_4_o_add_2_OUT<1>)
+     LUT5:I4->O            1   0.205   0.000  callInstDecode/inInstDecodeRsReg[3]_register[15][31]_wide_mux_1_OUT<15>_G (N10)
+     MUXF7:I1->O          64   0.140   0.000  callInstDecode/inInstDecodeRsReg[3]_register[15][31]_wide_mux_1_OUT<15> (callInstDecode/inInstDecodeRsReg[3]_register[15][31]_wide_mux_1_OUT<15>)
+     LDC_1:D                   0.037          callInstDecode/outInstDecodeRsReg_15
+    ----------------------------------------
+    Total                      3.547ns (1.807ns logic, 1.740ns route)
+                                       (50.9% logic, 49.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'btn'
-  Total number of paths / destination ports: 9 / 3
+  Total number of paths / destination ports: 18 / 4
 -------------------------------------------------------------------------
-Offset:              3.523ns (Levels of Logic = 3)
-  Source:            jmpAddr<1> (PAD)
-  Destination:       callAddPc/outAddPc_2 (FF)
+Offset:              3.567ns (Levels of Logic = 3)
+  Source:            jmpAddr<2> (PAD)
+  Destination:       callAddPc/outAddPc_3 (FF)
   Destination Clock: btn rising
 
-  Data Path: jmpAddr<1> to callAddPc/outAddPc_2
+  Data Path: jmpAddr<2> to callAddPc/outAddPc_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   1.222   0.849  jmpAddr_1_IBUF (jmpAddr_1_IBUF)
-     LUT2:I0->O            1   0.203   0.944  callAddPc/Madd_inAddPc[7]_GND_5_o_add_1_OUT_xor<2>11_SW0 (N2)
-     LUT6:I0->O            1   0.203   0.000  callAddPc/Madd_inAddPc[7]_GND_5_o_add_1_OUT_xor<2>11 (callAddPc/inAddPc[7]_GND_5_o_add_1_OUT<2>)
-     FD:D                      0.102          callAddPc/outAddPc_2
+     IBUF:I->O             4   1.222   0.912  jmpAddr_2_IBUF (jmpAddr_2_IBUF)
+     LUT4:I1->O            1   0.205   0.924  callAddPc/Madd_inAddPc[3]_GND_4_o_add_2_OUT_xor<3>11_SW0 (N5)
+     LUT6:I1->O            1   0.203   0.000  callAddPc/outAddPc_3_rstpot (callAddPc/outAddPc_3_rstpot)
+     FD:D                      0.102          callAddPc/outAddPc_3
     ----------------------------------------
-    Total                      3.523ns (1.730ns logic, 1.793ns route)
-                                       (49.1% logic, 50.9% route)
+    Total                      3.567ns (1.732ns logic, 1.835ns route)
+                                       (48.6% logic, 51.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'btn'
-  Total number of paths / destination ports: 12 / 4
+Timing constraint: Default OFFSET OUT AFTER for Clock 'btnWRselect'
+  Total number of paths / destination ports: 64 / 64
 -------------------------------------------------------------------------
-Offset:              5.699ns (Levels of Logic = 3)
-  Source:            callAddPc/outAddPc_0 (FF)
-  Destination:       led<2> (PAD)
-  Source Clock:      btn rising
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            callInstDecode/outInstDecodeRsReg_15_1 (LATCH)
+  Destination:       dataRs<31> (PAD)
+  Source Clock:      btnWRselect rising
 
-  Data Path: callAddPc/outAddPc_0 to led<2>
+  Data Path: callInstDecode/outInstDecodeRsReg_15_1 to dataRs<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.447   0.849  callAddPc/outAddPc_0 (callAddPc/outAddPc_0)
-     LUT3:I1->O            2   0.203   0.845  callMuxPc/Mmux_outMuxPc11 (PcMux<0>)
-     LUT6:I3->O            1   0.205   0.579  callInstruccionMem/Mram_memory111 (led_1_OBUF)
-     OBUF:I->O                 2.571          led_1_OBUF (led<1>)
+     LDC_1:G->Q            1   0.498   0.579  callInstDecode/outInstDecodeRsReg_15_1 (callInstDecode/outInstDecodeRsReg_15_1)
+     OBUF:I->O                 2.571          dataRs_31_OBUF (dataRs<31>)
     ----------------------------------------
-    Total                      5.699ns (3.426ns logic, 2.273ns route)
-                                       (60.1% logic, 39.9% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 20 / 4
--------------------------------------------------------------------------
-Delay:               6.712ns (Levels of Logic = 4)
-  Source:            btnSelect (PAD)
-  Destination:       led<2> (PAD)
-
-  Data Path: btnSelect to led<2>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            10   1.222   1.085  btnSelect_IBUF (btnSelect_IBUF)
-     LUT3:I0->O            2   0.205   0.845  callMuxPc/Mmux_outMuxPc11 (PcMux<0>)
-     LUT6:I3->O            1   0.205   0.579  callInstruccionMem/Mram_memory111 (led_1_OBUF)
-     OBUF:I->O                 2.571          led_1_OBUF (led<1>)
-    ----------------------------------------
-    Total                      6.712ns (4.203ns logic, 2.509ns route)
-                                       (62.6% logic, 37.4% route)
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
 
 =========================================================================
 
@@ -448,20 +529,28 @@ Clock to Setup on destination clock btn
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-btn            |    1.697|         |         |         |
+btn            |    2.486|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock btnWRselect
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn            |    2.561|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 21.48 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.41 secs
  
 --> 
 
-Total memory usage is 187532 kilobytes
+Total memory usage is 199820 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

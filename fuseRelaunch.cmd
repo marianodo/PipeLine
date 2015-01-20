@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_isim_beh.exe" -prj "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_beh.prj" "TestInstDecode" "work.glbl" 
