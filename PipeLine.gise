@@ -22,6 +22,8 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="PipeLine.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="InstDecode_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="InstDecode_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestAlu_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestAlu_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TestAlu_isim_beh.wdb"/>
@@ -32,6 +34,10 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestInstDecode_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestStageModules_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestStageModules_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestWR_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestWR_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TestWR_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestWR_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -97,27 +103,29 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1421772975" xil_pn:in_ck="1409512052324068900" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1421772974">
+    <transform xil_pn:end_ts="1421778388" xil_pn:in_ck="2693138208899139193" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1421778388">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AluEX.v"/>
       <outfile xil_pn:name="InstDecode.v"/>
       <outfile xil_pn:name="InstructionMem.v"/>
+      <outfile xil_pn:name="SignExtend.v"/>
       <outfile xil_pn:name="StageEX.v"/>
       <outfile xil_pn:name="StageID.v"/>
       <outfile xil_pn:name="StageIF.v"/>
-      <outfile xil_pn:name="TestAlu.v"/>
+      <outfile xil_pn:name="StageWB.v"/>
+      <outfile xil_pn:name="TestWR.v"/>
       <outfile xil_pn:name="addPc.v"/>
       <outfile xil_pn:name="muxEX.v"/>
       <outfile xil_pn:name="muxPc.v"/>
       <outfile xil_pn:name="pipeline.v"/>
       <outfile xil_pn:name="program-counter.v"/>
     </transform>
-    <transform xil_pn:end_ts="1421772640" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="949388717173897145" xil_pn:start_ts="1421772640">
+    <transform xil_pn:end_ts="1421778441" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8408714243096254304" xil_pn:start_ts="1421778441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1421772640" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3176975570065530505" xil_pn:start_ts="1421772640">
+    <transform xil_pn:end_ts="1421778441" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6877078495517589410" xil_pn:start_ts="1421778441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -125,36 +133,38 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1421772980" xil_pn:in_ck="1409512052324068900" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1421772980">
+    <transform xil_pn:end_ts="1421778394" xil_pn:in_ck="2693138208899139193" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1421778394">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AluEX.v"/>
       <outfile xil_pn:name="InstDecode.v"/>
       <outfile xil_pn:name="InstructionMem.v"/>
+      <outfile xil_pn:name="SignExtend.v"/>
       <outfile xil_pn:name="StageEX.v"/>
       <outfile xil_pn:name="StageID.v"/>
       <outfile xil_pn:name="StageIF.v"/>
-      <outfile xil_pn:name="TestAlu.v"/>
+      <outfile xil_pn:name="StageWB.v"/>
+      <outfile xil_pn:name="TestWR.v"/>
       <outfile xil_pn:name="addPc.v"/>
       <outfile xil_pn:name="muxEX.v"/>
       <outfile xil_pn:name="muxPc.v"/>
       <outfile xil_pn:name="pipeline.v"/>
       <outfile xil_pn:name="program-counter.v"/>
     </transform>
-    <transform xil_pn:end_ts="1421772991" xil_pn:in_ck="1409512052324068900" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5144366263989289201" xil_pn:start_ts="1421772980">
+    <transform xil_pn:end_ts="1421778452" xil_pn:in_ck="2693138208899139193" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7067572069141164641" xil_pn:start_ts="1421778441">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="TestAlu_beh.prj"/>
-      <outfile xil_pn:name="TestAlu_isim_beh.exe"/>
+      <outfile xil_pn:name="TestWR_beh.prj"/>
+      <outfile xil_pn:name="TestWR_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1421772993" xil_pn:in_ck="280451869338008643" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7085647393951134124" xil_pn:start_ts="1421772991">
+    <transform xil_pn:end_ts="1421778454" xil_pn:in_ck="5757948326485172187" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5634558600852393598" xil_pn:start_ts="1421778452">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="TestAlu_isim_beh.wdb"/>
+      <outfile xil_pn:name="TestWR_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
@@ -186,7 +196,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1421772937" xil_pn:in_ck="4389603467069031102" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4643409251439827928" xil_pn:start_ts="1421772861">
+    <transform xil_pn:end_ts="1421778379" xil_pn:in_ck="-5469997057658730868" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4643409251439827928" xil_pn:start_ts="1421778284">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

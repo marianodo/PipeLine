@@ -21,18 +21,24 @@
 module StageID(
 input [4:0] rs,rt,rd,
 input [31:0] writeData,
+input [15:0] immediate,
 input btnWRselect,
-output [31:0] dataRs,dataRt
+output [31:0] dataRs,dataRt, outImmediate
     );
 
-InstDecode callInstDecode (
-	.inInstDecodeRsReg(rs), //Entradas
-	.inInstDecodeRtReg(rt),
-	.inInstDecodeRdReg(rd),
-	.inInstDecodeWriteData(writeData),
-	.WRInstDecode(btnWRselect),
-	.outInstDecodeRsReg(dataRs), //Salidas
-	.outInstDecodeRtReg(dataRt)
+	InstDecode callInstDecode (
+		.inInstDecodeRsReg(rs), //Entradas
+		.inInstDecodeRtReg(rt),
+		.inInstDecodeRdReg(rd),
+		.inInstDecodeWriteData(writeData),
+		.WRInstDecode(btnWRselect),
+		.outInstDecodeRsReg(dataRs), //Salidas
+		.outInstDecodeRtReg(dataRt)
+		);
+		
+	SignExtend callSignExtend(
+	.immediate(immediate),
+	.outImmediate(outImmediate)
 	);
-	
+		
 endmodule

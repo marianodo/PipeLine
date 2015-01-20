@@ -61,6 +61,9 @@ module TestAlu;
 		#100;
       btn = 0;
 		
+		#100;
+      btn = 1;
+		
 		// Add stimulus here
 
 	end

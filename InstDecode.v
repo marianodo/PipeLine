@@ -29,11 +29,11 @@ reg [31:0] register[0:15];
 initial
 begin
 	register[0] <= 3;
-	register[1] <= 9;
-	register[2] <= 7;
-	register[3] <= 5;
-	register[4] <= 15;
-	register[5] <= 15;
+	register[1] <= 2;
+	register[2] <= 2;
+	register[3] <= 0;
+	register[4] <= 0;
+	register[5] <= 0;
 	register[6] <= 10;
 	register[7] <= 15;
 	register[8] <= 10;
@@ -58,8 +58,7 @@ begin
 	if(WRInstDecode == 1)
 		begin
 			register[inInstDecodeRdReg] = inInstDecodeWriteData;
-			outInstDecodeRsReg = 0; //Saca el valor del registro
-			outInstDecodeRtReg = 0;
+			
 		end
 		
 end
