@@ -22,21 +22,37 @@ module StageEX(
 	input [31:0] readRt, signExt, readRs,
 	input [4:0] sa,
 	input [5:0] instReg, 
-	input btnMuxEx,
+	input [3:0] PostPc,
+	input ALUSrc,
+	input [1:0] ALUOp,
 	output [31:0] outAlu,
-	output zeroAlu
+	output zeroAlu,
+	output [31:0] outAddEx
     );
 
-wire [31:0] outMuxEx;
+wire [31:0] outMuxEx, outShift;
+
+
+	ShiftEX callShiftEX(
+	.signExt(signExt), //Enrtada
+	.outShift(outShift)
+	);
+	
+	AddEX callAddEX(
+	.PostPc(PostPc), //Entrada
+	.outShift(outShift), //Entrada
+	.outAddEx(outAddEx) //Salida
+	);
 
 	MuxEX callMuxEX(
-	.btnMuxEx(btnMuxEx),
+	.ALUSrc(ALUSrc),
 	.readRt(readRt),
 	.signExt(signExt),
 	.outMuxEx(outMuxEx)
 	);
 
 	AluEX callAluEx(
+	.ALUOp(ALUOp),
 	.readRs(readRs),
 	.outMuxEx(outMuxEx), //Entrada de la alu, conectada a la salida del mux
 	.instReg(instReg),

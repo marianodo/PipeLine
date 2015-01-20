@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    12:52:20 01/19/2015 
+// Create Date:    15:47:18 01/20/2015 
 // Design Name: 
-// Module Name:    controlUnit 
+// Module Name:    ControlUnit 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,14 +18,36 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module controlUnit(
-input btn,
-input [7:0] inControlUnitAddPc,
-output [7:0] outControlUnitAddPc
+module ControlUnit(
+	input [5:0] inInstruction,
+	input clk,
+	output reg RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,
+	output reg [1:0] ALUOp
+	
     );
-always @(posedge btn)
+	 reg tmp;
+initial
 begin
-	outControlUnitAddPc = inControlUnitAddPc;
+	RegDst = 1;
+	Branch = 0;
+	MemRead = 0;
+	MemtoReg = 0;
+	MemWrite = 0;
+	ALUSrc = 0;
+	RegWrite = 0;
+	tmp = 1;
 end
 
+always @(posedge clk)
+begin
+	if(tmp)
+		begin
+			RegWrite = 1;
+			tmp = 0;
+		end
+	else
+		begin
+			tmp = 1;
+		end
+end
 endmodule

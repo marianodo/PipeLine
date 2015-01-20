@@ -19,15 +19,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
-input btn,
-input wire btnSelect,
-input btnWRselect,
-input wire btnMuxEx,
-input wire [3:0] jmpAddr,
-output zeroAlu,
+input clk,
+
 output [31:0] outMuxWb 
   );
-parameter tam = 8;
 
 // s i g n a l s
 wire [3:0] PostPc;
@@ -49,45 +44,67 @@ reg select = 0;
 reg [31:0] pcJmp;
 
 
+wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite;
+wire [1:0] ALUOp;
+wire [31:0] instruction, outAddEx;
+
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
-	.inBtn(btn), //Entrada
-	.rd(rd), //Salidas
-	.rs(rs),
-	.rt(rt),
-	.sa(sa),
-	.instReg(instReg) //Salida de la instruccion
-
+	.clk(clk), //Entrada
+	.outAddEx(outAddEx),
+	.Branch(Branch),
+	.zeroAlu(zeroAlu),
+	.outInstruction(instruction),
+	.PostPc(PostPc)
+	);
+	
+	ControlUnit callControlUnit(
+	.clk(clk),
+	.inInstruction(instruction[31:26]), //Entrada
+	.RegDst(RegDst),
+	.Branch(Branch),
+	.MemRead(MemRead),
+	.MemtoReg(MemtoReg),
+	.ALUOp(ALUOp),
+	.MemWrite(MemWrite),
+	.ALUSrc(ALUSrc),
+	.RegWrite(RegWrite)
+	
 	);
 
 	StageID callStageID(
-	.rd(rd), //Entradas
-	.rs(rs),
-	.rt(rt),
+	.rs(instruction[25:21]), //Entradas
+	.rt(instruction[20:16]),
+	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
+	.immediate(instruction[15:0]),
+	.RegDst(RegDst), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
 	.writeData(outMuxWb), //Dato a escribir en posicion rd
-	.btnWRselect(btnWRselect), //Selector de lectura escritura de registros
+	.RegWrite(RegWrite), //Era el btnWRselect //Selector de lectura escritura de registros
 	.dataRs(dataRs), //Salidas 
 	.dataRt(dataRt), //Datos de los registros
-	.outImmediate(outImmediate) //Valor imediato de la instruccion
+	.outImmediate(outImmediate) //Valor imediato de la instruccion, sale del sign extend
 	);
 	
 	StageEX callStageEX(
+	.PostPc(PostPc),
 	.readRs(dataRs), //Entradas
 	.readRt(dataRt), //Lee los datos de los registros
 	.signExt(outImmediate), // Entrada del inmediato extendido en el mux
 	.sa(sa), //Shift
-	.instReg(instReg), //Tipo de Instruccion, lo usa la alu
-	.btnMuxEx(btnMuxEx), //Selector entre Inmediato o registro Rt
+	.instReg(instruction[5:0]), //Tipo de Instruccion, lo usa la alu
+	.ALUSrc(ALUSrc), //Selector entre Inmediato o registro Rt
+	.ALUOp(ALUOp), //Distingue tipos de instrucciones, si es jmp u otra cosa
 	.outAlu(outAlu), //Salida resultado
-	.zeroAlu(zeroAlu) // Comparacion de valores
+	.zeroAlu(zeroAlu), // Comparacion de valores
+	.outAddEx(outAddEx)
 	);
 	
 	
 	StageWB callStageWB(
 	.outAlu(outAlu),
 	.readDataMem(readDataMem),
-	.btnMuxWb(btnMuxWb),
+	.MemtoReg(MemtoReg),
 	.outMuxWb(outMuxWb)
 	);
 

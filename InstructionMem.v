@@ -20,18 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 module InstructionMem # (parameter tam=32)(
 input [3:0] inInstructionMem,
-output reg [4:0] rsReg, rtReg, rdReg, saReg,
-output reg [5:0] instRreg
+output reg [31:0] outInstruction
     );
 
 reg [tam-1:0] memory[0:15];
-reg [5:0] opCode;
+
 
 initial
 begin
-//----------------opcode---rd----rs----rt----sa----Func--
+//----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b000000_00011_00001_00010_00000_100001;
+	memory[0] = 32'b000000_00010_00001_00011_00000_100001;
 	//-----------------------------15----3--------------
 	memory[1] = 32'b000000_00101_00011_00100_00000_100001;
 	memory[2] = 32'b000000_00010_00101_00101_00000_100011;
@@ -47,36 +46,15 @@ begin
 	memory[12] <= 5;
 	memory[13] <= 15;
 	memory[14] <= 4294967293;
-	memory[9] <= 5;
 	memory[15] <= 15;
 	
 	
-	rsReg = 0;
-	rtReg = 0;
-	rdReg = 0;
-	saReg = 0;
-	instRreg = 0;
+	outInstruction = 0;
 end
 
 always @(*)
 begin
 
-opCode <= memory[inInstructionMem][31:26];
-	if(opCode == 0)
-		begin
-			rdReg <= memory[inInstructionMem][25:21];
-			rsReg <= memory[inInstructionMem][20:16];
-			rtReg <= memory[inInstructionMem][15:11];
-			saReg <= memory[inInstructionMem][10:6];
-			instRreg <= memory[inInstructionMem][5:0];
-		end
-	else
-		rdReg <= memory[inInstructionMem][25:21];
-		rsReg <= memory[inInstructionMem][20:16];
-		rtReg <= memory[inInstructionMem][15:11];
-		saReg <= memory[inInstructionMem][10:6];
-		instRreg <= memory[inInstructionMem][5:0];
-	
-	
+	outInstruction = memory[inInstructionMem];
 end
 endmodule

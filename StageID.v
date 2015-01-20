@@ -22,23 +22,31 @@ module StageID(
 input [4:0] rs,rt,rd,
 input [31:0] writeData,
 input [15:0] immediate,
-input btnWRselect,
+input RegWrite,RegDst,
 output [31:0] dataRs,dataRt, outImmediate
     );
+wire [4:0] outMuxID;
 
+	MuxID callMuxID(
+	.rt(rt),
+	.rd(rd),
+	.RegDst(RegDst),
+	.outMuxID(outMuxID)
+	);
+	
 	InstDecode callInstDecode (
 		.inInstDecodeRsReg(rs), //Entradas
 		.inInstDecodeRtReg(rt),
-		.inInstDecodeRdReg(rd),
+		.inInstDecodeRdReg(outMuxID),
 		.inInstDecodeWriteData(writeData),
-		.WRInstDecode(btnWRselect),
+		.WRInstDecode(RegWrite),
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt)
 		);
 		
 	SignExtend callSignExtend(
 	.immediate(immediate),
-	.outImmediate(outImmediate)
+	.outImmediate(outImmediate) //Salida Extendida
 	);
 		
 endmodule

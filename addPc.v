@@ -19,16 +19,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module addPc # (parameter tam=5)(
-	input btn,
+	input clk,
 	input [3:0] inAddPc,
 	output reg [3:0] outAddPc
     );
 	 
+	 reg tmp;
 initial
 begin
 	outAddPc = 0;
+	tmp = 0;
 end
-always @(posedge btn)
+
+
+always @(posedge clk)
 begin
 	if(outAddPc == 15)
 		begin
@@ -36,7 +40,15 @@ begin
 		end
 	else
 		begin
-			outAddPc = inAddPc + 1;
+		if(tmp)
+			begin
+				tmp = 0;
+				outAddPc = inAddPc + 1;
+			end
+		else
+			begin
+				tmp = 1 ;
+			end
 		end
 end
 

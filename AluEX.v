@@ -22,6 +22,7 @@ module AluEX(
 input [31:0] readRs, outMuxEx,
 input [5:0] instReg,
 input [4:0] sa,
+input [1:0] ALUOp,
 output reg zeroAlu,
 output reg [31:0] outAlu
     );

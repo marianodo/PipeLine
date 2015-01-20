@@ -19,26 +19,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageWB(
-	input btnMuxWb,
+	input MemtoReg,
 	input [31:0] readDataMem, outAlu,
-	output reg [31:0] outMuxWb
+	output [31:0] outMuxWb
     );
 	 
-initial
-begin
-	outMuxWb = 0;
-end
-always @(*)
-begin
-	if(btnMuxWb)
-		begin
-			outMuxWb = readDataMem;
-		end
-	
-	else
-		begin
-			outMuxWb = outAlu;
-		end
-end
+	MuxWB callMuxWB(
+	.MemtoReg(MemtoReg),
+	.readDataMem(readDataMem),
+	.outAlu(outAlu),
+	.outMuxWb(outMuxWb)
+	);
 
 endmodule

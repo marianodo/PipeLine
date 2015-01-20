@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module MuxEX(
-	input btnMuxEx,
+	input ALUSrc,
 	input [31:0] readRt,signExt,
 	output reg [31:0] outMuxEx
     );
@@ -30,7 +30,7 @@ begin
 end
 always @(*)
 begin
-	if(btnMuxEx)
+	if(ALUSrc)
 		begin
 			outMuxEx = signExt;
 		end

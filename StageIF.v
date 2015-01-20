@@ -19,12 +19,14 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
-	input inBtn,
-	output [4:0] rd,rs,rt,sa,
-	output [5:0] instReg
+	input clk,Branch,zeroAlu,
+	input [31:0] outAddEx,
+	output [31:0] outInstruction,
+	output [3:0] PostPc
     );
 
-wire [3:0] PcMux, Pc, PostPc;
+wire [3:0] PcMux, Pc;
+wire outAnd;
 
 	Pc callPc (
 	.inPc(PcMux),
@@ -32,23 +34,26 @@ wire [3:0] PcMux, Pc, PostPc;
 	);
 
 	addPc callAddPc (
-	.btn(inBtn),
+	.clk(clk),
 	.inAddPc(Pc),
 	.outAddPc(PostPc)
 	);
 	
 	InstructionMem callInstruccionMem (
 	.inInstructionMem(Pc), //Entrada
-	.rsReg(rs), //Salidas
-	.rtReg(rt),
-	.rdReg(rd),
-	.saReg(sa),
-	.instRreg(instReg)
+	.outInstruction(outInstruction)
 	);
+	
+	AndIF callAndIF( //And entre el branch del control y el Zero de la Alu
+	.Branch(Branch),
+	.zeroAlu(zeroAlu),
+	.outAnd(outAnd)
+	);
+	
 	muxPc callMuxPc (
 	.inMuxAddPc(PostPc),
-	.inMuxAddJmp(jmpAddr),
-	.select(btnSelect),
+	.inMuxAddJmp(outAddEx), //Entrada al mux de la salida del add Ex
+	.select(outAnd),
 	.outMuxPc(PcMux)
 	);
 

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.93 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.94 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Reading design: pipeline.prj
 
@@ -107,20 +107,30 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\SignExtend.v" into library work
 Parsing module <SignExtend>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ShiftEX.v" into library work
+Parsing module <ShiftEX>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\program-counter.v" into library work
 Parsing module <Pc>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxWB.v" into library work
+Parsing module <MuxWB>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\muxPc.v" into library work
 Parsing module <muxPc>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxID.v" into library work
+Parsing module <MuxID>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\muxEX.v" into library work
 Parsing module <MuxEX>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\InstructionMem.v" into library work
 Parsing module <InstructionMem>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\InstDecode.v" into library work
 Parsing module <InstDecode>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\AndIF.v" into library work
+Parsing module <AndIF>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\AluEX.v" into library work
 Parsing module <AluEX>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\addPc.v" into library work
 Parsing module <addPc>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\AddEX.v" into library work
+Parsing module <AddEX>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageWB.v" into library work
 Parsing module <StageWB>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageIF.v" into library work
@@ -129,13 +139,14 @@ Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageID.v" into library w
 Parsing module <StageID>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageEX.v" into library work
 Parsing module <StageEX>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ControlUnit.v" into library work
+Parsing module <ControlUnit>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\pipeline.v" into library work
 Parsing module <pipeline>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 64: Port immediate is not connected to this instance
 
 Elaborating module <pipeline>.
 
@@ -144,16 +155,22 @@ Elaborating module <StageIF>.
 Elaborating module <Pc>.
 
 Elaborating module <addPc>.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\addPc.v" Line 39: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\addPc.v" Line 46: Result of 5-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <InstructionMem>.
 
+Elaborating module <AndIF>.
+
 Elaborating module <muxPc>.
-WARNING:HDLCompiler:189 - "C:\Users\Nano\Desktop\PipeLine\StageIF.v" Line 50: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\StageIF.v" Line 50: Net <jmpAddr> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\StageIF.v" Line 51: Net <btnSelect> does not have a driver.
+WARNING:HDLCompiler:189 - "C:\Users\Nano\Desktop\PipeLine\StageIF.v" Line 55: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 32-bit.
+
+Elaborating module <ControlUnit>.
+WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 67: Assignment to MemRead ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 70: Assignment to MemWrite ignored, since the identifier is never used
 
 Elaborating module <StageID>.
+
+Elaborating module <MuxID>.
 
 Elaborating module <InstDecode>.
 
@@ -161,14 +178,20 @@ Elaborating module <SignExtend>.
 
 Elaborating module <StageEX>.
 
+Elaborating module <ShiftEX>.
+
+Elaborating module <AddEX>.
+WARNING:HDLCompiler:189 - "C:\Users\Nano\Desktop\PipeLine\StageEX.v" Line 42: Size mismatch in connection of port <PostPc>. Formal port size is 32-bit while actual signal size is 4-bit.
+
 Elaborating module <MuxEX>.
 
 Elaborating module <AluEX>.
 
 Elaborating module <StageWB>.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 46: Net <btnMuxWb> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 47: Net <readDataMem[31]> does not have a driver.
-WARNING:HDLCompiler:552 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 64: Input port immediate[15] is not connected on this instance
+
+Elaborating module <MuxWB>.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 34: Net <sa[4]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 42: Net <readDataMem[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -176,20 +199,17 @@ WARNING:HDLCompiler:552 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 64: I
 
 Synthesizing Unit <pipeline>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\pipeline.v".
-        tam = 8
-WARNING:Xst:2898 - Port 'immediate', unconnected in block instance 'callStageID', is tied to GND.
-WARNING:Xst:647 - Input <jmpAddr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <btnSelect> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" line 62: Output port <MemRead> of the instance <callControlUnit> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" line 62: Output port <MemWrite> of the instance <callControlUnit> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <sa> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <readDataMem> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <btnMuxWb> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <pipeline> synthesized.
 
 Synthesizing Unit <StageIF>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\StageIF.v".
-WARNING:Xst:653 - Signal <jmpAddr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <btnSelect> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:647 - Input <outAddEx<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <StageIF> synthesized.
@@ -204,11 +224,12 @@ Unit <Pc> synthesized.
 Synthesizing Unit <addPc>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\addPc.v".
         tam = 5
+    Found 1-bit register for signal <tmp>.
     Found 4-bit register for signal <outAddPc>.
-    Found 4-bit adder for signal <inAddPc[3]_GND_4_o_add_2_OUT> created at line 39.
+    Found 4-bit adder for signal <inAddPc[3]_GND_4_o_add_2_OUT> created at line 46.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   4 D-type flip-flop(s).
+	inferred   5 D-type flip-flop(s).
 Unit <addPc> synthesized.
 
 Synthesizing Unit <InstructionMem>.
@@ -220,18 +241,46 @@ WARNING:Xst:2999 - Signal 'memory', unconnected in block 'InstructionMem', is ti
 	inferred   1 RAM(s).
 Unit <InstructionMem> synthesized.
 
+Synthesizing Unit <AndIF>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\AndIF.v".
+    Summary:
+	no macro.
+Unit <AndIF> synthesized.
+
 Synthesizing Unit <muxPc>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\muxPc.v".
         tam = 8
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
 Unit <muxPc> synthesized.
+
+Synthesizing Unit <ControlUnit>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\ControlUnit.v".
+WARNING:Xst:647 - Input <inInstruction> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <ALUOp> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:2935 - Signal 'RegDst', unconnected in block 'ControlUnit', is tied to its initial value (1).
+WARNING:Xst:2935 - Signal 'Branch', unconnected in block 'ControlUnit', is tied to its initial value (0).
+WARNING:Xst:2935 - Signal 'MemRead', unconnected in block 'ControlUnit', is tied to its initial value (0).
+WARNING:Xst:2935 - Signal 'MemtoReg', unconnected in block 'ControlUnit', is tied to its initial value (0).
+WARNING:Xst:2935 - Signal 'MemWrite', unconnected in block 'ControlUnit', is tied to its initial value (0).
+WARNING:Xst:2935 - Signal 'ALUSrc', unconnected in block 'ControlUnit', is tied to its initial value (0).
+    Found 1-bit register for signal <tmp>.
+    Found 1-bit register for signal <RegWrite>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <ControlUnit> synthesized.
 
 Synthesizing Unit <StageID>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\StageID.v".
     Summary:
 	no macro.
 Unit <StageID> synthesized.
+
+Synthesizing Unit <MuxID>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxID.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MuxID> synthesized.
 
 Synthesizing Unit <InstDecode>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\InstDecode.v".
@@ -887,7 +936,7 @@ Unit <InstDecode> synthesized.
 Synthesizing Unit <SignExtend>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\SignExtend.v".
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
 Unit <SignExtend> synthesized.
 
 Synthesizing Unit <StageEX>.
@@ -895,6 +944,20 @@ Synthesizing Unit <StageEX>.
     Summary:
 	no macro.
 Unit <StageEX> synthesized.
+
+Synthesizing Unit <ShiftEX>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\ShiftEX.v".
+WARNING:Xst:647 - Input <signExt<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <ShiftEX> synthesized.
+
+Synthesizing Unit <AddEX>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\AddEX.v".
+    Found 32-bit adder for signal <outAddEx> created at line 33.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <AddEX> synthesized.
 
 Synthesizing Unit <MuxEX>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\muxEX.v".
@@ -904,14 +967,15 @@ Unit <MuxEX> synthesized.
 
 Synthesizing Unit <AluEX>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\AluEX.v".
-    Found 32-bit subtractor for signal <readRs[31]_outMuxEx[31]_sub_9_OUT> created at line 68.
-    Found 32-bit adder for signal <readRs[31]_outMuxEx[31]_add_7_OUT> created at line 64.
-    Found 32-bit shifter logical left for signal <GND_588_o_sa[4]_shift_left_0_OUT> created at line 44
-    Found 32x32-bit multiplier for signal <n0033> created at line 44.
-    Found 32-bit shifter arithmetic right for signal <outMuxEx[31]_sa[4]_shift_right_4_OUT> created at line 52
-    Found 32-bit shifter logical right for signal <outMuxEx[31]_readRs[31]_shift_right_5_OUT> created at line 56
-    Found 32-bit shifter arithmetic right for signal <outMuxEx[31]_readRs[31]_shift_right_6_OUT> created at line 60
-    Found 32-bit comparator greater for signal <outMuxEx[31]_readRs[31]_LessThan_13_o> created at line 84
+WARNING:Xst:647 - Input <ALUOp> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit subtractor for signal <readRs[31]_outMuxEx[31]_sub_9_OUT> created at line 69.
+    Found 32-bit adder for signal <readRs[31]_outMuxEx[31]_add_7_OUT> created at line 65.
+    Found 32-bit shifter logical left for signal <GND_593_o_sa[4]_shift_left_0_OUT> created at line 45
+    Found 32x32-bit multiplier for signal <n0034> created at line 45.
+    Found 32-bit shifter arithmetic right for signal <outMuxEx[31]_sa[4]_shift_right_4_OUT> created at line 53
+    Found 32-bit shifter logical right for signal <outMuxEx[31]_readRs[31]_shift_right_5_OUT> created at line 57
+    Found 32-bit shifter arithmetic right for signal <outMuxEx[31]_readRs[31]_shift_right_6_OUT> created at line 61
+    Found 32-bit comparator greater for signal <outMuxEx[31]_readRs[31]_LessThan_13_o> created at line 85
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   2 Adder/Subtractor(s).
@@ -923,69 +987,69 @@ Unit <AluEX> synthesized.
 Synthesizing Unit <div_32u_32u>.
     Related source file is "".
     Found 64-bit adder for signal <n3436> created at line 0.
-    Found 64-bit adder for signal <GND_590_o_b[31]_add_1_OUT> created at line 0.
+    Found 64-bit adder for signal <GND_595_o_b[31]_add_1_OUT> created at line 0.
     Found 63-bit adder for signal <n3440> created at line 0.
-    Found 63-bit adder for signal <GND_590_o_b[31]_add_3_OUT> created at line 0.
+    Found 63-bit adder for signal <GND_595_o_b[31]_add_3_OUT> created at line 0.
     Found 62-bit adder for signal <n3444> created at line 0.
-    Found 62-bit adder for signal <GND_590_o_b[31]_add_5_OUT> created at line 0.
+    Found 62-bit adder for signal <GND_595_o_b[31]_add_5_OUT> created at line 0.
     Found 61-bit adder for signal <n3448> created at line 0.
-    Found 61-bit adder for signal <GND_590_o_b[31]_add_7_OUT> created at line 0.
+    Found 61-bit adder for signal <GND_595_o_b[31]_add_7_OUT> created at line 0.
     Found 60-bit adder for signal <n3452> created at line 0.
-    Found 60-bit adder for signal <GND_590_o_b[31]_add_9_OUT> created at line 0.
+    Found 60-bit adder for signal <GND_595_o_b[31]_add_9_OUT> created at line 0.
     Found 59-bit adder for signal <n3456> created at line 0.
-    Found 59-bit adder for signal <GND_590_o_b[31]_add_11_OUT> created at line 0.
+    Found 59-bit adder for signal <GND_595_o_b[31]_add_11_OUT> created at line 0.
     Found 58-bit adder for signal <n3460> created at line 0.
-    Found 58-bit adder for signal <GND_590_o_b[31]_add_13_OUT> created at line 0.
+    Found 58-bit adder for signal <GND_595_o_b[31]_add_13_OUT> created at line 0.
     Found 57-bit adder for signal <n3464> created at line 0.
-    Found 57-bit adder for signal <GND_590_o_b[31]_add_15_OUT> created at line 0.
+    Found 57-bit adder for signal <GND_595_o_b[31]_add_15_OUT> created at line 0.
     Found 56-bit adder for signal <n3468> created at line 0.
-    Found 56-bit adder for signal <GND_590_o_b[31]_add_17_OUT> created at line 0.
+    Found 56-bit adder for signal <GND_595_o_b[31]_add_17_OUT> created at line 0.
     Found 55-bit adder for signal <n3472> created at line 0.
-    Found 55-bit adder for signal <GND_590_o_b[31]_add_19_OUT> created at line 0.
+    Found 55-bit adder for signal <GND_595_o_b[31]_add_19_OUT> created at line 0.
     Found 54-bit adder for signal <n3476> created at line 0.
-    Found 54-bit adder for signal <GND_590_o_b[31]_add_21_OUT> created at line 0.
+    Found 54-bit adder for signal <GND_595_o_b[31]_add_21_OUT> created at line 0.
     Found 53-bit adder for signal <n3480> created at line 0.
-    Found 53-bit adder for signal <GND_590_o_b[31]_add_23_OUT> created at line 0.
+    Found 53-bit adder for signal <GND_595_o_b[31]_add_23_OUT> created at line 0.
     Found 52-bit adder for signal <n3484> created at line 0.
-    Found 52-bit adder for signal <GND_590_o_b[31]_add_25_OUT> created at line 0.
+    Found 52-bit adder for signal <GND_595_o_b[31]_add_25_OUT> created at line 0.
     Found 51-bit adder for signal <n3488> created at line 0.
-    Found 51-bit adder for signal <GND_590_o_b[31]_add_27_OUT> created at line 0.
+    Found 51-bit adder for signal <GND_595_o_b[31]_add_27_OUT> created at line 0.
     Found 50-bit adder for signal <n3492> created at line 0.
-    Found 50-bit adder for signal <GND_590_o_b[31]_add_29_OUT> created at line 0.
+    Found 50-bit adder for signal <GND_595_o_b[31]_add_29_OUT> created at line 0.
     Found 49-bit adder for signal <n3496> created at line 0.
-    Found 49-bit adder for signal <GND_590_o_b[31]_add_31_OUT> created at line 0.
+    Found 49-bit adder for signal <GND_595_o_b[31]_add_31_OUT> created at line 0.
     Found 48-bit adder for signal <n3500> created at line 0.
-    Found 48-bit adder for signal <GND_590_o_b[31]_add_33_OUT> created at line 0.
+    Found 48-bit adder for signal <GND_595_o_b[31]_add_33_OUT> created at line 0.
     Found 47-bit adder for signal <n3504> created at line 0.
-    Found 47-bit adder for signal <GND_590_o_b[31]_add_35_OUT> created at line 0.
+    Found 47-bit adder for signal <GND_595_o_b[31]_add_35_OUT> created at line 0.
     Found 46-bit adder for signal <n3508> created at line 0.
-    Found 46-bit adder for signal <GND_590_o_b[31]_add_37_OUT> created at line 0.
+    Found 46-bit adder for signal <GND_595_o_b[31]_add_37_OUT> created at line 0.
     Found 45-bit adder for signal <n3512> created at line 0.
-    Found 45-bit adder for signal <GND_590_o_b[31]_add_39_OUT> created at line 0.
+    Found 45-bit adder for signal <GND_595_o_b[31]_add_39_OUT> created at line 0.
     Found 44-bit adder for signal <n3516> created at line 0.
-    Found 44-bit adder for signal <GND_590_o_b[31]_add_41_OUT> created at line 0.
+    Found 44-bit adder for signal <GND_595_o_b[31]_add_41_OUT> created at line 0.
     Found 43-bit adder for signal <n3520> created at line 0.
-    Found 43-bit adder for signal <GND_590_o_b[31]_add_43_OUT> created at line 0.
+    Found 43-bit adder for signal <GND_595_o_b[31]_add_43_OUT> created at line 0.
     Found 42-bit adder for signal <n3524> created at line 0.
-    Found 42-bit adder for signal <GND_590_o_b[31]_add_45_OUT> created at line 0.
+    Found 42-bit adder for signal <GND_595_o_b[31]_add_45_OUT> created at line 0.
     Found 41-bit adder for signal <n3528> created at line 0.
-    Found 41-bit adder for signal <GND_590_o_b[31]_add_47_OUT> created at line 0.
+    Found 41-bit adder for signal <GND_595_o_b[31]_add_47_OUT> created at line 0.
     Found 40-bit adder for signal <n3532> created at line 0.
-    Found 40-bit adder for signal <GND_590_o_b[31]_add_49_OUT> created at line 0.
+    Found 40-bit adder for signal <GND_595_o_b[31]_add_49_OUT> created at line 0.
     Found 39-bit adder for signal <n3536> created at line 0.
-    Found 39-bit adder for signal <GND_590_o_b[31]_add_51_OUT> created at line 0.
+    Found 39-bit adder for signal <GND_595_o_b[31]_add_51_OUT> created at line 0.
     Found 38-bit adder for signal <n3540> created at line 0.
-    Found 38-bit adder for signal <GND_590_o_b[31]_add_53_OUT> created at line 0.
+    Found 38-bit adder for signal <GND_595_o_b[31]_add_53_OUT> created at line 0.
     Found 37-bit adder for signal <n3544> created at line 0.
-    Found 37-bit adder for signal <GND_590_o_b[31]_add_55_OUT> created at line 0.
+    Found 37-bit adder for signal <GND_595_o_b[31]_add_55_OUT> created at line 0.
     Found 36-bit adder for signal <n3548> created at line 0.
-    Found 36-bit adder for signal <GND_590_o_b[31]_add_57_OUT> created at line 0.
+    Found 36-bit adder for signal <GND_595_o_b[31]_add_57_OUT> created at line 0.
     Found 35-bit adder for signal <n3552> created at line 0.
-    Found 35-bit adder for signal <GND_590_o_b[31]_add_59_OUT> created at line 0.
+    Found 35-bit adder for signal <GND_595_o_b[31]_add_59_OUT> created at line 0.
     Found 34-bit adder for signal <n3556> created at line 0.
-    Found 34-bit adder for signal <GND_590_o_b[31]_add_61_OUT> created at line 0.
+    Found 34-bit adder for signal <GND_595_o_b[31]_add_61_OUT> created at line 0.
     Found 33-bit adder for signal <n3560> created at line 0.
-    Found 33-bit adder for signal <GND_590_o_b[31]_add_63_OUT> created at line 0.
+    Found 33-bit adder for signal <GND_595_o_b[31]_add_63_OUT> created at line 0.
     Found 64-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 63-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 62-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -1031,6 +1095,12 @@ Synthesizing Unit <StageWB>.
 	no macro.
 Unit <StageWB> synthesized.
 
+Synthesizing Unit <MuxWB>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxWB.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MuxWB> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
@@ -1039,8 +1109,8 @@ Macro Statistics
  16x32-bit single-port Read Only RAM                   : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 67
- 32-bit adder                                          : 1
+# Adders/Subtractors                                   : 68
+ 32-bit adder                                          : 2
  32-bit subtractor                                     : 1
  33-bit adder                                          : 2
  34-bit adder                                          : 2
@@ -1075,7 +1145,8 @@ Macro Statistics
  62-bit adder                                          : 2
  63-bit adder                                          : 2
  64-bit adder                                          : 2
-# Registers                                            : 1
+# Registers                                            : 4
+ 1-bit register                                        : 3
  4-bit register                                        : 1
 # Latches                                              : 576
  1-bit latch                                           : 576
@@ -1115,10 +1186,12 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1060
+# Multiplexers                                         : 1064
  1-bit 16-to-1 multiplexer                             : 64
  1-bit 2-to-1 multiplexer                              : 992
- 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 6
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 4
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 1
@@ -1155,13 +1228,13 @@ Macro Statistics
  16x32-bit single-port distributed Read Only RAM       : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 35
- 32-bit adder                                          : 1
+# Adders/Subtractors                                   : 36
+ 32-bit adder                                          : 2
  32-bit adder carry in                                 : 32
  32-bit subtractor                                     : 1
  4-bit adder                                           : 1
-# Registers                                            : 4
- Flip-Flops                                            : 4
+# Registers                                            : 7
+ Flip-Flops                                            : 7
 # Comparators                                          : 35
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 1
@@ -1198,10 +1271,12 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1060
+# Multiplexers                                         : 1064
  1-bit 16-to-1 multiplexer                             : 64
  1-bit 2-to-1 multiplexer                              : 992
- 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 6
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
 # Logic shifters                                       : 4
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 1
@@ -1214,27 +1289,31 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <Mmult_n00333> of sequential type is unconnected in block <AluEX>.
+WARNING:Xst:2677 - Node <Mmult_n00343> of sequential type is unconnected in block <AluEX>.
 
 Optimizing unit <pipeline> ...
 
-Optimizing unit <StageIF> ...
-
-Optimizing unit <muxPc> ...
-
 Optimizing unit <Pc> ...
 
-Optimizing unit <StageID> ...
+Optimizing unit <ShiftEX> ...
+
+Optimizing unit <AddEX> ...
 
 Optimizing unit <SignExtend> ...
 
 Optimizing unit <StageWB> ...
 
+Optimizing unit <callMuxPc> ...
+
+Optimizing unit <StageIF> ...
+
 Optimizing unit <addPc> ...
+
+Optimizing unit <AndIF> ...
 
 Optimizing unit <InstructionMem> ...
 
-Optimizing unit <InstDecode> ...
+Optimizing unit <ControlUnit> ...
 
 Optimizing unit <callMuxEX> ...
 
@@ -1243,18 +1322,32 @@ Optimizing unit <StageEX> ...
 Optimizing unit <AluEX> ...
 
 Optimizing unit <div_32u_32u> ...
-WARNING:Xst:1290 - Hierarchical block <callSignExtend> is unconnected in block <callStageID>.
+
+Optimizing unit <callMuxID> ...
+
+Optimizing unit <StageID> ...
+
+Optimizing unit <InstDecode> ...
+
+Optimizing unit <MuxWB> ...
+WARNING:Xst:2677 - Node <Mmult_n0034> of sequential type is unconnected in block <callAluEx>.
+WARNING:Xst:2677 - Node <Mmult_n00341> of sequential type is unconnected in block <callAluEx>.
+WARNING:Xst:2677 - Node <Mmult_n00342> of sequential type is unconnected in block <callAluEx>.
+WARNING:Xst:1290 - Hierarchical block <outMuxEx[31]_GND_593_o_div_3> is unconnected in block <callAluEx>.
    It will be removed from the design.
-WARNING:Xst:2677 - Node <Mmult_n0033> of sequential type is unconnected in block <callAluEx>.
-WARNING:Xst:2677 - Node <Mmult_n00331> of sequential type is unconnected in block <callAluEx>.
-WARNING:Xst:2677 - Node <Mmult_n00332> of sequential type is unconnected in block <callAluEx>.
-WARNING:Xst:1290 - Hierarchical block <outMuxEx[31]_GND_588_o_div_3> is unconnected in block <callAluEx>.
+WARNING:Xst:1290 - Hierarchical block <callAndIF> is unconnected in block <callStageIF>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <callShiftEX> is unconnected in block <callStageEX>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <callAddEX> is unconnected in block <callStageEX>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <callSignExtend> is unconnected in block <callStageID>.
    It will be removed from the design.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 4.
-WARNING:Xst:2957 - There are clock and non-clock loads on clock signal btnWRselect_BUFGP. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 3.
+WARNING:Xst:2957 - There are clock and non-clock loads on clock signal callControlUnit/RegWrite_BUFG. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
 
 Final Macro Processing ...
 
@@ -1262,8 +1355,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 4
- Flip-Flops                                            : 4
+# Registers                                            : 7
+ Flip-Flops                                            : 7
 
 =========================================================================
 
@@ -1286,28 +1379,28 @@ Top Level Output File Name         : pipeline.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 991
+# BELS                             : 859
 #      GND                         : 1
-#      LUT2                        : 98
-#      LUT3                        : 49
-#      LUT4                        : 26
-#      LUT5                        : 83
-#      LUT6                        : 414
+#      INV                         : 1
+#      LUT2                        : 67
+#      LUT3                        : 22
+#      LUT4                        : 25
+#      LUT5                        : 35
+#      LUT6                        : 389
 #      MUXCY                       : 62
-#      MUXF7                       : 129
+#      MUXF7                       : 128
 #      MUXF8                       : 64
 #      VCC                         : 1
 #      XORCY                       : 64
-# FlipFlops/Latches                : 580
-#      FD                          : 4
+# FlipFlops/Latches                : 583
+#      FD                          : 7
 #      LD                          : 512
 #      LD_1                        : 64
 # Clock Buffers                    : 8
-#      BUFG                        : 7
-#      BUFGP                       : 1
-# IO Buffers                       : 35
-#      IBUF                        : 2
-#      OBUF                        : 33
+#      BUFG                        : 8
+# IO Buffers                       : 33
+#      IBUF                        : 1
+#      OBUF                        : 32
 
 Device utilization summary:
 ---------------------------
@@ -1316,20 +1409,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             580  out of  18224     3%  
- Number of Slice LUTs:                  670  out of   9112     7%  
-    Number used as Logic:               670  out of   9112     7%  
+ Number of Slice Registers:             583  out of  18224     3%  
+ Number of Slice LUTs:                  539  out of   9112     5%  
+    Number used as Logic:               539  out of   9112     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1246
-   Number with an unused Flip Flop:     666  out of   1246    53%  
-   Number with an unused LUT:           576  out of   1246    46%  
-   Number of fully used LUT-FF pairs:     4  out of   1246     0%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:   1116
+   Number with an unused Flip Flop:     533  out of   1116    47%  
+   Number with an unused LUT:           577  out of   1116    51%  
+   Number of fully used LUT-FF pairs:     6  out of   1116     0%  
+   Number of unique control sets:        19
 
 IO Utilization: 
- Number of IOs:                          41
- Number of bonded IOBs:                  36  out of    232    15%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    232    14%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                8  out of     16    50%  
@@ -1352,28 +1445,28 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
-Clock Signal                                                                                                                           | Clock buffer(FF name)                              | Load  |
----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
-btn                                                                                                                                    | IBUF                                               | 4     |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o1:O)  | BUFG(*)(callStageID/callInstDecode/register<0>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o1:O)  | BUFG(*)(callStageID/callInstDecode/register<1>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o1:O)| BUFG(*)(callStageID/callInstDecode/register<4>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o1:O)| BUFG(*)(callStageID/callInstDecode/register<2>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o1:O)| BUFG(*)(callStageID/callInstDecode/register<3>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o1:O)| BUFG(*)(callStageID/callInstDecode/register<5>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o1:O)| BUFG(*)(callStageID/callInstDecode/register<6>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o1:O)| NONE(*)(callStageID/callInstDecode/register<9>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o1:O)| NONE(*)(callStageID/callInstDecode/register<7>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o1:O)| NONE(*)(callStageID/callInstDecode/register<8>_31) | 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o1:O)| NONE(*)(callStageID/callInstDecode/register<10>_31)| 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o1:O)| NONE(*)(callStageID/callInstDecode/register<11>_31)| 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o1:O)| NONE(*)(callStageID/callInstDecode/register<14>_31)| 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o1:O)| NONE(*)(callStageID/callInstDecode/register<12>_31)| 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o1:O)| NONE(*)(callStageID/callInstDecode/register<13>_31)| 32    |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o(callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o1:O)| NONE(*)(callStageID/callInstDecode/register<15>_31)| 32    |
-btnWRselect                                                                                                                            | BUFGP                                              | 64    |
----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
+Clock Signal                                                                                                                             | Clock buffer(FF name)                              | Load  |
+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
+clk                                                                                                                                      | IBUF                                               | 7     |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_48_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_48_o1:O)  | BUFG(*)(callStageID/callInstDecode/register<0>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_80_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_80_o1:O)  | BUFG(*)(callStageID/callInstDecode/register<1>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_176_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_176_o1:O)| BUFG(*)(callStageID/callInstDecode/register<4>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_112_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_112_o1:O)| BUFG(*)(callStageID/callInstDecode/register<2>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_144_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_144_o1:O)| BUFG(*)(callStageID/callInstDecode/register<3>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_208_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_208_o1:O)| BUFG(*)(callStageID/callInstDecode/register<5>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_240_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_240_o1:O)| BUFG(*)(callStageID/callInstDecode/register<6>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_336_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_336_o1:O)| NONE(*)(callStageID/callInstDecode/register<9>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_272_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_272_o1:O)| NONE(*)(callStageID/callInstDecode/register<7>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_304_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_304_o1:O)| NONE(*)(callStageID/callInstDecode/register<8>_31) | 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_368_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_368_o1:O)| NONE(*)(callStageID/callInstDecode/register<10>_31)| 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_400_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_400_o1:O)| NONE(*)(callStageID/callInstDecode/register<11>_31)| 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_496_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_496_o1:O)| NONE(*)(callStageID/callInstDecode/register<14>_31)| 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_432_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_432_o1:O)| NONE(*)(callStageID/callInstDecode/register<12>_31)| 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_464_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_464_o1:O)| NONE(*)(callStageID/callInstDecode/register<13>_31)| 32    |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_528_o(callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_528_o1:O)| NONE(*)(callStageID/callInstDecode/register<15>_31)| 32    |
+callControlUnit/RegWrite                                                                                                                 | BUFG                                               | 64    |
+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+-------+
 (*) These 16 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -1387,665 +1480,95 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 2.809ns (Maximum Frequency: 355.986MHz)
-   Minimum input arrival time before clock: 8.600ns
-   Maximum output required time after clock: 16.759ns
-   Maximum combinational path delay: 14.285ns
+   Minimum period: 2.886ns (Maximum Frequency: 346.536MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 13.057ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'btn'
-  Clock period: 2.809ns (frequency: 355.986MHz)
-  Total number of paths / destination ports: 26 / 4
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.886ns (frequency: 346.536MHz)
+  Total number of paths / destination ports: 41 / 7
 -------------------------------------------------------------------------
-Delay:               2.809ns (Levels of Logic = 2)
-  Source:            callStageIF/callAddPc/outAddPc_2 (FF)
-  Destination:       callStageIF/callAddPc/outAddPc_2 (FF)
-  Source Clock:      btn rising
-  Destination Clock: btn rising
+Delay:               2.886ns (Levels of Logic = 5)
+  Source:            callStageIF/callAddPc/outAddPc_3 (FF)
+  Destination:       callStageIF/callAddPc/outAddPc_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
 
-  Data Path: callStageIF/callAddPc/outAddPc_2 to callStageIF/callAddPc/outAddPc_2
+  Data Path: callStageIF/callAddPc/outAddPc_3 to callStageIF/callAddPc/outAddPc_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              16   0.447   1.233  outAddPc_2 (outAddPc_2)
-     LUT4:I1->O            2   0.205   0.617  GND_4_o_GND_4_o_equal_2_o<3>1 (GND_4_o_GND_4_o_equal_2_o)
-     LUT4:I3->O            1   0.205   0.000  outAddPc_2_rstpot (outAddPc_2_rstpot)
-     FD:D                      0.102          outAddPc_2
+     FD:C->Q              16   0.447   1.349  outAddPc_3 (outAddPc_3)
+     end scope: 'callStageIF/callAddPc:outAddPc<3>'
+     begin scope: 'callStageIF/callMuxPc:inMuxAddPc<3>'
+     end scope: 'callStageIF/callMuxPc:outMuxPc<3>'
+     begin scope: 'callStageIF/callPc:inPc<3>'
+     end scope: 'callStageIF/callPc:outPc<3>'
+     begin scope: 'callStageIF/callAddPc:inAddPc<3>'
+     LUT6:I1->O            1   0.203   0.580  outAddPc_3_rstpot (outAddPc_3_rstpot)
+     LUT5:I4->O            1   0.205   0.000  outAddPc_3_rstpot1 (outAddPc_3_rstpot1)
+     FD:D                      0.102          outAddPc_3
     ----------------------------------------
-    Total                      2.809ns (0.959ns logic, 1.850ns route)
-                                       (34.1% logic, 65.9% route)
+    Total                      2.886ns (0.957ns logic, 1.929ns route)
+                                       (33.2% logic, 66.8% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o'
-  Total number of paths / destination ports: 2202 / 32
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 5872 / 32
 -------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<0>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<0>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<0>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<1>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<1>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<1>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<4>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<4>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<4>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<2>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<2>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<2>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<3>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<3>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<3>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<5>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<5>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<5>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<6>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<6>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<6>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<9>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<9>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<9>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<7>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<7>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<7>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<8>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<8>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<8>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<10>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<10>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<10>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<11>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<11>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<11>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<14>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<14>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<14>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<12>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<12>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<12>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<13>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<13>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<13>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o'
-  Total number of paths / destination ports: 2202 / 32
--------------------------------------------------------------------------
-Offset:              8.600ns (Levels of Logic = 13)
-  Source:            btnMuxEx (PAD)
-  Destination:       callStageID/callInstDecode/register<15>_16 (LATCH)
-  Destination Clock: callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o falling
-
-  Data Path: btnMuxEx to callStageID/callInstDecode/register<15>_16
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx181 (outMuxEx<25>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<25>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<25>'
-     LUT6:I2->O            4   0.203   0.788  Sh2161 (Sh216)
-     LUT3:I1->O            1   0.203   0.580  Sh23611 (Sh2361)
-     LUT5:I4->O            2   0.205   0.721  Sh2401 (Sh240)
-     LUT4:I2->O            1   0.203   0.580  _n0174<16>1 (_n0174<16>1)
-     LUT6:I5->O            2   0.205   0.721  _n0174<16>2 (_n0174<16>2)
-     LUT3:I1->O           17   0.203   0.000  _n0174<16>4 (outAlu<16>)
-     end scope: 'callStageEX/callAluEx:outAlu<16>'
-     end scope: 'callStageEX:outAlu<16>'
-     begin scope: 'callStageWB:outAlu<16>'
-     end scope: 'callStageWB:outMuxWb<16>'
-     begin scope: 'callStageID:writeData<16>'
-     begin scope: 'callStageID/callInstDecode:inInstDecodeWriteData<16>'
-     LD:D                      0.037          register<15>_16
-    ----------------------------------------
-    Total                      8.600ns (2.684ns logic, 5.916ns route)
-                                       (31.2% logic, 68.8% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'btn'
-  Total number of paths / destination ports: 17408 / 33
--------------------------------------------------------------------------
-Offset:              16.759ns (Levels of Logic = 17)
+Offset:              13.057ns (Levels of Logic = 15)
   Source:            callStageIF/callAddPc/outAddPc_0 (FF)
-  Destination:       zeroAlu (PAD)
-  Source Clock:      btn rising
+  Destination:       outMuxWb<16> (PAD)
+  Source Clock:      clk rising
 
-  Data Path: callStageIF/callAddPc/outAddPc_0 to zeroAlu
+  Data Path: callStageIF/callAddPc/outAddPc_0 to outMuxWb<16>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.447   1.278  outAddPc_0 (outAddPc_0)
+     FD:C->Q              18   0.447   1.297  outAddPc_0 (outAddPc_0)
      end scope: 'callStageIF/callAddPc:outAddPc<0>'
      begin scope: 'callStageIF/callMuxPc:inMuxAddPc<0>'
      end scope: 'callStageIF/callMuxPc:outMuxPc<0>'
      begin scope: 'callStageIF/callPc:inPc<0>'
      end scope: 'callStageIF/callPc:outPc<0>'
      begin scope: 'callStageIF/callInstruccionMem:inInstructionMem<0>'
-     LUT4:I1->O          268   0.205   2.296  Mram_memory141 (instRreg<4>)
-     end scope: 'callStageIF/callInstruccionMem:instRreg<4>'
-     end scope: 'callStageIF:instReg<4>'
-     begin scope: 'callStageEX:instReg<4>'
-     begin scope: 'callStageEX/callAluEx:instReg<4>'
-     LUT5:I2->O           34   0.205   1.321  instReg[5]_GND_588_o_equal_19_o<5>1 (instReg[5]_GND_588_o_equal_19_o)
-     LUT4:I3->O            2   0.205   0.617  out111 (out11)
-     LUT4:I3->O            3   0.205   0.651  out11 (n0023)
-     LUT4:I3->O           15   0.205   0.982  _n0175<0>11 (_n0175<0>1)
-     LUT6:I5->O            1   0.205   0.827  _n0174<10>5_SW0 (N20)
-     LUT6:I2->O           18   0.203   1.414  _n0174<10>5 (outAlu<10>)
-     LUT6:I0->O            1   0.203   0.808  zeroAlu<31>1 (zeroAlu<31>)
-     LUT6:I3->O            1   0.205   0.924  zeroAlu<31>2 (zeroAlu<31>1)
-     LUT6:I1->O            1   0.203   0.579  zeroAlu<31>7 (zeroAlu)
-     end scope: 'callStageEX/callAluEx:zeroAlu'
-     end scope: 'callStageEX:zeroAlu'
-     OBUF:I->O                 2.571          zeroAlu_OBUF (zeroAlu)
+     LUT4:I0->O          152   0.203   2.258  Mram_memory51 (outInstruction<5>)
+     end scope: 'callStageIF/callInstruccionMem:outInstruction<5>'
+     end scope: 'callStageIF:outInstruction<5>'
+     begin scope: 'callStageEX:instReg<5>'
+     begin scope: 'callStageEX/callAluEx:instReg<5>'
+     LUT5:I1->O           34   0.203   1.568  instReg[5]_GND_593_o_equal_19_o<5>1 (instReg[5]_GND_593_o_equal_19_o)
+     LUT4:I0->O            2   0.203   0.617  out11 (n0023)
+     LUT5:I4->O           16   0.205   1.369  _n0175<15>11 (_n0175<15>1)
+     LUT6:I0->O            1   0.203   0.684  _n0175<16>4_SW0 (N14)
+     LUT6:I4->O           17   0.203   1.027  _n0175<16>4 (outAlu<16>)
+     end scope: 'callStageEX/callAluEx:outAlu<16>'
+     end scope: 'callStageEX:outAlu<16>'
+     begin scope: 'callStageWB:outAlu<16>'
+     begin scope: 'callStageWB/callMuxWB:outAlu<16>'
+     end scope: 'callStageWB/callMuxWB:outMuxWb<16>'
+     end scope: 'callStageWB:outMuxWb<16>'
+     OBUF:I->O                 2.571          outMuxWb_16_OBUF (outMuxWb<16>)
     ----------------------------------------
-    Total                     16.759ns (5.062ns logic, 11.697ns route)
-                                       (30.2% logic, 69.8% route)
+    Total                     13.057ns (4.238ns logic, 8.819ns route)
+                                       (32.5% logic, 67.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'btnWRselect'
-  Total number of paths / destination ports: 12886 / 33
+Timing constraint: Default OFFSET OUT AFTER for Clock 'callControlUnit/RegWrite'
+  Total number of paths / destination ports: 5902 / 32
 -------------------------------------------------------------------------
-Offset:              13.912ns (Levels of Logic = 12)
+Offset:              10.537ns (Levels of Logic = 11)
   Source:            callStageID/callInstDecode/outInstDecodeRsReg_31 (LATCH)
-  Destination:       zeroAlu (PAD)
-  Source Clock:      btnWRselect rising
+  Destination:       outMuxWb<16> (PAD)
+  Source Clock:      callControlUnit/RegWrite rising
 
-  Data Path: callStageID/callInstDecode/outInstDecodeRsReg_31 to zeroAlu
+  Data Path: callStageID/callInstDecode/outInstDecodeRsReg_31 to outMuxWb<16>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -2055,245 +1578,213 @@ Offset:              13.912ns (Levels of Logic = 12)
      begin scope: 'callStageEX:readRs<31>'
      begin scope: 'callStageEX/callAluEx:readRs<31>'
      LUT6:I0->O            1   0.203   0.944  out2 (out1)
-     LUT6:I0->O           34   0.203   1.321  out7 (_n0050)
-     LUT2:I1->O            1   0.205   0.827  _n0174<15>1_SW0 (N01)
-     LUT6:I2->O           17   0.203   1.372  _n0174<15>1 (_n0174<15>1)
-     LUT6:I1->O           18   0.203   1.394  _n0174<21>3 (outAlu<21>)
-     LUT6:I1->O            1   0.203   0.808  zeroAlu<31>1 (zeroAlu<31>)
-     LUT6:I3->O            1   0.205   0.924  zeroAlu<31>2 (zeroAlu<31>1)
-     LUT6:I1->O            1   0.203   0.579  zeroAlu<31>7 (zeroAlu)
-     end scope: 'callStageEX/callAluEx:zeroAlu'
-     end scope: 'callStageEX:zeroAlu'
-     OBUF:I->O                 2.571          zeroAlu_OBUF (zeroAlu)
+     LUT6:I0->O           31   0.203   1.382  out7 (_n0051)
+     LUT5:I3->O           16   0.203   1.369  _n0175<15>11 (_n0175<15>1)
+     LUT6:I0->O            1   0.203   0.684  _n0175<16>4_SW0 (N14)
+     LUT6:I4->O           17   0.203   1.027  _n0175<16>4 (outAlu<16>)
+     end scope: 'callStageEX/callAluEx:outAlu<16>'
+     end scope: 'callStageEX:outAlu<16>'
+     begin scope: 'callStageWB:outAlu<16>'
+     begin scope: 'callStageWB/callMuxWB:outAlu<16>'
+     end scope: 'callStageWB/callMuxWB:outMuxWb<16>'
+     end scope: 'callStageWB:outMuxWb<16>'
+     OBUF:I->O                 2.571          outMuxWb_16_OBUF (outMuxWb<16>)
     ----------------------------------------
-    Total                     13.912ns (4.697ns logic, 9.215ns route)
-                                       (33.8% logic, 66.2% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 4404 / 33
--------------------------------------------------------------------------
-Delay:               14.285ns (Levels of Logic = 14)
-  Source:            btnMuxEx (PAD)
-  Destination:       zeroAlu (PAD)
-
-  Data Path: btnMuxEx to zeroAlu
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            32   1.222   1.396  btnMuxEx_IBUF (btnMuxEx_IBUF)
-     begin scope: 'callStageEX:btnMuxEx'
-     begin scope: 'callStageEX/callMuxEX:btnMuxEx'
-     LUT2:I0->O           11   0.203   1.130  Mmux_outMuxEx141 (outMuxEx<21>)
-     end scope: 'callStageEX/callMuxEX:outMuxEx<21>'
-     begin scope: 'callStageEX/callAluEx:outMuxEx<21>'
-     LUT6:I2->O            3   0.203   0.755  Sh202 (Sh20)
-     LUT3:I1->O            2   0.203   0.617  Sh23211 (Sh2321)
-     LUT5:I4->O            1   0.205   0.684  _n0174<12>1 (_n0174<12>2)
-     LUT5:I3->O            1   0.203   0.580  _n0174<12>2 (_n0174<12>3)
-     LUT6:I5->O            1   0.205   0.580  _n0174<12>6_SW0 (N32)
-     LUT6:I5->O           18   0.205   1.414  _n0174<12>6 (outAlu<12>)
-     LUT6:I0->O            1   0.203   0.924  zeroAlu<31>2 (zeroAlu<31>1)
-     LUT6:I1->O            1   0.203   0.579  zeroAlu<31>7 (zeroAlu)
-     end scope: 'callStageEX/callAluEx:zeroAlu'
-     end scope: 'callStageEX:zeroAlu'
-     OBUF:I->O                 2.571          zeroAlu_OBUF (zeroAlu)
-    ----------------------------------------
-    Total                     14.285ns (5.626ns logic, 8.659ns route)
-                                       (39.4% logic, 60.6% route)
+    Total                     10.537ns (4.084ns logic, 6.453ns route)
+                                       (38.8% logic, 61.2% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock btn
+Clock to Setup on destination clock callControlUnit/RegWrite
+------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------------------------------------+---------+---------+---------+---------+
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_112_o|         |    1.877|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_144_o|         |    1.860|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_176_o|         |    1.641|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_208_o|         |    1.743|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_240_o|         |    1.886|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_272_o|         |    1.869|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_304_o|         |    1.640|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_336_o|         |    1.742|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_368_o|         |    1.885|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_400_o|         |    1.868|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_432_o|         |    1.649|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_464_o|         |    1.751|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_48_o |         |    1.632|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_496_o|         |    1.894|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_528_o|         |    1.877|         |         |
+callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_80_o |         |    1.734|         |         |
+clk                                                               |    4.899|         |         |         |
+------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_112_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_144_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_176_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_208_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_240_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_272_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_304_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_336_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_368_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_400_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_432_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_464_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_48_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_496_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_528_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock callStageID/callInstDecode/GND_11_o_inInstDecodeRdReg[3]_AND_80_o
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+callControlUnit/RegWrite|         |         |    6.976|         |
+clk                     |         |         |    9.496|         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-btn            |    2.809|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock btnWRselect
------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------------------------------+---------+---------+---------+---------+
-btn                                                              |    4.869|         |         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o|         |    1.877|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o|         |    1.860|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o|         |    1.641|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o|         |    1.743|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o|         |    1.886|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o|         |    1.869|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o|         |    1.640|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o|         |    1.742|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o|         |    1.885|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o|         |    1.868|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o|         |    1.649|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o|         |    1.751|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o |         |    1.632|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o|         |    1.894|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o|         |    1.877|         |         |
-callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o |         |    1.734|         |         |
------------------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_111_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_143_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_175_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_207_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_239_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_271_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_303_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_335_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_367_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_399_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_431_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_463_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_47_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_495_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_527_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock callStageID/callInstDecode/GND_8_o_inInstDecodeRdReg[3]_AND_79_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-btn            |         |         |    9.889|         |
-btnWRselect    |         |         |    7.083|         |
+clk            |    2.886|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 85.00 secs
-Total CPU time to Xst completion: 85.07 secs
+Total REAL time to Xst completion: 67.00 secs
+Total CPU time to Xst completion: 66.38 secs
  
 --> 
 
-Total memory usage is 245452 kilobytes
+Total memory usage is 245772 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  601 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :  609 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 
