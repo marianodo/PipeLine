@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_isim_beh.exe" -prj "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_beh.prj" "TestInstDecode" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Nano/Desktop/PipeLine/TestStageModules_isim_beh.exe" -prj "C:/Users/Nano/Desktop/PipeLine/TestStageModules_beh.prj" "work.TestStageModules" "work.glbl" 

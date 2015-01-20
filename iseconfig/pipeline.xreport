@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-01-20T09:14:27</DateModified>
+  <DateModified>2015-01-20T11:06:35</DateModified>
   <ModuleName>pipeline</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/Facu/Arquitectura de Computadoras/pipeline/iseconfig/pipeline.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/Facu/Arquitectura de Computadoras/pipeline\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Nano/Desktop/PipeLine/iseconfig/pipeline.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Nano/Desktop/PipeLine\</ImplementationReportsDirectory>
   <DateInitialized>2015-01-16T14:39:21</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

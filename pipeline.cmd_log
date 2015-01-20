@@ -178,3 +178,6 @@ xst -intstyle ise -ifn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.x
 xst -intstyle ise -ifn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.xst" -ofn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.syr" 
 xst -intstyle ise -ifn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.xst" -ofn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.syr" 
 xst -intstyle ise -ifn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.xst" -ofn "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 

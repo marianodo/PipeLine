@@ -19,46 +19,39 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
+	input inBtn,
+	output [4:0] rd,rs,rt,
+	output [31:0] writeData,
+	output [5:0] instReg
     );
-	 
-	 
-//wire [4:0] rs;
-//wire [4:0] rd;
-//wire [4:0] rt;
-//wire [4:0] sa;
-//wire [5:0] instReg;
-//wire [31:0] writeData;
-////wire wdSelect;
-////wire [31:0] dataRd, dataRt;
-//reg select = 0; 
-//
-//	muxPc callMuxPc (
-//	.inMuxAddPc(PostPc),
-//	.inMuxAddJmp(jmpAddr),
-//	.select(btnSelect),
-//	.outMuxPc(PcMux)
-//	);
-//
-//	Pc callPc (
-//	.inPc(PcMux),
-//	.outPc(Pc)
-//	);
-//
-//	addPc callAddPc (
-//	.btn(btn),
-//	.inAddPc(Pc),
-//	.outAddPc(PostPc)
-//	);
-//	
-//	InstructionMem callInstruccionMem (
-//	.inInstructionMem(Pc),
-//	.rsReg(rs),
-//	.rtReg(rt),
-//	.rdReg(rd),
-//	.saReg(sa),
-//	.instRreg(instReg)
-//	);
+
+wire [3:0] PcMux, Pc, PostPc;
+
+	Pc callPc (
+	.inPc(PcMux),
+	.outPc(Pc)
+	);
+
+	addPc callAddPc (
+	.btn(inBtn),
+	.inAddPc(Pc),
+	.outAddPc(PostPc)
+	);
 	
+	InstructionMem callInstruccionMem (
+	.inInstructionMem(Pc),
+	.rsReg(rs),
+	.rtReg(rt),
+	.rdReg(rd),
+	.saReg(sa),
+	.instRreg(instReg)
+	);
+	muxPc callMuxPc (
+	.inMuxAddPc(PostPc),
+	.inMuxAddJmp(jmpAddr),
+	.select(btnSelect),
+	.outMuxPc(PcMux)
+	);
 
 
 endmodule

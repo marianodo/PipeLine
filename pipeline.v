@@ -23,7 +23,7 @@ input btn,
 input wire btnSelect,
 input wire btnWRselect,
 input wire [3:0] jmpAddr,
-output [31:0] dataRd,
+output [31:0] dataRs,
 output [31:0] dataRt 
   );
 parameter tam = 8;
@@ -45,42 +45,23 @@ reg [31:0] pcJmp;
 
 
 // i n s t a n t i a t i o n s
-	muxPc callMuxPc (
-	.inMuxAddPc(PostPc),
-	.inMuxAddJmp(jmpAddr),
-	.select(btnSelect),
-	.outMuxPc(PcMux)
+
+	StageIF callStageIF(
+	.inBtn(btn),
+	.rd(rd),
+	.rs(rs),
+	.rt(rt),
+	.writeData(writeData)
 	);
 
-	program callPc (
-	.inPc(PcMux),
-	.outPc(Pc)
-	);
-
-	addPc callAddPc (
-	.btn(btn),
-	.inAddPc(Pc),
-	.outAddPc(PostPc)
-	);
-	
-	InstructionMem callInstruccionMem (
-	.inInstructionMem(Pc),
-	.rsReg(rs),
-	.rtReg(rt),
-	.rdReg(rd),
-	.saReg(sa),
-	.instRreg(instReg)
-	);
-	
-	
 	InstDecode callInstDecode (
 	.inInstDecodeRsReg(rs),
 	.inInstDecodeRtReg(rt),
 	.inInstDecodeRdReg(rd),
 	.inInstDecodeWriteData(writeData),
 	.WRInstDecode(btnWRselect),
-	.outInstDecodeRtReg(dataRt),
-	.outInstDecodeRdReg(dataRd)
+	.outInstDecodeRsReg(dataRs),
+	.outInstDecodeRtReg(dataRt)
 	);
 	
 	

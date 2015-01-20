@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/Facu/Arquitectura de Computadoras/pipeline/program-counter.v";
+static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/program-counter.v";
 static int ng1[] = {0, 0};
 
 
@@ -76,9 +76,9 @@ LAB5:    xsi_set_current_line(31, ng0);
 }
 
 
-extern void work_m_00000000001341368767_3391526516_init()
+extern void work_m_00000000001341368767_1547046708_init()
 {
 	static char *pe[] = {(void *)Initial_25_0,(void *)Always_29_1};
-	xsi_register_didat("work_m_00000000001341368767_3391526516", "isim/TestInstDecode_isim_beh.exe.sim/work/m_00000000001341368767_3391526516.didat");
+	xsi_register_didat("work_m_00000000001341368767_1547046708", "isim/TestInstDecode_isim_beh.exe.sim/work/m_00000000001341368767_1547046708.didat");
 	xsi_register_executes(pe);
 }

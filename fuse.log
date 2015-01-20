@@ -1,32 +1,36 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_isim_beh.exe -prj D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_beh.prj TestInstDecode work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Desktop/PipeLine/TestStageModules_isim_beh.exe -prj C:/Users/Nano/Desktop/PipeLine/TestStageModules_beh.prj work.TestStageModules work.glbl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/program-counter.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/muxPc.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/InstructionMem.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/InstDecode.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/addPc.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.v" into library work
-Analyzing Verilog file "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/TestStageModules.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode.v" Line 42: Size mismatch in connection of port <jmpAddr>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 49: Port instReg is not connected to this instance
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageIF.v" Line 46: Size mismatch in connection of port <saReg>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageIF.v" Line 51: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 1-bit.
 Completed static elaboration
-Fuse Memory Usage: 106076 KB
-Fuse CPU Usage: 888 ms
-Compiling module muxPc
-Compiling module program
+Fuse Memory Usage: 106140 KB
+Fuse CPU Usage: 873 ms
+Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
+Compiling module muxPc
+Compiling module StageIF
 Compiling module InstDecode
 Compiling module pipeline
-Compiling module TestInstDecode
+Compiling module TestStageModules
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 5 sub-compilation(s) to finish...
-Compiled 8 Verilog Units
-Built simulation executable D:/Facu/Arquitectura de Computadoras/pipeline/TestInstDecode_isim_beh.exe
-Fuse Memory Usage: 110668 KB
-Fuse CPU Usage: 982 ms
+Waiting for 6 sub-compilation(s) to finish...
+Compiled 9 Verilog Units
+Built simulation executable C:/Users/Nano/Desktop/PipeLine/TestStageModules_isim_beh.exe
+Fuse Memory Usage: 109708 KB
+Fuse CPU Usage: 1044 ms
