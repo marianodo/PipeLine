@@ -20,14 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Pc # (parameter tam=8)(
 input [3:0] inPc,
-output reg [3:0] outPc
+input clk,
+output  [3:0] outPc
     );
+reg [3:0] tmpPc;
 initial
 	begin
-		outPc <= 0;
+		tmpPc <= 0;
 	end
-always @(inPc)
+always @(negedge clk)
 	begin
-		outPc = inPc;
+		tmpPc = inPc;
 	end
+	
+assign outPc = tmpPc;
 endmodule

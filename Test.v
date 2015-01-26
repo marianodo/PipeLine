@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   17:45:44 01/20/2015
+// Create Date:   16:56:52 01/26/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -42,16 +42,37 @@ module Test;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-       
-		clk = 1;
-		
+        
+		  clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
-		
-		clk = 0;
-		
+        
+		  clk = 0;
+
+		// Wait 100 ns for global reset to finish
 		#100;
-		
-		clk = 1;
+        
+		  clk = 1;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		  clk = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		  clk = 1;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		  clk = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
 		// Add stimulus here
 
 	end

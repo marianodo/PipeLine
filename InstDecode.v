@@ -29,12 +29,12 @@ reg [31:0] register[0:15];
 initial
 begin
 	register[0] <= 3;
-	register[1] <= 2;
+	register[1] <= 3;
 	register[2] <= 2;
-	register[3] <= 0;
+	register[3] <= 9;
 	register[4] <= 0;
-	register[5] <= 0;
-	register[6] <= 10;
+	register[5] <= 4;
+	register[6] <= 0;
 	register[7] <= 15;
 	register[8] <= 10;
 	register[9] <= 15;

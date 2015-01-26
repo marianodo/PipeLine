@@ -12,11 +12,13 @@ Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxID.v" into library wor
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxEX.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/DataMemoryMEM.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AndIF.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AluEX.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AddEX.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageWB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageMEM.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageID.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageEX.v" into library work
@@ -26,10 +28,9 @@ Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageIF.v" Line 55: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageEX.v" Line 42: Size mismatch in connection of port <PostPc>. Formal port size is 32-bit while actual signal size is 4-bit.
 Completed static elaboration
-Fuse Memory Usage: 106140 KB
-Fuse CPU Usage: 1044 ms
+Fuse Memory Usage: 106076 KB
+Fuse CPU Usage: 998 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -46,14 +47,16 @@ Compiling module AddEX
 Compiling module MuxEX
 Compiling module AluEX
 Compiling module StageEX
+Compiling module DataMemoryMEM
+Compiling module StageMEM
 Compiling module MuxWB
 Compiling module StageWB
 Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 18 sub-compilation(s) to finish...
-Compiled 21 Verilog Units
+Waiting for 16 sub-compilation(s) to finish...
+Compiled 23 Verilog Units
 Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 109708 KB
-Fuse CPU Usage: 1247 ms
+Fuse Memory Usage: 109644 KB
+Fuse CPU Usage: 1294 ms

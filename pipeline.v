@@ -61,7 +61,7 @@ wire [31:0] instruction, outAddEx;
 	
 	ControlUnit callControlUnit(
 	.clk(clk),
-	.inInstruction(instruction[31:26]), //Entrada
+	.inInstruction(instruction[31:26]), //Entrada de Opcode
 	.RegDst(RegDst),
 	.Branch(Branch),
 	.MemRead(MemRead),
@@ -100,15 +100,24 @@ wire [31:0] instruction, outAddEx;
 	.outAddEx(outAddEx)
 	);
 	
+	StageMEM callStageMEM(
+	.clk(clk),
+	.inMemAddress(outAlu), //Entrada que es salida de ALU
+	.inMemWriteData(dataRt), // Entrada que es el valor del registro Rt
+	.MemRead(MemRead), //Flag de lectura, en 1 lee, en 0 nada
+	.MemWrite(MemWrite), //Flag de escritura
+	.outMemReadData(readDataMem) //Salida del data mem, que va a ser entrada del MUX
+	);
 	
 	StageWB callStageWB(
-	.outAlu(outAlu),
-	.readDataMem(readDataMem),
-	.MemtoReg(MemtoReg),
-	.outMuxWb(outMuxWb)
+	.outAlu(outAlu), //Entrada que es salida la ALU
+	.readDataMem(readDataMem), // Entrada que es salida de Data memory. Con el de arriba, van a MUX
+	.MemtoReg(MemtoReg), //Flag
+	.outMuxWb(outMuxWb) //Salida del mux
 	);
 
 	
+
 	
 
 

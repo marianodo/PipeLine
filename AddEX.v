@@ -19,17 +19,19 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AddEX(
-	input [31:0] PostPc, outShift,
-	output reg [31:0] outAddEx
+	input [3:0] PostPc,
+	input [31:0] outShift,
+	output [31:0] outAddEx
     );
-
+reg [31:0] tmpOut;
 initial
 begin
-	outAddEx = 0;
+	tmpOut = 0;
 end
 
 always @(*)
 begin
-	outAddEx = PostPc + outShift;
+	tmpOut = PostPc + outShift;
 end
+assign outAddEx = tmpOut[3:0];
 endmodule

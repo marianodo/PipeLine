@@ -30,11 +30,11 @@ wire outAnd;
 
 	Pc callPc (
 	.inPc(PcMux),
+	.clk(clk),
 	.outPc(Pc)
 	);
 
 	addPc callAddPc (
-	.clk(clk),
 	.inAddPc(Pc),
 	.outAddPc(PostPc)
 	);
