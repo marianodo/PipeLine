@@ -19,10 +19,9 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module muxPc # (parameter tam=8)( 
-input [3:0] inMuxAddPc,
-input [3:0] inMuxAddJmp,
+input [31:0] inMuxAddPc,inMuxAddJmp,
 input outAnd,
-output reg [3:0] outMuxPc
+output reg [31:0] outMuxPc
     );
 initial
 begin

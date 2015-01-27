@@ -19,11 +19,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module InstructionMem # (parameter tam=32)(
-input [3:0] inInstructionMem,
+input [31:0] inInstructionMem, // Es el PC
 output reg [31:0] outInstruction
     );
 
-reg [tam-1:0] memory[0:15];
+reg [tam-1:0] memory[0:31];
 
 
 initial

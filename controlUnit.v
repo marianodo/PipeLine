@@ -21,7 +21,7 @@
 module ControlUnit(
 	input [5:0] inOpcode, inFunction, //Opcode y Funcion
 	input clk,
-	output reg RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch,
+	output reg RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch,Jump,
 	output reg [1:0] ALUOp,
 	output reg [2:0] flagLoadWordDividerMEM,
 	output reg [1:0] flagStoreWordDividerMEM,
@@ -42,6 +42,7 @@ begin
 	flagLoadWordDividerMEM = 0;
 	flagStoreWordDividerMEM = 0;
 	flagBranch = 0; // 0 = BNE, 1 = BEQ
+	Jump = 0;
 end
 
 always @(*)
@@ -62,6 +63,7 @@ begin
 					flagStoreWordDividerMEM = 0;
 					outFunction = inFunction; //Si es tipo R la funcion es igual a la funcion
 					flagBranch = 0; // 0 = BNE, 1 = BEQ
+					Jump = 0;
 				end
 			else if (inOpcode == 35 ) //Write Load, LW
 				begin
@@ -77,6 +79,7 @@ begin
 					flagStoreWordDividerMEM = 0;
 					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
 					flagBranch = 0; // 0 = BNE, 1 = BEQ
+					Jump = 0;
 				end
 			else if (inOpcode == 39 ) //Write Load, LWU
 				begin
@@ -92,6 +95,7 @@ begin
 					flagStoreWordDividerMEM = 0;
 					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
 					flagBranch = 0; // 0 = BNE, 1 = BEQ
+					Jump = 0;
 				end
 			else if (inOpcode == 32 ) //Write Load, LB
 				begin
@@ -107,6 +111,7 @@ begin
 					flagStoreWordDividerMEM = 0;
 					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
 					flagBranch = 0; // 0 = BNE, 1 = BEQ
+					Jump = 0;
 				end
 			else if (inOpcode == 36 ) //Write Load, LBU
 				begin

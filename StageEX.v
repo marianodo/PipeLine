@@ -19,10 +19,9 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageEX(
-	input [31:0] readRt, signExt, readRs,
+	input [31:0] readRt, signExt, readRs,PostPc,
 	input [4:0] sa,
 	input [5:0] instReg, 
-	input [3:0] PostPc,
 	input ALUSrc, flagBranch,
 	input [1:0] ALUOp,
 	output [31:0] outAlu,

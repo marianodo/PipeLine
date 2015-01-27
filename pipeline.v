@@ -25,9 +25,7 @@ output [31:0] outMuxWb
   );
 
 // s i g n a l s
-wire [3:0] PostPc;
-wire [3:0] Pc;
-wire [3:0] PcMux;
+wire [31:0] PostPc, Pc, PcMux;
 wire [4:0] rs;
 wire [4:0] rd;
 wire [4:0] rt;
@@ -44,7 +42,7 @@ reg select = 0;
 reg [31:0] pcJmp;
 
 
-wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch;
+wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch, Jump;
 wire [1:0] flagStoreWordDividerMEM;
 wire [2:0] flagLoadWordDividerMEM;
 wire [1:0] ALUOp;
@@ -54,6 +52,7 @@ wire [31:0] instruction, outAddEx;
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
+	.Jump(Jump),
 	.clk(clk), //Entrada
 	.outAddEx(outAddEx),
 	.Branch(Branch),
@@ -77,7 +76,8 @@ wire [31:0] instruction, outAddEx;
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.outFunction(Function),
-	.flagBranch(flagBranch)
+	.flagBranch(flagBranch),
+	.Jump(Jump)
 	);
 
 	StageID callStageID(
@@ -125,10 +125,6 @@ wire [31:0] instruction, outAddEx;
 	.MemtoReg(MemtoReg), //Flag
 	.outMuxWb(outMuxWb) //Salida del mux
 	);
-
-	
-
-	
 
 
 endmodule

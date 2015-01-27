@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AddEX(
-	input [3:0] PostPc,
-	input [31:0] outShift,
+	
+	input [31:0] outShift,PostPc,
 	output [31:0] outAddEx
     );
 reg [31:0] tmpOut;
@@ -33,5 +33,5 @@ always @(*)
 begin
 	tmpOut = PostPc + outShift - 1'b1;
 end
-assign outAddEx = tmpOut[3:0];
+assign outAddEx = tmpOut;
 endmodule

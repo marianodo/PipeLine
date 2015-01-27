@@ -20,11 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 module ShiftIF(
 	input [25:0] inInstruction,
-	input [3:0] inPostPc,
-	output [25:0] outShiftIF
+	input [31:0] inPostPc,
+	output [31:0] outShiftIF
     );
-
-tmp = inInstruction * 1;
-tmp2 = tmp + inPostPc;
-outshiftif = tmp2[0:3];
+reg [31:0] tmpOutShift = 0;
+reg [25:0] tmpInInstruction = 0;
+always @(*)
+	begin
+		tmpInInstruction = inInstruction * 1;
+		tmpOutShift[31:28] = inPostPc[31:28];
+		tmpOutShift[27:2] = tmpInInstruction;
+		outShift = tmpOutShift;
+	end
 endmodule

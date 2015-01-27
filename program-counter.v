@@ -19,11 +19,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Pc # (parameter tam=8)(
-input [3:0] inPc,
+input [31:0] inPc,
 input clk,
-output  [3:0] outPc
+output  [31:0] outPc
     );
-reg [3:0] tmpPc;
+reg [31:0] tmpPc;
 initial
 	begin
 		tmpPc <= 0;
