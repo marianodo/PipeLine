@@ -3,6 +3,8 @@ ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/WordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/SignExtend.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftEX.v" into library work
 Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
@@ -29,8 +31,8 @@ Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into libr
 Starting static elaboration
 WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageIF.v" Line 55: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 106076 KB
-Fuse CPU Usage: 998 ms
+Fuse Memory Usage: 105692 KB
+Fuse CPU Usage: 1029 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -47,7 +49,9 @@ Compiling module AddEX
 Compiling module MuxEX
 Compiling module AluEX
 Compiling module StageEX
+Compiling module StoreWordDividerMEM
 Compiling module DataMemoryMEM
+Compiling module LoadWordDividerMEM
 Compiling module StageMEM
 Compiling module MuxWB
 Compiling module StageWB
@@ -55,8 +59,8 @@ Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 16 sub-compilation(s) to finish...
-Compiled 23 Verilog Units
+Waiting for 20 sub-compilation(s) to finish...
+Compiled 25 Verilog Units
 Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 109644 KB
-Fuse CPU Usage: 1294 ms
+Fuse Memory Usage: 110284 KB
+Fuse CPU Usage: 1450 ms

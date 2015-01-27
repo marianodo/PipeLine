@@ -28,7 +28,7 @@ begin
 end
 always @(*)
 begin
-	outShift = signExt << 2;
+	outShift = signExt * 1; //OJO, Deberia ser signExt << 2, pero sumamos de a una instruccion en vez de 4
 end
 	 
 	 

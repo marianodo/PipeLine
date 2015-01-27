@@ -1,3 +1,5 @@
+verilog isim_temp "WordDividerMEM.v"
+verilog isim_temp "StoreWordDividerMEM.v"
 verilog isim_temp "SignExtend.v"
 verilog isim_temp "ShiftEX.v"
 verilog isim_temp "program-counter.v"

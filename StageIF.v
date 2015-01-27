@@ -27,7 +27,7 @@ module StageIF(
 
 wire [3:0] PcMux, Pc;
 wire outAnd;
-
+wire [25:0] outShiftIF;
 	Pc callPc (
 	.inPc(PcMux),
 	.clk(clk),
@@ -44,6 +44,12 @@ wire outAnd;
 	.outInstruction(outInstruction)
 	);
 	
+	ShiftIF callShiftIF(
+	.inInstruction(outInstruction[25:0]),
+	.inPostPc(PostPc),
+	.outShiftIF(outShiftIF)
+	);
+	
 	AndIF callAndIF( //And entre el branch del control y el Zero de la Alu
 	.Branch(Branch),
 	.zeroAlu(zeroAlu),
@@ -53,7 +59,7 @@ wire outAnd;
 	muxPc callMuxPc (
 	.inMuxAddPc(PostPc),
 	.inMuxAddJmp(outAddEx), //Entrada al mux de la salida del add Ex
-	.select(outAnd),
+	.outAnd(outAnd),
 	.outMuxPc(PcMux)
 	);
 

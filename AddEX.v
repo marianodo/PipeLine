@@ -31,7 +31,7 @@ end
 
 always @(*)
 begin
-	tmpOut = PostPc + outShift;
+	tmpOut = PostPc + outShift - 1'b1;
 end
 assign outAddEx = tmpOut[3:0];
 endmodule

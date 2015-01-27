@@ -23,7 +23,7 @@ module StageEX(
 	input [4:0] sa,
 	input [5:0] instReg, 
 	input [3:0] PostPc,
-	input ALUSrc,
+	input ALUSrc, flagBranch,
 	input [1:0] ALUOp,
 	output [31:0] outAlu,
 	output zeroAlu,
@@ -52,6 +52,7 @@ wire [31:0] outMuxEx, outShift;
 	);
 
 	AluEX callAluEx(
+	.flagBranch(flagBranch),
 	.ALUOp(ALUOp),
 	.readRs(readRs),
 	.outMuxEx(outMuxEx), //Entrada de la alu, conectada a la salida del mux

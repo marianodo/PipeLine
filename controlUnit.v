@@ -19,11 +19,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ControlUnit(
-	input [5:0] inInstruction, //Opcode
+	input [5:0] inOpcode, inFunction, //Opcode y Funcion
 	input clk,
-	output reg RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,
-	output reg [1:0] ALUOp
-	
+	output reg RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch,
+	output reg [1:0] ALUOp,
+	output reg [2:0] flagLoadWordDividerMEM,
+	output reg [1:0] flagStoreWordDividerMEM,
+	output reg [5:0] outFunction
     );
 	 reg opCode;
 	 
@@ -36,15 +38,17 @@ begin
 	MemWrite = 0; //Flag para escribir en memoria, en 0 no pasa nada, en 1 Escribe
 	ALUSrc = 0; //Mux que elige entre Inmediato o Rt, 1 es inmediato, 0 Rt
 	RegWrite = 0; //Flag que lee o escribe en registros , 0 Lee 1 Escribe
-	opCode = inInstruction; //Selecciona tipo de instruccion
 	ALUOp = 2'b10;
+	flagLoadWordDividerMEM = 0;
+	flagStoreWordDividerMEM = 0;
+	flagBranch = 0; // 0 = BNE, 1 = BEQ
 end
 
 always @(*)
 begin
 	if(clk)
 		begin
-			if ( inInstruction == 0) //R-Type
+			if ( inOpcode == 0) //Write R-Type
 				begin
 					RegDst = 1;
 					Branch = 0;
@@ -54,8 +58,12 @@ begin
 					ALUSrc = 0;
 					RegWrite = 1;
 					ALUOp = 2'b10;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inFunction; //Si es tipo R la funcion es igual a la funcion
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 35 ) //Load
+			else if (inOpcode == 35 ) //Write Load, LW
 				begin
 					RegDst = 0;
 					Branch = 0;
@@ -65,8 +73,87 @@ begin
 					ALUSrc = 1;
 					RegWrite = 1;
 					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 43 ) //Store
+			else if (inOpcode == 39 ) //Write Load, LWU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 1;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 32 ) //Write Load, LB
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 2;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 36 ) //Write Load, LBU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 3;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 33 ) //Write Load, LH
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 4;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 37 ) //Write Load, LHU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 5;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 43 ) //Write Store, SW
 				begin
 					RegDst = 0;
 					Branch = 0;
@@ -76,8 +163,42 @@ begin
 					ALUSrc = 1;
 					RegWrite = 0;
 					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 4 ) //Branch
+			else if (inOpcode == 40 ) //Write Store, SB
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 1;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 1;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 41 ) //Write Store, SH
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 1;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 2;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 4 ) //Write Branch, BEQ
 				begin
 					RegDst = 0;
 					Branch = 1;
@@ -87,11 +208,45 @@ begin
 					ALUSrc = 0;
 					RegWrite = 0;
 					ALUOp = 2'b01;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 1; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 5 ) //Write Branch, BNE
+				begin
+					RegDst = 0;
+					Branch = 1;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 0;
+					RegWrite = 0;
+					ALUOp = 2'b01;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else //El resto son inmediatas
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 1;
+					ALUOp = 2'b11;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
 		end
 	else if(clk == 0)//Clock en 0
 		begin
-			if ( inInstruction == 0) //R-Type
+			if ( inOpcode == 0) //Read R-Type
 				begin
 					RegDst = 1;
 					Branch = 0;
@@ -101,8 +256,12 @@ begin
 					ALUSrc = 0;
 					RegWrite = 0;
 					ALUOp = 2'b10;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inFunction; 
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 35 ) //Load
+			else if (inOpcode == 35 ) //Read Load, LW
 				begin
 					RegDst = 0;
 					Branch = 0;
@@ -112,8 +271,117 @@ begin
 					ALUSrc = 1;
 					RegWrite = 0;
 					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 43 ) //Load
+			else if (inOpcode == 39 ) //Read Load, LWU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 1;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 1;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 32 ) //Read Load, LB
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 1;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 2;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 36 ) //Read Load, LBU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 1;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 3;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 33 ) //Read Load, LH
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 1;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 4;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 37 ) //Read Load, LHU
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 1;
+					MemRead = 1;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 5;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 43 ) //Read Store, SW
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 40 ) //Read Store, SB
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 1;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 41 ) //Read Store, SH
 				begin
 					RegDst = 1;
 					Branch = 0;
@@ -123,8 +391,12 @@ begin
 					ALUSrc = 1;
 					RegWrite = 0;
 					ALUOp = 2'b00;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 2;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
-			else if (inInstruction == 4 ) //Load
+			else if (inOpcode == 4 ) //Branch, BEQ
 				begin
 					RegDst = 0;
 					Branch = 1;
@@ -134,6 +406,41 @@ begin
 					ALUSrc = 0;
 					RegWrite = 0;
 					ALUOp = 2'b01;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 1; // 0 = BNE, 1 = BEQ
+				end
+			else if (inOpcode == 5 ) //Branch, BNE
+				begin
+					RegDst = 0;
+					Branch = 1;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 0;
+					RegWrite = 0;
+					ALUOp = 2'b01;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
+				end
+			
+			else //El resto son inmediatas
+				begin
+					RegDst = 0;
+					Branch = 0;
+					MemtoReg = 0;
+					MemRead = 0;
+					MemWrite = 0;
+					ALUSrc = 1;
+					RegWrite = 0;
+					ALUOp = 2'b10;
+					flagLoadWordDividerMEM = 0;
+					flagStoreWordDividerMEM = 0;
+					outFunction = inOpcode; // Si no es r-Type, la funcion es igual al opcode
+					flagBranch = 0; // 0 = BNE, 1 = BEQ
 				end
 		
 		end

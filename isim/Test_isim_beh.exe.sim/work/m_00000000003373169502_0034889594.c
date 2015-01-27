@@ -23,7 +23,7 @@
 #endif
 static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/ShiftEX.v";
 static int ng1[] = {0, 0};
-static int ng2[] = {2, 0};
+static int ng2[] = {1, 0};
 
 
 
@@ -74,7 +74,7 @@ LAB5:    xsi_set_current_line(31, ng0);
     t5 = *((char **)t4);
     t4 = ((char*)((ng2)));
     memset(t6, 0, 8);
-    xsi_vlog_unsigned_lshift(t6, 32, t5, 32, t4, 32);
+    xsi_vlog_unsigned_multiply(t6, 32, t5, 32, t4, 32);
     t7 = (t0 + 828);
     xsi_vlogvar_assign_value(t7, t6, 0, 0, 32);
     goto LAB2;

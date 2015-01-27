@@ -44,8 +44,11 @@ reg select = 0;
 reg [31:0] pcJmp;
 
 
-wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite;
+wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch;
+wire [1:0] flagStoreWordDividerMEM;
+wire [2:0] flagLoadWordDividerMEM;
 wire [1:0] ALUOp;
+wire [5:0] Function;
 wire [31:0] instruction, outAddEx;
 
 // i n s t a n t i a t i o n s
@@ -61,16 +64,20 @@ wire [31:0] instruction, outAddEx;
 	
 	ControlUnit callControlUnit(
 	.clk(clk),
-	.inInstruction(instruction[31:26]), //Entrada de Opcode
-	.RegDst(RegDst),
+	.inOpcode(instruction[31:26]), //Entrada de Opcode
+	.inFunction(instruction[5:0]),
+	.RegDst(RegDst), //Salidas
 	.Branch(Branch),
 	.MemRead(MemRead),
 	.MemtoReg(MemtoReg),
 	.ALUOp(ALUOp),
 	.MemWrite(MemWrite),
 	.ALUSrc(ALUSrc),
-	.RegWrite(RegWrite)
-	
+	.RegWrite(RegWrite),
+	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
+	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
+	.outFunction(Function),
+	.flagBranch(flagBranch)
 	);
 
 	StageID callStageID(
@@ -87,12 +94,13 @@ wire [31:0] instruction, outAddEx;
 	);
 	
 	StageEX callStageEX(
+	.flagBranch(flagBranch),
 	.PostPc(PostPc),
 	.readRs(dataRs), //Entradas
 	.readRt(dataRt), //Lee los datos de los registros
 	.signExt(outImmediate), // Entrada del inmediato extendido en el mux
 	.sa(sa), //Shift
-	.instReg(instruction[5:0]), //Tipo de Instruccion, lo usa la alu
+	.instReg(Function), //Tipo de Instruccion, lo usa la alu
 	.ALUSrc(ALUSrc), //Selector entre Inmediato o registro Rt
 	.ALUOp(ALUOp), //Distingue tipos de instrucciones, si es jmp u otra cosa
 	.outAlu(outAlu), //Salida resultado
@@ -103,10 +111,12 @@ wire [31:0] instruction, outAddEx;
 	StageMEM callStageMEM(
 	.clk(clk),
 	.inMemAddress(outAlu), //Entrada que es salida de ALU
-	.inMemWriteData(dataRt), // Entrada que es el valor del registro Rt
+	.inStoreWordDividerMEM(dataRt), // Entrada que es el valor del registro Rt
 	.MemRead(MemRead), //Flag de lectura, en 1 lee, en 0 nada
 	.MemWrite(MemWrite), //Flag de escritura
-	.outMemReadData(readDataMem) //Salida del data mem, que va a ser entrada del MUX
+	.flagStoreWordDividerMEM(flagStoreWordDividerMEM), //Flag que identifica si es SB, SW, SH
+	.flagLoadWordDividerMEM(flagLoadWordDividerMEM), //Flag que identifica si es LB, LH,LHU etc
+	.outLoadWordDividerMEM(readDataMem) //Salida del data mem, que va a ser entrada del MUX
 	);
 	
 	StageWB callStageWB(

@@ -21,7 +21,7 @@
 module muxPc # (parameter tam=8)( 
 input [3:0] inMuxAddPc,
 input [3:0] inMuxAddJmp,
-input select,
+input outAnd,
 output reg [3:0] outMuxPc
     );
 initial
@@ -30,7 +30,7 @@ begin
 end
 always @(*)
 begin
-	if(select)
+	if(outAnd)
 		begin
 			outMuxPc = inMuxAddJmp;
 		end

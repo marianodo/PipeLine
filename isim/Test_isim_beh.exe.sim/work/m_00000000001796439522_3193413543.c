@@ -23,6 +23,7 @@
 #endif
 static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/AddEX.v";
 static int ng1[] = {0, 0};
+static unsigned int ng2[] = {1U, 0U};
 
 
 
@@ -44,12 +45,14 @@ LAB1:    return;
 static void Always_32_1(char *t0)
 {
     char t7[8];
+    char t8[8];
     char *t1;
     char *t2;
     char *t3;
     char *t4;
     char *t5;
     char *t6;
+    char *t9;
 
 LAB0:    t1 = (t0 + 1680U);
     t2 = *((char **)t1);
@@ -75,8 +78,11 @@ LAB5:    xsi_set_current_line(34, ng0);
     t6 = *((char **)t4);
     memset(t7, 0, 8);
     xsi_vlog_unsigned_add(t7, 32, t5, 4, t6, 32);
-    t4 = (t0 + 1012);
-    xsi_vlogvar_assign_value(t4, t7, 0, 0, 32);
+    t4 = ((char*)((ng2)));
+    memset(t8, 0, 8);
+    xsi_vlog_unsigned_minus(t8, 32, t7, 32, t4, 32);
+    t9 = (t0 + 1012);
+    xsi_vlogvar_assign_value(t9, t8, 0, 0, 32);
     goto LAB2;
 
 }

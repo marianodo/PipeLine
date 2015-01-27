@@ -1,3 +1,5 @@
+verilog work "WordDividerMEM.v"
+verilog work "StoreWordDividerMEM.v"
 verilog work "SignExtend.v"
 verilog work "ShiftEX.v"
 verilog work "program-counter.v"
