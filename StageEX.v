@@ -19,45 +19,91 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageEX(
-	input [31:0] readRt, signExt, readRs,PostPc,
-	input [4:0] sa,
-	input [5:0] instReg, 
-	input ALUSrc, flagBranch,
-	input [1:0] ALUOp,
-	output [31:0] outAlu,
-	output zeroAlu,
-	output [31:0] outAddEx
-    );
+	input clk,flagBranch,Jump,
+	input Branch,MemRead,MemWrite,ALUSrc,RegWrite,
+	input [1:0] RegDst,MemtoReg,ALUOp,inflagStoreWordDividerMEM,
+	input [2:0] inflagLoadWordDividerMEM,
+	input [5:0] instReg,
+	input [31:0] inPc,dataRs,dataRt,signExt,
+	input [4:0] inRegRt,inRegRd,sa,
+	
+	output outZeroAlu,outBranch,outMemRead,outMemWrite,outRegWrite,
+	output [31:0] outAddEx,outAlu,
+	output [4:0] outDataRt,outMuxRtRd,
+   output [1:0] outMemtoReg, outflagStoreWordDividerMEM,
+	output [2:0] outflagLoadWordDividerMEM
+	
+ );
 
-wire [31:0] outMuxEx, outShift;
-
-
+wire [31:0] outMuxEx, outShift,outAddExTmp,outAluTmp;
+wire outZeroAluTmp;
+wire [4:0] outMuxRtRdTmp;
 	ShiftEX callShiftEX(
 	.signExt(signExt), //Enrtada
 	.outShift(outShift)
 	);
 	
 	AddEX callAddEX(
-	.PostPc(PostPc), //Entrada
+	.PostPc(inPc), //Entrada
 	.outShift(outShift), //Entrada
-	.outAddEx(outAddEx) //Salida
+	
+	.outAddEx(outAddExTmp) //Salida
 	);
 
 	MuxEX callMuxEX(
 	.ALUSrc(ALUSrc),
-	.readRt(readRt),
+	.dataRt(dataRt),
 	.signExt(signExt),
+	
 	.outMuxEx(outMuxEx)
 	);
 
+	MuxRtRd callMuxRtRd(
+	.RegDst(RegDst),
+	.rt(inRegRt),
+	.rd(inRegRd),
+	
+	.outMuxRtRd(outMuxRtRdTmp)
+	);
+	
 	AluEX callAluEx(
 	.flagBranch(flagBranch),
 	.ALUOp(ALUOp),
-	.readRs(readRs),
+	.dataRs(dataRs),
 	.outMuxEx(outMuxEx), //Entrada de la alu, conectada a la salida del mux
 	.instReg(instReg),
 	.sa(sa),
+	
+	.outAlu(outAluTmp),
+	.zeroAlu(outZeroAluTmp)
+	);
+	
+	EX_MEM_Latch callEX_MEM_Latch(
+	.clk(clk),
+	.inOutAlu(outAluTmp),
+	.inZeroAlu(outZeroAluTmp),
+	.indataRt(dataRt),
+	.inOutAddEx(outAddExTmp),
+	.inOutMuxRtRd(outMuxRtRdTmp),
+	.inMemtoReg(MemtoReg),
+	.inRegWrite(RegWrite),
+	.inMemRead(MemRead),
+	.inMemWrite(MemWrite),
+	.inBranch(Branch),
+	.inflagLoadWordDividerMEM(inflagLoadWordDividerMEM),
+	.inflagStoreWordDividerMEM(inflagStoreWordDividerMEM),
+	
 	.outAlu(outAlu),
-	.zeroAlu(zeroAlu)
+	.zeroAlu(outZeroAlu),
+	.dataRt(outDataRt),
+	.outAddEx(outAddEx),
+	.outMuxRtRd(outMuxRtRd),
+	.outMemtoReg(outMemtoReg),
+	.outRegWrite(outRegWrite),
+	.outMemRead(outMemRead),
+	.outMemWrite(outMemWrite),
+	.outBranch(outBranch),
+	.outflagLoadWordDividerMEM(outflagLoadWordDividerMEM),
+	.outflagStoreWordDividerMEM(outflagStoreWordDividerMEM)
 	);
 endmodule

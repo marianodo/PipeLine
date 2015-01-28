@@ -19,26 +19,27 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageID(
-input clk, RegWrite,
-input [4:0] rs,rt,rd,
+input clk, inRegWrite,
+input [4:0] rs,rt,rd,writeReg,
 input [5:0] opCode, inFunction,
-input [31:0] writeData,writeReg, inPc,
+input [31:0] writeData, inPc,
 input [15:0] immediate,
 
-output reg Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,Jump,
-output reg [1:0] ALUOp, MemtoReg, RegDst,
-output reg [2:0] flagLoadWordDividerMEM,
-output reg [1:0] flagStoreWordDividerMEM, 
-output reg [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,
-output reg [4:0] outRegRt,outRegRd
+output  Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,Jump,
+output  [1:0] ALUOp, MemtoReg, RegDst,
+output  [2:0] flagLoadWordDividerMEM,
+output  [1:0] flagStoreWordDividerMEM, 
+output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,
+output  [4:0] outRegRt,outRegRd,
+output  [5:0] Function
     );
 	 
 wire [4:0] outMuxID;
 wire [31:0] dataRs,dataRt, outImmediate;
-wire Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,Jump;
-wire [1:0] ALUOp, MemtoReg, RegDst;
-wire [2:0] flagLoadWordDividerMEM;
-wire [1:0] flagStoreWordDividerMEM;
+wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch,outJump;
+wire [1:0] outALUOp, outMemtoReg, outRegDst;
+wire [2:0] outflagLoadWordDividerMEM;
+wire [1:0] outflagStoreWordDividerMEM;
 wire [5:0] outFunction;
 
 	ControlUnit callControlUnit(
@@ -71,9 +72,9 @@ wire [5:0] outFunction;
 	InstDecode callInstDecode (
 		.inInstDecodeRsReg(rs), //Entradas
 		.inInstDecodeRtReg(rt),
-		.inInstDecodeWriteReg(), //entrada que viene del ultimo latch
+		.inInstDecodeWriteReg(writeReg), //entrada que viene del ultimo latch
 		.inInstDecodeWriteData(writeData),
-		.WRInstDecode(RegWrite),
+		.WRInstDecode(inRegWrite),
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt)
@@ -107,6 +108,7 @@ wire [5:0] outFunction;
 	.inflagBranch(outflagBranch),
 	.inJump(outJump),
 	
+
 	.outPcLatch(outPcLatch),
 	.outDataRs(outDataRs),
 	.outDataRt(outDataRt),

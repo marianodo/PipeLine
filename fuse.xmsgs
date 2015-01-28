@@ -5,5 +5,110 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 83: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">writeReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 88: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outDataRs</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 89: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outDataRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 93: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 94: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">ALUOp</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 98: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">flagLoadWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 99: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">flagStoreWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 100: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">Function</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 103: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outRegRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 104: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outRegRd</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 112: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 113: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">ALUOp</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 117: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inflagLoadWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 118: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inflagStoreWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 122: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dataRs</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 123: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dataRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 126: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inRegRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 127: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inRegRd</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 128: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">instReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 130: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outAlu</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 133: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outDataRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 138: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outMemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 140: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outflagLoadWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 141: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outflagStoreWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/StageEX.v" Line 98: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dataRt</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">5</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 146: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inMemAddress</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 147: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inStoreWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 150: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">flagStoreWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 151: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">flagLoadWordDividerMEM</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 152: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">inMemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 157: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outAluLatch</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 158: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outMemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 160: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outWriteReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 165: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">outAlu</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 168: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">MemtoReg</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
 </messages>
 

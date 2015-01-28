@@ -1,39 +1,78 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Leo/Desktop/PipeLine/Test_beh.prj work.Test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Nano/Desktop/PipeLine/Test_beh.prj Test work.glbl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/WordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/SignExtend.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftIF.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftEX.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/program-counter.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxWB.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/muxPc.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxJumpPc.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxID.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/muxEX.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstructionMem.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstDecode.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/DataMemoryMEM.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AndIF.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AluEX.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/addPc.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AddEX.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageWB.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageMEM.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageIF.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageID.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageEX.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ControlUnit.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/pipeline.v" into library work
-Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/Test.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/WordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/SignExtend.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxWB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxJumpPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MEM_WB_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/IF_ID_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ID_EX_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/EX_MEM_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/DataMemoryMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ControlUnit.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AndIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AluEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AddEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageWB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 83: Size mismatch in connection of port <writeReg>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 88: Size mismatch in connection of port <outDataRs>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 89: Size mismatch in connection of port <outDataRt>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 93: Size mismatch in connection of port <MemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 94: Size mismatch in connection of port <ALUOp>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 98: Size mismatch in connection of port <flagLoadWordDividerMEM>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 99: Size mismatch in connection of port <flagStoreWordDividerMEM>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 100: Size mismatch in connection of port <Function>. Formal port size is 6-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 103: Size mismatch in connection of port <outRegRt>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 104: Size mismatch in connection of port <outRegRd>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 112: Size mismatch in connection of port <MemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 113: Size mismatch in connection of port <ALUOp>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 117: Size mismatch in connection of port <inflagLoadWordDividerMEM>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 118: Size mismatch in connection of port <inflagStoreWordDividerMEM>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 122: Size mismatch in connection of port <dataRs>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 123: Size mismatch in connection of port <dataRt>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 126: Size mismatch in connection of port <inRegRt>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 127: Size mismatch in connection of port <inRegRd>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 128: Size mismatch in connection of port <instReg>. Formal port size is 6-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 130: Size mismatch in connection of port <outAlu>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 133: Size mismatch in connection of port <outDataRt>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 138: Size mismatch in connection of port <outMemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 140: Size mismatch in connection of port <outflagLoadWordDividerMEM>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 141: Size mismatch in connection of port <outflagStoreWordDividerMEM>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageEX.v" Line 98: Size mismatch in connection of port <dataRt>. Formal port size is 32-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 146: Size mismatch in connection of port <inMemAddress>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 147: Size mismatch in connection of port <inStoreWordDividerMEM>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 150: Size mismatch in connection of port <flagStoreWordDividerMEM>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 151: Size mismatch in connection of port <flagLoadWordDividerMEM>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 152: Size mismatch in connection of port <inMemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 157: Size mismatch in connection of port <outAluLatch>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 158: Size mismatch in connection of port <outMemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 160: Size mismatch in connection of port <outWriteReg>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 165: Size mismatch in connection of port <outAlu>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 168: Size mismatch in connection of port <MemtoReg>. Formal port size is 2-bit while actual signal size is 1-bit.
 Completed static elaboration
-Fuse Memory Usage: 104872 KB
-Fuse CPU Usage: 420 ms
+Fuse Memory Usage: 105692 KB
+Fuse CPU Usage: 1107 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -41,20 +80,24 @@ Compiling module ShiftIF
 Compiling module AndIF
 Compiling module muxPc
 Compiling module MuxJumpPc
+Compiling module IF_ID_Latch
 Compiling module StageIF
 Compiling module ControlUnit
-Compiling module MuxID
 Compiling module InstDecode
 Compiling module SignExtend
+Compiling module ID_EX_Latch
 Compiling module StageID
 Compiling module ShiftEX
 Compiling module AddEX
 Compiling module MuxEX
+Compiling module MuxRtRd
 Compiling module AluEX
+Compiling module EX_MEM_Latch
 Compiling module StageEX
 Compiling module StoreWordDividerMEM
 Compiling module DataMemoryMEM
 Compiling module LoadWordDividerMEM
+Compiling module MEM_WB_Latch
 Compiling module StageMEM
 Compiling module MuxWB
 Compiling module StageWB
@@ -62,8 +105,8 @@ Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 19 sub-compilation(s) to finish...
-Compiled 27 Verilog Units
-Built simulation executable C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 110484 KB
-Fuse CPU Usage: 623 ms
+Waiting for 24 sub-compilation(s) to finish...
+Compiled 31 Verilog Units
+Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
+Fuse Memory Usage: 110284 KB
+Fuse CPU Usage: 1668 ms

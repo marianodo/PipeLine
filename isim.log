@@ -1,21 +1,48 @@
 ISim log file
-Running: C:\Users\Leo\Desktop\PipeLine\Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.wdb 
+Running: C:\Users\Nano\Desktop\PipeLine\Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 83.  For instance uut/callStageID/, width 5 of formal port writeReg is not equal to width 1 of actual signal WriteReg.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 88.  For instance uut/callStageID/, width 32 of formal port outDataRs is not equal to width 1 of actual signal dataRsId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 89.  For instance uut/callStageID/, width 32 of formal port outDataRt is not equal to width 1 of actual signal dataRtId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 93.  For instance uut/callStageID/, width 2 of formal port MemtoReg is not equal to width 1 of actual signal MemtoRegId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 94.  For instance uut/callStageID/, width 2 of formal port ALUOp is not equal to width 1 of actual signal ALUOpId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 98.  For instance uut/callStageID/, width 3 of formal port flagLoadWordDividerMEM is not equal to width 1 of actual signal flagLoadWordDividerMEMId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 99.  For instance uut/callStageID/, width 2 of formal port flagStoreWordDividerMEM is not equal to width 1 of actual signal flagStoreWordDividerMEMId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 100.  For instance uut/callStageID/, width 6 of formal port Function is not equal to width 1 of actual signal FunctionId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 103.  For instance uut/callStageID/, width 5 of formal port outRegRt is not equal to width 1 of actual signal outRegRt.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 104.  For instance uut/callStageID/, width 5 of formal port outRegRd is not equal to width 1 of actual signal outRegRd.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/StageEX.v" Line 32.  For instance callStageEX/callEX_MEM_Latch/, width 32 of formal port dataRt is not equal to width 5 of actual signal outDataRt.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 93.  For instance uut/callStageEX/, width 2 of formal port MemtoReg is not equal to width 1 of actual signal MemtoRegId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 94.  For instance uut/callStageEX/, width 2 of formal port ALUOp is not equal to width 1 of actual signal ALUOpId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 98.  For instance uut/callStageEX/, width 3 of formal port inflagLoadWordDividerMEM is not equal to width 1 of actual signal flagLoadWordDividerMEMId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 99.  For instance uut/callStageEX/, width 2 of formal port inflagStoreWordDividerMEM is not equal to width 1 of actual signal flagStoreWordDividerMEMId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 88.  For instance uut/callStageEX/, width 32 of formal port dataRs is not equal to width 1 of actual signal dataRsId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 89.  For instance uut/callStageEX/, width 32 of formal port dataRt is not equal to width 1 of actual signal dataRtId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 103.  For instance uut/callStageEX/, width 5 of formal port inRegRt is not equal to width 1 of actual signal outRegRt.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 104.  For instance uut/callStageEX/, width 5 of formal port inRegRd is not equal to width 1 of actual signal outRegRd.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 100.  For instance uut/callStageEX/, width 6 of formal port instReg is not equal to width 1 of actual signal FunctionId.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 130.  For instance uut/callStageEX/, width 32 of formal port outAlu is not equal to width 1 of actual signal outAluLatchEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 133.  For instance uut/callStageEX/, width 5 of formal port outDataRt is not equal to width 1 of actual signal dataRtEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 138.  For instance uut/callStageEX/, width 2 of formal port outMemtoReg is not equal to width 1 of actual signal MemtoRegEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 140.  For instance uut/callStageEX/, width 3 of formal port outflagLoadWordDividerMEM is not equal to width 1 of actual signal flagLoadWordDividerMEMEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 141.  For instance uut/callStageEX/, width 2 of formal port outflagStoreWordDividerMEM is not equal to width 1 of actual signal flagStoreWordDividerMEMEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 130.  For instance uut/callStageMEM/, width 32 of formal port inMemAddress is not equal to width 1 of actual signal outAluLatchEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 133.  For instance uut/callStageMEM/, width 32 of formal port inStoreWordDividerMEM is not equal to width 1 of actual signal dataRtEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 141.  For instance uut/callStageMEM/, width 2 of formal port flagStoreWordDividerMEM is not equal to width 1 of actual signal flagStoreWordDividerMEMEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 140.  For instance uut/callStageMEM/, width 3 of formal port flagLoadWordDividerMEM is not equal to width 1 of actual signal flagLoadWordDividerMEMEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 138.  For instance uut/callStageMEM/, width 2 of formal port inMemtoReg is not equal to width 1 of actual signal MemtoRegEx.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 157.  For instance uut/callStageMEM/, width 32 of formal port outAluLatch is not equal to width 1 of actual signal outAluLatchMem.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 158.  For instance uut/callStageMEM/, width 2 of formal port outMemtoReg is not equal to width 1 of actual signal MemtoRegMem.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 83.  For instance uut/callStageMEM/, width 5 of formal port outWriteReg is not equal to width 1 of actual signal WriteReg.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 157.  For instance uut/callStageWB/, width 32 of formal port outAlu is not equal to width 1 of actual signal outAluLatchMem.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 158.  For instance uut/callStageWB/, width 2 of formal port MemtoReg is not equal to width 1 of actual signal MemtoRegMem.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# run all
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# run all
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.

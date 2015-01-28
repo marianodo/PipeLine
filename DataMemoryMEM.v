@@ -21,7 +21,7 @@
 module DataMemoryMEM(
 
 input [31:0] inMemAddress, inMemWriteData,
-input MemWrite,MemRead, clk,
+input MemWrite,MemRead, 
 output [31:0] outMemReadData
     );
 reg [31:0] dataMemory[0:31];

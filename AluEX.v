@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AluEX(
-input [31:0] readRs, outMuxEx,
+input [31:0] dataRs, outMuxEx,
 input [5:0] instReg,
 input [4:0] sa,
 input [1:0] ALUOp,
@@ -59,56 +59,56 @@ initial
 				
 					//SRLV
 					6'b000110:
-						outAlu <= outMuxEx >> readRs;
+						outAlu <= outMuxEx >> dataRs;
 
 					//SRAV
 					6'b000111:
-						outAlu <= $signed(outMuxEx) >>> readRs;
+						outAlu <= $signed(outMuxEx) >>> dataRs;
 
 					//ADDU
 					6'b100001:
-						outAlu <= readRs + outMuxEx;
+						outAlu <= dataRs + outMuxEx;
 						
 					//SUBU
 					6'b100011:
-						outAlu <= readRs - outMuxEx;
+						outAlu <= dataRs - outMuxEx;
 						
 					//AND
 					6'b100100:
-						outAlu <= readRs & outMuxEx;
+						outAlu <= dataRs & outMuxEx;
 								
 					//OR
 					6'b100101:
-						outAlu <= readRs | outMuxEx;
+						outAlu <= dataRs | outMuxEx;
 						
 					//XOR
 					6'b100110:
-						outAlu <= readRs ^ outMuxEx;
+						outAlu <= dataRs ^ outMuxEx;
 						
 					//SLT
 					6'b101010:
-						outAlu <= ($signed(readRs) < $signed(outMuxEx)) ? 1 : 0;
+						outAlu <= ($signed(dataRs) < $signed(outMuxEx)) ? 1 : 0;
 //#############################################################################
 //#######################IMMEDIATE##############################3
 					//ADDI:
 					6'b001000:
-						outAlu <= readRs + outMuxEx;
+						outAlu <= dataRs + outMuxEx;
 
 					//ADDIU
 					6'b001001:
-						outAlu <= readRs + outMuxEx;			
+						outAlu <= dataRs + outMuxEx;			
 					
 					//ANDI:
 					6'b001100:
-						outAlu <= readRs & (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= dataRs & (outMuxEx & 32'b00000000_00000000_11111111_11111111);
 
 					//ORI:
 					6'b001101:
-						outAlu <= readRs | (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= dataRs | (outMuxEx & 32'b00000000_00000000_11111111_11111111);
 
 					//XORI:
 					6'b001110:
-						outAlu <= readRs ^ (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= dataRs ^ (outMuxEx & 32'b00000000_00000000_11111111_11111111);
 
 					//LUI:
 					6'b001111:
@@ -116,11 +116,11 @@ initial
 
 					//SLTI:
 					6'b001010:
-						outAlu <= ($signed(readRs) < $signed(outMuxEx)) ? 1 : 0;
+						outAlu <= ($signed(dataRs) < $signed(outMuxEx)) ? 1 : 0;
 
 					//SLTIU:
 					6'b001011:
-						outAlu <= ($unsigned(readRs) < $unsigned(outMuxEx)) ? 1 : 0;
+						outAlu <= ($unsigned(dataRs) < $unsigned(outMuxEx)) ? 1 : 0;
 					
 					default:
 						outAlu <= {32{1'b1}};
@@ -130,13 +130,13 @@ initial
 			
 		else if(ALUOp == 2'b00) //Load/Store (LW/SW)
 			begin
-				outAlu <= readRs + outMuxEx;
+				outAlu <= dataRs + outMuxEx;
 			end
 		else if(ALUOp == 2'b01) //Branch EQ
 			begin
 				if (flagBranch) //flagBranch 1 = BEQ, flagBranch 0 = BNE
 					begin
-						if(readRs == outMuxEx)
+						if(dataRs == outMuxEx)
 							begin
 								zeroAlu = 1;
 							end
@@ -147,7 +147,7 @@ initial
 					end
 				else
 					begin
-						if(readRs != outMuxEx)
+						if(dataRs != outMuxEx)
 							begin
 								zeroAlu = 1;
 							end

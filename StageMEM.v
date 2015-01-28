@@ -21,17 +21,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageMEM(
 input [31:0] inMemAddress, inStoreWordDividerMEM,
-input MemWrite,MemRead, clk,
-input [1:0] flagStoreWordDividerMEM,
+input MemWrite,MemRead, clk,inRegWrite,
+input [1:0] flagStoreWordDividerMEM,inMemtoReg,
 input [2:0] flagLoadWordDividerMEM,
-output [31:0] outLoadWordDividerMEM
+input [4:0] inMuxRtRd,
+	
+output [31:0] outLoadWordDividerMEM,outAluLatch,
+output [1:0] outMemtoReg,
+output outRegWrite,
+output [4:0] outWriteReg
+
 );
 
-wire [31:0] outMemReadData, inMemWriteData;
+wire [31:0] outMemReadData, inMemWriteData,LoadWordDividerMEM;
 
 	StoreWordDividerMEM callStoreWordDividerMEM(
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.inStoreWordDividerMEM(inStoreWordDividerMEM),
+	
 	.outStoreWordDividerMEM(inMemWriteData)
 	);
 	
@@ -40,13 +47,29 @@ wire [31:0] outMemReadData, inMemWriteData;
 	.inMemWriteData(inMemWriteData),
 	.MemWrite(MemWrite),
 	.MemRead(MemRead),
-	.clk(clk),
+	
 	.outMemReadData(outMemReadData)
 	);
 	
 	LoadWordDividerMEM callLoadWordDividerMEM(
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM), //Flag para identificar si es LB, LH, LW, etc
 	.inLoadWordDividerMEM(outMemReadData),
-	.outLoadWordDividerMEM(outLoadWordDividerMEM)
+	
+	.outLoadWordDividerMEM(LoadWordDividerMEM)
+	);
+	
+	MEM_WB_Latch callMEM_WB_Latch(
+	.inLoadWordDividerMEM(LoadWordDividerMEM),
+	.inAluLatch(inMemAddress),
+	.inMuxRtRd(inMuxRtRd),
+	.inMemtoReg(inMemtoReg),
+	.inRegWrite(inRegWrite),
+	.clk(clk),
+	
+	.outLoadWordDividerMEM(outLoadWordDividerMEM),
+	.outAluLatch(outAluLatch),
+	.outMuxRtRd(outWriteReg),
+	.outMemtoReg(outMemtoReg),
+	.outRegWrite(outRegWrite)
 	);
 endmodule
