@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
  
 --> Reading design: pipeline.prj
 
@@ -131,6 +131,8 @@ Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\InstructionMem.v" into lib
 Parsing module <InstructionMem>.
 Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\InstDecode.v" into library work
 Parsing module <InstDecode>.
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\IF_ID_Latch.v" into library work
+Parsing module <IF_ID_Latch>.
 Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\DataMemoryMEM.v" into library work
 Parsing module <DataMemoryMEM>.
 Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\AndIF.v" into library work
@@ -178,6 +180,8 @@ Elaborating module <AndIF>.
 Elaborating module <muxPc>.
 
 Elaborating module <MuxJumpPc>.
+
+Elaborating module <IF_ID_Latch>.
 
 Elaborating module <ControlUnit>.
 
@@ -282,6 +286,14 @@ Synthesizing Unit <MuxJumpPc>.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxJumpPc> synthesized.
+
+Synthesizing Unit <IF_ID_Latch>.
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\IF_ID_Latch.v".
+    Found 32-bit register for signal <tmpInstruction>.
+    Found 32-bit register for signal <tmpPc>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <IF_ID_Latch> synthesized.
 
 Synthesizing Unit <ControlUnit>.
     Related source file is "C:\Users\Leo\Desktop\PipeLine\ControlUnit.v".
@@ -995,7 +1007,7 @@ Synthesizing Unit <AluEX>.
     Related source file is "C:\Users\Leo\Desktop\PipeLine\AluEX.v".
     Found 32-bit subtractor for signal <readRs[31]_outMuxEx[31]_sub_10_OUT> created at line 74.
     Found 32-bit adder for signal <readRs[31]_outMuxEx[31]_add_49_OUT> created at line 133.
-    Found 32-bit shifter logical left for signal <GND_619_o_sa[4]_shift_left_1_OUT> created at line 50
+    Found 32-bit shifter logical left for signal <GND_620_o_sa[4]_shift_left_1_OUT> created at line 50
     Found 32x32-bit multiplier for signal <n0092> created at line 50.
     Found 32-bit shifter arithmetic right for signal <outMuxEx[31]_sa[4]_shift_right_5_OUT> created at line 58
     Found 32-bit shifter logical right for signal <outMuxEx[31]_readRs[31]_shift_right_6_OUT> created at line 62
@@ -1049,69 +1061,69 @@ Unit <AluEX> synthesized.
 Synthesizing Unit <div_32u_32u>.
     Related source file is "".
     Found 64-bit adder for signal <n3436> created at line 0.
-    Found 64-bit adder for signal <GND_621_o_b[31]_add_1_OUT> created at line 0.
+    Found 64-bit adder for signal <GND_622_o_b[31]_add_1_OUT> created at line 0.
     Found 63-bit adder for signal <n3440> created at line 0.
-    Found 63-bit adder for signal <GND_621_o_b[31]_add_3_OUT> created at line 0.
+    Found 63-bit adder for signal <GND_622_o_b[31]_add_3_OUT> created at line 0.
     Found 62-bit adder for signal <n3444> created at line 0.
-    Found 62-bit adder for signal <GND_621_o_b[31]_add_5_OUT> created at line 0.
+    Found 62-bit adder for signal <GND_622_o_b[31]_add_5_OUT> created at line 0.
     Found 61-bit adder for signal <n3448> created at line 0.
-    Found 61-bit adder for signal <GND_621_o_b[31]_add_7_OUT> created at line 0.
+    Found 61-bit adder for signal <GND_622_o_b[31]_add_7_OUT> created at line 0.
     Found 60-bit adder for signal <n3452> created at line 0.
-    Found 60-bit adder for signal <GND_621_o_b[31]_add_9_OUT> created at line 0.
+    Found 60-bit adder for signal <GND_622_o_b[31]_add_9_OUT> created at line 0.
     Found 59-bit adder for signal <n3456> created at line 0.
-    Found 59-bit adder for signal <GND_621_o_b[31]_add_11_OUT> created at line 0.
+    Found 59-bit adder for signal <GND_622_o_b[31]_add_11_OUT> created at line 0.
     Found 58-bit adder for signal <n3460> created at line 0.
-    Found 58-bit adder for signal <GND_621_o_b[31]_add_13_OUT> created at line 0.
+    Found 58-bit adder for signal <GND_622_o_b[31]_add_13_OUT> created at line 0.
     Found 57-bit adder for signal <n3464> created at line 0.
-    Found 57-bit adder for signal <GND_621_o_b[31]_add_15_OUT> created at line 0.
+    Found 57-bit adder for signal <GND_622_o_b[31]_add_15_OUT> created at line 0.
     Found 56-bit adder for signal <n3468> created at line 0.
-    Found 56-bit adder for signal <GND_621_o_b[31]_add_17_OUT> created at line 0.
+    Found 56-bit adder for signal <GND_622_o_b[31]_add_17_OUT> created at line 0.
     Found 55-bit adder for signal <n3472> created at line 0.
-    Found 55-bit adder for signal <GND_621_o_b[31]_add_19_OUT> created at line 0.
+    Found 55-bit adder for signal <GND_622_o_b[31]_add_19_OUT> created at line 0.
     Found 54-bit adder for signal <n3476> created at line 0.
-    Found 54-bit adder for signal <GND_621_o_b[31]_add_21_OUT> created at line 0.
+    Found 54-bit adder for signal <GND_622_o_b[31]_add_21_OUT> created at line 0.
     Found 53-bit adder for signal <n3480> created at line 0.
-    Found 53-bit adder for signal <GND_621_o_b[31]_add_23_OUT> created at line 0.
+    Found 53-bit adder for signal <GND_622_o_b[31]_add_23_OUT> created at line 0.
     Found 52-bit adder for signal <n3484> created at line 0.
-    Found 52-bit adder for signal <GND_621_o_b[31]_add_25_OUT> created at line 0.
+    Found 52-bit adder for signal <GND_622_o_b[31]_add_25_OUT> created at line 0.
     Found 51-bit adder for signal <n3488> created at line 0.
-    Found 51-bit adder for signal <GND_621_o_b[31]_add_27_OUT> created at line 0.
+    Found 51-bit adder for signal <GND_622_o_b[31]_add_27_OUT> created at line 0.
     Found 50-bit adder for signal <n3492> created at line 0.
-    Found 50-bit adder for signal <GND_621_o_b[31]_add_29_OUT> created at line 0.
+    Found 50-bit adder for signal <GND_622_o_b[31]_add_29_OUT> created at line 0.
     Found 49-bit adder for signal <n3496> created at line 0.
-    Found 49-bit adder for signal <GND_621_o_b[31]_add_31_OUT> created at line 0.
+    Found 49-bit adder for signal <GND_622_o_b[31]_add_31_OUT> created at line 0.
     Found 48-bit adder for signal <n3500> created at line 0.
-    Found 48-bit adder for signal <GND_621_o_b[31]_add_33_OUT> created at line 0.
+    Found 48-bit adder for signal <GND_622_o_b[31]_add_33_OUT> created at line 0.
     Found 47-bit adder for signal <n3504> created at line 0.
-    Found 47-bit adder for signal <GND_621_o_b[31]_add_35_OUT> created at line 0.
+    Found 47-bit adder for signal <GND_622_o_b[31]_add_35_OUT> created at line 0.
     Found 46-bit adder for signal <n3508> created at line 0.
-    Found 46-bit adder for signal <GND_621_o_b[31]_add_37_OUT> created at line 0.
+    Found 46-bit adder for signal <GND_622_o_b[31]_add_37_OUT> created at line 0.
     Found 45-bit adder for signal <n3512> created at line 0.
-    Found 45-bit adder for signal <GND_621_o_b[31]_add_39_OUT> created at line 0.
+    Found 45-bit adder for signal <GND_622_o_b[31]_add_39_OUT> created at line 0.
     Found 44-bit adder for signal <n3516> created at line 0.
-    Found 44-bit adder for signal <GND_621_o_b[31]_add_41_OUT> created at line 0.
+    Found 44-bit adder for signal <GND_622_o_b[31]_add_41_OUT> created at line 0.
     Found 43-bit adder for signal <n3520> created at line 0.
-    Found 43-bit adder for signal <GND_621_o_b[31]_add_43_OUT> created at line 0.
+    Found 43-bit adder for signal <GND_622_o_b[31]_add_43_OUT> created at line 0.
     Found 42-bit adder for signal <n3524> created at line 0.
-    Found 42-bit adder for signal <GND_621_o_b[31]_add_45_OUT> created at line 0.
+    Found 42-bit adder for signal <GND_622_o_b[31]_add_45_OUT> created at line 0.
     Found 41-bit adder for signal <n3528> created at line 0.
-    Found 41-bit adder for signal <GND_621_o_b[31]_add_47_OUT> created at line 0.
+    Found 41-bit adder for signal <GND_622_o_b[31]_add_47_OUT> created at line 0.
     Found 40-bit adder for signal <n3532> created at line 0.
-    Found 40-bit adder for signal <GND_621_o_b[31]_add_49_OUT> created at line 0.
+    Found 40-bit adder for signal <GND_622_o_b[31]_add_49_OUT> created at line 0.
     Found 39-bit adder for signal <n3536> created at line 0.
-    Found 39-bit adder for signal <GND_621_o_b[31]_add_51_OUT> created at line 0.
+    Found 39-bit adder for signal <GND_622_o_b[31]_add_51_OUT> created at line 0.
     Found 38-bit adder for signal <n3540> created at line 0.
-    Found 38-bit adder for signal <GND_621_o_b[31]_add_53_OUT> created at line 0.
+    Found 38-bit adder for signal <GND_622_o_b[31]_add_53_OUT> created at line 0.
     Found 37-bit adder for signal <n3544> created at line 0.
-    Found 37-bit adder for signal <GND_621_o_b[31]_add_55_OUT> created at line 0.
+    Found 37-bit adder for signal <GND_622_o_b[31]_add_55_OUT> created at line 0.
     Found 36-bit adder for signal <n3548> created at line 0.
-    Found 36-bit adder for signal <GND_621_o_b[31]_add_57_OUT> created at line 0.
+    Found 36-bit adder for signal <GND_622_o_b[31]_add_57_OUT> created at line 0.
     Found 35-bit adder for signal <n3552> created at line 0.
-    Found 35-bit adder for signal <GND_621_o_b[31]_add_59_OUT> created at line 0.
+    Found 35-bit adder for signal <GND_622_o_b[31]_add_59_OUT> created at line 0.
     Found 34-bit adder for signal <n3556> created at line 0.
-    Found 34-bit adder for signal <GND_621_o_b[31]_add_61_OUT> created at line 0.
+    Found 34-bit adder for signal <GND_622_o_b[31]_add_61_OUT> created at line 0.
     Found 33-bit adder for signal <n3560> created at line 0.
-    Found 33-bit adder for signal <GND_621_o_b[31]_add_63_OUT> created at line 0.
+    Found 33-bit adder for signal <GND_622_o_b[31]_add_63_OUT> created at line 0.
     Found 64-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 63-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 62-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -2328,8 +2340,8 @@ Macro Statistics
  62-bit adder                                          : 2
  63-bit adder                                          : 2
  64-bit adder                                          : 2
-# Registers                                            : 1
- 32-bit register                                       : 1
+# Registers                                            : 3
+ 32-bit register                                       : 3
 # Latches                                              : 1666
  1-bit latch                                           : 1666
 # Comparators                                          : 38
@@ -2393,6 +2405,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:2677 - Node <tmpInstruction_25> of sequential type is unconnected in block <callIF_ID_Latch>.
 
 Synthesizing (advanced) Unit <ControlUnit>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0598> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -2459,8 +2472,8 @@ Macro Statistics
  32-bit adder                                          : 3
  32-bit adder carry in                                 : 32
  32-bit subtractor                                     : 2
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# Registers                                            : 96
+ Flip-Flops                                            : 96
 # Comparators                                          : 38
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
@@ -2527,6 +2540,8 @@ Optimizing unit <pipeline> ...
 
 Optimizing unit <Pc> ...
 
+Optimizing unit <IF_ID_Latch> ...
+
 Optimizing unit <addPc> ...
 
 Optimizing unit <ShiftIF> ...
@@ -2574,12 +2589,13 @@ Optimizing unit <StageWB> ...
 Optimizing unit <InstDecode> ...
 
 Optimizing unit <MuxID> ...
+WARNING:Xst:2677 - Node <tmpInstruction_25> of sequential type is unconnected in block <callIF_ID_Latch>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 12.
-WARNING:Xst:2957 - There are clock and non-clock loads on clock signal callControlUnit/RegWrite_BUFG. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 13.
 WARNING:Xst:2957 - There are clock and non-clock loads on clock signal clk_BUFGP. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+WARNING:Xst:2957 - There are clock and non-clock loads on clock signal callControlUnit/RegWrite_BUFG. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
 
 Final Macro Processing ...
 
@@ -2587,8 +2603,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# Registers                                            : 95
+ Flip-Flops                                            : 95
 
 =========================================================================
 
@@ -2625,8 +2641,9 @@ Primitive and Black Box Usage:
 #      MUXF8                       : 64
 #      VCC                         : 5
 #      XORCY                       : 609
-# FlipFlops/Latches                : 1698
-#      FD_1                        : 32
+# FlipFlops/Latches                : 1761
+#      FD                          : 32
+#      FD_1                        : 63
 #      LD                          : 1569
 #      LD_1                        : 64
 #      LDC_1                       : 1
@@ -2646,16 +2663,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1698  out of  18224     9%  
+ Number of Slice Registers:            1761  out of  18224     9%  
  Number of Slice LUTs:                 2954  out of   9112    32%  
     Number used as Logic:              2954  out of   9112    32%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4586
-   Number with an unused Flip Flop:    2888  out of   4586    62%  
-   Number with an unused LUT:          1632  out of   4586    35%  
-   Number of fully used LUT-FF pairs:    66  out of   4586     1%  
-   Number of unique control sets:        54
+ Number of LUT Flip Flop pairs used:   4649
+   Number with an unused Flip Flop:    2888  out of   4649    62%  
+   Number with an unused LUT:          1695  out of   4649    36%  
+   Number of fully used LUT-FF pairs:    66  out of   4649     1%  
+   Number of unique control sets:        55
 
 IO Utilization: 
  Number of IOs:                          33
@@ -2686,58 +2703,58 @@ Clock Information:
 -------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
 Clock Signal                                                                                                                               | Clock buffer(FF name)                                    | Load  |
 -------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
-clk                                                                                                                                        | BUFGP                                                    | 33    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1734_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1734_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<0>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1766_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1766_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<1>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1798_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1798_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<2>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1830_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1830_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<3>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1926_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1926_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<6>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1862_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1862_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<4>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1894_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1894_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<5>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1958_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1958_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<7>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1990_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1990_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<8>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2022_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2022_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<9>_31) | 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2054_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2054_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<10>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2086_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2086_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<11>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2118_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2118_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<12>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2150_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2150_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<13>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2182_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2182_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<14>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2214_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2214_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<15>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2246_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2246_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<16>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2278_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2278_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<17>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2310_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2310_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<18>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2342_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2342_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<19>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2374_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2374_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<20>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2470_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2470_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<23>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2406_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2406_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<21>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2438_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2438_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<22>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2502_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2502_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<24>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2534_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2534_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<25>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2566_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2566_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<26>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2598_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2598_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<27>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2630_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2630_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<28>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2662_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2662_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<29>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2694_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2694_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<30>_31)| 32    |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2726_o(callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2726_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<31>_31)| 32    |
+clk                                                                                                                                        | BUFGP                                                    | 96    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1734_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1734_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<0>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1766_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1766_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<1>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1798_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1798_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<2>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1830_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1830_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<3>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1926_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1926_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<6>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1862_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1862_o1:O)| BUFG(*)(callStageMEM/callDataMemoryMEM/dataMemory<4>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1894_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1894_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<5>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1958_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1958_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<7>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1990_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1990_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<8>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2022_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2022_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<9>_31) | 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2054_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2054_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<10>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2086_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2086_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<11>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2118_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2118_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<12>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2150_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2150_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<13>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2182_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2182_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<14>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2214_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2214_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<15>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2246_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2246_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<16>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2278_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2278_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<17>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2310_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2310_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<18>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2342_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2342_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<19>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2374_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2374_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<20>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2470_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2470_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<23>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2406_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2406_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<21>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2438_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2438_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<22>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2502_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2502_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<24>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2534_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2534_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<25>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2566_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2566_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<26>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2598_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2598_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<27>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2630_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2630_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<28>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2662_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2662_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<29>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2694_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2694_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<30>_31)| 32    |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2726_o(callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2726_o1:O)| NONE(*)(callStageMEM/callDataMemoryMEM/dataMemory<31>_31)| 32    |
 callControlUnit/MemWrite(callControlUnit/Mmux_MemWrite1:O)                                                                                 | NONE(*)(callStageMEM/callDataMemoryMEM/tmpData_29)       | 32    |
 callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_1637_o(callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_1637_o1:O)                                  | NONE(*)(callStageEX/callAluEx/zeroAlu)                   | 1     |
 callControlUnit/ALUOp<0>(callControlUnit/Mmux_ALUOp12:O)                                                                                   | NONE(*)(callStageEX/callAluEx/outAlu_29)                 | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_48_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_48_o1:O)    | NONE(*)(callStageID/callInstDecode/register<0>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_80_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_80_o1:O)    | NONE(*)(callStageID/callInstDecode/register<1>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_176_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_176_o1:O)  | NONE(*)(callStageID/callInstDecode/register<4>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_112_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_112_o1:O)  | NONE(*)(callStageID/callInstDecode/register<2>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_144_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_144_o1:O)  | NONE(*)(callStageID/callInstDecode/register<3>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_208_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_208_o1:O)  | NONE(*)(callStageID/callInstDecode/register<5>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_240_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_240_o1:O)  | NONE(*)(callStageID/callInstDecode/register<6>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_336_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_336_o1:O)  | NONE(*)(callStageID/callInstDecode/register<9>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_272_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_272_o1:O)  | NONE(*)(callStageID/callInstDecode/register<7>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_304_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_304_o1:O)  | NONE(*)(callStageID/callInstDecode/register<8>_31)       | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_368_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_368_o1:O)  | NONE(*)(callStageID/callInstDecode/register<10>_31)      | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_400_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_400_o1:O)  | NONE(*)(callStageID/callInstDecode/register<11>_31)      | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_496_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_496_o1:O)  | NONE(*)(callStageID/callInstDecode/register<14>_31)      | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_432_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_432_o1:O)  | NONE(*)(callStageID/callInstDecode/register<12>_31)      | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_464_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_464_o1:O)  | NONE(*)(callStageID/callInstDecode/register<13>_31)      | 32    |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_528_o(callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_528_o1:O)  | NONE(*)(callStageID/callInstDecode/register<15>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_48_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_48_o1:O)    | NONE(*)(callStageID/callInstDecode/register<0>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_80_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_80_o1:O)    | NONE(*)(callStageID/callInstDecode/register<1>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_176_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_176_o1:O)  | NONE(*)(callStageID/callInstDecode/register<4>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_112_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_112_o1:O)  | NONE(*)(callStageID/callInstDecode/register<2>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_144_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_144_o1:O)  | NONE(*)(callStageID/callInstDecode/register<3>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_208_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_208_o1:O)  | NONE(*)(callStageID/callInstDecode/register<5>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_240_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_240_o1:O)  | NONE(*)(callStageID/callInstDecode/register<6>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_336_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_336_o1:O)  | NONE(*)(callStageID/callInstDecode/register<9>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_272_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_272_o1:O)  | NONE(*)(callStageID/callInstDecode/register<7>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_304_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_304_o1:O)  | NONE(*)(callStageID/callInstDecode/register<8>_31)       | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_368_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_368_o1:O)  | NONE(*)(callStageID/callInstDecode/register<10>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_400_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_400_o1:O)  | NONE(*)(callStageID/callInstDecode/register<11>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_496_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_496_o1:O)  | NONE(*)(callStageID/callInstDecode/register<14>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_432_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_432_o1:O)  | NONE(*)(callStageID/callInstDecode/register<12>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_464_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_464_o1:O)  | NONE(*)(callStageID/callInstDecode/register<13>_31)      | 32    |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_528_o(callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_528_o1:O)  | NONE(*)(callStageID/callInstDecode/register<15>_31)      | 32    |
 callControlUnit/RegWrite(callControlUnit/Mmux_RegWrite12:O)                                                                                | BUFG(*)(callStageID/callInstDecode/outInstDecodeRsReg_29)| 64    |
 -------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+-------+
 (*) These 52 clock signal(s) are generated by combinatorial logic,
@@ -2753,9 +2770,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.478ns (Maximum Frequency: 117.946MHz)
+   Minimum period: 10.757ns (Maximum Frequency: 92.962MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 10.768ns
+   Maximum output required time after clock: 8.438ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -2764,57 +2781,63 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 8.478ns (frequency: 117.946MHz)
-  Total number of paths / destination ports: 26162 / 33
+  Clock period: 10.757ns (frequency: 92.962MHz)
+  Total number of paths / destination ports: 4764 / 96
 -------------------------------------------------------------------------
-Delay:               4.239ns (Levels of Logic = 5)
-  Source:            callStageIF/callPc/tmpPc_0 (FF)
-  Destination:       callControlUnit/MemRead (LATCH)
+Delay:               5.379ns (Levels of Logic = 10)
+  Source:            callStageIF/callIF_ID_Latch/tmpInstruction_28 (FF)
+  Destination:       callStageIF/callPc/tmpPc_31 (FF)
   Source Clock:      clk falling
   Destination Clock: clk rising
 
-  Data Path: callStageIF/callPc/tmpPc_0 to callControlUnit/MemRead
+  Data Path: callStageIF/callIF_ID_Latch/tmpInstruction_28 to callStageIF/callPc/tmpPc_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD_1:C->Q            15   0.447   1.326  tmpPc_0 (tmpPc_0)
-     end scope: 'callStageIF/callPc:outPc<0>'
-     begin scope: 'callStageIF/callInstruccionMem:inInstructionMem<0>'
-     LUT5:I0->O          164   0.203   2.021  Mram_memory101 (outInstruction<4>)
-     end scope: 'callStageIF/callInstruccionMem:outInstruction<30>'
-     end scope: 'callStageIF:outInstruction<30>'
-     begin scope: 'callControlUnit:inOpcode<4>'
-     LUT5:I4->O           33   0.205   0.000  GND_10_o_GND_10_o_MUX_162_o1 (MemtoReg<0>)
-     LDC_1:D                   0.037          MemRead
+     FD_1:C->Q            21   0.447   1.458  tmpInstruction_28 (tmpInstruction_28)
+     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<28>'
+     end scope: 'callStageIF:outInstructionLatch<28>'
+     begin scope: 'callControlUnit:inOpcode<2>'
+     LUT5:I0->O            1   0.203   0.580  Mmux_Branch11 (Branch)
+     end scope: 'callControlUnit:Branch'
+     begin scope: 'callStageIF:Branch'
+     begin scope: 'callStageIF/callAndIF:Branch'
+     LUT2:I1->O           32   0.205   1.396  outAnd1 (outAnd)
+     end scope: 'callStageIF/callAndIF:outAnd'
+     begin scope: 'callStageIF/callMuxPc:outAnd'
+     LUT3:I1->O            1   0.203   0.580  Mmux_outMuxPc251 (outMuxPc<31>)
+     end scope: 'callStageIF/callMuxPc:outMuxPc<31>'
+     begin scope: 'callStageIF/callMuxJumpPc:inMuxPc<31>'
+     LUT3:I2->O            1   0.205   0.000  Mmux_outMuxJumpPc251 (outMuxJumpPc<31>)
+     end scope: 'callStageIF/callMuxJumpPc:outMuxJumpPc<31>'
+     begin scope: 'callStageIF/callPc:inPc<31>'
+     FD:D                      0.102          tmpPc_31
     ----------------------------------------
-    Total                      4.239ns (0.892ns logic, 3.347ns route)
-                                       (21.0% logic, 79.0% route)
+    Total                      5.379ns (1.365ns logic, 4.014ns route)
+                                       (25.4% logic, 74.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 4208 / 32
+  Total number of paths / destination ports: 768 / 32
 -------------------------------------------------------------------------
-Offset:              10.768ns (Levels of Logic = 12)
-  Source:            callStageIF/callPc/tmpPc_0 (FF)
+Offset:              8.438ns (Levels of Logic = 10)
+  Source:            callStageIF/callIF_ID_Latch/tmpInstruction_26 (FF)
   Destination:       outMuxWb<31> (PAD)
   Source Clock:      clk falling
 
-  Data Path: callStageIF/callPc/tmpPc_0 to outMuxWb<31>
+  Data Path: callStageIF/callIF_ID_Latch/tmpInstruction_26 to outMuxWb<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD_1:C->Q            15   0.447   1.326  tmpPc_0 (tmpPc_0)
-     end scope: 'callStageIF/callPc:outPc<0>'
-     begin scope: 'callStageIF/callInstruccionMem:inInstructionMem<0>'
-     LUT5:I0->O          150   0.203   2.373  Mram_memory281 (outInstruction<22>)
-     end scope: 'callStageIF/callInstruccionMem:outInstruction<28>'
-     end scope: 'callStageIF:outInstruction<28>'
-     begin scope: 'callControlUnit:inOpcode<2>'
-     LUT6:I0->O           24   0.203   1.401  Mram_flagLoadWordDividerMEM12 (flagLoadWordDividerMEM<0>)
-     end scope: 'callControlUnit:flagLoadWordDividerMEM<0>'
-     begin scope: 'callStageMEM:flagLoadWordDividerMEM<0>'
-     begin scope: 'callStageMEM/callLoadWordDividerMEM:flagLoadWordDividerMEM<0>'
-     LUT6:I3->O            1   0.205   0.808  Mmux_tmpLoadWordDividerMEM101 (outLoadWordDividerMEM<18>)
+     FD_1:C->Q            21   0.447   1.458  tmpInstruction_26 (tmpInstruction_26)
+     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<26>'
+     end scope: 'callStageIF:outInstructionLatch<26>'
+     begin scope: 'callControlUnit:inOpcode<0>'
+     LUT5:I0->O           24   0.203   1.517  Mram_flagLoadWordDividerMEM111 (flagLoadWordDividerMEM<1>)
+     end scope: 'callControlUnit:flagLoadWordDividerMEM<1>'
+     begin scope: 'callStageMEM:flagLoadWordDividerMEM<1>'
+     begin scope: 'callStageMEM/callLoadWordDividerMEM:flagLoadWordDividerMEM<1>'
+     LUT6:I1->O            1   0.203   0.808  Mmux_tmpLoadWordDividerMEM101 (outLoadWordDividerMEM<18>)
      end scope: 'callStageMEM/callLoadWordDividerMEM:outLoadWordDividerMEM<18>'
      end scope: 'callStageMEM:outLoadWordDividerMEM<18>'
      begin scope: 'callStageWB:readDataMem<18>'
@@ -2824,8 +2847,8 @@ Offset:              10.768ns (Levels of Logic = 12)
      end scope: 'callStageWB:outMuxWb<18>'
      OBUF:I->O                 2.571          outMuxWb_18_OBUF (outMuxWb<18>)
     ----------------------------------------
-    Total                     10.768ns (3.834ns logic, 6.934ns route)
-                                       (35.6% logic, 64.4% route)
+    Total                      8.438ns (3.629ns logic, 4.809ns route)
+                                       (43.0% logic, 57.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'callControlUnit/MemWrite'
@@ -2893,7 +2916,7 @@ Clock to Setup on destination clock callControlUnit/ALUOp<0>
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|  120.316|         |         |         |
-clk                     |         |  125.183|         |         |
+clk                     |         |  122.806|         |         |
 ------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock callControlUnit/MemWrite
@@ -2902,38 +2925,38 @@ Clock to Setup on destination clock callControlUnit/MemWrite
 Source Clock                                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------------------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>                                           |    4.339|         |         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1734_o|         |    2.236|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1766_o|         |    2.338|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1798_o|         |    2.481|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1830_o|         |    2.464|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1862_o|         |    2.338|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1894_o|         |    2.440|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1926_o|         |    2.583|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1958_o|         |    2.566|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1990_o|         |    2.481|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2022_o|         |    2.583|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2054_o|         |    2.726|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2086_o|         |    2.709|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2118_o|         |    2.464|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2150_o|         |    2.566|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2182_o|         |    2.709|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2214_o|         |    2.692|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2246_o|         |    2.245|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2278_o|         |    2.347|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2310_o|         |    2.490|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2342_o|         |    2.473|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2374_o|         |    2.347|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2406_o|         |    2.449|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2438_o|         |    2.592|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2470_o|         |    2.575|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2502_o|         |    2.490|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2534_o|         |    2.592|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2566_o|         |    2.735|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2598_o|         |    2.718|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2630_o|         |    2.473|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2662_o|         |    2.575|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2694_o|         |    2.718|         |         |
-callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2726_o|         |    2.701|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1734_o|         |    2.236|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1766_o|         |    2.338|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1798_o|         |    2.481|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1830_o|         |    2.464|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1862_o|         |    2.338|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1894_o|         |    2.440|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1926_o|         |    2.583|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1958_o|         |    2.566|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1990_o|         |    2.481|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2022_o|         |    2.583|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2054_o|         |    2.726|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2086_o|         |    2.709|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2118_o|         |    2.464|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2150_o|         |    2.566|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2182_o|         |    2.709|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2214_o|         |    2.692|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2246_o|         |    2.245|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2278_o|         |    2.347|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2310_o|         |    2.490|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2342_o|         |    2.473|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2374_o|         |    2.347|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2406_o|         |    2.449|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2438_o|         |    2.592|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2470_o|         |    2.575|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2502_o|         |    2.490|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2534_o|         |    2.592|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2566_o|         |    2.735|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2598_o|         |    2.718|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2630_o|         |    2.473|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2662_o|         |    2.575|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2694_o|         |    2.718|         |         |
+callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2726_o|         |    2.701|         |         |
 clk                                                                |    2.168|         |         |         |
 -------------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -2942,23 +2965,23 @@ Clock to Setup on destination clock callControlUnit/RegWrite
                                                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------------------------------------+---------+---------+---------+---------+
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_112_o|         |    1.877|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_144_o|         |    1.860|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_176_o|         |    1.641|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_208_o|         |    1.743|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_240_o|         |    1.886|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_272_o|         |    1.869|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_304_o|         |    1.640|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_336_o|         |    1.742|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_368_o|         |    1.885|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_400_o|         |    1.868|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_432_o|         |    1.649|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_464_o|         |    1.751|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_48_o |         |    1.632|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_496_o|         |    1.894|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_528_o|         |    1.877|         |         |
-callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_80_o |         |    1.734|         |         |
-clk                                                               |         |    4.923|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_112_o|         |    1.877|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_144_o|         |    1.860|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_176_o|         |    1.641|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_208_o|         |    1.743|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_240_o|         |    1.886|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_272_o|         |    1.869|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_304_o|         |    1.640|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_336_o|         |    1.742|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_368_o|         |    1.885|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_400_o|         |    1.868|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_432_o|         |    1.649|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_464_o|         |    1.751|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_48_o |         |    1.632|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_496_o|         |    1.894|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_528_o|         |    1.877|         |         |
+callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_80_o |         |    1.734|         |         |
+clk                                                               |         |    3.297|         |         |
 ------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_1637_o
@@ -2967,455 +2990,455 @@ Clock to Setup on destination clock callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    5.408|         |
-clk                     |         |         |    9.431|         |
+clk                     |         |         |    7.054|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_112_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_112_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_144_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_144_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_176_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_176_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_208_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_208_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_240_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_240_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_272_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_272_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_304_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_304_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_336_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_336_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_368_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_368_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_400_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_400_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_432_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_432_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_464_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_464_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_48_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_48_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_496_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_496_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_528_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_528_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageID/callInstDecode/GND_37_o_inInstDecodeRdReg[3]_AND_80_o
+Clock to Setup on destination clock callStageID/callInstDecode/GND_38_o_inInstDecodeRdReg[3]_AND_80_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/ALUOp<0>|         |         |    2.910|         |
 callControlUnit/MemWrite|         |         |    3.123|         |
-clk                     |         |         |    7.208|         |
+clk                     |         |         |    4.878|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1734_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1734_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1766_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1766_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1798_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1798_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1830_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1830_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1862_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1862_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1894_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1894_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1926_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1926_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1958_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1958_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_1990_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_1990_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2022_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2022_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2054_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2054_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2086_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2086_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2118_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2118_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2150_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2150_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2182_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2182_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2214_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2214_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2246_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2246_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2278_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2278_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2310_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2310_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2342_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2342_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2374_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2374_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2406_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2406_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2438_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2438_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2470_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2470_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2502_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2502_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2534_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2534_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2566_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2566_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2598_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2598_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2630_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2630_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2662_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2662_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2694_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2694_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_658_o_inMemAddress[4]_AND_2726_o
+Clock to Setup on destination clock callStageMEM/callDataMemoryMEM/GND_659_o_inMemAddress[4]_AND_2726_o
 ------------------------+---------+---------+---------+---------+
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
 callControlUnit/RegWrite|         |         |    2.334|         |
-clk                     |         |         |    6.192|         |
+clk                     |         |         |    3.924|         |
 ------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -3423,21 +3446,21 @@ Clock to Setup on destination clock clk
                                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------------+---------+---------+---------+---------+
-callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_1637_o|         |         |    3.871|         |
-clk                                               |         |    4.239|    7.569|         |
+callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_AND_1637_o|         |    3.871|         |         |
+clk                                               |    4.531|    5.379|    2.662|         |
 --------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 42.00 secs
-Total CPU time to Xst completion: 41.51 secs
+Total REAL time to Xst completion: 57.00 secs
+Total CPU time to Xst completion: 56.62 secs
  
 --> 
 
-Total memory usage is 253696 kilobytes
+Total memory usage is 253888 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1680 (   0 filtered)
+Number of warnings : 1682 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

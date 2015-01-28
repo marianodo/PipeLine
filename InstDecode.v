@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module InstDecode(
-	input [4:0] inInstDecodeRsReg,inInstDecodeRtReg,inInstDecodeRdReg,
+	input [4:0] inInstDecodeRsReg,inInstDecodeRtReg,inInstDecodeWriteReg,
 	input WRInstDecode,
 	input [31:0] inInstDecodeWriteData,
 	output reg [31:0] outInstDecodeRsReg,outInstDecodeRtReg
@@ -57,7 +57,7 @@ begin
 		end
 	if(WRInstDecode == 1)
 		begin
-			register[inInstDecodeRdReg] = inInstDecodeWriteData;
+			register[inInstDecodeWriteReg] = inInstDecodeWriteData;
 			
 		end
 		

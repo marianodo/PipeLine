@@ -21,10 +21,10 @@
 module StageIF(
 	input clk,Branch,zeroAlu,Jump,
 	input [31:0] outAddEx,
-	output [31:0] outInstruction,PostPc
+	output [31:0] outInstructionLatch,outPostPc
     );
 
-wire [31:0] PcMux, Pc, PcMuxJump; 
+wire [31:0] PcMux, Pc, PcMuxJump, PostPc,outInstruction; 
 wire outAnd;
 wire [31:0] outShiftIF;
 	Pc callPc (
@@ -67,5 +67,13 @@ wire [31:0] outShiftIF;
 	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------
 	.outMuxJumpPc(PcMuxJump) //PcMuxJump me define si es salida del Jump o de (algo normal o branch)
+	);
+	
+	IF_ID_Latch callIF_ID_Latch(
+	.clk(clk),
+	.inInstruction(outInstruction),
+	.inPc(PostPc),
+	.outInstruction(outInstructionLatch),
+	.outPc(outPostPc)
 	);
 endmodule

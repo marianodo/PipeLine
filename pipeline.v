@@ -41,11 +41,6 @@ wire [31:0] readDataMem;
 reg select = 0; 
 reg [31:0] pcJmp;
 
-
-wire Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch, Jump;
-wire [1:0] flagStoreWordDividerMEM,MemtoReg, RegDst;
-wire [2:0] flagLoadWordDividerMEM;
-wire [1:0] ALUOp;
 wire [5:0] Function;
 wire [31:0] instruction, outAddEx;
 
@@ -57,15 +52,29 @@ wire [31:0] instruction, outAddEx;
 	.outAddEx(outAddEx),
 	.Branch(Branch),
 	.zeroAlu(zeroAlu),
-	.outInstruction(instruction),
-	.PostPc(PostPc)
+	.outInstructionLatch(instruction),
+	.outPostPc(PostPc) //PostPc es la salida del latch IF/ID
 	);
 	
-	ControlUnit callControlUnit(
-	.clk(clk),
-	.inOpcode(instruction[31:26]), //Entrada de Opcode
+
+	StageID callStageID(
+	.clk(clk), //ENTRADAS
+	.inPc(PostPc),
 	.inFunction(instruction[5:0]),
-	.RegDst(RegDst), //Salidas
+	.opCode(instruction[31:26]),
+	.rs(instruction[25:21]), 
+	.rt(instruction[20:16]),
+	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
+	.immediate(instruction[15:0]),
+	.writeData(outMuxWb), //Dato a escribir en posicion rd
+	.writeReg(), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
+	.inRegWrite(), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
+	
+	.RegDst(RegDst), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
+	.dataRs(dataRs), //Salidas 
+	.dataRt(dataRt), //Datos de los registros
+	.outImmediate(outImmediate), //Valor imediato de la instruccion, sale del sign extend
+	.RegDst(RegDst), //salidas referentes al control unit
 	.Branch(Branch),
 	.MemRead(MemRead),
 	.MemtoReg(MemtoReg),
@@ -77,20 +86,7 @@ wire [31:0] instruction, outAddEx;
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.outFunction(Function),
 	.flagBranch(flagBranch),
-	.Jump(Jump)
-	);
-
-	StageID callStageID(
-	.rs(instruction[25:21]), //Entradas
-	.rt(instruction[20:16]),
-	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
-	.immediate(instruction[15:0]),
-	.RegDst(RegDst), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
-	.writeData(outMuxWb), //Dato a escribir en posicion rd
-	.RegWrite(RegWrite), //Era el btnWRselect //Selector de lectura escritura de registros
-	.dataRs(dataRs), //Salidas 
-	.dataRt(dataRt), //Datos de los registros
-	.outImmediate(outImmediate) //Valor imediato de la instruccion, sale del sign extend
+	.Jump(Jump) //terminan las salidas referentes al control unit
 	);
 	
 	StageEX callStageEX(

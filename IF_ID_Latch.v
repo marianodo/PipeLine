@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    14:42:18 01/16/2015 
+// Create Date:    12:21:37 01/28/2015 
 // Design Name: 
-// Module Name:    program-counter 
+// Module Name:    IF_ID_Latch 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,21 +18,20 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Pc # (parameter tam=8)(
-input [31:0] inPc,
-input clk,
-output  [31:0] outPc
-    );
-reg [31:0] tmpPc;
+module IF_ID_Latch(
 
-initial
-	begin
-		tmpPc <= 0;
-	end
-always @(posedge clk)
-	begin
-		tmpPc = inPc;
-	end
-	
+input clk,
+input [31:0] inPc,inInstruction,
+output [31:0] outPc, outInstruction
+    );
+reg [31:0] tmpPc,tmpInstruction;
+ 
+always @(negedge clk)
+begin
+	tmpPc=inPc;
+	tmpInstruction=inInstruction;
+end
+
 assign outPc = tmpPc;
+assign outInstruction = tmpInstruction;
 endmodule
