@@ -42,8 +42,8 @@ reg select = 0;
 reg [31:0] pcJmp;
 
 
-wire RegDst,Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,flagBranch, Jump;
-wire [1:0] flagStoreWordDividerMEM;
+wire Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch, Jump;
+wire [1:0] flagStoreWordDividerMEM,MemtoReg, RegDst;
 wire [2:0] flagLoadWordDividerMEM;
 wire [1:0] ALUOp;
 wire [5:0] Function;
@@ -122,6 +122,7 @@ wire [31:0] instruction, outAddEx;
 	StageWB callStageWB(
 	.outAlu(outAlu), //Entrada que es salida la ALU
 	.readDataMem(readDataMem), // Entrada que es salida de Data memory. Con el de arriba, van a MUX
+	.currentPC(PostPc), // entrada del MUX del write Back
 	.MemtoReg(MemtoReg), //Flag
 	.outMuxWb(outMuxWb) //Salida del mux
 	);

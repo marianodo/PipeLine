@@ -22,7 +22,8 @@ module StageID(
 input [4:0] rs,rt,rd,
 input [31:0] writeData,
 input [15:0] immediate,
-input RegWrite,RegDst,
+input RegWrite,
+input [1:0] RegDst,
 output [31:0] dataRs,dataRt, outImmediate
     );
 wire [4:0] outMuxID;

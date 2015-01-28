@@ -33,14 +33,8 @@ end
 
 always @(*)
 begin
-	if(outAddPc == 15) //Esta para que siempre se maneje dentro de las primeras 15 direcciones 
-		begin
-			outAddPc = 0;
-		end
-	else
-		begin
+
 			outAddPc = inAddPc + 1;
-		end
 end
 
 endmodule

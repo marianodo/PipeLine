@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/program-counter.v";
+static const char *ng0 = "C:/Users/Leo/Desktop/PipeLine/program-counter.v";
 static int ng1[] = {0, 0};
 
 
@@ -36,7 +36,7 @@ LAB0:    xsi_set_current_line(28, ng0);
 LAB2:    xsi_set_current_line(29, ng0);
     t1 = ((char*)((ng1)));
     t2 = (t0 + 1092);
-    xsi_vlogvar_wait_assign_value(t2, t1, 0, 0, 4, 0LL);
+    xsi_vlogvar_wait_assign_value(t2, t1, 0, 0, 32, 0LL);
 
 LAB1:    return;
 }
@@ -70,7 +70,7 @@ LAB5:    xsi_set_current_line(33, ng0);
     t4 = (t0 + 680U);
     t5 = *((char **)t4);
     t4 = (t0 + 1092);
-    xsi_vlogvar_assign_value(t4, t5, 0, 0, 4);
+    xsi_vlogvar_assign_value(t4, t5, 0, 0, 32);
     goto LAB2;
 
 }
@@ -86,15 +86,7 @@ static void Cont_36_2(char *t0)
     char *t7;
     char *t8;
     char *t9;
-    unsigned int t10;
-    unsigned int t11;
-    char *t12;
-    unsigned int t13;
-    unsigned int t14;
-    char *t15;
-    unsigned int t16;
-    unsigned int t17;
-    char *t18;
+    char *t10;
 
 LAB0:    t1 = (t0 + 1904U);
     t2 = *((char **)t1);
@@ -112,22 +104,10 @@ LAB2:    xsi_set_current_line(36, ng0);
     t7 = *((char **)t6);
     t8 = (t7 + 40U);
     t9 = *((char **)t8);
-    memset(t9, 0, 8);
-    t10 = 15U;
-    t11 = t10;
-    t12 = (t4 + 4);
-    t13 = *((unsigned int *)t4);
-    t10 = (t10 & t13);
-    t14 = *((unsigned int *)t12);
-    t11 = (t11 & t14);
-    t15 = (t9 + 4);
-    t16 = *((unsigned int *)t9);
-    *((unsigned int *)t9) = (t16 | t10);
-    t17 = *((unsigned int *)t15);
-    *((unsigned int *)t15) = (t17 | t11);
-    xsi_driver_vfirst_trans(t5, 0, 3);
-    t18 = (t0 + 2108);
-    *((int *)t18) = 1;
+    memcpy(t9, t4, 8);
+    xsi_driver_vfirst_trans(t5, 0, 31);
+    t10 = (t0 + 2108);
+    *((int *)t10) = 1;
 
 LAB1:    return;
 }

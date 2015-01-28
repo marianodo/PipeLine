@@ -19,14 +19,15 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageWB(
-	input MemtoReg,
-	input [31:0] readDataMem, outAlu,
+	input [1:0] MemtoReg,
+	input [31:0] readDataMem, outAlu, currentPC,
 	output [31:0] outMuxWb
     );
 	 
 	MuxWB callMuxWB(
 	.MemtoReg(MemtoReg),
 	.readDataMem(readDataMem),
+	.currentPC(currentPC), //este es el PC que se guarda en el registro (ra) para instruccion JAL
 	.outAlu(outAlu),
 	.outMuxWb(outMuxWb)
 	);

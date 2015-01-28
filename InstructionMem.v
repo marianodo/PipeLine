@@ -30,7 +30,7 @@ initial
 begin
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b000100_00000_00001_00000_00000_000010; // registro 0 + registro 1 = registro 2
+	memory[0] = 32'b000011_00000_00000_00000_00000_000001; // registro 0 + registro 1 = registro 2
 	//-----------------------------15----3--------------
 	memory[1] = 32'b001001_00000_00011_00000_00000_000010; //Registro 0 + numero 2 = registro 3
 	memory[2] = 32'b000101_00010_00011_00000_00000_000010; // Los ultimos 16 bit aparecen en los primeros 16 del reg 4

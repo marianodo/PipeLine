@@ -1,43 +1,46 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Nano/Desktop/PipeLine/Test_beh.prj work.Test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Leo/Desktop/PipeLine/Test_beh.prj work.Test work.glbl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/WordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/SignExtend.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/DataMemoryMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AndIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AluEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AddEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ControlUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/pipeline.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/Test.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/WordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/SignExtend.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/program-counter.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxWB.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/muxPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxJumpPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxID.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/muxEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstructionMem.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/DataMemoryMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AndIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AluEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/addPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AddEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageWB.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageID.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ControlUnit.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:189 - "C:/Users/Nano/Desktop/PipeLine/StageIF.v" Line 55: Size mismatch in connection of port <inMuxAddJmp>. Formal port size is 4-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 105692 KB
-Fuse CPU Usage: 1029 ms
+Fuse Memory Usage: 104872 KB
+Fuse CPU Usage: 420 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
+Compiling module ShiftIF
 Compiling module AndIF
 Compiling module muxPc
+Compiling module MuxJumpPc
 Compiling module StageIF
 Compiling module ControlUnit
 Compiling module MuxID
@@ -59,8 +62,8 @@ Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 20 sub-compilation(s) to finish...
-Compiled 25 Verilog Units
-Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 110284 KB
-Fuse CPU Usage: 1450 ms
+Waiting for 19 sub-compilation(s) to finish...
+Compiled 27 Verilog Units
+Built simulation executable C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe
+Fuse Memory Usage: 110484 KB
+Fuse CPU Usage: 623 ms

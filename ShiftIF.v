@@ -30,6 +30,7 @@ always @(*)
 		tmpInInstruction = inInstruction * 1;
 		tmpOutShift[31:28] = inPostPc[31:28];
 		tmpOutShift[27:2] = tmpInInstruction;
-		outShift = tmpOutShift;
 	end
+	
+assign outShiftIF = tmpOutShift;
 endmodule

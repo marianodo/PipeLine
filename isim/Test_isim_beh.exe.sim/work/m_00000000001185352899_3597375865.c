@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/Test.v";
+static const char *ng0 = "C:/Users/Leo/Desktop/PipeLine/Test.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
 
@@ -82,27 +82,7 @@ LAB7:    xsi_set_current_line(53, ng0);
     *((char **)t1) = &&LAB8;
     goto LAB1;
 
-LAB8:    xsi_set_current_line(57, ng0);
-    t2 = ((char*)((ng1)));
-    t3 = (t0 + 828);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(60, ng0);
-    t2 = (t0 + 1252);
-    xsi_process_wait(t2, 100000LL);
-    *((char **)t1) = &&LAB9;
-    goto LAB1;
-
-LAB9:    xsi_set_current_line(61, ng0);
-    t2 = ((char*)((ng2)));
-    t3 = (t0 + 828);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(64, ng0);
-    t2 = (t0 + 1252);
-    xsi_process_wait(t2, 100000LL);
-    *((char **)t1) = &&LAB10;
-    goto LAB1;
-
-LAB10:    goto LAB1;
+LAB8:    goto LAB1;
 
 }
 

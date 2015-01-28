@@ -26,7 +26,7 @@ module StageIF(
 
 wire [31:0] PcMux, Pc, PcMuxJump; 
 wire outAnd;
-wire [25:0] outShiftIF;
+wire [31:0] outShiftIF;
 	Pc callPc (
 	.inPc(PcMuxJump),
 	.clk(clk),
@@ -64,7 +64,7 @@ wire [25:0] outShiftIF;
 
 	MuxJumpPc callMuxJumpPc(
 	.inMuxJumpPc(outShiftIF), //Salida del shift del jump que tiene concatenado los 4 upper bit del PC
-	.inMuxPC(PcMux), //Salida del Mux Pc
+	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------
 	.outMuxJumpPc(PcMuxJump) //PcMuxJump me define si es salida del Jump o de (algo normal o branch)
 	);

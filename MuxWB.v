@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module MuxWB(
-	input MemtoReg,
-	input [31:0] readDataMem, outAlu,
+	input [1:0] MemtoReg,
+	input [31:0] readDataMem, outAlu, currentPC,
 	output reg [31:0] outMuxWb
     );
 
@@ -30,11 +30,19 @@ begin
 end
 always @(*)
 begin
-	if(MemtoReg)
+	if(MemtoReg == 1)
 		begin
 			outMuxWb = readDataMem;
 		end
 	
+	else if(MemtoReg == 0)
+		begin
+			outMuxWb = outAlu;
+		end
+	else if(MemtoReg == 2)
+		begin
+			outMuxWb = currentPC;
+		end
 	else
 		begin
 			outMuxWb = outAlu;
