@@ -21,23 +21,21 @@
 module muxPc # (parameter tam=8)( 
 input [31:0] inMuxAddPc,inMuxAddJmp,
 input outAnd,
-output reg [31:0] outMuxPc
+output [31:0] outMuxPc
     );
-initial
-begin
-	outMuxPc = 0;
-end
+	 reg [31:0] tmp = 0;
+
 always @(*)
 begin
 	if(outAnd)
 		begin
-			outMuxPc = inMuxAddJmp;
+			tmp = inMuxAddJmp;
 		end
 	
 	else
 		begin
-			outMuxPc = inMuxAddPc;
+			tmp = inMuxAddPc;
 		end
 end
-
+assign outMuxPc = tmp;
 endmodule

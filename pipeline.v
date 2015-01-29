@@ -52,17 +52,18 @@ wire [1:0] ALUOp;
 
 ////
 wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite;
-wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId;
-wire [5:0] Function;
-wire [4:0] outMuxRtRd;
-wire [1:0] RegDstId;
+wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
+wire [5:0] Function,FunctionId;
+wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
+wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
+wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
 	.Jump(Jump),
 	.clk(clk), //Entrada
 	.outAddEx(outAddExLatch),
-	.Branch(Branch),
+	.Branch(BranchEx),
 	.zeroAlu(zeroAluLatch), //Viene del latch EX_MEM
 	
 	.outInstructionLatch(instruction),
@@ -80,8 +81,8 @@ wire [1:0] RegDstId;
 	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
 	.immediate(instruction[15:0]),
 	.writeData(outMuxWb), //Dato a escribir en posicion rd
-	.WriteReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
-	.inRegWrite(RegWrite), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
+	.writeReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
+	.inRegWrite(RegWriteMem), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
 	
 	.outPcLatch(outPcLatch),
 	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
@@ -101,7 +102,8 @@ wire [1:0] RegDstId;
 	.flagBranch(flagBranchId),
 	.Jump(JumpId), //terminan las salidas referentes al control unit
 	.outRegRt(outRegRt),
-	.outRegRd(outRegRd)
+	.outRegRd(outRegRd),
+	.outRegRs(outRegRs)
 	);
 	
 	StageEX callStageEX(
@@ -126,12 +128,15 @@ wire [1:0] RegDstId;
 	.inRegRt(outRegRt),
 	.inRegRd(outRegRd),
 	.instReg(FunctionId), //Tipo de Instruccion, lo usa la alu
+	.inForwardA(forwardA),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecodes
+	.inForwardB(forwardB),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecode
+	.inOutMuxWb(outMuxWb), //Entrada a los nuevos mux que es salida del muxwb del writeback
 	
 	.outAlu(outAluLatchEx), //Salida resultado
 	.outZeroAlu(zeroAluLatch), // Comparacion de valores
 	.outAddEx(outAddExLatch),
 	.outDataRt(dataRtEx),
-	.outMuxRtRd(outMuxRtRd),
+	.outMuxRtRd(outMuxRtRd),//Salida del Latch EX/MEM que es mux entre Rt y Rd para saber en que reg guardar.
 	.outBranch(BranchEx),
 	.outMemRead(MemReadEx),
 	.outMemWrite(MemWriteEx),
@@ -170,5 +175,15 @@ wire [1:0] RegDstId;
 	.outMuxWb(outMuxWb) //Salida del mux
 	);
 
-
+	ForwardingUnit callForwardingUnit(
+	.inRs(outRegRs),
+	.inRt(outRegRt),
+	.inRdEX_MEM(outMuxRtRd), //Reg salida del mux (rt y rd) que sale del latch EX/MEM
+	.inRdMEM_WB(WriteReg),//Reg salida del mux (rt y rd) que sale del latch MEM/WB
+	.inRegWriteEX_MEM(RegWriteEx), //Flag de escritura del latch EX_MEM
+	.inRegWriteMEM_WB(RegWriteMem),
+	
+	.outForwardA(forwardA),
+	.outForwardB(forwardB)
+	);
 endmodule

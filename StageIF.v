@@ -59,6 +59,7 @@ wire [31:0] outShiftIF;
 	.inMuxAddPc(PostPc),
 	.inMuxAddJmp(outAddEx), //Entrada al mux de la salida del add Ex
 	.outAnd(outAnd),
+	
 	.outMuxPc(PcMux)
 	);
 

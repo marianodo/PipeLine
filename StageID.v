@@ -30,11 +30,11 @@ output  [1:0] ALUOp, MemtoReg, RegDst,
 output  [2:0] flagLoadWordDividerMEM,
 output  [1:0] flagStoreWordDividerMEM, 
 output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,
-output  [4:0] outRegRt,outRegRd,
+output  [4:0] outRegRt,outRegRd,outRegRs,
 output  [5:0] Function
     );
 	 
-wire [4:0] outMuxID;
+
 wire [31:0] dataRs,dataRt, outImmediate;
 wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch,outJump;
 wire [1:0] outALUOp, outMemtoReg, outRegDst;
@@ -74,7 +74,7 @@ wire [5:0] outFunction;
 		.inInstDecodeRtReg(rt),
 		.inInstDecodeWriteReg(writeReg), //entrada que viene del ultimo latch
 		.inInstDecodeWriteData(writeData),
-		.WRInstDecode(inRegWrite),
+		.RegWrite(inRegWrite),
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt)
@@ -94,6 +94,7 @@ wire [5:0] outFunction;
 	.inSignExtend(outImmediate),
 	.inRegRt(rt),
 	.inRegRd(rd),
+	.inRegRs(rs),
 	.inRegDst(outRegDst), //entradas que vienen del control unit
 	.inBranch(outBranch),
 	.inMemRead(outMemRead),
@@ -115,6 +116,7 @@ wire [5:0] outFunction;
 	.outImmediateLatch(outImmediateLatch),
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
+	.outRegRs(outRegRs),
 	.RegDst(RegDst), //salidas referentes al control unit
 	.Branch(Branch),
 	.MemRead(MemRead),

@@ -21,27 +21,48 @@
 module StageEX(
 	input clk,flagBranch,Jump,
 	input Branch,MemRead,MemWrite,ALUSrc,RegWrite,
-	input [1:0] RegDst,MemtoReg,ALUOp,inflagStoreWordDividerMEM,
+	input [1:0] RegDst,MemtoReg,ALUOp,inflagStoreWordDividerMEM,inForwardA,inForwardB,
 	input [2:0] inflagLoadWordDividerMEM,
 	input [5:0] instReg,
-	input [31:0] inPc,dataRs,dataRt,signExt,
+	input [31:0] inPc,dataRs,dataRt,signExt,inOutMuxWb,
 	input [4:0] inRegRt,inRegRd,sa,
 	
 	output outZeroAlu,outBranch,outMemRead,outMemWrite,outRegWrite,
-	output [31:0] outAddEx,outAlu,
-	output [4:0] outDataRt,outMuxRtRd,
+	output [31:0] outAddEx,outAlu,outDataRt,inoutMuxWb,
+	output [4:0] outMuxRtRd,
    output [1:0] outMemtoReg, outflagStoreWordDividerMEM,
 	output [2:0] outflagLoadWordDividerMEM
 	
  );
 
-wire [31:0] outMuxEx, outShift,outAddExTmp,outAluTmp;
+wire [31:0] outMuxEx, outShift,outAddExTmp,outAluTmp,outMuxForwardA,outMuxForwardB;
 wire outZeroAluTmp;
 wire [4:0] outMuxRtRdTmp;
 	ShiftEX callShiftEX(
 	.signExt(signExt), //Enrtada
 	.outShift(outShift)
 	);
+	
+	
+	MuxExForwardA callMuxExForwardA(
+	.inDataRs(dataRs),
+	.inMuxWb(inOutMuxWb),
+	.inOutAlu(outAlu), //Entrada de la Salida del latch EX/MEM (corto circuito)
+	.inForwardA(inForwardA),
+	
+	.outMuxForwardA(outMuxForwardA) //Salida que es entrada de la Alu (antes era el dataRs)
+	);
+	
+	MuxExForwardB callMuxExForwardB(
+	.inDataRt(dataRt),
+	.inSignExt(signExt),
+	.inMuxWb(inOutMuxWb),
+	.inOutAlu(outAlu), //Entrada de la Salida del latch EX/MEM (corto circuito)
+	.inForwardB(inForwardB),
+	
+	.outMuxForwardB(outMuxForwardB) //Salida que es entrada de la Alu (antes era el dataRs)
+	);
+	
 	
 	AddEX callAddEX(
 	.PostPc(inPc), //Entrada
@@ -50,15 +71,9 @@ wire [4:0] outMuxRtRdTmp;
 	.outAddEx(outAddExTmp) //Salida
 	);
 
-	MuxEX callMuxEX(
-	.ALUSrc(ALUSrc),
-	.dataRt(dataRt),
-	.signExt(signExt),
 	
-	.outMuxEx(outMuxEx)
-	);
 
-	MuxRtRd callMuxRtRd(
+	MuxRtRd callMuxRtRd( //Mux para decidir entre Rt o Rd en el WriteReg del instDecode
 	.RegDst(RegDst),
 	.rt(inRegRt),
 	.rd(inRegRd),
@@ -69,8 +84,8 @@ wire [4:0] outMuxRtRdTmp;
 	AluEX callAluEx(
 	.flagBranch(flagBranch),
 	.ALUOp(ALUOp),
-	.dataRs(dataRs),
-	.outMuxEx(outMuxEx), //Entrada de la alu, conectada a la salida del mux
+	.inOutMuxForwardA(outMuxForwardA),
+	.inOutMuxForwardB(outMuxForwardB),
 	.instReg(instReg),
 	.sa(sa),
 	
@@ -92,6 +107,7 @@ wire [4:0] outMuxRtRdTmp;
 	.inBranch(Branch),
 	.inflagLoadWordDividerMEM(inflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(inflagStoreWordDividerMEM),
+	
 	
 	.outAlu(outAlu),
 	.zeroAlu(outZeroAlu),

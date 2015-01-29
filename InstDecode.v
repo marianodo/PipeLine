@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module InstDecode(
 	input [4:0] inInstDecodeRsReg,inInstDecodeRtReg,inInstDecodeWriteReg,
-	input WRInstDecode,
+	input RegWrite,
 	input [31:0] inInstDecodeWriteData,
 	output reg [31:0] outInstDecodeRsReg,outInstDecodeRtReg
     );
@@ -30,7 +30,7 @@ initial
 begin
 	register[0] <= 5;
 	register[1] <= 5;
-	register[2] <= 0;
+	register[2] <= 3;
 	register[3] <= 2;
 	register[4] <= 0;
 	register[5] <= 0;
@@ -50,12 +50,12 @@ begin
 end
 always @(*)
 begin
-	if(WRInstDecode == 0) //Modo Lectura
+	if(RegWrite == 0) //Modo Lectura
 		begin
 			outInstDecodeRsReg = register[inInstDecodeRsReg]; //Saca el valor del registro
 			outInstDecodeRtReg = register[inInstDecodeRtReg];
 		end
-	if(WRInstDecode == 1)
+	if(RegWrite == 1)
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;
 			

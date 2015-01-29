@@ -20,21 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 module addPc # (parameter tam=5)(
 	input [31:0] inAddPc,
-	output reg [31:0] outAddPc
+	output [31:0] outAddPc
     );
 	 
-	 
-initial
-begin
-	outAddPc = 0;
-	
-end
-
+	 reg [31:0] tmp = 0;
 
 always @(*)
 begin
 
-			outAddPc = inAddPc + 1;
+			tmp = inAddPc + 1;
 end
-
+assign outAddPc = tmp;
 endmodule

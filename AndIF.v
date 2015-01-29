@@ -20,16 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 module AndIF(
 	input Branch, zeroAlu,
-	output reg outAnd
+	output outAnd
     );
-initial
-begin
-	outAnd = 0;
-end
+reg tmp = 0;
 
 always @(*)
 begin
-	outAnd = Branch & zeroAlu;
+	tmp = Branch & zeroAlu;
 end
+assign outAnd = tmp;
 
 endmodule

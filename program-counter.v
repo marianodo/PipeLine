@@ -23,13 +23,10 @@ input [31:0] inPc,
 input clk,
 output  [31:0] outPc
     );
-reg [31:0] tmpPc;
+reg [31:0] tmpPc = 0;
 
-initial
-	begin
-		tmpPc <= 0;
-	end
-always @(posedge clk)
+
+always @(negedge clk)
 	begin
 		tmpPc = inPc;
 	end

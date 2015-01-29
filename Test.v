@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   17:32:20 01/28/2015
+// Create Date:   16:51:05 01/29/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -42,6 +42,7 @@ module Test;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+		
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
@@ -58,7 +59,7 @@ module Test;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -66,69 +67,67 @@ module Test;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+       
+		clk = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
-		
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
+		clk = 1;
+
+		// Wait 100 ns for global reset to finish
 		#100;
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
-		#100;
-		clk = 0;
+		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk = 1;
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk = 1;
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk = 1;
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk = 1;
-		
 		// Add stimulus here
 
 	end

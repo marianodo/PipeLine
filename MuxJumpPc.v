@@ -21,25 +21,22 @@
 module MuxJumpPc(
 input [31:0] inMuxPc,inMuxJumpPc,
 input Jump,
-output reg [31:0] outMuxJumpPc
+output [31:0] outMuxJumpPc
 
     );
+reg [31:0] tmp = 0;
 
-initial
-begin
-	outMuxJumpPc = 0;
-end
 always @(*)
 begin
 	if(Jump)
 		begin
-			outMuxJumpPc = inMuxJumpPc;
+			tmp = inMuxJumpPc;
 		end
 	
 	else
 		begin
-			outMuxJumpPc = inMuxPc;
+			tmp = inMuxPc;
 		end
 end
-
+assign outMuxJumpPc = tmp;
 endmodule
