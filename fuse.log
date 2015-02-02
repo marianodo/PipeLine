@@ -1,46 +1,47 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Nano/Desktop/PipeLine/Test_beh.prj Test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Leo/Desktop/PipeLine/Test_beh.prj Test work.glbl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/WordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/SignExtend.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxJumpPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxExForwardB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxExForwardA.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MEM_WB_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/IF_ID_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ID_EX_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/EX_MEM_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/DataMemoryMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ControlUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AndIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AluEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AddEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ForwardingUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/pipeline.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/Test.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/WordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/SignExtend.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ShiftEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/program-counter.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxWB.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/muxPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxJumpPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxID.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxExForwardB.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MuxExForwardA.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/MEM_WB_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstructionMem.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/IF_ID_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ID_EX_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/EX_MEM_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/DataMemoryMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ControlUnit.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AndIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AluEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/addPc.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/AddEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageWB.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageMEM.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageIF.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageID.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/StageEX.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/HazardDetectionUnit.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/ForwardingUnit.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Leo/Desktop/PipeLine/Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 109: Port inoutMuxWb is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/Leo/Desktop/PipeLine/pipeline.v" Line 114: Port inoutMuxWb is not connected to this instance
 Completed static elaboration
-Fuse Memory Usage: 105692 KB
-Fuse CPU Usage: 1044 ms
+Fuse Memory Usage: 105000 KB
+Fuse CPU Usage: 483 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -71,12 +72,13 @@ Compiling module StageMEM
 Compiling module MuxWB
 Compiling module StageWB
 Compiling module ForwardingUnit
+Compiling module HazardDetectionUnit
 Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 30 sub-compilation(s) to finish...
-Compiled 33 Verilog Units
-Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 110284 KB
-Fuse CPU Usage: 1512 ms
+Waiting for 23 sub-compilation(s) to finish...
+Compiled 34 Verilog Units
+Built simulation executable C:/Users/Leo/Desktop/PipeLine/Test_isim_beh.exe
+Fuse Memory Usage: 109588 KB
+Fuse CPU Usage: 780 ms

@@ -29,7 +29,7 @@ module MEM_WB_Latch(
 	output reg outRegWrite,
 	output reg [1:0] outMemtoReg
 	);
-always @(negedge clk)
+always @(posedge clk)
 begin
 	outLoadWordDividerMEM =inLoadWordDividerMEM;
 	outAluLatch = inAluLatch;

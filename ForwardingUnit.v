@@ -29,7 +29,7 @@ always @(*)
 begin
 	if(inRegWriteEX_MEM & (inRdEX_MEM!=0) & (inRdEX_MEM == inRs))
 		begin
-			tmpA = 2'b10;
+			tmpA = 2'b10;	//top ALU
 		end
 	else
 		begin
@@ -37,7 +37,7 @@ begin
 		end
 	if(inRegWriteEX_MEM & (inRdEX_MEM != 0) & (inRdEX_MEM == inRt))
 		begin
-			tmpB = 2'b10;
+			tmpB = 2'b10; //bottom ALU
 		end
 	else
 		begin
@@ -47,7 +47,7 @@ begin
 	//Hazard del MEM //Si Rd = Rs, se toma el primer mux, si Rd= Rt se toma el segundo
 	if(inRegWriteMEM_WB & (inRdMEM_WB!=0) & (inRdEX_MEM != inRs) & (inRdMEM_WB == inRs))
 		begin
-			tmpA = 2'b01;
+			tmpA = 2'b01; //top ALU
 		end
 	else
 		begin
@@ -56,7 +56,7 @@ begin
 
 	if(inRegWriteMEM_WB & (inRdMEM_WB!=0) & (inRdEX_MEM != inRt) & (inRdMEM_WB == inRt))
 		begin
-			tmpB = 2'b01;
+			tmpB = 2'b01; //bottom ALU
 		end
 	else
 		begin

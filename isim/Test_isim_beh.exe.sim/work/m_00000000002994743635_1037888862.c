@@ -21,10 +21,10 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/MuxExForwardA.v";
+static const char *ng0 = "C:/Users/Leo/Desktop/PipeLine/MuxExForwardA.v";
 static unsigned int ng1[] = {0U, 0U};
-static unsigned int ng2[] = {2U, 0U};
-static unsigned int ng3[] = {1U, 0U};
+static unsigned int ng2[] = {1U, 0U};
+static unsigned int ng3[] = {2U, 0U};
 static int ng4[] = {0, 0};
 
 
@@ -93,14 +93,14 @@ LAB7:    xsi_set_current_line(32, ng0);
     goto LAB15;
 
 LAB9:    xsi_set_current_line(34, ng0);
-    t3 = (t0 + 784U);
+    t3 = (t0 + 692U);
     t4 = *((char **)t3);
     t3 = (t0 + 1196);
     xsi_vlogvar_assign_value(t3, t4, 0, 0, 32);
     goto LAB15;
 
 LAB11:    xsi_set_current_line(36, ng0);
-    t3 = (t0 + 692U);
+    t3 = (t0 + 784U);
     t4 = *((char **)t3);
     t3 = (t0 + 1196);
     xsi_vlogvar_assign_value(t3, t4, 0, 0, 32);

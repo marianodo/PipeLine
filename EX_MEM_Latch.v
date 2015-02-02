@@ -32,7 +32,7 @@ module EX_MEM_Latch(
 	output reg [2:0] outflagLoadWordDividerMEM
 		);
 
-always @(negedge clk)
+always @(posedge clk)
 begin
 	outAlu = inOutAlu;
 	dataRt = indataRt;

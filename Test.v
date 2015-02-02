@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   16:51:05 01/29/2015
+// Create Date:   18:08:50 02/02/2015
 // Design Name:   pipeline
-// Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
+// Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
 // Target Device:  
 // Tool versions:  
@@ -38,96 +38,131 @@ module Test;
 
 	initial begin
 		// Initialize Inputs
-		clk = 0;
+	clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
 		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-       
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
+        
+		// Add stimulus here
+		
+		// Initialize Inputs
 		clk = 1;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 1;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 1;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 1;
-
-		// Wait 100 ns for global reset to finish
-		#100;
+        
 		// Add stimulus here
 
 	end

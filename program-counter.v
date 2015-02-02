@@ -20,16 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Pc # (parameter tam=8)(
 input [31:0] inPc,
-input clk,
+input clk,inPCWrite,
 output  [31:0] outPc
     );
 reg [31:0] tmpPc = 0;
 
 
 always @(negedge clk)
-	begin
-		tmpPc = inPc;
-	end
-	
+begin
+
+	if(inPCWrite) //habilito para que se actualice el PC
+		begin
+			tmpPc = inPc;
+		end
+	else
+		begin
+			tmpPc = tmpPc;
+		end
+		
+end
 assign outPc = tmpPc;
 endmodule

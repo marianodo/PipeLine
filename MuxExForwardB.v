@@ -21,22 +21,30 @@
 module MuxExForwardB(
 	input [31:0] inDataRt, inMuxWb,inOutAlu,inSignExt,
 	input [1:0] inForwardB,
+	input ALUSrc,
 	output [31:0] outMuxForwardB
     );
 reg [31:0] tmp = 0;
 
 always @(*)
 begin
-	case(inForwardB)
-		2'b00:
-			tmp = inDataRt;
-		2'b10:
-			tmp = inOutAlu;
-		2'b01:
-			tmp = inMuxWb;
-		2'b11:
+	if(ALUSrc)
+		begin
 			tmp = inSignExt;
-	endcase		
+		end
+	else
+		begin
+			case(inForwardB)
+				2'b00:
+					tmp = inDataRt;
+				2'b01:
+					tmp = inMuxWb;
+				2'b10:
+					tmp = inOutAlu;
+				2'b11:
+					tmp = inDataRt;
+			endcase		
+		end
 end
 assign outMuxForwardB = tmp;
 

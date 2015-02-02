@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageID(
-input clk, inRegWrite,
+input clk, inRegWrite, inStall,
 input [4:0] rs,rt,rd,writeReg,
 input [5:0] opCode, inFunction,
 input [31:0] writeData, inPc,
@@ -46,6 +46,7 @@ wire [5:0] outFunction;
 	.clk(clk),
 	.inOpcode(opCode), //Entrada de Opcode
 	.inFunction(inFunction),
+	.inStall(inStall),
 	
 	.RegDst(outRegDst), //Salidas
 	.Branch(outBranch),

@@ -20,18 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 module IF_ID_Latch(
 
-input clk,
+input clk,inIF_IDWrite,inIF_Flush,
 input [31:0] inPc,inInstruction,
-output [31:0] outPc, outInstruction
+output reg [31:0] outPc, outInstruction
     );
-reg [31:0] tmpPc,tmpInstruction;
- 
-always @(negedge clk)
+initial
 begin
-	tmpPc=inPc;
-	tmpInstruction=inInstruction;
+	outPc =0;
+	outInstruction = 0;
+end
+ 
+always @(posedge clk)
+begin
+if (inIF_IDWrite)
+	begin
+		outPc=inPc;
+		outInstruction=inInstruction;
+	end
+if (inIF_Flush)
+	begin
+		outPc=inPc;
+		outInstruction= 32'b000000_000000_000000_000000;
+	end
 end
 
-assign outPc = tmpPc;
-assign outInstruction = tmpInstruction;
 endmodule

@@ -30,10 +30,10 @@ begin
 	case(inForwardA)
 		2'b00:
 			tmp = inDataRs;
+		2'b01:
+			tmp = inMuxWb;	
 		2'b10:
 			tmp = inOutAlu;
-		2'b01:
-			tmp = inMuxWb;
 		default:
 			tmp = 0;
 	endcase		

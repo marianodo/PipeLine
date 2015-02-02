@@ -3,11 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Thu Jan 29 17:18:18 2015">
+<application name="pn" timeStamp="Mon Feb 02 18:07:45 2015">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="11D2954593DC4CDF9E5A6A41B9EB104B" type="project"/>
 <property name="ProjectIteration" value="13" type="project"/>
-<property name="ProjectFile" value="C:/Users/Nano/Desktop/PipeLine/PipeLine.xise" type="project"/>
+<property name="ProjectFile" value="C:/Users/Leo/Desktop/PipeLine/PipeLine.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2015-01-16T14:38:58" type="project"/>
 </section>
 <section name="Project Statistics" visible="true">
@@ -39,7 +39,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_DevSpeed" value="-3" type="design"/>
 <property name="PROP_PreferredLanguage" value="Verilog" type="design"/>
 <property name="FILE_UCF" value="1" type="source"/>
-<property name="FILE_VERILOG" value="32" type="source"/>
+<property name="FILE_VERILOG" value="33" type="source"/>
 </section>
 </application>
 </document>

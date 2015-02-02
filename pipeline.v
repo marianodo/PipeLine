@@ -51,12 +51,13 @@ wire [1:0] ALUOp;
 //////////////////////
 
 ////
-wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite;
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCWrite,IF_IDWrite,IF_Flush,Stall;
 wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
+
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
@@ -65,6 +66,9 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.outAddEx(outAddExLatch),
 	.Branch(BranchEx),
 	.zeroAlu(zeroAluLatch), //Viene del latch EX_MEM
+	.inPCWrite(PCWrite), //entrada que viene del hazard detection
+	.inIF_IDWrite(IF_IDWrite),// entrada que viene del hazard detection
+	.inIF_Flush(IF_Flush), // entrada que viene del hazard detection
 	
 	.outInstructionLatch(instruction),
 	.outPostPc(PostPc) //PostPc es la salida del latch IF/ID
@@ -83,6 +87,7 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.writeData(outMuxWb), //Dato a escribir en posicion rd
 	.writeReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
 	.inRegWrite(RegWriteMem), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
+	.inStall(Stall), //entrada que viene del hazard
 	
 	.outPcLatch(outPcLatch),
 	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
@@ -186,4 +191,18 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.outForwardA(forwardA),
 	.outForwardB(forwardB)
 	);
+	
+	HazardDetectionUnit callHazardDetectionUnit(
+	.inMemRead(MemReadId), //entrada que es salida del latch ID/EX
+	.inZeroAlu(zeroAluLatch), //en vez de usar PCSrc decidimos entrar ZeroAlu y Branch y hacer el AND dentro de este modulo
+	.inBranch(BranchEx),
+	.inID_EXRt(outRegRt), //entrada que es salida del latch ID/EX
+	.inIF_IDRs(instruction[25:21]), //entradas que son salidas del latch IF/ID
+	.inIF_IDRt(instruction[20:16]),
+	
+	.outPCWrite(PCWrite), //decide si actualizar el PC o no
+	.outIF_IDWrite(IF_IDWrite), //frena el latch IF/ID
+	.outIF_Flush(IF_Flush), //descarta instrucciones
+	.outStall(Stall) //Poner CEROS en todas las señales de control
+    );
 endmodule

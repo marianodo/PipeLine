@@ -36,7 +36,7 @@ output reg [31:0] outDataRs,outDataRt
     );
 
 wire [31:0] outDataRsTmp, outDataRtTmp; 
-always @(negedge clk)
+always @(posedge clk)
 begin
 	Branch = inBranch;
 	MemRead = inMemRead;

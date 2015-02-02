@@ -59,6 +59,7 @@ wire [4:0] outMuxRtRdTmp;
 	.inMuxWb(inOutMuxWb),
 	.inOutAlu(outAlu), //Entrada de la Salida del latch EX/MEM (corto circuito)
 	.inForwardB(inForwardB),
+	.ALUSrc(ALUSrc),
 	
 	.outMuxForwardB(outMuxForwardB) //Salida que es entrada de la Alu (antes era el dataRs)
 	);

@@ -29,10 +29,10 @@ reg [31:0] register[0:15];
 initial
 begin
 	register[0] <= 5;
-	register[1] <= 5;
+	register[1] <= 3;
 	register[2] <= 3;
 	register[3] <= 2;
-	register[4] <= 0;
+	register[4] <= 1;
 	register[5] <= 0;
 	register[6] <= 0;
 	register[7] <= 15;
@@ -45,21 +45,25 @@ begin
 	register[14] <= 1435224;
 	register[15] <= 32'b111111_00001_00011_00010_00000_100010;
 	
+	
 	outInstDecodeRsReg = 0;
 	outInstDecodeRtReg = 0;
 end
+ 
 always @(*)
 begin
-	if(RegWrite == 0) //Modo Lectura
-		begin
-			outInstDecodeRsReg = register[inInstDecodeRsReg]; //Saca el valor del registro
-			outInstDecodeRtReg = register[inInstDecodeRtReg];
-		end
+	
+	
+		
+			
+	
 	if(RegWrite == 1)
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;
 			
 		end
+		outInstDecodeRsReg = register[inInstDecodeRsReg]; //Saca el valor del registro
+			outInstDecodeRtReg = register[inInstDecodeRtReg];
 		
 end
 
