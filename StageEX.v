@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageEX(
 	input clk,flagBranch,Jump,
-	input Branch,MemRead,MemWrite,ALUSrc,RegWrite,
+	input Branch,MemRead,MemWrite,ALUSrc,RegWrite,inEX_Flush,
 	input [1:0] RegDst,MemtoReg,ALUOp,inflagStoreWordDividerMEM,inForwardA,inForwardB,
 	input [2:0] inflagLoadWordDividerMEM,
 	input [5:0] instReg,
@@ -108,7 +108,7 @@ wire [4:0] outMuxRtRdTmp;
 	.inBranch(Branch),
 	.inflagLoadWordDividerMEM(inflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(inflagStoreWordDividerMEM),
-	
+	.inEX_Flush(inEX_Flush),
 	
 	.outAlu(outAlu),
 	.zeroAlu(outZeroAlu),

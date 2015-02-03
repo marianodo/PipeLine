@@ -51,7 +51,7 @@ wire [1:0] ALUOp;
 //////////////////////
 
 ////
-wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCWrite,IF_IDWrite,IF_Flush,Stall;
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall;
 wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
@@ -136,6 +136,7 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.inForwardA(forwardA),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecodes
 	.inForwardB(forwardB),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecode
 	.inOutMuxWb(outMuxWb), //Entrada a los nuevos mux que es salida del muxwb del writeback
+	.inEX_Flush(EX_Flush), 
 	
 	.outAlu(outAluLatchEx), //Salida resultado
 	.outZeroAlu(zeroAluLatch), // Comparacion de valores
@@ -203,6 +204,7 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.outPCWrite(PCWrite), //decide si actualizar el PC o no
 	.outIF_IDWrite(IF_IDWrite), //frena el latch IF/ID
 	.outIF_Flush(IF_Flush), //descarta instrucciones
+	.outEX_Flush(EX_Flush), 
 	.outStall(Stall) //Poner CEROS en todas las señales de control
     );
 endmodule

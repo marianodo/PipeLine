@@ -21,7 +21,7 @@
 module HazardDetectionUnit(
 input inMemRead,inZeroAlu,inBranch,
 input [4:0] inID_EXRt,inIF_IDRs,inIF_IDRt,
-output reg outPCWrite,outIF_IDWrite,outIF_Flush,outStall
+output reg outPCWrite,outIF_IDWrite,outIF_Flush,outEX_Flush,outStall
     );
 reg PCSrc;
 
@@ -35,6 +35,7 @@ begin
 		outIF_IDWrite = 1; //Permito el paso al latch
 		outStall=0; //Ponemos las señales de control en 0
 		outIF_Flush = 1; //descartamos las futuras instrucciones
+		outEX_Flush = 1; //descartamos instrucciones del stage EX
 	end
 	
 	else if(inMemRead
@@ -45,6 +46,7 @@ begin
 		outIF_IDWrite = 0;
 		outStall = 0;
 		outIF_Flush  = 0;
+		outEX_Flush = 0;
 	end
 	
 	else //situacion normal sin problematicas
@@ -53,6 +55,7 @@ begin
 		outIF_IDWrite = 1;
 		outStall = 1;
 		outIF_Flush = 0;
+		outEX_Flush = 0;
 	end	
 	
 end

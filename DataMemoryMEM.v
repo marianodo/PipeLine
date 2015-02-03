@@ -29,7 +29,7 @@ reg [31:0] tmpData =0;
 integer i;
 initial
 begin
-	dataMemory[0] = 32'b00000_00000_00000_00000_00000_00000_00; //Word
+	dataMemory[0] = 32'b00000_00000_00000_00000_00000_00000_10; //Word
 	dataMemory[1] = 32'b00111_00100_01000_00100_00110_00011_10; // Byte
 	dataMemory[2] = 32'b01110_01110_00010_00100_00010_00110_00; //Half
 	dataMemory[3] = 0;
