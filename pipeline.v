@@ -25,7 +25,7 @@ output [31:0] outMuxWb
   );
 
 // s i g n a l s
-wire [31:0] PostPc, Pc, PcMux;
+wire [31:0]  Pc, PcMux, outPcLatch;
 wire [4:0] rs;
 wire [4:0] rd;
 wire [4:0] rt;
@@ -33,7 +33,7 @@ wire [4:0] sa;
 wire [5:0] instReg;
 wire [31:0] writeData;
 wire [31:0] outImmediate; //Salida del Sign Extend
-wire [31:0] outAlu;
+
 //wire wdSelect;
 wire [31:0] dataRs, dataRt;
 wire btnMuxWb;
@@ -42,90 +42,169 @@ reg select = 0;
 reg [31:0] pcJmp;
 
 
-wire Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch, Jump;
+
+//Wire de control
+wire ALUSrc,flagBranch;
 wire [1:0] flagStoreWordDividerMEM,MemtoReg, RegDst;
 wire [2:0] flagLoadWordDividerMEM;
 wire [1:0] ALUOp;
-wire [5:0] Function;
-wire [31:0] instruction, outAddEx;
+//////////////////////
+
+////
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall;
+wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
+wire [5:0] Function,FunctionId;
+wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
+wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
+wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
 	.Jump(Jump),
 	.clk(clk), //Entrada
-	.outAddEx(outAddEx),
-	.Branch(Branch),
-	.zeroAlu(zeroAlu),
-	.outInstruction(instruction),
-	.PostPc(PostPc)
+	.outAddEx(outAddExLatch),
+	.Branch(BranchEx),
+	.zeroAlu(zeroAluLatch), //Viene del latch EX_MEM
+	.inPCWrite(PCWrite), //entrada que viene del hazard detection
+	.inIF_IDWrite(IF_IDWrite),// entrada que viene del hazard detection
+	.inIF_Flush(IF_Flush), // entrada que viene del hazard detection
+	
+	.outInstructionLatch(instruction),
+	.outPostPc(PostPc) //PostPc es la salida del latch IF/ID
 	);
 	
-	ControlUnit callControlUnit(
-	.clk(clk),
-	.inOpcode(instruction[31:26]), //Entrada de Opcode
-	.inFunction(instruction[5:0]),
-	.RegDst(RegDst), //Salidas
-	.Branch(Branch),
-	.MemRead(MemRead),
-	.MemtoReg(MemtoReg),
-	.ALUOp(ALUOp),
-	.MemWrite(MemWrite),
-	.ALUSrc(ALUSrc),
-	.RegWrite(RegWrite),
-	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
-	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
-	.outFunction(Function),
-	.flagBranch(flagBranch),
-	.Jump(Jump)
-	);
 
 	StageID callStageID(
-	.rs(instruction[25:21]), //Entradas
+	.clk(clk), //ENTRADAS
+	.inPc(PostPc),
+	.inFunction(instruction[5:0]), 
+	.opCode(instruction[31:26]),
+	.rs(instruction[25:21]), 
 	.rt(instruction[20:16]),
 	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
 	.immediate(instruction[15:0]),
-	.RegDst(RegDst), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
 	.writeData(outMuxWb), //Dato a escribir en posicion rd
-	.RegWrite(RegWrite), //Era el btnWRselect //Selector de lectura escritura de registros
-	.dataRs(dataRs), //Salidas 
-	.dataRt(dataRt), //Datos de los registros
-	.outImmediate(outImmediate) //Valor imediato de la instruccion, sale del sign extend
+	.writeReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
+	.inRegWrite(RegWriteMem), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
+	.inStall(Stall), //entrada que viene del hazard
+	
+	.outPcLatch(outPcLatch),
+	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
+	.outDataRs(dataRsId), //Salidas 
+	.outDataRt(dataRtId), //Datos de los registros
+	.outImmediateLatch(outImmediate), //Valor imediato de la instruccion, sale del sign extend
+	.Branch(BranchId),
+	.MemRead(MemReadId),
+	.MemtoReg(MemtoRegId),
+	.ALUOp(ALUOpId),
+	.MemWrite(MemWriteId),
+	.ALUSrc(ALUSrcId),
+	.RegWrite(RegWriteId),
+	.flagLoadWordDividerMEM(flagLoadWordDividerMEMId),
+	.flagStoreWordDividerMEM(flagStoreWordDividerMEMId),
+	.Function(FunctionId),
+	.flagBranch(flagBranchId),
+	.Jump(JumpId), //terminan las salidas referentes al control unit
+	.outRegRt(outRegRt),
+	.outRegRd(outRegRd),
+	.outRegRs(outRegRs)
 	);
 	
 	StageEX callStageEX(
-	.flagBranch(flagBranch),
-	.PostPc(PostPc),
-	.readRs(dataRs), //Entradas
-	.readRt(dataRt), //Lee los datos de los registros
+	.clk(clk),
+	.RegDst(RegDstId), //salidas referentes al control unit
+	.Branch(BranchId),
+	.MemRead(MemReadId),
+	.MemtoReg(MemtoRegId),
+	.ALUOp(ALUOpId),
+	.MemWrite(MemWriteId),
+	.ALUSrc(ALUSrcId),
+	.RegWrite(RegWriteId),
+	.inflagLoadWordDividerMEM(flagLoadWordDividerMEMId),
+	.inflagStoreWordDividerMEM(flagStoreWordDividerMEMId),
+	.flagBranch(flagBranchId),
+	.Jump(JumpId), //terminan las salidas referentes al control unit
+	.inPc(outPcLatch),
+	.dataRs(dataRsId), //Entradas
+	.dataRt(dataRtId), //Lee los datos de los registros
 	.signExt(outImmediate), // Entrada del inmediato extendido en el mux
-	.sa(sa), //Shift
-	.instReg(Function), //Tipo de Instruccion, lo usa la alu
-	.ALUSrc(ALUSrc), //Selector entre Inmediato o registro Rt
-	.ALUOp(ALUOp), //Distingue tipos de instrucciones, si es jmp u otra cosa
-	.outAlu(outAlu), //Salida resultado
-	.zeroAlu(zeroAlu), // Comparacion de valores
-	.outAddEx(outAddEx)
+	.sa(sa), //Shift CORREGIR
+	.inRegRt(outRegRt),
+	.inRegRd(outRegRd),
+	.instReg(FunctionId), //Tipo de Instruccion, lo usa la alu
+	.inForwardA(forwardA),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecodes
+	.inForwardB(forwardB),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecode
+	.inOutMuxWb(outMuxWb), //Entrada a los nuevos mux que es salida del muxwb del writeback
+	.inEX_Flush(EX_Flush), 
+	
+	.outAlu(outAluLatchEx), //Salida resultado
+	.outZeroAlu(zeroAluLatch), // Comparacion de valores
+	.outAddEx(outAddExLatch),
+	.outDataRt(dataRtEx),
+	.outMuxRtRd(outMuxRtRd),//Salida del Latch EX/MEM que es mux entre Rt y Rd para saber en que reg guardar.
+	.outBranch(BranchEx),
+	.outMemRead(MemReadEx),
+	.outMemWrite(MemWriteEx),
+	.outMemtoReg(MemtoRegEx),
+	.outRegWrite(RegWriteEx),
+	.outflagLoadWordDividerMEM(flagLoadWordDividerMEMEx),
+	.outflagStoreWordDividerMEM(flagStoreWordDividerMEMEx)
 	);
 	
 	StageMEM callStageMEM(
 	.clk(clk),
-	.inMemAddress(outAlu), //Entrada que es salida de ALU
-	.inStoreWordDividerMEM(dataRt), // Entrada que es el valor del registro Rt
-	.MemRead(MemRead), //Flag de lectura, en 1 lee, en 0 nada
-	.MemWrite(MemWrite), //Flag de escritura
-	.flagStoreWordDividerMEM(flagStoreWordDividerMEM), //Flag que identifica si es SB, SW, SH
-	.flagLoadWordDividerMEM(flagLoadWordDividerMEM), //Flag que identifica si es LB, LH,LHU etc
-	.outLoadWordDividerMEM(readDataMem) //Salida del data mem, que va a ser entrada del MUX
+	.inMemAddress(outAluLatchEx), //Entrada que es salida de ALU
+	.inStoreWordDividerMEM(dataRtEx), // Entrada que es el valor del registro Rt
+	.MemRead(MemReadEx), //Flag de lectura, en 1 lee, en 0 nada
+	.MemWrite(MemWriteEx), //Flag de escritura
+	.flagStoreWordDividerMEM(flagStoreWordDividerMEMEx), //Flag que identifica si es SB, SW, SH
+	.flagLoadWordDividerMEM(flagLoadWordDividerMEMEx), //Flag que identifica si es LB, LH,LHU etc
+	.inMemtoReg(MemtoRegEx),
+	.inRegWrite(RegWriteEx),
+	.inMuxRtRd(outMuxRtRd),
+	
+	.outLoadWordDividerMEM(readDataMem), //Salida del data mem, que va a ser entrada del MUX
+	.outAluLatch(outAluLatchMem), //Sale del alu para entrar al ultimo MUX del stage WB
+	.outMemtoReg(MemtoRegMem),
+	.outRegWrite(RegWriteMem),
+	.outWriteReg(WriteReg) //Sale del latch de MEM/WB y entra al InstDecode
+	
 	);
 	
 	StageWB callStageWB(
-	.outAlu(outAlu), //Entrada que es salida la ALU
+	.outAlu(outAluLatchMem), //Entrada que es salida la ALU
 	.readDataMem(readDataMem), // Entrada que es salida de Data memory. Con el de arriba, van a MUX
-	.currentPC(PostPc), // entrada del MUX del write Back
-	.MemtoReg(MemtoReg), //Flag
+	.currentPC(outPcLatch), // entrada del MUX del write Back
+	.MemtoReg(MemtoRegMem), //Flag
+	
 	.outMuxWb(outMuxWb) //Salida del mux
 	);
 
-
+	ForwardingUnit callForwardingUnit(
+	.inRs(outRegRs),
+	.inRt(outRegRt),
+	.inRdEX_MEM(outMuxRtRd), //Reg salida del mux (rt y rd) que sale del latch EX/MEM
+	.inRdMEM_WB(WriteReg),//Reg salida del mux (rt y rd) que sale del latch MEM/WB
+	.inRegWriteEX_MEM(RegWriteEx), //Flag de escritura del latch EX_MEM
+	.inRegWriteMEM_WB(RegWriteMem),
+	
+	.outForwardA(forwardA),
+	.outForwardB(forwardB)
+	);
+	
+	HazardDetectionUnit callHazardDetectionUnit(
+	.inMemRead(MemReadId), //entrada que es salida del latch ID/EX
+	.inZeroAlu(zeroAluLatch), //en vez de usar PCSrc decidimos entrar ZeroAlu y Branch y hacer el AND dentro de este modulo
+	.inBranch(BranchEx),
+	.inID_EXRt(outRegRt), //entrada que es salida del latch ID/EX
+	.inIF_IDRs(instruction[25:21]), //entradas que son salidas del latch IF/ID
+	.inIF_IDRt(instruction[20:16]),
+	
+	.outPCWrite(PCWrite), //decide si actualizar el PC o no
+	.outIF_IDWrite(IF_IDWrite), //frena el latch IF/ID
+	.outIF_Flush(IF_Flush), //descarta instrucciones
+	.outEX_Flush(EX_Flush), 
+	.outStall(Stall) //Poner CEROS en todas las señales de control
+    );
 endmodule

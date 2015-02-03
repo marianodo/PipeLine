@@ -18,36 +18,36 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module MuxID(
+module MuxRtRd(
 	input [4:0] rt,rd,
 	input [1:0] RegDst,
-	output reg [4:0] outMuxID
+	output reg [4:0] outMuxRtRd
     );
 reg [3:0] ra;
 
 initial
 begin
 	ra = 15;
-	outMuxID = 0;
+	outMuxRtRd = 0;
 end
 always @(*)
 begin
 	if(RegDst == 1)
 		begin
-			outMuxID = rd; //Selecciona tipo R
+			outMuxRtRd = rd; //Selecciona tipo R
 		end
 	
 	else if(RegDst == 0)
 		begin
-			outMuxID = rt; //Selecciona tipo I
+			outMuxRtRd = rt; //Selecciona tipo I
 		end
 	else if(RegDst == 2)
 		begin
-			outMuxID = ra; //Selecciona direccion de retorno constante
+			outMuxRtRd = ra; //Selecciona direccion de retorno constante
 		end
 	else
 		begin
-			outMuxID = rd;
+			outMuxRtRd = rd;
 		end
 end
 endmodule

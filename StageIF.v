@@ -19,17 +19,18 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
-	input clk,Branch,zeroAlu,Jump,
+	input clk,Branch,zeroAlu,Jump,inPCWrite,inIF_IDWrite,inIF_Flush,
 	input [31:0] outAddEx,
-	output [31:0] outInstruction,PostPc
+	output [31:0] outInstructionLatch,outPostPc
     );
 
-wire [31:0] PcMux, Pc, PcMuxJump; 
+wire [31:0] PcMux, Pc, PcMuxJump, PostPc,outInstruction; 
 wire outAnd;
 wire [31:0] outShiftIF;
 	Pc callPc (
 	.inPc(PcMuxJump),
 	.clk(clk),
+	.inPCWrite(inPCWrite),
 	.outPc(Pc)
 	);
 
@@ -59,6 +60,7 @@ wire [31:0] outShiftIF;
 	.inMuxAddPc(PostPc),
 	.inMuxAddJmp(outAddEx), //Entrada al mux de la salida del add Ex
 	.outAnd(outAnd),
+	
 	.outMuxPc(PcMux)
 	);
 
@@ -67,5 +69,15 @@ wire [31:0] outShiftIF;
 	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------
 	.outMuxJumpPc(PcMuxJump) //PcMuxJump me define si es salida del Jump o de (algo normal o branch)
+	);
+	
+	IF_ID_Latch callIF_ID_Latch(
+	.clk(clk),
+	.inInstruction(outInstruction),
+	.inPc(PostPc),
+	.inIF_IDWrite(inIF_IDWrite),
+	.inIF_Flush(inIF_Flush),
+	.outInstruction(outInstructionLatch),
+	.outPc(outPostPc)
 	);
 endmodule

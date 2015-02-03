@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AluEX(
-input [31:0] readRs, outMuxEx,
+input [31:0] inOutMuxForwardA, inOutMuxForwardB,
 input [5:0] instReg,
 input [4:0] sa,
 input [1:0] ALUOp,
@@ -47,80 +47,80 @@ initial
 
 					//SLL
 					6'b000000:
-						outAlu <= outMuxEx * 2**sa;
+						outAlu <= inOutMuxForwardB * 2**sa;
 										
 					//SRL
 					6'b000010:
-						outAlu <= outMuxEx / 2**sa;
+						outAlu <= inOutMuxForwardB / 2**sa;
 							
 					//SRA
 					6'b000011:
-						outAlu <= $signed(outMuxEx) >>> sa;
+						outAlu <= $signed(inOutMuxForwardB) >>> sa;
 				
 					//SRLV
 					6'b000110:
-						outAlu <= outMuxEx >> readRs;
+						outAlu <= inOutMuxForwardB >> inOutMuxForwardA;
 
 					//SRAV
 					6'b000111:
-						outAlu <= $signed(outMuxEx) >>> readRs;
+						outAlu <= $signed(inOutMuxForwardB) >>> inOutMuxForwardA;
 
 					//ADDU
 					6'b100001:
-						outAlu <= readRs + outMuxEx;
+						outAlu <= inOutMuxForwardA + inOutMuxForwardB;
 						
 					//SUBU
 					6'b100011:
-						outAlu <= readRs - outMuxEx;
+						outAlu <= inOutMuxForwardA - inOutMuxForwardB;
 						
 					//AND
 					6'b100100:
-						outAlu <= readRs & outMuxEx;
+						outAlu <= inOutMuxForwardA & inOutMuxForwardB;
 								
 					//OR
 					6'b100101:
-						outAlu <= readRs | outMuxEx;
+						outAlu <= inOutMuxForwardA | inOutMuxForwardB;
 						
 					//XOR
 					6'b100110:
-						outAlu <= readRs ^ outMuxEx;
+						outAlu <= inOutMuxForwardA ^ inOutMuxForwardB;
 						
 					//SLT
 					6'b101010:
-						outAlu <= ($signed(readRs) < $signed(outMuxEx)) ? 1 : 0;
+						outAlu <= ($signed(inOutMuxForwardA) < $signed(inOutMuxForwardB)) ? 1 : 0;
 //#############################################################################
 //#######################IMMEDIATE##############################3
 					//ADDI:
 					6'b001000:
-						outAlu <= readRs + outMuxEx;
+						outAlu <= inOutMuxForwardA + inOutMuxForwardB;
 
 					//ADDIU
 					6'b001001:
-						outAlu <= readRs + outMuxEx;			
+						outAlu <= inOutMuxForwardA + inOutMuxForwardB;			
 					
 					//ANDI:
 					6'b001100:
-						outAlu <= readRs & (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= inOutMuxForwardA & (inOutMuxForwardB & 32'b00000000_00000000_11111111_11111111);
 
 					//ORI:
 					6'b001101:
-						outAlu <= readRs | (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= inOutMuxForwardA | (inOutMuxForwardB & 32'b00000000_00000000_11111111_11111111);
 
 					//XORI:
 					6'b001110:
-						outAlu <= readRs ^ (outMuxEx & 32'b00000000_00000000_11111111_11111111);
+						outAlu <= inOutMuxForwardA ^ (inOutMuxForwardB & 32'b00000000_00000000_11111111_11111111);
 
 					//LUI:
 					6'b001111:
-						outAlu <= outMuxEx << 16;
+						outAlu <= inOutMuxForwardB << 16;
 
 					//SLTI:
 					6'b001010:
-						outAlu <= ($signed(readRs) < $signed(outMuxEx)) ? 1 : 0;
+						outAlu <= ($signed(inOutMuxForwardA) < $signed(inOutMuxForwardB)) ? 1 : 0;
 
 					//SLTIU:
 					6'b001011:
-						outAlu <= ($unsigned(readRs) < $unsigned(outMuxEx)) ? 1 : 0;
+						outAlu <= ($unsigned(inOutMuxForwardA) < $unsigned(inOutMuxForwardB)) ? 1 : 0;
 					
 					default:
 						outAlu <= {32{1'b1}};
@@ -130,13 +130,13 @@ initial
 			
 		else if(ALUOp == 2'b00) //Load/Store (LW/SW)
 			begin
-				outAlu <= readRs + outMuxEx;
+				outAlu <= inOutMuxForwardA + inOutMuxForwardB;
 			end
 		else if(ALUOp == 2'b01) //Branch EQ
 			begin
 				if (flagBranch) //flagBranch 1 = BEQ, flagBranch 0 = BNE
 					begin
-						if(readRs == outMuxEx)
+						if(inOutMuxForwardA == inOutMuxForwardB)
 							begin
 								zeroAlu = 1;
 							end
@@ -147,7 +147,7 @@ initial
 					end
 				else
 					begin
-						if(readRs != outMuxEx)
+						if(inOutMuxForwardA != inOutMuxForwardB)
 							begin
 								zeroAlu = 1;
 							end

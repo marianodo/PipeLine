@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module MuxEX(
 	input ALUSrc,
-	input [31:0] readRt,signExt,
+	input [31:0] dataRt,signExt,
 	output reg [31:0] outMuxEx
     );
 
@@ -37,7 +37,7 @@ begin
 	
 	else
 		begin
-			outMuxEx = readRt;
+			outMuxEx = dataRt;
 		end
 end
 endmodule

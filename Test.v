@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:15:31 01/27/2015
+// Create Date:   12:35:13 02/03/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -37,25 +37,77 @@ module Test;
 	);
 
 	initial begin
-		// Initialize Inputs
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 1;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-		clk = 1;
-
-		// Wait 100 ns for global reset to finish
-		#100;
+		// clock 1
+clk = 0;
+#100;      
+clk = 1;
+#100;
         
-		// Add stimulus here
+// clock 2
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 3
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 4
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 5
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 6
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 7
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 8
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 9
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 10
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 11
+clk = 0;
+#100;      
+clk = 1;
+#100;
+
+// clock 12
+clk = 0;
+#100;      
+clk = 1;
+#100;
 
 	end
       
