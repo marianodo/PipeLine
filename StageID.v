@@ -36,7 +36,7 @@ output  [5:0] Function
 	 
 
 wire [31:0] dataRs,dataRt, outImmediate;
-wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch,outJump;
+wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch;
 wire [1:0] outALUOp, outMemtoReg, outRegDst;
 wire [2:0] outflagLoadWordDividerMEM;
 wire [1:0] outflagStoreWordDividerMEM;
@@ -60,7 +60,7 @@ wire [5:0] outFunction;
 	.flagStoreWordDividerMEM(outflagStoreWordDividerMEM),
 	.outFunction(outFunction),
 	.flagBranch(outflagBranch),
-	.Jump(outJump)
+	.Jump(Jump)
 	);
 	
 //	MuxID callMuxID(
@@ -108,9 +108,7 @@ wire [5:0] outFunction;
 	.inflagStoreWordDividerMEM(outflagStoreWordDividerMEM),
 	.inoutFunction(outFunction),
 	.inflagBranch(outflagBranch),
-	.inJump(outJump),
 	
-
 	.outPcLatch(outPcLatch),
 	.outDataRs(outDataRs),
 	.outDataRt(outDataRt),
@@ -129,8 +127,8 @@ wire [5:0] outFunction;
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.outFunction(Function),
-	.flagBranch(flagBranch),
-	.Jump(Jump)
+	.flagBranch(flagBranch)
+	
 	);
 		
 endmodule

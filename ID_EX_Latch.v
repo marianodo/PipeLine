@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ID_EX_Latch(
-input clk,inBranch,inMemRead,inMemWrite,inALUSrc,inRegWrite,inflagBranch,inJump,
+input clk,inBranch,inMemRead,inMemWrite,inALUSrc,inRegWrite,inflagBranch,
 input [31:0] inPc,dataRs,dataRt,inSignExtend,
 input [4:0] inRegRt,inRegRd,inRegRs,
 input [1:0] inRegDst,inMemtoReg,inALUOp,inflagStoreWordDividerMEM,
@@ -30,7 +30,7 @@ output reg [31:0] outPcLatch,outImmediateLatch,
 output reg [4:0] outRegRt,outRegRd,outRegRs,
 output reg [2:0] flagLoadWordDividerMEM,
 output reg [1:0] RegDst,MemtoReg,ALUOp,flagStoreWordDividerMEM,
-output reg Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,Jump,
+output reg Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,
 output reg [5:0] outFunction,
 output reg [31:0] outDataRs,outDataRt
     );
@@ -44,7 +44,6 @@ begin
 	ALUSrc = inALUSrc;
 	RegWrite = inRegWrite;
 	flagBranch = inflagBranch;
-	Jump = inJump;
 	outPcLatch = inPc;
 	outDataRs <= dataRs;
 	outDataRt <= dataRt;

@@ -68,6 +68,7 @@ wire [31:0] outShiftIF;
 	.inMuxJumpPc(outShiftIF), //Salida del shift del jump que tiene concatenado los 4 upper bit del PC
 	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------
+	
 	.outMuxJumpPc(PcMuxJump) //PcMuxJump me define si es salida del Jump o de (algo normal o branch)
 	);
 	
@@ -77,6 +78,7 @@ wire [31:0] outShiftIF;
 	.inPc(PostPc),
 	.inIF_IDWrite(inIF_IDWrite),
 	.inIF_Flush(inIF_Flush),
+	
 	.outInstruction(outInstructionLatch),
 	.outPc(outPostPc)
 	);

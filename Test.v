@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   12:35:13 02/03/2015
+// Create Date:   14:12:29 02/03/2015
 // Design Name:   pipeline
-// Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
+// Module Name:   C:/Users/Nano/Google Drive/PipeLine/Test.v
 // Project Name:  PipeLine
 // Target Device:  
 // Tool versions:  
@@ -80,30 +80,6 @@ clk = 1;
 #100;
 
 // clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 9
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 10
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 11
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 12
 clk = 0;
 #100;      
 clk = 1;

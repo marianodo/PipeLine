@@ -27,7 +27,6 @@ output reg [31:0] outPc, outInstruction
 initial
 begin
 	outPc =0;
-	outInstruction = 0;
 end
  
 always @(posedge clk)

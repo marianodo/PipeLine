@@ -105,7 +105,7 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEMId),
 	.Function(FunctionId),
 	.flagBranch(flagBranchId),
-	.Jump(JumpId), //terminan las salidas referentes al control unit
+	.Jump(Jump), 
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
 	.outRegRs(outRegRs)
@@ -124,7 +124,6 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.inflagLoadWordDividerMEM(flagLoadWordDividerMEMId),
 	.inflagStoreWordDividerMEM(flagStoreWordDividerMEMId),
 	.flagBranch(flagBranchId),
-	.Jump(JumpId), //terminan las salidas referentes al control unit
 	.inPc(outPcLatch),
 	.dataRs(dataRsId), //Entradas
 	.dataRt(dataRtId), //Lee los datos de los registros

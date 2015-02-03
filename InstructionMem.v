@@ -24,7 +24,7 @@ output [31:0] outInstruction
     );
 
 reg [tam-1:0] memory[0:31];
-reg [31:0] tmp = 0;
+reg [31:0] tmp;
 
 initial
 begin
@@ -36,6 +36,10 @@ begin
 	memory[3] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
 	memory[4] = 32'b000000_00001_00010_00110_00000_100001; //suma del registro 1 + 2 = 6
 	memory[5] = 32'b000000_00001_00010_00111_00000_100001; //suma del registro 1 + 2 = 7
+	memory[6] = 32'b000000_00001_00010_01000_00000_100001; //suma del registro 1 + 2 = 4
+	memory[7] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
+	memory[8] = 32'b000000_00001_00010_01010_00000_100001; //suma del registro 1 + 2 = 10
+	memory[9] = 32'b000000_00001_00000_01011_00000_100001; //suma del registro 1 + 2 = 11
 	//memory[2] = 32'b000000_00010_00110_00111_00000_100001; //suma del registro 2 + 6 = 7
 	//-----------------------------15----3--------------
 //	memory[1] = 32'b000000_00000_00000_00000_00000_000000; //Registro 0 + numero 2 = registro 3
