@@ -20,10 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 module ForwardingUnit(
 	input [4:0] inRs, inRt,inRdEX_MEM,inRdMEM_WB,
-	input inRegWriteEX_MEM, inRegWriteMEM_WB,
-   output  [1:0] outForwardA, outForwardB
+	input inRegWriteEX_MEM, inRegWriteMEM_WB,inBranch,
+   output  [1:0] outForwardA, outForwardB,
+	output outForwardAD,outForwardBD
 		);
 	reg [1:0] tmpA,tmpB = 0;
+	reg tmpAD,tmpBD = 0;
 	//Hazard del EX //Si Rd = Rs, se toma el primer mux, si Rd= Rt se toma el segundo
 always @(*)
 
@@ -59,10 +61,27 @@ begin
 
 	else
 		tmpB = 2'b00;
-
+		
+	//Chequea se el branch esta en uno y si la instruccion siguiente depende de este branch
+	if(inBranch
+	& (inRs != 0)
+	& (inRs == inRdEX_MEM ))
+		tmpAD = 1;
+	else
+		tmpAD = 0;
+		
+		
+	if(inBranch
+	& (inRt != 0)
+	& (inRt == inRdEX_MEM ))
+		tmpBD = 1;
+	else
+		tmpBD = 0;
+	
 end
 
 assign outForwardA = tmpA;
 assign outForwardB = tmpB;
-
+assign outForwardAD = tmpAD;
+assign outForwardBD = tmpBD;
 endmodule

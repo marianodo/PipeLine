@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Nano/Google Drive/PipeLine/Test_isim_beh.exe" -prj "C:/Users/Nano/Google Drive/PipeLine/Test_beh.prj" "work.Test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Nano/Google Drive/PipeLine/Test_isim_beh.exe" -prj "C:/Users/Nano/Google Drive/PipeLine/Test_beh.prj" "Test" "work.glbl" 

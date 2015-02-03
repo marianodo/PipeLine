@@ -23,8 +23,8 @@ input [31:0] inOutMuxForwardA, inOutMuxForwardB,
 input [5:0] instReg,
 input [4:0] sa,
 input [1:0] ALUOp,
-input flagBranch, //Flag que identifica de BEQ y BNE
-output reg zeroAlu,
+
+
 output reg [31:0] outAlu
     );
 //ALUOp 
@@ -35,7 +35,7 @@ output reg [31:0] outAlu
 initial
 	begin
 		outAlu = 0;
-		zeroAlu = 0;
+		
 	end
 	
 	always @(*)
@@ -131,32 +131,6 @@ initial
 		else if(ALUOp == 2'b00) //Load/Store (LW/SW)
 			begin
 				outAlu <= inOutMuxForwardA + inOutMuxForwardB;
-			end
-		else if(ALUOp == 2'b01) //Branch EQ
-			begin
-				if (flagBranch) //flagBranch 1 = BEQ, flagBranch 0 = BNE
-					begin
-						if(inOutMuxForwardA == inOutMuxForwardB)
-							begin
-								zeroAlu = 1;
-							end
-						else
-							begin
-								zeroAlu = 0;
-							end
-					end
-				else
-					begin
-						if(inOutMuxForwardA != inOutMuxForwardB)
-							begin
-								zeroAlu = 1;
-							end
-						else
-							begin
-								zeroAlu = 0;
-							end
-					end
-			
 			end
 		
 end		

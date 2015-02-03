@@ -31,7 +31,12 @@ end
  
 always @(posedge clk)
 begin
-if (inIF_IDWrite)
+if (inIF_IDWrite == 0)
+	begin
+		outPc=outPc;
+		outInstruction=outInstruction;
+	end
+else
 	begin
 		outPc=inPc;
 		outInstruction=inInstruction;

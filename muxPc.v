@@ -20,14 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 module muxPc # (parameter tam=8)( 
 input [31:0] inMuxAddPc,inMuxAddJmp,
-input outAnd,
+input PCSrc,
 output [31:0] outMuxPc
     );
 	 reg [31:0] tmp = 0;
 
 always @(*)
 begin
-	if(outAnd)
+	if(PCSrc)
 		begin
 			tmp = inMuxAddJmp;
 		end
