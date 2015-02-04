@@ -753,11 +753,11 @@ LAB1:    return;
 }
 
 
-extern void xilinxcorelib_ver_m_00000000003435484244_0973088192_init()
+extern void xilinxcorelib_ver_m_00000000003435484244_2324117310_init()
 {
 	static char *pe[] = {(void *)Always_3891_0,(void *)Cont_4030_1,(void *)Cont_4031_2,(void *)Cont_4032_3,(void *)Cont_4117_4,(void *)Cont_4118_5,(void *)Cont_4119_6,(void *)Cont_4120_7,(void *)Cont_4121_8,(void *)Cont_4122_9,(void *)Cont_4132_10};
 	static char *se[] = {(void *)sp_log2roundup,(void *)sp_divroundup};
-	xsi_register_didat("xilinxcorelib_ver_m_00000000003435484244_0973088192", "isim/Test_isim_beh.exe.sim/xilinxcorelib_ver/m_00000000003435484244_0973088192.didat");
+	xsi_register_didat("xilinxcorelib_ver_m_00000000003435484244_2324117310", "isim/Test_isim_beh.exe.sim/xilinxcorelib_ver/m_00000000003435484244_2324117310.didat");
 	xsi_register_executes(pe);
 	xsi_register_subprogram_executes(se);
 }

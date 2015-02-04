@@ -1,6 +1,7 @@
 # Output products list for <DataMemory>
 DataMemory.asy
 DataMemory.gise
+DataMemory.mif
 DataMemory.ngc
 DataMemory.sym
 DataMemory.v
@@ -53,4 +54,5 @@ DataMemory\simulation\timing\wave_mti.do
 DataMemory\simulation\timing\wave_ncsim.sv
 DataMemory_flist.txt
 DataMemory_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
 summary.log
