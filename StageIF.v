@@ -52,7 +52,7 @@ wire [31:0] outShiftIF;
 	
 	
 	
-	muxPc callMuxPc (
+	muxPc callMuxPc ( //Mux entre salida del ADD comun mas add del branch
 	.inMuxAddPc(PostPc),
 	.inMuxAddJmp(outAddId), //Entrada al mux de la salida del add Id
 	.PCSrc(PCSrc),
@@ -60,7 +60,7 @@ wire [31:0] outShiftIF;
 	.outMuxPc(PcMux)
 	);
 
-	MuxJumpPc callMuxJumpPc(
+	MuxJumpPc callMuxJumpPc( // Mux entre el mux anterior y el jump address (incondicional)
 	.inMuxJumpPc(outShiftIF), //Salida del shift del jump que tiene concatenado los 4 upper bit del PC
 	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------

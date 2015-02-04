@@ -25,7 +25,7 @@
 
 
 
-extern void work_m_00000000000563973471_1536977722_init()
+extern void work_m_00000000004149679594_1536977722_init()
 {
-	xsi_register_didat("work_m_00000000000563973471_1536977722", "isim/Test_isim_beh.exe.sim/work/m_00000000000563973471_1536977722.didat");
+	xsi_register_didat("work_m_00000000004149679594_1536977722", "isim/Test_isim_beh.exe.sim/work/m_00000000004149679594_1536977722.didat");
 }

@@ -37,22 +37,22 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems/>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000252000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001860000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001b10000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>pipeline.ucf</CurrentItem>
    </ItemView>
@@ -112,7 +112,6 @@
          <ClosedNode>/Test C:|Users|Nano|Desktop|PipeLine|Test.v/uut - pipeline/callStageWB - StageWB</ClosedNode>
          <ClosedNode>/Test C:|Users|Nano|Google Drive|PipeLine|Test.v/uut - pipeline/callStageEX - StageEX</ClosedNode>
          <ClosedNode>/Test C:|Users|Nano|Google Drive|PipeLine|Test.v/uut - pipeline/callStageID - StageID</ClosedNode>
-         <ClosedNode>/Test C:|Users|Nano|Google Drive|PipeLine|Test.v/uut - pipeline/callStageIF - StageIF</ClosedNode>
          <ClosedNode>/Test C:|Users|Nano|Google Drive|PipeLine|Test.v/uut - pipeline/callStageMEM - StageMEM</ClosedNode>
          <ClosedNode>/Test C:|Users|Nano|Google Drive|PipeLine|Test.v/uut - pipeline/callStageWB - StageWB</ClosedNode>
          <ClosedNode>/TestAlu C:|Users|Nano|Desktop|PipeLine|TestAlu.v/uut - pipeline</ClosedNode>
@@ -124,13 +123,13 @@
          <ClosedNode>/TestWR C:|Users|Nano|Desktop|PipeLine|TestWR.v/uut - pipeline/callStageIF - StageIF</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Test (C:/Users/Nano/Google Drive/PipeLine/Test.v)</SelectedItem>
+         <SelectedItem>callInstruccionMem - InstructionMem (C:/Users/Nano/Google Drive/PipeLine/InstructionMem.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e7000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e70000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Test (C:/Users/Nano/Google Drive/PipeLine/Test.v)</CurrentItem>
+      <CurrentItem>callInstruccionMem - InstructionMem (C:/Users/Nano/Google Drive/PipeLine/InstructionMem.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

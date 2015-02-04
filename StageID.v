@@ -36,7 +36,7 @@ output  [5:0] Function
 	 
 
 wire [31:0] dataRs,dataRt, outImmediate,DataAEq,DataBEq,outShift, outAddBranchtmp;
-wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch,PCSrctmp;
+wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch;
 wire [1:0] outALUOp, outMemtoReg, outRegDst;
 wire [2:0] outflagLoadWordDividerMEM;
 wire [1:0] outflagStoreWordDividerMEM;
@@ -104,7 +104,7 @@ wire [5:0] outFunction;
 	.inDataAEq(DataAEq), //Datos elegido entre Dato Rs o Alu EX_MEM
 	.inDataBEq(DataBEq),
 	
-	.outPCSrc(PCSrctmp)
+	.outPCSrc(PCSrc)
 	
 	);
 	
@@ -124,7 +124,7 @@ wire [5:0] outFunction;
 	.PostPc(inPc), //Entrada
 	.outShift(outShift), //Entrada
 	
-	.outAddEx(outAddBranchtmp) //Salida que va a ser entrada del mux en el PC, para saber si es brunch o no
+	.outAddId(outAddBranch) //Salida que va a ser entrada del mux en el PC, para saber si es brunch o no
 	);
 	ID_EX_Latch callID_EX_Latch(
 	.inoutBranch(outBranch),
@@ -146,10 +146,8 @@ wire [5:0] outFunction;
 	.inflagLoadWordDividerMEM(outflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(outflagStoreWordDividerMEM),
 	.inoutFunction(outFunction),
-	.inoutAddBranch(outAddBranchtmp), //Entrada del add sumado del branch
-	.inPCSrc(PCSrctmp),
 	
-	.outPCSrc(PCSrc),
+	
 	.outPcLatch(outPcLatch),
 	.outDataRs(outDataRs),
 	.outDataRt(outDataRt),
@@ -167,8 +165,8 @@ wire [5:0] outFunction;
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.outFunction(Function),
-	.Branch(Branch),
-	.outAddBranch(outAddBranch)
+	.Branch(Branch)
+	
 	
 	);
 		

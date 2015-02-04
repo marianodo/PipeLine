@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   18:07:01 02/03/2015
+// Create Date:   10:19:34 02/04/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Google Drive/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -37,8 +37,7 @@ module Test;
 	);
 
 	initial begin
-			// clock 1
-clk = 0;
+			clk = 0;
 #100;      
 clk = 1;
 #100;

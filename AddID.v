@@ -21,7 +21,7 @@
 module AddID(
 	
 	input [31:0] outShift,PostPc,
-	output [31:0] outAddEx
+	output [31:0] outAddId
     );
 reg [31:0] tmpOut;
 initial
@@ -33,5 +33,5 @@ always @(*)
 begin
 	tmpOut = PostPc + outShift - 1'b1;
 end
-assign outAddEx = tmpOut;
+assign outAddId = tmpOut;
 endmodule

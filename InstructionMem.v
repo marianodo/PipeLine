@@ -30,7 +30,7 @@ initial
 begin
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b000100_00000_00000_00000_00000_000010; //Branch equal reg1=reg2 salta a posicion 4
+	memory[0] = 32'b000100_00000_00000_00000_00000_000101; //Branch equal reg1=reg2 salta a posicion 4
 	memory[1] = 32'b000000_00001_00010_00011_00000_100001; //suma del registro 1 + 2 = 3
 	memory[2] = 32'b000000_00001_00010_00100_00000_100001; //suma del registro 1 + 2 = 4
 	memory[3] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
