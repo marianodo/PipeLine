@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
-	input clk,Branch,zeroAlu,Jump,inPCWrite,inIF_IDWrite,inIF_Flush,
-	input [31:0] outAddEx,
+	input clk,Jump,inPCWrite,inIF_IDWrite,inIF_Flush,PCSrc,
+	input [31:0] outAddId,
 	output [31:0] outInstructionLatch,outPostPc
     );
 
@@ -50,21 +50,17 @@ wire [31:0] outShiftIF;
 	.outShiftIF(outShiftIF)
 	);
 	
-	AndIF callAndIF( //And entre el branch del control y el Zero de la Alu
-	.Branch(Branch),
-	.zeroAlu(zeroAlu),
-	.outAnd(outAnd)
-	);
 	
-	muxPc callMuxPc (
+	
+	muxPc callMuxPc ( //Mux entre salida del ADD comun mas add del branch
 	.inMuxAddPc(PostPc),
-	.inMuxAddJmp(outAddEx), //Entrada al mux de la salida del add Ex
-	.outAnd(outAnd),
+	.inMuxAddJmp(outAddId), //Entrada al mux de la salida del add Id
+	.PCSrc(PCSrc),
 	
 	.outMuxPc(PcMux)
 	);
 
-	MuxJumpPc callMuxJumpPc(
+	MuxJumpPc callMuxJumpPc( // Mux entre el mux anterior y el jump address (incondicional)
 	.inMuxJumpPc(outShiftIF), //Salida del shift del jump que tiene concatenado los 4 upper bit del PC
 	.inMuxPc(PcMux), //Salida del Mux Pc
 	.Jump(Jump),//-------------------------------------------------------------------PcMux----------

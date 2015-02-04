@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ID_EX_Latch(
-input clk,inBranch,inMemRead,inMemWrite,inALUSrc,inRegWrite,inflagBranch,
-input [31:0] inPc,dataRs,dataRt,inSignExtend,
+input clk,inMemRead,inMemWrite,inALUSrc,inRegWrite,inoutBranch,
+input [31:0] inPc,dataRs,dataRt,inSignExtend,inoutAddBranch,
 input [4:0] inRegRt,inRegRd,inRegRs,
 input [1:0] inRegDst,inMemtoReg,inALUOp,inflagStoreWordDividerMEM,
 input [2:0] inflagLoadWordDividerMEM,
@@ -30,20 +30,19 @@ output reg [31:0] outPcLatch,outImmediateLatch,
 output reg [4:0] outRegRt,outRegRd,outRegRs,
 output reg [2:0] flagLoadWordDividerMEM,
 output reg [1:0] RegDst,MemtoReg,ALUOp,flagStoreWordDividerMEM,
-output reg Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,
+output reg MemRead,MemWrite,ALUSrc,RegWrite,Branch,
 output reg [5:0] outFunction,
-output reg [31:0] outDataRs,outDataRt
+output reg [31:0] outDataRs,outDataRt,outAddBranch
     );
 
 wire [31:0] outDataRsTmp, outDataRtTmp; 
 always @(posedge clk)
 begin
-	Branch = inBranch;
+	Branch = inoutBranch;
 	MemRead = inMemRead;
 	MemWrite = inMemWrite;
 	ALUSrc = inALUSrc;
 	RegWrite = inRegWrite;
-	flagBranch = inflagBranch;
 	outPcLatch = inPc;
 	outDataRs <= dataRs;
 	outDataRt <= dataRt;
@@ -57,6 +56,7 @@ begin
 	flagLoadWordDividerMEM = inflagLoadWordDividerMEM;
 	flagStoreWordDividerMEM = inflagStoreWordDividerMEM;
 	outFunction = inoutFunction;
+	outAddBranch = inoutAddBranch;
 end
 
 endmodule

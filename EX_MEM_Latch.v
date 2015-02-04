@@ -19,14 +19,14 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module EX_MEM_Latch(
-	input [31:0] inOutAlu,indataRt,inOutAddEx,
-	input inZeroAlu,inRegWrite,inMemRead,inMemWrite,inBranch,clk,inEX_Flush,
+	input [31:0] inOutAlu,indataRt,
+	input inRegWrite,inMemRead,inMemWrite,clk,inEX_Flush,
 	input [1:0] inMemtoReg,inflagStoreWordDividerMEM,
    input [4:0] inOutMuxRtRd,
 	input [2:0] inflagLoadWordDividerMEM,
 	
-	output reg [31:0] outAlu, dataRt, outAddEx,
-	output reg zeroAlu,outRegWrite,outMemRead,outMemWrite,outBranch,
+	output reg [31:0] outAlu, dataRt,
+	output reg outRegWrite,outMemRead,outMemWrite,
 	output reg [4:0] outMuxRtRd,
 	output reg [1:0] outMemtoReg, outflagStoreWordDividerMEM,
 	output reg [2:0] outflagLoadWordDividerMEM
@@ -51,9 +51,6 @@ begin
 	
 	outAlu = inOutAlu;
 	dataRt = indataRt;
-	outAddEx = inOutAddEx;
-	zeroAlu = inZeroAlu;
-	outBranch = inBranch;
 	outMuxRtRd = inOutMuxRtRd;
 	outflagLoadWordDividerMEM=inflagLoadWordDividerMEM;
 	outflagStoreWordDividerMEM=inflagStoreWordDividerMEM;

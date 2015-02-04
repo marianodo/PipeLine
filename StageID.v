@@ -19,23 +19,23 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageID(
-input clk, inRegWrite, inStall,
+input clk, inRegWrite, inStall,ForwardAD,ForwardBD,
 input [4:0] rs,rt,rd,writeReg,
 input [5:0] opCode, inFunction,
-input [31:0] writeData, inPc,
+input [31:0] writeData, inPc,AluOut_EX_MEM,
 input [15:0] immediate,
 
-output  Branch,MemRead,MemWrite,ALUSrc,RegWrite,flagBranch,Jump,
+output  Branch,MemRead,MemWrite,ALUSrc,RegWrite,Jump,PCSrc,
 output  [1:0] ALUOp, MemtoReg, RegDst,
 output  [2:0] flagLoadWordDividerMEM,
 output  [1:0] flagStoreWordDividerMEM, 
-output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,
+output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,outAddBranch,
 output  [4:0] outRegRt,outRegRd,outRegRs,
 output  [5:0] Function
     );
 	 
 
-wire [31:0] dataRs,dataRt, outImmediate;
+wire [31:0] dataRs,dataRt, outImmediate,DataAEq,DataBEq,outShift, outAddBranchtmp;
 wire outBranch,outMemRead,outMemWrite,outALUSrc,outRegWrite,outflagBranch;
 wire [1:0] outALUOp, outMemtoReg, outRegDst;
 wire [2:0] outflagLoadWordDividerMEM;
@@ -63,6 +63,7 @@ wire [5:0] outFunction;
 	.Jump(Jump)
 	);
 	
+	
 //	MuxID callMuxID(
 //	.rt(rt),
 //	.rd(rd),
@@ -81,13 +82,52 @@ wire [5:0] outFunction;
 		.outInstDecodeRtReg(dataRt)
 		);
 		
+	MuxDataA_ALU callMuxDataA_ALU( //Mux entre la salida del dato A y la salida de la ALU
+	.inDataRs(dataRs),
+	.inAluOut_EX_MEM(AluOut_EX_MEM),
+	.inForwardAD(ForwardAD),
+	
+	.outDataAEq(DataAEq) // Dato de la salida del mux entre dato A y la ALU
+	);
+	
+	MuxDataB_ALU callMuxDataB_ALU( //Mux entre la salida del dato A y la salida de la ALU
+	.inDataRt(dataRt),
+	.inAluOut_EX_MEM(AluOut_EX_MEM),
+	.inForwardBD(ForwardBD),
+	
+	.outDataBEq(DataBEq) // Dato de la salida del mux entre dato A y la ALU
+	);
+	
+	EqualBranch callEqualBranch(
+	.inBranch(outBranch), //Para saber si hace el branch
+	.inflagBranch(outflagBranch), // Para saber que tipo de Branch...BEQ o BNE
+	.inDataAEq(DataAEq), //Datos elegido entre Dato Rs o Alu EX_MEM
+	.inDataBEq(DataBEq),
+	
+	.outPCSrc(PCSrc)
+	
+	);
+	
 	SignExtend callSignExtend(
 	.immediate(immediate),
 	
 	.outImmediate(outImmediate) //Salida Extendida
 	);
 	
+	ShiftID callShiftID(
+	.signExt(outImmediate), //Enrtada
+	
+	.outShift(outShift)
+	);
+	
+	AddID callAddID(
+	.PostPc(inPc), //Entrada
+	.outShift(outShift), //Entrada
+	
+	.outAddId(outAddBranch) //Salida que va a ser entrada del mux en el PC, para saber si es brunch o no
+	);
 	ID_EX_Latch callID_EX_Latch(
+	.inoutBranch(outBranch),
 	.clk(clk),
 	.inPc(inPc),
 	.dataRs(dataRs),
@@ -97,7 +137,6 @@ wire [5:0] outFunction;
 	.inRegRd(rd),
 	.inRegRs(rs),
 	.inRegDst(outRegDst), //entradas que vienen del control unit
-	.inBranch(outBranch),
 	.inMemRead(outMemRead),
 	.inMemtoReg(outMemtoReg),
 	.inALUOp(outALUOp),
@@ -107,7 +146,7 @@ wire [5:0] outFunction;
 	.inflagLoadWordDividerMEM(outflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(outflagStoreWordDividerMEM),
 	.inoutFunction(outFunction),
-	.inflagBranch(outflagBranch),
+	
 	
 	.outPcLatch(outPcLatch),
 	.outDataRs(outDataRs),
@@ -117,7 +156,6 @@ wire [5:0] outFunction;
 	.outRegRd(outRegRd),
 	.outRegRs(outRegRs),
 	.RegDst(RegDst), //salidas referentes al control unit
-	.Branch(Branch),
 	.MemRead(MemRead),
 	.MemtoReg(MemtoReg),
 	.ALUOp(ALUOp),
@@ -127,7 +165,8 @@ wire [5:0] outFunction;
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	.outFunction(Function),
-	.flagBranch(flagBranch)
+	.Branch(Branch)
+	
 	
 	);
 		

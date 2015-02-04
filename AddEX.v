@@ -5,7 +5,7 @@
 // 
 // Create Date:    17:05:58 01/20/2015 
 // Design Name: 
-// Module Name:    AddEX 
+// Module Name:    AddID 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module AddEX(
+module AddID(
 	
 	input [31:0] outShift,PostPc,
 	output [31:0] outAddEx

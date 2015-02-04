@@ -112,15 +112,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1422985611" xil_pn:in_ck="6337785867295052472" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1422985611">
+    <transform xil_pn:end_ts="1423056662" xil_pn:in_ck="3369793481922363089" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1423056662">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="AddEX.v"/>
+      <outfile xil_pn:name="AddID.v"/>
       <outfile xil_pn:name="AluEX.v"/>
-      <outfile xil_pn:name="AndIF.v"/>
       <outfile xil_pn:name="ControlUnit.v"/>
       <outfile xil_pn:name="DataMemoryMEM.v"/>
       <outfile xil_pn:name="EX_MEM_Latch.v"/>
+      <outfile xil_pn:name="EqualBranch.v"/>
       <outfile xil_pn:name="ForwardingUnit.v"/>
       <outfile xil_pn:name="HazardDetectionUnit.v"/>
       <outfile xil_pn:name="ID_EX_Latch.v"/>
@@ -128,12 +128,14 @@
       <outfile xil_pn:name="InstDecode.v"/>
       <outfile xil_pn:name="InstructionMem.v"/>
       <outfile xil_pn:name="MEM_WB_Latch.v"/>
+      <outfile xil_pn:name="MuxDataA_ALU.v"/>
+      <outfile xil_pn:name="MuxDataB_ALU.v"/>
       <outfile xil_pn:name="MuxExForwardA.v"/>
       <outfile xil_pn:name="MuxExForwardB.v"/>
       <outfile xil_pn:name="MuxID.v"/>
       <outfile xil_pn:name="MuxJumpPc.v"/>
       <outfile xil_pn:name="MuxWB.v"/>
-      <outfile xil_pn:name="ShiftEX.v"/>
+      <outfile xil_pn:name="ShiftID.v"/>
       <outfile xil_pn:name="ShiftIF.v"/>
       <outfile xil_pn:name="SignExtend.v"/>
       <outfile xil_pn:name="StageEX.v"/>
@@ -161,15 +163,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1422985615" xil_pn:in_ck="6337785867295052472" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1422985615">
+    <transform xil_pn:end_ts="1423056669" xil_pn:in_ck="3369793481922363089" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1423056669">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="AddEX.v"/>
+      <outfile xil_pn:name="AddID.v"/>
       <outfile xil_pn:name="AluEX.v"/>
-      <outfile xil_pn:name="AndIF.v"/>
       <outfile xil_pn:name="ControlUnit.v"/>
       <outfile xil_pn:name="DataMemoryMEM.v"/>
       <outfile xil_pn:name="EX_MEM_Latch.v"/>
+      <outfile xil_pn:name="EqualBranch.v"/>
       <outfile xil_pn:name="ForwardingUnit.v"/>
       <outfile xil_pn:name="HazardDetectionUnit.v"/>
       <outfile xil_pn:name="ID_EX_Latch.v"/>
@@ -177,12 +179,14 @@
       <outfile xil_pn:name="InstDecode.v"/>
       <outfile xil_pn:name="InstructionMem.v"/>
       <outfile xil_pn:name="MEM_WB_Latch.v"/>
+      <outfile xil_pn:name="MuxDataA_ALU.v"/>
+      <outfile xil_pn:name="MuxDataB_ALU.v"/>
       <outfile xil_pn:name="MuxExForwardA.v"/>
       <outfile xil_pn:name="MuxExForwardB.v"/>
       <outfile xil_pn:name="MuxID.v"/>
       <outfile xil_pn:name="MuxJumpPc.v"/>
       <outfile xil_pn:name="MuxWB.v"/>
-      <outfile xil_pn:name="ShiftEX.v"/>
+      <outfile xil_pn:name="ShiftID.v"/>
       <outfile xil_pn:name="ShiftIF.v"/>
       <outfile xil_pn:name="SignExtend.v"/>
       <outfile xil_pn:name="StageEX.v"/>
@@ -198,9 +202,10 @@
       <outfile xil_pn:name="pipeline.v"/>
       <outfile xil_pn:name="program-counter.v"/>
     </transform>
-    <transform xil_pn:end_ts="1422985626" xil_pn:in_ck="6337785867295052472" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6229101006713504685" xil_pn:start_ts="1422985615">
+    <transform xil_pn:end_ts="1423056682" xil_pn:in_ck="3369793481922363089" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6229101006713504685" xil_pn:start_ts="1423056669">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Test_beh.prj"/>
@@ -210,9 +215,11 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1422985626" xil_pn:in_ck="8643339817611728450" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7333415892644663856" xil_pn:start_ts="1422985626">
+    <transform xil_pn:end_ts="1423056683" xil_pn:in_ck="8643339817611728450" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7333415892644663856" xil_pn:start_ts="1423056682">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Test_isim_beh.wdb"/>
@@ -247,7 +254,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1422983532" xil_pn:in_ck="-7363444055071935596" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4643409251439827928" xil_pn:start_ts="1422983410">
+    <transform xil_pn:end_ts="1423055369" xil_pn:in_ck="2541924871683752173" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4643409251439827928" xil_pn:start_ts="1423055274">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

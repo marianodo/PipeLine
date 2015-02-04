@@ -51,8 +51,8 @@ wire [1:0] ALUOp;
 //////////////////////
 
 ////
-wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall;
-wire [31:0] instruction, outAddExLatch,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId;
+wire [31:0] instruction,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
@@ -63,9 +63,8 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	StageIF callStageIF(
 	.Jump(Jump),
 	.clk(clk), //Entrada
-	.outAddEx(outAddExLatch),
-	.Branch(BranchEx),
-	.zeroAlu(zeroAluLatch), //Viene del latch EX_MEM
+	.outAddId(outAddId), //Entrada que es salida del ID, es la suma del PC con el branch eq o ne
+	.PCSrc(PCSrc), //Viene del latch EX_MEM
 	.inPCWrite(PCWrite), //entrada que viene del hazard detection
 	.inIF_IDWrite(IF_IDWrite),// entrada que viene del hazard detection
 	.inIF_Flush(IF_Flush), // entrada que viene del hazard detection
@@ -88,7 +87,11 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.writeReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
 	.inRegWrite(RegWriteMem), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
 	.inStall(Stall), //entrada que viene del hazard
+	.AluOut_EX_MEM(outAluLatchEx), //Entrada que es salida de la alu
+	.ForwardAD(ForwardAD), // Entrada que es salida del forward unit, elige si usar entre un dato o la ALU
+	.ForwardBD(ForwardBD),
 	
+	.outAddBranch(outAddId),
 	.outPcLatch(outPcLatch),
 	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
 	.outDataRs(dataRsId), //Salidas 
@@ -104,17 +107,16 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEMId),
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEMId),
 	.Function(FunctionId),
-	.flagBranch(flagBranchId),
 	.Jump(Jump), 
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
-	.outRegRs(outRegRs)
+	.outRegRs(outRegRs),
+	.PCSrc(PCSrc)
 	);
 	
 	StageEX callStageEX(
 	.clk(clk),
 	.RegDst(RegDstId), //salidas referentes al control unit
-	.Branch(BranchId),
 	.MemRead(MemReadId),
 	.MemtoReg(MemtoRegId),
 	.ALUOp(ALUOpId),
@@ -123,7 +125,6 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.RegWrite(RegWriteId),
 	.inflagLoadWordDividerMEM(flagLoadWordDividerMEMId),
 	.inflagStoreWordDividerMEM(flagStoreWordDividerMEMId),
-	.flagBranch(flagBranchId),
 	.inPc(outPcLatch),
 	.dataRs(dataRsId), //Entradas
 	.dataRt(dataRtId), //Lee los datos de los registros
@@ -138,11 +139,8 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.inEX_Flush(EX_Flush), 
 	
 	.outAlu(outAluLatchEx), //Salida resultado
-	.outZeroAlu(zeroAluLatch), // Comparacion de valores
-	.outAddEx(outAddExLatch),
 	.outDataRt(dataRtEx),
 	.outMuxRtRd(outMuxRtRd),//Salida del Latch EX/MEM que es mux entre Rt y Rd para saber en que reg guardar.
-	.outBranch(BranchEx),
 	.outMemRead(MemReadEx),
 	.outMemWrite(MemWriteEx),
 	.outMemtoReg(MemtoRegEx),
@@ -187,9 +185,12 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.inRdMEM_WB(WriteReg),//Reg salida del mux (rt y rd) que sale del latch MEM/WB
 	.inRegWriteEX_MEM(RegWriteEx), //Flag de escritura del latch EX_MEM
 	.inRegWriteMEM_WB(RegWriteMem),
+	.inBranch(BranchId),
 	
 	.outForwardA(forwardA),
-	.outForwardB(forwardB)
+	.outForwardB(forwardB),
+	.outForwardAD(ForwardAD),
+	.outForwardBD(ForwardBD)
 	);
 	
 	HazardDetectionUnit callHazardDetectionUnit(
