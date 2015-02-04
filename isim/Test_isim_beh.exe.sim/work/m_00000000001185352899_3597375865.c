@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Google Drive/PipeLine/Test.v";
+static const char *ng0 = "C:/Users/Leo/Desktop/PipeLine/Test.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
 
@@ -202,7 +202,47 @@ LAB19:    xsi_set_current_line(84, ng0);
     *((char **)t1) = &&LAB20;
     goto LAB1;
 
-LAB20:    goto LAB1;
+LAB20:    xsi_set_current_line(88, ng0);
+    t2 = ((char*)((ng1)));
+    t3 = (t0 + 828);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
+    xsi_set_current_line(89, ng0);
+    t2 = (t0 + 1252);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB21;
+    goto LAB1;
+
+LAB21:    xsi_set_current_line(90, ng0);
+    t2 = ((char*)((ng2)));
+    t3 = (t0 + 828);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
+    xsi_set_current_line(91, ng0);
+    t2 = (t0 + 1252);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB22;
+    goto LAB1;
+
+LAB22:    xsi_set_current_line(94, ng0);
+    t2 = ((char*)((ng1)));
+    t3 = (t0 + 828);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
+    xsi_set_current_line(95, ng0);
+    t2 = (t0 + 1252);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB23;
+    goto LAB1;
+
+LAB23:    xsi_set_current_line(96, ng0);
+    t2 = ((char*)((ng2)));
+    t3 = (t0 + 828);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
+    xsi_set_current_line(97, ng0);
+    t2 = (t0 + 1252);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB24;
+    goto LAB1;
+
+LAB24:    goto LAB1;
 
 }
 
