@@ -397,3 +397,49 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off pipeline_map.ncd pipeline.ncd pipeline.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline.twx pipeline.ncd -o pipeline.twr pipeline.pcf -ucf pipeline.ucf 
 bitgen -intstyle ise -f pipeline.ut pipeline.ncd 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_map.ncd pipeline.ncd pipeline.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline.twx pipeline.ncd -o pipeline.twr pipeline.pcf -ucf pipeline.ucf 
+bitgen -intstyle ise -f pipeline.ut pipeline.ncd 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+par -w -intstyle ise -ol high -mt off pipeline_map.ncd pipeline.ncd pipeline.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml pipeline.twx pipeline.ncd -o pipeline.twr pipeline.pcf -ucf pipeline.ucf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 
+xst -intstyle ise -ifn "C:/Users/Nano/Desktop/PipeLine/pipeline.xst" -ofn "C:/Users/Nano/Desktop/PipeLine/pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc pipeline.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o pipeline_map.ncd pipeline.ngd pipeline.pcf 

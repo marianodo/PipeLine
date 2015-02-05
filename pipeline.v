@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
 input clk,
-input btn,
+
 output tx 
   );
 
@@ -36,7 +36,6 @@ wire [31:0] outImmediate; //Salida del Sign Extend
 
 //wire wdSelect;
 wire [31:0] dataRs, dataRt;
-wire btnMuxWb;
 wire [31:0] readDataMem;
 reg select = 0; 
 reg [31:0] pcJmp;
@@ -52,12 +51,13 @@ wire [1:0] ALUOp;
 
 ////
 wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId;
-wire [31:0] instruction,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
+wire [31:0] instruction,outMuxWb,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 
+wire [31:0]  Registro0;
 // i n s t a n t i a t i o n s
 
 	StageIF callStageIF(
@@ -111,7 +111,9 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
 	.outRegRs(outRegRs),
-	.PCSrc(PCSrc)
+	.PCSrc(PCSrc),
+	////////////Salida de los Registros hacia la UART
+	.Registro0(Registro0)
 	);
 	
 	StageEX callStageEX(
@@ -209,8 +211,13 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
     );
 	 
 	 DebugUnit callDebugUnit(
+	 ////Enrtada de los Registros hacia la Uart
+	 .inRegistro0(Registro0),
+	 //////////
 	 .clk(clk),
-	 .btn(btn),
+	 .inPc(PostPc),
+	 
+	 
 	 
 	 .tx(tx)
 	 );

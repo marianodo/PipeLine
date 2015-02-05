@@ -29,12 +29,13 @@ input [5:0] inoutFunction,
 output reg [31:0] outPcLatch,outImmediateLatch,
 output reg [4:0] outRegRt,outRegRd,outRegRs,
 output reg [2:0] flagLoadWordDividerMEM,
-output reg [1:0] RegDst,MemtoReg,ALUOp,flagStoreWordDividerMEM,
+output reg [1:0] RegDst,MemtoReg,flagStoreWordDividerMEM,
 output reg MemRead,MemWrite,ALUSrc,RegWrite,Branch,
 output reg [5:0] outFunction,
-output reg [31:0] outDataRs,outDataRt,outAddBranch
+output reg [31:0] outDataRs,outDataRt,outAddBranch,
+output [1:0] ALUOp
     );
-
+reg tmpAluop;
 wire [31:0] outDataRsTmp, outDataRtTmp; 
 always @(posedge clk)
 begin
@@ -52,11 +53,11 @@ begin
 	outRegRs = inRegRs;
 	RegDst = inRegDst;
 	MemtoReg = inMemtoReg;
-	ALUOp = inALUOp;
+	tmpAluop = inALUOp;
 	flagLoadWordDividerMEM = inflagLoadWordDividerMEM;
 	flagStoreWordDividerMEM = inflagStoreWordDividerMEM;
 	outFunction = inoutFunction;
 	outAddBranch = inoutAddBranch;
 end
-
+assign ALUOp = tmpAluop;
 endmodule

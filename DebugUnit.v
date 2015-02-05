@@ -32,13 +32,18 @@ module DebugUnit
    )
    (
     input wire clk,
-	 input btn,
+	 
+	 
+	 input [31:0] inRegistro0,inPc,
+	 
     output wire tx
    );
 
    // signal declaration
    wire tick, tx_done_tick;
-
+	wire [7:0] arrayTx; //Array de 8 bits que manda la Uart hacia la Pc
+	wire WEUart; //Write Enable del Tx
+	
 	reg reset = 0;
 	reg tx_fifo_not_empty = 1;
 	reg [7:0] tx_fifo_out = 8'b01000001;
@@ -49,13 +54,21 @@ module DebugUnit
 		.q(), 
 		.max_tick(tick));
 
+	Fifo callFifo(
+	.inRegistro0(inRegistro0),
+	.inPc(inPc),
+	
+	.outArray(arrayTx),
+	.outWE(WEUart)
+	);
+	
 
    UartTx #(.DBIT(DBIT), .SB_TICK(SB_TICK)) callUartTx
       (.clk(clk), 
 		.reset(reset), 
-		.tx_start(btn), //tiene que ser uno
+		.tx_start(WEUart), //tiene que ser uno
       .s_tick(tick), // se lo da el baud rate
-		.din(tx_fifo_out), //dato de entrada
+		.din(arrayTx), //dato de entrada
 		 
       .tx_done_tick(tx_done_tick), 
 		.tx(tx));

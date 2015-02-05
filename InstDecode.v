@@ -22,13 +22,15 @@ module InstDecode(
 	input [4:0] inInstDecodeRsReg,inInstDecodeRtReg,inInstDecodeWriteReg,
 	input RegWrite,
 	input [31:0] inInstDecodeWriteData,
-	output reg [31:0] outInstDecodeRsReg,outInstDecodeRtReg
+	output reg [31:0] outInstDecodeRsReg,outInstDecodeRtReg,
+	
+	output reg [31:0] Registro0
     );
 
 reg [31:0] register[0:15];
 initial
 begin
-	register[0] <= 0;
+	register[0] <= 32'b100011_00000_00001_01100_01000_010101;
 	register[1] <= 1;
 	register[2] <= 2;
 	register[3] <= 3;
@@ -56,7 +58,7 @@ begin
 	
 		
 			
-	
+	Registro0 = register[0];
 	if(RegWrite == 1)
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;

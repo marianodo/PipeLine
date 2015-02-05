@@ -1,10 +1,9 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Feb 05 14:15:26 2015
+// Written by: Map P.20131013 on Thu Feb 05 16:09:48 2015
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
-COMP "btn" LOCATE = SITE "C4" LEVEL 1;
 COMP "tx" LOCATE = SITE "N18" LEVEL 1;
 SCHEMATIC END;
 

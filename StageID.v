@@ -31,7 +31,10 @@ output  [2:0] flagLoadWordDividerMEM,
 output  [1:0] flagStoreWordDividerMEM, 
 output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,outAddBranch,
 output  [4:0] outRegRt,outRegRd,outRegRs,
-output  [5:0] Function
+output  [5:0] Function,
+
+//Salida de los Registros hacia la Uart
+output [31:0] Registro0
     );
 	 
 
@@ -79,7 +82,8 @@ wire [5:0] outFunction;
 		.RegWrite(inRegWrite),
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
-		.outInstDecodeRtReg(dataRt)
+		.outInstDecodeRtReg(dataRt),
+		.Registro0(Registro0)
 		);
 		
 	MuxDataA_ALU callMuxDataA_ALU( //Mux entre la salida del dato A y la salida de la ALU

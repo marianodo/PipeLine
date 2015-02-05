@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:22:43 02/04/2015
+// Create Date:   15:12:29 02/05/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -26,18 +26,20 @@ module Test;
 
 	// Inputs
 	reg clk;
+	reg btn;
 
 	// Outputs
-	wire [31:0] outMuxWb;
+	wire tx;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipeline uut (
 		.clk(clk), 
-		.outMuxWb(outMuxWb)
+		.btn(btn), 
+		.tx(tx)
 	);
 
 	initial begin
-			clk = 0;
+		clk = 0;
 #100;      
 clk = 1;
 #100;
