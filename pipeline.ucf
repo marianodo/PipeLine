@@ -5,6 +5,5 @@
 
 
 NET "btn" LOC = C4; 
-NET "btn" CLOCK_DEDICATED_ROUTE = FALSE;
-NET "btnSelect" LOC = D9;
-NET "btnWRselect" LOC = C9;
+NET "clk" LOC = V10;
+NET "tx" LOC = N18;

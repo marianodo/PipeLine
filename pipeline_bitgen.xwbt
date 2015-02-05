@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.ncd
-OUTFILE=D:\Facu\Arquitectura de Computadoras\pipeline\pipeline.bit
+INFILE=C:\Users\Nano\Desktop\PipeLine\pipeline.ncd
+OUTFILE=C:\Users\Nano\Desktop\PipeLine\pipeline.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=D:\Facu\Arquitectura de Computadoras\pipeline
+WORKINGDIR=C:\Users\Nano\Desktop\PipeLine
 LICENSE=WebPack
-USER_INFO=210790645_0_0_619
+USER_INFO=210930660_0_0_108

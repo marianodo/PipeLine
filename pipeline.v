@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
 input clk,
-
-output [31:0] outMuxWb 
+input btn,
+output tx 
   );
 
 // s i g n a l s
@@ -207,4 +207,11 @@ wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 	.outEX_Flush(EX_Flush), 
 	.outStall(Stall) //Poner CEROS en todas las señales de control
     );
+	 
+	 DebugUnit callDebugUnit(
+	 .clk(clk),
+	 .btn(btn),
+	 
+	 .tx(tx)
+	 );
 endmodule

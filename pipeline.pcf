@@ -1,12 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Jan 20 09:11:56 2015
+// Written by: Map P.20131013 on Thu Feb 05 14:15:26 2015
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "btnSelect" LOCATE = SITE "D9" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "btn" LOCATE = SITE "C4" LEVEL 1;
-PIN btn_pin<0> = BEL "btn" PINNAME PAD;
-PIN "btn_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
-COMP "btnWRselect" LOCATE = SITE "C9" LEVEL 1;
+COMP "tx" LOCATE = SITE "N18" LEVEL 1;
 SCHEMATIC END;
 
