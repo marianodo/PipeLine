@@ -30,9 +30,9 @@ initial
 begin
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b100011_00000_00001_00000_00000_000001; //Load de la memoria 0 en registro 0
-	memory[1] = 32'b100011_00000_00010_00000_00000_000010;  //Store en la memoria 1 lo q tiene reg 1
-	memory[2] = 32'b100011_00000_00011_00000_00000_000011;  //Store en la memoria 3 lo q tiene reg 
+	memory[0] = 32'b100011_00000_00001_00000_00000_000000; //Load de la memoria 0 en registro 0
+	memory[1] = 32'b100011_00000_00010_00000_00000_000100;  //Store en la memoria 1 lo q tiene reg 1
+	memory[2] = 32'b100011_00000_00011_00000_00000_001000;  //Store en la memoria 3 lo q tiene reg 
 	memory[3] = 32'b100011_00000_00100_00000_00000_000100;  //suma del registro 1 + 2 = 7
 	memory[4] = 32'b101011_00000_00100_00000_00000_000001; //Store en la memoria 0 lo q tiene reg 0
 	memory[5] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5

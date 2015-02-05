@@ -44,8 +44,8 @@ Starting static elaboration
 WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 117: Port inoutMuxWb is not connected to this instance
 WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/StageID.v" Line 129: Port inoutAddBranch is not connected to this instance
 Completed static elaboration
-Fuse Memory Usage: 105904 KB
-Fuse CPU Usage: 1122 ms
+Fuse Memory Usage: 105648 KB
+Fuse CPU Usage: 1123 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -88,8 +88,8 @@ Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 25 sub-compilation(s) to finish...
+Waiting for 30 sub-compilation(s) to finish...
 Compiled 41 Verilog Units
 Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 112224 KB
-Fuse CPU Usage: 1871 ms
+Fuse Memory Usage: 111968 KB
+Fuse CPU Usage: 1762 ms
