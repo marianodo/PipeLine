@@ -34,6 +34,8 @@ output [4:0] outWriteReg
 );
 
 wire [31:0] outMemReadData, inMemWriteData,LoadWordDividerMEM;
+wire [3:0] ReadWriteMEM;
+wire clkNeg;
 
 	StoreWordDividerMEM callStoreWordDividerMEM(
 	.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
@@ -42,14 +44,32 @@ wire [31:0] outMemReadData, inMemWriteData,LoadWordDividerMEM;
 	.outStoreWordDividerMEM(inMemWriteData)
 	);
 	
-	DataMemoryMEM callDataMemoryMEM(
-	.inMemAddress(inMemAddress),
-	.inMemWriteData(inMemWriteData),
-	.MemWrite(MemWrite),
-	.MemRead(MemRead),
+	IPCoreAdapter callIPCoreAdapter( //Adaptador para pasar de cables de 1 bit a 4 bits...
+	.MemWrite(MemWrite), //esto es porque salen 2 cables del control unit que entran a la memoria...
+	.MemRead(MemRead), //pero el IPCore necesita 4
+	.clk(clk),
 	
-	.outMemReadData(outMemReadData)
+	.outReadWriteMEM(ReadWriteMEM),
+	.outClkNeg(clkNeg)
 	);
+	
+	DataMemory callDataMemory( //IPCore de la memoria de datos
+	.addra(inMemAddress),
+	.dina(inMemWriteData),
+	.wea(ReadWriteMEM),
+	.clka(clkNeg),
+	
+	.douta(outMemReadData)
+	);
+	
+//	DataMemoryMEM callDataMemoryMEM(
+//	.inMemAddress(inMemAddress),
+//	.inMemWriteData(inMemWriteData),
+//	.MemWrite(MemWrite),
+//	.MemRead(MemRead),
+//	
+//	.outMemReadData(outMemReadData)
+//	);
 	
 	LoadWordDividerMEM callLoadWordDividerMEM(
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM), //Flag para identificar si es LB, LH, LW, etc

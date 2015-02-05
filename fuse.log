@@ -1,50 +1,51 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Google Drive/PipeLine/Test_isim_beh.exe -prj C:/Users/Nano/Google Drive/PipeLine/Test_beh.prj work.Test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe -prj C:/Users/Nano/Desktop/PipeLine/Test_beh.prj work.Test work.glbl 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/WordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StoreWordDividerMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/SignExtend.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/ShiftIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/ShiftID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/program-counter.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/muxPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxJumpPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxExForwardB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxExForwardA.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxDataB_ALU.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MuxDataA_ALU.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/MEM_WB_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/InstructionMem.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/InstDecode.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/IF_ID_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/ID_EX_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/EX_MEM_Latch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/EqualBranch.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/DataMemoryMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/ControlUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/AluEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/addPc.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/AddID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StageWB.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StageMEM.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StageIF.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StageID.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/StageEX.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/HazardDetectionUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/ForwardingUnit.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/pipeline.v" into library work
-Analyzing Verilog file "C:/Users/Nano/Google Drive/PipeLine/Test.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/WordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StoreWordDividerMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/SignExtend.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ShiftID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/program-counter.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxWB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/muxPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxJumpPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxExForwardB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxExForwardA.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxDataB_ALU.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MuxDataA_ALU.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/MEM_WB_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ipcore_dir/DataMemory.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/IPCoreAdapter.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstructionMem.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/InstDecode.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/IF_ID_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ID_EX_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/EX_MEM_Latch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/EqualBranch.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ControlUnit.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AluEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/addPc.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/AddID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageWB.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageMEM.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageIF.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageID.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/StageEX.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/HazardDetectionUnit.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/ForwardingUnit.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Nano/Desktop/PipeLine/Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/Nano/Google Drive/PipeLine/pipeline.v" Line 117: Port inoutMuxWb is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/Nano/Google Drive/PipeLine/StageID.v" Line 129: Port inoutAddBranch is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 117: Port inoutMuxWb is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/Nano/Desktop/PipeLine/StageID.v" Line 129: Port inoutAddBranch is not connected to this instance
 Completed static elaboration
-Fuse Memory Usage: 105008 KB
-Fuse CPU Usage: 1169 ms
+Fuse Memory Usage: 105648 KB
+Fuse CPU Usage: 1123 ms
 Compiling module Pc
 Compiling module addPc
 Compiling module InstructionMem
@@ -70,7 +71,12 @@ Compiling module AluEX
 Compiling module EX_MEM_Latch
 Compiling module StageEX
 Compiling module StoreWordDividerMEM
-Compiling module DataMemoryMEM
+Compiling module IPCoreAdapter
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module DataMemory
 Compiling module LoadWordDividerMEM
 Compiling module MEM_WB_Latch
 Compiling module StageMEM
@@ -82,8 +88,8 @@ Compiling module pipeline
 Compiling module Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 18 sub-compilation(s) to finish...
-Compiled 36 Verilog Units
-Built simulation executable C:/Users/Nano/Google Drive/PipeLine/Test_isim_beh.exe
-Fuse Memory Usage: 109600 KB
-Fuse CPU Usage: 1825 ms
+Waiting for 30 sub-compilation(s) to finish...
+Compiled 41 Verilog Units
+Built simulation executable C:/Users/Nano/Desktop/PipeLine/Test_isim_beh.exe
+Fuse Memory Usage: 111968 KB
+Fuse CPU Usage: 1762 ms

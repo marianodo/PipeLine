@@ -21,11 +21,11 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Google Drive/PipeLine/InstDecode.v";
+static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/InstDecode.v";
 static int ng1[] = {0, 0};
-static int ng2[] = {3, 0};
-static int ng3[] = {1, 0};
-static int ng4[] = {2, 0};
+static int ng2[] = {1, 0};
+static int ng3[] = {2, 0};
+static int ng4[] = {3, 0};
 static int ng5[] = {4, 0};
 static int ng6[] = {5, 0};
 static int ng7[] = {6, 0};
@@ -101,7 +101,7 @@ LAB4:    xsi_set_current_line(32, ng0);
     t8 = (t0 + 1380);
     t9 = (t8 + 40U);
     t10 = *((char **)t9);
-    t11 = ((char*)((ng3)));
+    t11 = ((char*)((ng2)));
     xsi_vlog_generic_convert_array_indices(t3, t4, t7, t10, 2, 1, t11, 32, 1);
     t12 = (t3 + 4);
     t13 = *((unsigned int *)t12);
@@ -114,7 +114,7 @@ LAB4:    xsi_set_current_line(32, ng0);
         goto LAB5;
 
 LAB6:    xsi_set_current_line(33, ng0);
-    t1 = ((char*)((ng2)));
+    t1 = ((char*)((ng3)));
     t2 = (t0 + 1380);
     t5 = (t0 + 1380);
     t6 = (t5 + 44U);
@@ -122,7 +122,7 @@ LAB6:    xsi_set_current_line(33, ng0);
     t8 = (t0 + 1380);
     t9 = (t8 + 40U);
     t10 = *((char **)t9);
-    t11 = ((char*)((ng4)));
+    t11 = ((char*)((ng3)));
     xsi_vlog_generic_convert_array_indices(t3, t4, t7, t10, 2, 1, t11, 32, 1);
     t12 = (t3 + 4);
     t13 = *((unsigned int *)t12);
@@ -143,7 +143,7 @@ LAB8:    xsi_set_current_line(34, ng0);
     t8 = (t0 + 1380);
     t9 = (t8 + 40U);
     t10 = *((char **)t9);
-    t11 = ((char*)((ng2)));
+    t11 = ((char*)((ng4)));
     xsi_vlog_generic_convert_array_indices(t3, t4, t7, t10, 2, 1, t11, 32, 1);
     t12 = (t3 + 4);
     t13 = *((unsigned int *)t12);
@@ -156,7 +156,7 @@ LAB8:    xsi_set_current_line(34, ng0);
         goto LAB9;
 
 LAB10:    xsi_set_current_line(35, ng0);
-    t1 = ((char*)((ng3)));
+    t1 = ((char*)((ng2)));
     t2 = (t0 + 1380);
     t5 = (t0 + 1380);
     t6 = (t5 + 44U);
@@ -324,7 +324,7 @@ LAB24:    xsi_set_current_line(42, ng0);
         goto LAB25;
 
 LAB26:    xsi_set_current_line(43, ng0);
-    t1 = ((char*)((ng2)));
+    t1 = ((char*)((ng4)));
     t2 = (t0 + 1380);
     t5 = (t0 + 1380);
     t6 = (t5 + 44U);
@@ -603,7 +603,7 @@ LAB4:    xsi_set_current_line(54, ng0);
 LAB5:    xsi_set_current_line(60, ng0);
     t4 = (t0 + 876U);
     t5 = *((char **)t4);
-    t4 = ((char*)((ng3)));
+    t4 = ((char*)((ng2)));
     memset(t6, 0, 8);
     t7 = (t5 + 4);
     t8 = (t4 + 4);

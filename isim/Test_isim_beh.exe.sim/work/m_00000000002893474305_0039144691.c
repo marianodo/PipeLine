@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Nano/Google Drive/PipeLine/MuxDataB_ALU.v";
+static const char *ng0 = "C:/Users/Nano/Desktop/PipeLine/MuxDataB_ALU.v";
 
 
 
