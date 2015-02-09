@@ -1,5 +1,6 @@
 verilog work "WordDividerMEM.v"
 verilog work "UartTx.v"
+verilog work "UartRx.v"
 verilog work "StoreWordDividerMEM.v"
 verilog work "SignExtend.v"
 verilog work "ShiftIF.v"

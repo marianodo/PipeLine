@@ -30,7 +30,7 @@ module InstDecode(
 reg [31:0] register[0:15];
 initial
 begin
-	register[0] <= 32'b100011_00000_00001_01100_01000_010101;
+	register[0] <= 32'b01000001010000100100001111000010;
 	register[1] <= 1;
 	register[2] <= 2;
 	register[3] <= 3;

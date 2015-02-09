@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.35 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.36 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Reading design: pipeline.prj
 
@@ -112,6 +112,8 @@ Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\WordDividerMEM.v" into li
 Parsing module <LoadWordDividerMEM>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\UartTx.v" into library work
 Parsing module <UartTx>.
+Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\UartRx.v" into library work
+Parsing module <UartRx>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StoreWordDividerMEM.v" into library work
 Parsing module <StoreWordDividerMEM>.
 Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\SignExtend.v" into library work
@@ -190,7 +192,6 @@ Parsing module <pipeline>.
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 119: Port inoutMuxWb is not connected to this instance
 
 Elaborating module <pipeline>.
 
@@ -269,30 +270,25 @@ Elaborating module <ForwardingUnit>.
 Elaborating module <HazardDetectionUnit>.
 
 Elaborating module <DebugUnit>.
-WARNING:HDLCompiler:872 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 47: Using initial value of reset since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 52: Using initial value of reset since it is never assigned
 
 Elaborating module <BaudGenerator(M=163,N=8)>.
 WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\BaudGenerator.v" Line 26: Result of 32-bit expression is truncated to fit in 8-bit target.
 
-Elaborating module <Fifo>.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 39: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 43: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 45: Signal <inRegistro0> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 47: Signal <inRegistro0> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 49: Signal <inRegistro0> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 51: Signal <inRegistro0> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 53: Signal <count> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 53: Result of 4-bit expression is truncated to fit in 3-bit target.
+Elaborating module <UartRx(DBIT=8,SB_TICK=16)>.
+
+Elaborating module <Fifo(B=8)>.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 16: Net <array_reg[190][7]> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 90: Assignment to fifo_data_rd ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 93: Size mismatch in connection of port <current_pc>. Formal port size is 8-bit while actual signal size is 1-bit.
 
 Elaborating module <UartTx(DBIT=8,SB_TICK=16)>.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\UartTx.v" Line 80: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\UartTx.v" Line 93: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\UartTx.v" Line 96: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\UartTx.v" Line 108: Result of 5-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 73: Assignment to tx_done_tick ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 32: Net <sa[4]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 53: Net <zeroAluLatch> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 201: Net <BranchEx> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 110: Assignment to tx_fifo_not_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 93: Net <current_pc> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 34: Net <sa[4]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 55: Net <zeroAluLatch> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 203: Net <BranchEx> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84. All outputs of instance <callFifo> of block <Fifo> are unconnected in block <DebugUnit>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -300,7 +296,6 @@ WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 201: 
 
 Synthesizing Unit <pipeline>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\pipeline.v".
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" line 119: Output port <inoutMuxWb> of the instance <callStageEX> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sa> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <zeroAluLatch> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <BranchEx> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -978,7 +973,6 @@ Unit <ID_EX_Latch> synthesized.
 Synthesizing Unit <StageEX>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\StageEX.v".
 WARNING:Xst:647 - Input <inPc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <inoutMuxWb> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <StageEX> synthesized.
@@ -1207,7 +1201,7 @@ Synthesizing Unit <MEM_WB_Latch>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\MEM_WB_Latch.v".
     Found 32-bit register for signal <outAluLatch>.
     Found 5-bit register for signal <outMuxRtRd>.
-    Found 1-bit register for signal <outRegWritetmp>.
+    Found 1-bit register for signal <outRegWrite>.
     Found 2-bit register for signal <outMemtoRegtmp>.
     Found 32-bit register for signal <outLoadWordDividerMEM>.
     Summary:
@@ -1253,8 +1247,12 @@ Synthesizing Unit <DebugUnit>.
         DVSR = 163
         DVSR_BIT = 8
         FIFO_W = 2
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 51: Output port <q> of the instance <callBaudGenerator> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 66: Output port <tx_done_tick> of the instance <callUartTx> is unconnected or connected to loadless signal.
+WARNING:Xst:647 - Input <inPc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 60: Output port <q> of the instance <callBaudGenerator> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <r_data> of the instance <callFifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <full> of the instance <callFifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <empty> of the instance <callFifo> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <current_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <DebugUnit> synthesized.
@@ -1270,33 +1268,24 @@ Synthesizing Unit <BaudGenerator>.
 	inferred   8 D-type flip-flop(s).
 Unit <BaudGenerator> synthesized.
 
-Synthesizing Unit <Fifo>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\Fifo.v".
-WARNING:Xst:647 - Input <inPc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 3-bit adder for signal <count[2]_GND_585_o_add_7_OUT> created at line 53.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0045> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0054> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0063> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0072> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0081> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0091> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0100> created at line 43.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0109> created at line 43.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <tmpArray<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 3-bit comparator greater for signal <tmpWE> created at line 39
+Synthesizing Unit <UartRx>.
+    Related source file is "C:\Users\Nano\Desktop\PipeLine\UartRx.v".
+        DBIT = 8
+        SB_TICK = 16
+    Found 4-bit register for signal <s_reg>.
+    Found 3-bit register for signal <n_reg>.
+    Found 8-bit register for signal <b_reg>.
+    Found 2-bit register for signal <state_reg>.
+    Found 3-bit adder for signal <n_reg[2]_GND_585_o_add_17_OUT> created at line 81.
+    Found 4-bit adder for signal <s_reg[3]_GND_585_o_add_30_OUT> created at line 102.
+    Found 2-bit 4-to-1 multiplexer for signal <state_next> created at line 48.
+    Found 4-bit 4-to-1 multiplexer for signal <s_next> created at line 48.
+    HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <state_reg> would allow inference of a finite state machine and as consequence better performance and smaller area.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred   8 Latch(s).
-	inferred   1 Comparator(s).
-	inferred   9 Multiplexer(s).
-Unit <Fifo> synthesized.
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred  20 Multiplexer(s).
+Unit <UartRx> synthesized.
 
 Synthesizing Unit <UartTx>.
     Related source file is "C:\Users\Nano\Desktop\PipeLine\UartTx.v".
@@ -1305,12 +1294,12 @@ Synthesizing Unit <UartTx>.
     Found 4-bit register for signal <s_reg>.
     Found 3-bit register for signal <n_reg>.
     Found 8-bit register for signal <b_reg>.
-    Found 2-bit register for signal <state_reg>.
     Found 1-bit register for signal <tx_reg>.
-    Found 3-bit adder for signal <n_reg[2]_GND_594_o_add_17_OUT> created at line 93.
-    Found 4-bit adder for signal <s_reg[3]_GND_594_o_add_30_OUT> created at line 108.
-    Found 2-bit 4-to-1 multiplexer for signal <state_next> created at line 58.
-    Found 4-bit 4-to-1 multiplexer for signal <s_next> created at line 58.
+    Found 2-bit register for signal <state_reg>.
+    Found 3-bit adder for signal <n_reg[2]_GND_587_o_add_18_OUT> created at line 93.
+    Found 4-bit adder for signal <s_reg[3]_GND_587_o_add_31_OUT> created at line 117.
+    Found 2-bit 4-to-1 multiplexer for signal <state_next> created at line 51.
+    Found 4-bit 4-to-1 multiplexer for signal <s_next> created at line 51.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <state_reg> would allow inference of a finite state machine and as consequence better performance and smaller area.
     Summary:
 	inferred   2 Adder/Subtractor(s).
@@ -1326,7 +1315,7 @@ Macro Statistics
  32x32-bit single-port Read Only RAM                   : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 73
+# Adders/Subtractors                                   : 74
  3-bit adder                                           : 2
  32-bit adder                                          : 3
  32-bit subtractor                                     : 2
@@ -1337,7 +1326,7 @@ Macro Statistics
  37-bit adder                                          : 2
  38-bit adder                                          : 2
  39-bit adder                                          : 2
- 4-bit adder                                           : 1
+ 4-bit adder                                           : 2
  40-bit adder                                          : 2
  41-bit adder                                          : 2
  42-bit adder                                          : 2
@@ -1364,19 +1353,18 @@ Macro Statistics
  63-bit adder                                          : 2
  64-bit adder                                          : 2
  9-bit adder                                           : 1
-# Registers                                            : 41
+# Registers                                            : 45
  1-bit register                                        : 11
- 2-bit register                                        : 7
- 3-bit register                                        : 3
+ 2-bit register                                        : 8
+ 3-bit register                                        : 4
  32-bit register                                       : 11
- 4-bit register                                        : 1
+ 4-bit register                                        : 2
  5-bit register                                        : 5
  6-bit register                                        : 1
- 8-bit register                                        : 2
-# Latches                                              : 552
- 1-bit latch                                           : 552
-# Comparators                                          : 44
- 3-bit comparator greater                              : 1
+ 8-bit register                                        : 3
+# Latches                                              : 544
+ 1-bit latch                                           : 544
+# Comparators                                          : 43
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 1
@@ -1414,19 +1402,18 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1098
- 1-bit 2-to-1 multiplexer                              : 1018
- 1-bit 4-to-1 multiplexer                              : 8
- 2-bit 2-to-1 multiplexer                              : 18
- 2-bit 4-to-1 multiplexer                              : 1
+# Multiplexers                                         : 1109
+ 1-bit 2-to-1 multiplexer                              : 1020
+ 2-bit 2-to-1 multiplexer                              : 26
+ 2-bit 4-to-1 multiplexer                              : 2
  3-bit 2-to-1 multiplexer                              : 3
  32-bit 16-to-1 multiplexer                            : 2
  32-bit 2-to-1 multiplexer                             : 31
  32-bit 27-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
  32-bit 6-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 6
- 4-bit 4-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 13
+ 4-bit 4-to-1 multiplexer                              : 2
  5-bit 4-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 1
@@ -1464,6 +1451,10 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_memory> will be implemented on LUTs 
     -----------------------------------------------------------------------
 Unit <InstructionMem> synthesized (advanced).
 
+Synthesizing (advanced) Unit <UartRx>.
+The following registers are absorbed into counter <n_reg>: 1 register on signal <n_reg>.
+Unit <UartRx> synthesized (advanced).
+
 Synthesizing (advanced) Unit <UartTx>.
 The following registers are absorbed into counter <n_reg>: 1 register on signal <n_reg>.
 Unit <UartTx> synthesized (advanced).
@@ -1477,18 +1468,16 @@ Macro Statistics
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 39
- 3-bit adder                                           : 1
  32-bit adder                                          : 3
  32-bit adder carry in                                 : 32
  32-bit subtractor                                     : 2
- 4-bit adder                                           : 1
-# Counters                                             : 2
- 3-bit up counter                                      : 1
+ 4-bit adder                                           : 2
+# Counters                                             : 3
+ 3-bit up counter                                      : 2
  8-bit up counter                                      : 1
-# Registers                                            : 426
- Flip-Flops                                            : 426
-# Comparators                                          : 44
- 3-bit comparator greater                              : 1
+# Registers                                            : 440
+ Flip-Flops                                            : 440
+# Comparators                                          : 43
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
  32-bit comparator lessequal                           : 1
@@ -1526,19 +1515,18 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1561
- 1-bit 2-to-1 multiplexer                              : 1498
- 1-bit 4-to-1 multiplexer                              : 8
- 2-bit 2-to-1 multiplexer                              : 18
- 2-bit 4-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 2
+# Multiplexers                                         : 1571
+ 1-bit 2-to-1 multiplexer                              : 1500
+ 2-bit 2-to-1 multiplexer                              : 26
+ 2-bit 4-to-1 multiplexer                              : 2
+ 3-bit 2-to-1 multiplexer                              : 1
  32-bit 16-to-1 multiplexer                            : 2
  32-bit 2-to-1 multiplexer                             : 16
  32-bit 27-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
  32-bit 6-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 5
- 4-bit 4-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 12
+ 4-bit 4-to-1 multiplexer                              : 2
  5-bit 4-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 1
@@ -1555,9 +1543,6 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:2677 - Node <Mmult_n00823> of sequential type is unconnected in block <AluEX>.
-WARNING:Xst:2170 - Unit Fifo : the following signal(s) form a combinatorial loop: count[2]_GND_585_o_add_7_OUT<1>, Madd_count[2]_GND_585_o_add_7_OUT_cy<1>, count[2]_GND_585_o_add_7_OUT<2>, Madd_count[2]_GND_585_o_add_7_OUT_lut<2>, tmpWE, Madd_count[2]_GND_585_o_add_7_OUT_lut<1>.
-WARNING:Xst:2170 - Unit Fifo : the following signal(s) form a combinatorial loop: Madd_count[2]_GND_585_o_add_7_OUT_cy<0>.
-WARNING:Xst:2170 - Unit Fifo : the following signal(s) form a combinatorial loop: Madd_count[2]_GND_585_o_add_7_OUT_lut<2>.
 
 Optimizing unit <pipeline> ...
 
@@ -1623,9 +1608,9 @@ Optimizing unit <LoadWordDividerMEM> ...
 
 Optimizing unit <IPCoreAdapter> ...
 
-Optimizing unit <Fifo> ...
-
 Optimizing unit <BaudGenerator> ...
+
+Optimizing unit <UartRx> ...
 
 Optimizing unit <UartTx> ...
 
@@ -1636,59 +1621,32 @@ Optimizing unit <StageWB> ...
 Optimizing unit <ForwardingUnit> ...
 
 Optimizing unit <HazardDetectionUnit> ...
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_19> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_20> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_21> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_22> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_23> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_24> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_25> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_26> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_27> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_28> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_29> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_30> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_31> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRt_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRt_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRd_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_2> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outFunction_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <flagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Branch> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outMuxRtRd_4> (without init value) has a constant value of 0 in block <callEX_MEM_Latch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outflagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callEX_MEM_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outMuxRtRd_4> (without init value) has a constant value of 0 in block <callMEM_WB_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_1> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_4> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_6> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_7> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_8> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_9> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_10> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_15> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_19> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_20> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_22> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_23> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_24> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_25> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_28> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_30> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_6> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_7> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_8> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Branch> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <flagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outFunction_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_2> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRt_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outImmediateLatch_9> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_10> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_15> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_16> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_17> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_18> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_8> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_7> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_6> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_30> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_28> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_24> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_23> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_22> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_19> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_9> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_8> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_7> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_6> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_4> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_1> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1290 - Hierarchical block <callMuxDataA_ALU> is unconnected in block <callStageID>.
    It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <callMuxDataB_ALU> is unconnected in block <callStageID>.
@@ -1709,7 +1667,7 @@ WARNING:Xst:1290 - Hierarchical block <callEqualBranch> is unconnected in block 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block pipeline, actual ratio is 7.
-WARNING:Xst:2957 - There are clock and non-clock loads on clock signal callStageMEM/callMEM_WB_Latch/outRegWritetmp_BUFG. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+WARNING:Xst:2957 - There are clock and non-clock loads on clock signal callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
 
 Final Macro Processing ...
 
@@ -1717,8 +1675,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 379
- Flip-Flops                                            : 379
+# Registers                                            : 423
+ Flip-Flops                                            : 423
 
 =========================================================================
 
@@ -1741,36 +1699,36 @@ Top Level Output File Name         : pipeline.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1524
+# BELS                             : 1566
 #      GND                         : 6
-#      INV                         : 5
+#      INV                         : 4
 #      LUT1                        : 37
-#      LUT2                        : 85
-#      LUT3                        : 70
-#      LUT4                        : 556
-#      LUT5                        : 127
-#      LUT6                        : 302
+#      LUT2                        : 83
+#      LUT3                        : 97
+#      LUT4                        : 546
+#      LUT5                        : 174
+#      LUT6                        : 281
 #      MUXCY                       : 69
-#      MUXF7                       : 128
+#      MUXF7                       : 130
 #      MUXF8                       : 64
 #      VCC                         : 3
 #      XORCY                       : 72
-# FlipFlops/Latches                : 931
-#      FD                          : 275
-#      FDE                         : 43
+# FlipFlops/Latches                : 967
+#      FD                          : 304
+#      FDE                         : 54
 #      FDE_1                       : 32
 #      FDR                         : 13
-#      FDRE                        : 16
+#      FDRE                        : 20
 #      LD                          : 32
-#      LDC                         : 8
 #      LDE                         : 512
 # RAMS                             : 1
 #      RAMB8BWER                   : 1
 # Clock Buffers                    : 3
 #      BUFG                        : 2
 #      BUFGP                       : 1
-# IO Buffers                       : 1
-#      OBUF                        : 1
+# IO Buffers                       : 11
+#      IBUF                        : 2
+#      OBUF                        : 9
 
 Device utilization summary:
 ---------------------------
@@ -1779,20 +1737,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             931  out of  18224     5%  
- Number of Slice LUTs:                 1182  out of   9112    12%  
-    Number used as Logic:              1182  out of   9112    12%  
+ Number of Slice Registers:             967  out of  18224     5%  
+ Number of Slice LUTs:                 1222  out of   9112    13%  
+    Number used as Logic:              1222  out of   9112    13%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2047
-   Number with an unused Flip Flop:    1116  out of   2047    54%  
-   Number with an unused LUT:           865  out of   2047    42%  
-   Number of fully used LUT-FF pairs:    66  out of   2047     3%  
-   Number of unique control sets:        29
+ Number of LUT Flip Flop pairs used:   2122
+   Number with an unused Flip Flop:    1155  out of   2122    54%  
+   Number with an unused LUT:           900  out of   2122    42%  
+   Number of fully used LUT-FF pairs:    67  out of   2122     3%  
+   Number of unique control sets:        31
 
 IO Utilization: 
- Number of IOs:                           2
- Number of bonded IOBs:                   2  out of    232     0%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     32     3%  
@@ -1817,18 +1775,13 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-------------------------------------------------------------------------------------------------------+-------------------------------------------+-------+
-Clock Signal                                                                                          | Clock buffer(FF name)                     | Load  |
-------------------------------------------------------------------------------------------------------+-------------------------------------------+-------+
-clk                                                                                                   | BUFGP                                     | 380   |
-callStageMEM/callMEM_WB_Latch/outRegWritetmp                                                          | BUFG                                      | 512   |
-callStageID/callID_EX_Latch/tmpAluop                                                                  | BUFG                                      | 32    |
-callDebugUnit/callFifo/Madd_count[2]_GND_585_o_add_7_OUT_lut<2>(callDebugUnit/callFifo/Mmux_count31:O)| NONE(*)(callDebugUnit/callFifo/tmpArray_7)| 8     |
-------------------------------------------------------------------------------------------------------+-------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------------+------------------------+-------+
+Clock Signal                             | Clock buffer(FF name)  | Load  |
+-----------------------------------------+------------------------+-------+
+clk                                      | BUFGP                  | 424   |
+callStageMEM/callMEM_WB_Latch/outRegWrite| BUFG                   | 512   |
+callStageID/callID_EX_Latch/tmpAluop     | BUFG                   | 32    |
+-----------------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1838,9 +1791,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 14.710ns (Maximum Frequency: 67.981MHz)
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 3.597ns
+   Minimum period: 16.214ns (Maximum Frequency: 61.676MHz)
+   Minimum input arrival time before clock: 3.401ns
+   Maximum output required time after clock: 3.634ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1849,25 +1802,26 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 14.710ns (frequency: 67.981MHz)
-  Total number of paths / destination ports: 13700 / 490
+  Clock period: 16.214ns (frequency: 61.676MHz)
+  Total number of paths / destination ports: 20191 / 548
 -------------------------------------------------------------------------
-Delay:               7.355ns (Levels of Logic = 10)
-  Source:            callStageIF/callIF_ID_Latch/outInstruction_21 (FF)
+Delay:               8.107ns (Levels of Logic = 11)
+  Source:            callStageIF/callIF_ID_Latch/outInstruction_17 (FF)
   Destination:       callStageIF/callPc/tmpPc_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk falling
 
-  Data Path: callStageIF/callIF_ID_Latch/outInstruction_21 to callStageIF/callPc/tmpPc_0
+  Data Path: callStageIF/callIF_ID_Latch/outInstruction_17 to callStageIF/callPc/tmpPc_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q           131   0.447   2.187  outInstruction_21 (outInstruction_21)
-     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<21>'
-     end scope: 'callStageIF:outInstructionLatch<21>'
-     begin scope: 'callHazardDetectionUnit:inIF_IDRs<0>'
-     LUT6:I3->O            1   0.205   0.684  outStall6_SW0 (N01)
-     LUT4:I2->O           92   0.203   1.825  outStall6 (outStall)
+     FDRE:C->Q           133   0.447   1.964  outInstruction_17 (outInstruction_17)
+     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<17>'
+     end scope: 'callStageIF:outInstructionLatch<17>'
+     begin scope: 'callHazardDetectionUnit:inIF_IDRt<1>'
+     LUT2:I1->O            2   0.205   0.617  outStall6 (outStall6)
+     LUT6:I5->O            1   0.205   0.808  outStall14_SW0 (N4)
+     LUT6:I3->O           96   0.205   1.851  outStall14 (outStall)
      end scope: 'callHazardDetectionUnit:outStall'
      begin scope: 'callStageID:inStall'
      begin scope: 'callStageID/callControlUnit:inStall'
@@ -1881,81 +1835,95 @@ Delay:               7.355ns (Levels of Logic = 10)
      begin scope: 'callStageIF/callPc:inPc<9>'
      FDE_1:D                   0.102          tmpPc_9
     ----------------------------------------
-    Total                      7.355ns (1.367ns logic, 5.988ns route)
-                                       (18.6% logic, 81.4% route)
+    Total                      8.107ns (1.574ns logic, 6.533ns route)
+                                       (19.4% logic, 80.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1 / 1
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 2)
-  Source:            callDebugUnit/callUartTx/tx_reg (FF)
-  Destination:       tx (PAD)
-  Source Clock:      clk rising
+Offset:              3.401ns (Levels of Logic = 4)
+  Source:            rx (PAD)
+  Destination:       callDebugUnit/callUartRx/state_reg_0 (FF)
+  Destination Clock: clk rising
 
-  Data Path: callDebugUnit/callUartTx/tx_reg to tx
+  Data Path: rx to callDebugUnit/callUartRx/state_reg_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.447   0.579  tx_reg (tx_reg)
-     end scope: 'callDebugUnit/callUartTx:tx'
-     end scope: 'callDebugUnit:tx'
-     OBUF:I->O                 2.571          tx_OBUF (tx)
+     IBUF:I->O             6   1.222   0.745  rx_IBUF (rx_IBUF)
+     begin scope: 'callDebugUnit:rx'
+     begin scope: 'callDebugUnit/callUartRx:rx'
+     LUT5:I4->O            1   0.205   0.924  Mmux_state_next1_SW0 (N01)
+     LUT5:I0->O            1   0.203   0.000  Mmux_state_next1 (state_next<0>)
+     FD:D                      0.102          state_reg_0
     ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      3.401ns (1.732ns logic, 1.669ns route)
+                                       (50.9% logic, 49.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              3.634ns (Levels of Logic = 2)
+  Source:            callDebugUnit/callUartRx/b_reg_7 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: callDebugUnit/callUartRx/b_reg_7 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.447   0.616  b_reg_7 (b_reg_7)
+     end scope: 'callDebugUnit/callUartRx:dout<7>'
+     end scope: 'callDebugUnit:rx_data_out_debug<7>'
+     OBUF:I->O                 2.571          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock callDebugUnit/callFifo/Madd_count[2]_GND_585_o_add_7_OUT_lut<2>
---------------------------------------------+---------+---------+---------+---------+
-                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------+---------+---------+---------+---------+
-callStageMEM/callMEM_WB_Latch/outRegWritetmp|         |    1.602|         |         |
---------------------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock callStageID/callID_EX_Latch/tmpAluop
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.280|         |         |         |
+clk            |    8.436|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock callStageMEM/callMEM_WB_Latch/outRegWritetmp
+Clock to Setup on destination clock callStageMEM/callMEM_WB_Latch/outRegWrite
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    3.930|         |
+clk            |         |         |    4.027|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
----------------------------------------------------------------+---------+---------+---------+---------+
-                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------------------------------------------------+---------+---------+---------+---------+
-callDebugUnit/callFifo/Madd_count[2]_GND_585_o_add_7_OUT_lut<2>|    1.487|         |         |         |
-callStageID/callID_EX_Latch/tmpAluop                           |    1.179|         |         |         |
-callStageMEM/callMEM_WB_Latch/outRegWritetmp                   |         |    2.989|         |         |
-clk                                                            |    6.200|    3.378|    7.355|         |
----------------------------------------------------------------+---------+---------+---------+---------+
+-----------------------------------------+---------+---------+---------+---------+
+                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------+---------+---------+---------+---------+
+callStageID/callID_EX_Latch/tmpAluop     |    1.179|         |         |         |
+callStageMEM/callMEM_WB_Latch/outRegWrite|         |    2.989|         |         |
+clk                                      |    6.952|    3.378|    8.107|         |
+-----------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 90.00 secs
-Total CPU time to Xst completion: 89.95 secs
+Total REAL time to Xst completion: 109.00 secs
+Total CPU time to Xst completion: 109.13 secs
  
 --> 
 
-Total memory usage is 249936 kilobytes
+Total memory usage is 218000 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  663 (   0 filtered)
+Number of warnings :  617 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

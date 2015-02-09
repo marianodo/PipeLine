@@ -28,7 +28,7 @@ module StageEX(
 	input [4:0] inRegRt,inRegRd,sa,
 	
 	output outMemRead,outMemWrite,outRegWrite,
-	output [31:0] outAlu,outDataRt,inoutMuxWb,
+	output [31:0] outAlu,outDataRt,
 	output [4:0] outMuxRtRd,
    output [1:0] outMemtoReg, outflagStoreWordDividerMEM,
 	output [2:0] outflagLoadWordDividerMEM

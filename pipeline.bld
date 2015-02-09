@@ -17,24 +17,6 @@ Done...
 
 Checking expanded design ...
 WARNING:NgdBuild:452 - logical net 'ALUOpId<1>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<31>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<30>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<29>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<28>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<27>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<26>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<25>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<24>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<23>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<22>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<21>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<20>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<19>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<18>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<17>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<16>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<15>' has no driver
-WARNING:NgdBuild:452 - logical net 'outImmediate<10>' has no driver
 WARNING:NgdBuild:452 - logical net 'outImmediate<9>' has no driver
 WARNING:NgdBuild:452 - logical net 'outImmediate<8>' has no driver
 WARNING:NgdBuild:452 - logical net 'outImmediate<7>' has no driver
@@ -73,10 +55,7 @@ WARNING:NgdBuild:452 - logical net 'outAddId<3>' has no driver
 WARNING:NgdBuild:452 - logical net 'outAddId<2>' has no driver
 WARNING:NgdBuild:452 - logical net 'outAddId<1>' has no driver
 WARNING:NgdBuild:452 - logical net 'outAddId<0>' has no driver
-WARNING:NgdBuild:452 - logical net 'outRegRt<4>' has no driver
 WARNING:NgdBuild:452 - logical net 'outRegRt<3>' has no driver
-WARNING:NgdBuild:452 - logical net 'outRegRd<4>' has no driver
-WARNING:NgdBuild:452 - logical net 'outRegRs<4>' has no driver
 WARNING:NgdBuild:452 - logical net 'outRegRs<3>' has no driver
 WARNING:NgdBuild:452 - logical net 'outRegRs<2>' has no driver
 WARNING:NgdBuild:452 - logical net 'outRegRs<1>' has no driver
@@ -88,26 +67,16 @@ WARNING:NgdBuild:452 - logical net 'FunctionId<1>' has no driver
 WARNING:NgdBuild:452 - logical net 'FunctionId<0>' has no driver
 WARNING:NgdBuild:452 - logical net 'BranchId' has no driver
 WARNING:NgdBuild:452 - logical net 'PCSrc' has no driver
-WARNING:NgdBuild:452 - logical net 'outMuxRtRd<4>' has no driver
 WARNING:NgdBuild:452 - logical net 'flagLoadWordDividerMEMEx<0>' has no driver
-WARNING:NgdBuild:452 - logical net 'WriteReg<4>' has no driver
 WARNING:NgdBuild:452 - logical net 'ForwardAD' has no driver
 WARNING:NgdBuild:452 - logical net 'ForwardBD' has no driver
-WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<25>' has no
-   driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<24>' has no
    driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<23>' has no
    driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<22>' has no
    driver
-WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<20>' has no
-   driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<19>' has no
-   driver
-WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<15>' has no
-   driver
-WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<10>' has no
    driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<9>' has no driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outInstruction<8>' has no driver
@@ -133,12 +102,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  99
+  Number of warnings:  72
 
-Total memory usage is 125264 kilobytes
+Total memory usage is 125776 kilobytes
 
 Writing NGD file "pipeline.ngd" ...
-Total REAL time to NGDBUILD completion:  12 sec
-Total CPU time to NGDBUILD completion:   12 sec
+Total REAL time to NGDBUILD completion:  22 sec
+Total CPU time to NGDBUILD completion:   14 sec
 
 Writing NGDBUILD log file "pipeline.bld"...

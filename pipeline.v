@@ -20,8 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
 input clk,
-
-output tx 
+input btn,
+input rx,
+output tx,
+output [7:0] led
   );
 
 // s i g n a l s
@@ -216,9 +218,10 @@ wire [31:0]  Registro0;
 	 //////////
 	 .clk(clk),
 	 .inPc(PostPc),
+	 .btn(btn),
+	 .rx(rx),
 	 
-	 
-	 
+	 .rx_data_out_debug(led),
 	 .tx(tx)
 	 );
 endmodule

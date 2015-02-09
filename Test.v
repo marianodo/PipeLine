@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:12:29 02/05/2015
+// Create Date:   11:04:46 02/06/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -27,78 +27,61 @@ module Test;
 	// Inputs
 	reg clk;
 	reg btn;
+	reg rx;
 
 	// Outputs
 	wire tx;
+	wire [7:0] led;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipeline uut (
 		.clk(clk), 
 		.btn(btn), 
-		.tx(tx)
+		.rx(rx), 
+		.tx(tx), 
+		.led(led)
 	);
 
 	initial begin
+		// Initialize Inputs
 		clk = 0;
-#100;      
-clk = 1;
-#100;
-        
-// clock 2
-clk = 0;
-#100;      
-clk = 1;
-#100;
+		rx = 1;
+		btn = 1;
+		// Wait 100 ns for global reset to finish
+		#10000;
+		// Bit de start  ---- ENVIO UNA C
+//		rx = 0;
+		
+		#104640;
+		btn = 0;
+//		rx = 1;
+		#104640;
+		btn = 1;
+//		rx = 1;
+//		#104640;
+//		rx = 0;
+//		#104640;
+//		rx = 0;
+//		#104640;
+//		rx = 0;
+//		#104640;
+//		rx = 0;
+//		#104640;
+//		rx = 1;
+//		#104640;
+//		rx = 0;
+//		
+//		// Bit stop
+//		#104640;
+//		rx = 1;
+		
+	
 
-// clock 3
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 4
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 5
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 6
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 7
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-	end
+	
+   end
+	always
+		#5 clk = ~clk;
+	
       
 endmodule
 
