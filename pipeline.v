@@ -23,9 +23,7 @@ input clk100,
 input btn,
 input rx,
 output tx,
-output [7:0] led,
-output [3:0] an,
-output sseg
+output [7:0] led
   );
 
 // s i g n a l s
@@ -60,8 +58,40 @@ wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
-wire clk;
+wire clk, enable;
+//Registros hacia el Debug Unit/////
 wire [31:0]  Registro0;
+wire [31:0]  Registro1;
+wire [31:0]  Registro2;
+wire [31:0]  Registro3;
+wire [31:0]  Registro4;
+wire [31:0]  Registro5;
+wire [31:0]  Registro6;
+wire [31:0]  Registro7;
+wire [31:0]  Registro8;
+wire [31:0]  Registro9;
+wire [31:0]  Registro10;
+wire [31:0]  Registro11;
+wire [31:0]  Registro12;
+wire [31:0]  Registro13;
+wire [31:0]  Registro14;
+wire [31:0]  Registro15;
+wire [31:0]  Registro16;
+wire [31:0]  Registro17;
+wire [31:0]  Registro18;
+wire [31:0]  Registro19;
+wire [31:0]  Registro20;
+wire [31:0]  Registro21;
+wire [31:0]  Registro22;
+wire [31:0]  Registro23;
+wire [31:0]  Registro24;
+wire [31:0]  Registro25;
+wire [31:0]  Registro26;
+wire [31:0]  Registro27;
+wire [31:0]  Registro28;
+wire [31:0]  Registro29;
+wire [31:0]  Registro30;
+wire [31:0]  Registro31;
 // i n s t a n t i a t i o n s
 
 	Clock10Mhz callClock10Mhz
@@ -78,6 +108,7 @@ wire [31:0]  Registro0;
 	.inPCWrite(PCWrite), //entrada que viene del hazard detection
 	.inIF_IDWrite(IF_IDWrite),// entrada que viene del hazard detection
 	.inIF_Flush(IF_Flush), // entrada que viene del hazard detection
+	.enable(enable),
 	
 	.outInstructionLatch(instruction),
 	.outPostPc(PostPc) //PostPc es la salida del latch IF/ID
@@ -100,6 +131,7 @@ wire [31:0]  Registro0;
 	.AluOut_EX_MEM(outAluLatchEx), //Entrada que es salida de la alu
 	.ForwardAD(ForwardAD), // Entrada que es salida del forward unit, elige si usar entre un dato o la ALU
 	.ForwardBD(ForwardBD),
+	.enable(enable),
 	
 	.outAddBranch(outAddId),
 	.outPcLatch(outPcLatch),
@@ -123,7 +155,38 @@ wire [31:0]  Registro0;
 	.outRegRs(outRegRs),
 	.PCSrc(PCSrc),
 	////////////Salida de los Registros hacia la UART
-	.Registro0(Registro0)
+	.Registro0(Registro0),
+	.Registro1(Registro1), 
+	.Registro2(Registro2), 
+	.Registro3(Registro3), 
+	.Registro4(Registro4), 
+	.Registro5(Registro5), 
+	.Registro6(Registro6), 
+	.Registro7(Registro7), 
+	.Registro8(Registro8), 
+	.Registro9(Registro9), 
+	.Registro10(Registro10), 
+	.Registro11(Registro11), 
+	.Registro12(Registro12), 
+	.Registro13(Registro13), 
+	.Registro14(Registro14), 
+	.Registro15(Registro15), 
+	.Registro16(Registro16), 
+	.Registro17(Registro17), 
+	.Registro18(Registro18), 
+	.Registro19(Registro19), 
+	.Registro20(Registro20), 
+	.Registro21(Registro21), 
+	.Registro22(Registro22), 
+	.Registro23(Registro23), 
+	.Registro24(Registro24), 
+	.Registro25(Registro25), 
+	.Registro26(Registro26), 
+	.Registro27(Registro27), 
+	.Registro28(Registro28), 
+	.Registro29(Registro29), 
+	.Registro30(Registro30), 
+	.Registro31(Registro31)
 	);
 	
 	StageEX callStageEX(
@@ -149,6 +212,7 @@ wire [31:0]  Registro0;
 	.inForwardB(forwardB),//Entrada a los nuevos mux que elige entre el corto circuito o el instdecode
 	.inOutMuxWb(outMuxWb), //Entrada a los nuevos mux que es salida del muxwb del writeback
 	.inEX_Flush(EX_Flush), 
+	.enable(enable),
 	
 	.outAlu(outAluLatchEx), //Salida resultado
 	.outDataRt(dataRtEx),
@@ -172,6 +236,7 @@ wire [31:0]  Registro0;
 	.inMemtoReg(MemtoRegEx),
 	.inRegWrite(RegWriteEx),
 	.inMuxRtRd(outMuxRtRd),
+	.enable(enable),
 	
 	.outLoadWordDividerMEM(readDataMem), //Salida del data mem, que va a ser entrada del MUX
 	.outAluLatch(outAluLatchMem), //Sale del alu para entrar al ultimo MUX del stage WB
@@ -220,19 +285,55 @@ wire [31:0]  Registro0;
 	.outStall(Stall) //Poner CEROS en todas las señales de control
     );
 	 
-	 DebugUnit callDebugUnit(
-	 ////Enrtada de los Registros hacia la Uart
-	 .inRegistro0(Registro0),
-	 //////////
-	 .clk(clk),
-	 .inPc(PostPc),
-	 .btn(btn),
-	 .rx(rx),
-	 
-	 .rx_data_out_debug(led),
-	 .outStep(sseg),
-	 .tx(tx)
-	 );
-	 
-assign an = 4'b1110;
+	reg reset = 0;
+	reg [7:0] dato;
+	wire [7:0] led1;
+	
+	 DebugUnit callDebugUnit (
+   .clk(clk), 
+   .rx(rx), 
+     
+   .tx(tx), 
+   .rx_data_out(led),
+	.enable(enable),
+	
+//Entrada de los registros hacia el debug	
+	.Registro0(Registro0), 
+	.Registro1(Registro1), 
+	.Registro2(Registro2), 
+	.Registro3(Registro3), 
+	.Registro4(Registro4), 
+	.Registro5(Registro5), 
+	.Registro6(Registro6), 
+	.Registro7(Registro7), 
+	.Registro8(Registro8), 
+	.Registro9(Registro9), 
+	.Registro10(Registro10), 
+	.Registro11(Registro11), 
+	.Registro12(Registro12), 
+	.Registro13(Registro13), 
+	.Registro14(Registro14), 
+	.Registro15(Registro15), 
+	.Registro16(Registro16), 
+	.Registro17(Registro17), 
+	.Registro18(Registro18), 
+	.Registro19(Registro19), 
+	.Registro20(Registro20), 
+	.Registro21(Registro21), 
+	.Registro22(Registro22), 
+	.Registro23(Registro23), 
+	.Registro24(Registro24), 
+	.Registro25(Registro25), 
+	.Registro26(Registro26), 
+	.Registro27(Registro27), 
+	.Registro28(Registro28), 
+	.Registro29(Registro29), 
+	.Registro30(Registro30), 
+	.Registro31(Registro31)
+    );
+
+
+
+
+
 endmodule

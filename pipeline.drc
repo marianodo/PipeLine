@@ -1,11 +1,8 @@
 Release 14.7 Drc P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Feb 09 18:08:24 2015
+Wed Feb 11 18:09:53 2015
 
 drc -z pipeline.ncd pipeline.pcf
 
-INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
-   with the CLKFX and CLKFX180 outputs of the DCM comp
-   callClock10Mhz/dcm_sp_inst, consult the device Data Sheet.
 DRC detected 0 errors and 0 warnings.

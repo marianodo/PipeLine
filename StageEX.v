@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageEX(
 	input clk,
-	input MemRead,MemWrite,ALUSrc,RegWrite,inEX_Flush,
+	input MemRead,MemWrite,ALUSrc,RegWrite,inEX_Flush,enable,
 	input [1:0] RegDst,MemtoReg,ALUOp,inflagStoreWordDividerMEM,inForwardA,inForwardB,
 	input [2:0] inflagLoadWordDividerMEM,
 	input [5:0] instReg,
@@ -94,6 +94,7 @@ wire [4:0] outMuxRtRdTmp;
 	.inflagLoadWordDividerMEM(inflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(inflagStoreWordDividerMEM),
 	.inEX_Flush(inEX_Flush),
+	.enable(enable),
 	
 	.outAlu(outAlu),
 	.dataRt(outDataRt),

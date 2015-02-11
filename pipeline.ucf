@@ -12,9 +12,4 @@ NET "led[4]" LOC = M11;
 NET "led[5]" LOC = N11;
 NET "led[6]" LOC = R11;
 NET "led[7]" LOC = T11;
-NET "an[0]" LOC = N16;
-NET "an[1]" LOC = N15;
-NET "an[2]" LOC = P18;
-NET "an[3]" LOC = P17;
-NET "sseg" LOC = T17;
-PIN "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG.O" CLOCK_DEDICATED_ROUTE = FALSE;
+

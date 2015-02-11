@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageID(
-input clk, inRegWrite, inStall,ForwardAD,ForwardBD,
+input clk, inRegWrite, inStall,ForwardAD,ForwardBD,enable,
 input [4:0] rs,rt,rd,writeReg,
 input [5:0] opCode, inFunction,
 input [31:0] writeData, inPc,AluOut_EX_MEM,
@@ -34,7 +34,38 @@ output  [4:0] outRegRt,outRegRd,outRegRs,
 output  [5:0] Function,
 
 //Salida de los Registros hacia la Uart
-output [31:0] Registro0
+output  [31:0] Registro0,
+output  [31:0] Registro1,
+output  [31:0] Registro2,
+output  [31:0] Registro3,
+output  [31:0] Registro4,
+output  [31:0] Registro5,
+output  [31:0] Registro6,
+output  [31:0] Registro7,
+output  [31:0] Registro8,
+output  [31:0] Registro9,
+output  [31:0] Registro10,
+output  [31:0] Registro11,
+output  [31:0] Registro12,
+output  [31:0] Registro13,
+output  [31:0] Registro14,
+output  [31:0] Registro15,
+output  [31:0] Registro16,
+output  [31:0] Registro17,
+output  [31:0] Registro18,
+output  [31:0] Registro19,
+output  [31:0] Registro20,
+output  [31:0] Registro21,
+output  [31:0] Registro22,
+output  [31:0] Registro23,
+output  [31:0] Registro24,
+output  [31:0] Registro25,
+output  [31:0] Registro26,
+output  [31:0] Registro27,
+output  [31:0] Registro28,
+output  [31:0] Registro29,
+output  [31:0] Registro30,
+output  [31:0] Registro31
     );
 	 
 
@@ -83,7 +114,38 @@ wire [5:0] outFunction;
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt),
-		.Registro0(Registro0)
+		.Registro0(Registro0),
+		.Registro1(Registro1), 
+		.Registro2(Registro2), 
+		.Registro3(Registro3), 
+		.Registro4(Registro4), 
+		.Registro5(Registro5), 
+		.Registro6(Registro6), 
+		.Registro7(Registro7), 
+		.Registro8(Registro8), 
+		.Registro9(Registro9), 
+		.Registro10(Registro10), 
+		.Registro11(Registro11), 
+		.Registro12(Registro12), 
+		.Registro13(Registro13), 
+		.Registro14(Registro14), 
+		.Registro15(Registro15), 
+		.Registro16(Registro16), 
+		.Registro17(Registro17), 
+		.Registro18(Registro18), 
+		.Registro19(Registro19), 
+		.Registro20(Registro20), 
+		.Registro21(Registro21), 
+		.Registro22(Registro22), 
+		.Registro23(Registro23), 
+		.Registro24(Registro24), 
+		.Registro25(Registro25), 
+		.Registro26(Registro26), 
+		.Registro27(Registro27), 
+		.Registro28(Registro28), 
+		.Registro29(Registro29), 
+		.Registro30(Registro30), 
+		.Registro31(Registro31)
 		);
 		
 	MuxDataA_ALU callMuxDataA_ALU( //Mux entre la salida del dato A y la salida de la ALU
@@ -150,7 +212,7 @@ wire [5:0] outFunction;
 	.inflagLoadWordDividerMEM(outflagLoadWordDividerMEM),
 	.inflagStoreWordDividerMEM(outflagStoreWordDividerMEM),
 	.inoutFunction(outFunction),
-	
+	.enable(enable),
 	
 	.outPcLatch(outPcLatch),
 	.outDataRs(outDataRs),

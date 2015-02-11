@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+DebugUnit instance_name (
+    .clk(clk), 
+    .rd_uart(rd_uart), 
+    .wr_uart(wr_uart), 
+    .rx(rx), 
+    .inRegistro0(inRegistro0), 
+    .tx_full(tx_full), 
+    .tx(tx), 
+    .rx_data_out(rx_data_out)
+    );
+
+

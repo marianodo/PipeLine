@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Leo\Desktop\PipeLine\pipeline.ncd
-OUTFILE=C:\Users\Leo\Desktop\PipeLine\pipeline.bit
+INFILE=C:\Users\Nano\Desktop\PipeLine\pipeline.ncd
+OUTFILE=C:\Users\Nano\Desktop\PipeLine\pipeline.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=C:\Users\Leo\Desktop\PipeLine
+WORKINGDIR=C:\Users\Nano\Desktop\PipeLine
 LICENSE=WebPack
 USER_INFO=210930660_0_0_108

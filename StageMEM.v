@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageMEM(
 input [31:0] inMemAddress, inStoreWordDividerMEM,
-input MemWrite,MemRead, clk,inRegWrite,
+input MemWrite,MemRead, clk,inRegWrite,enable,
 input [1:0] flagStoreWordDividerMEM,inMemtoReg,
 input [2:0] flagLoadWordDividerMEM,
 input [4:0] inMuxRtRd,
@@ -85,6 +85,7 @@ wire clkNeg;
 	.inMemtoReg(inMemtoReg),
 	.inRegWrite(inRegWrite),
 	.clk(clk),
+	.enable(enable),
 	
 	.outLoadWordDividerMEM(outLoadWordDividerMEM),
 	.outAluLatch(outAluLatch),

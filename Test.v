@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:31:37 02/09/2015
+// Create Date:   12:57:48 02/11/2015
 // Design Name:   pipeline
-// Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
+// Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
 // Target Device:  
 // Tool versions:  
@@ -32,8 +32,6 @@ module Test;
 	// Outputs
 	wire tx;
 	wire [7:0] led;
-	wire [3:0] an;
-	wire sseg;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipeline uut (
@@ -41,13 +39,9 @@ module Test;
 		.btn(btn), 
 		.rx(rx), 
 		.tx(tx), 
-		.led(led), 
-		.an(an), 
-		.sseg(sseg)
+		.led(led)
 	);
 
-	
-	
 	initial begin
 		// Initialize Inputs
 		clk100 = 0;
@@ -58,11 +52,9 @@ module Test;
 		#100;
         
 		// Add stimulus here
-		
-		// Initialize Inputs
-		
 
 	end
-   always #5 clk100 = ~clk100;   
+      always
+		# 100 clk100 = ~ clk100;
 endmodule
 

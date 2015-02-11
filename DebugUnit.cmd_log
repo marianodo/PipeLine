@@ -1,0 +1,2 @@
+vhdtdtfi -lang verilog -prj PipeLine -o C:/Users/Nano/Desktop/PipeLine/DebugUnit.tfi -lib work C:/Users/Nano/Desktop/PipeLine//DebugUnit.v -module DebugUnit -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj PipeLine -o C:/Users/Nano/Desktop/PipeLine/DebugUnit.tfi -lib work C:/Users/Nano/Desktop/PipeLine//DebugUnit.v -module DebugUnit -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

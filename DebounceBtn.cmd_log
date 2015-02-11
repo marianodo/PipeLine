@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj PipeLine -o C:/Users/Nano/Desktop/PipeLine/DebounceBtn.tfi -lib work C:/Users/Nano/Desktop/PipeLine//DebounceBtn.v -module DebounceBtn -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

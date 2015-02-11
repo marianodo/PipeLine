@@ -24,16 +24,26 @@ input [7:0] inDato,
 output outStep
     );
 reg tmp = 0;
-
-always @(negedge clk)
+reg flag = 1;
+reg [2:0] count = 0;
+always @(posedge clk)
   begin
       if (inDato == 8'b01110011)
 			begin
-				tmp = 1;
+				if(flag)
+					begin						
+						tmp = 1;
+						flag = 0;
+					end
+				else
+					begin
+						tmp = 0;
+					end
 			end
 		else
 			begin
 				tmp = 0;
+				flag = 1;
 			end
   end
   
