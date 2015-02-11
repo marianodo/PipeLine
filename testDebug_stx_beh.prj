@@ -1,0 +1,8 @@
+verilog isim_temp "UartTx.v"
+verilog isim_temp "UartRx.v"
+verilog isim_temp "StepModule.v"
+verilog isim_temp "Fifo.v"
+verilog isim_temp "BaudGenerator.v"
+verilog isim_temp "DebugUnit.v"
+verilog isim_temp "testDebug.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -24,7 +24,7 @@ module DebugUnit
       parameter DBIT = 8,     // # data bits
                 SB_TICK = 16, // # ticks for stop bits, 16/24/32
                               // for 1/1.5/2 stop bits
-                DVSR = 163,   // baud rate divisor
+                DVSR = 32,   // baud rate divisor
                               // DVSR = 50M/(16*baud rate)
                 DVSR_BIT = 8, // # bits of DVSR
                 FIFO_W = 2    // # addr bits of FIFO
@@ -36,7 +36,7 @@ module DebugUnit
 	 
 	 input [31:0] inRegistro0,inPc,
 	 output [7:0] rx_data_out_debug,
-    output  tx
+    output  tx,outStep
    );
 
    // signal declaration
@@ -56,11 +56,11 @@ module DebugUnit
 	
 	assign dato = inRegistro0[31:24];
    BaudGenerator #(
-	.M(DVSR), 
-	.N(DVSR_BIT)) callBaudGenerator(
+	.M(DVSR),
+	.N(DVSR_BIT)
+   )callBaudGenerator(
 		.clk(clk), 
 		.reset(reset), 
-		.q(), 
 		.max_tick(tick));
 		
 		
@@ -77,31 +77,36 @@ module DebugUnit
 	.dout(rx_data_out)
 	);
 		
-
+	StepModule callStepModule(
+	.clk(clk),
+	.inDato(rx_data_out), //tecla apretada
+	.outStep(outStep)
+	);
+	
 	Fifo #(
 	 .B(DBIT)
 	)
 	callFifo (
     .clk(clk), 
-    .rd(tx_done_tick), 
-    .wr(rx_done_tick), 
-    .full(), 
-    .empty(rx_empty), 
+    .rd(outStep),
+	 .register_0_id_out(inRegistro0),	
+    //.wr(rx_done_tick), 
+    //.full(), 
+    //.empty(rx_empty), 
     .r_data(fifo_data_rd),
-	 
+	 .flagTx(flagTx)
 	 //Debug signals for IF
-	 .current_pc(current_pc),
+	 //.current_pc(current_pc),
 	 //Debugging signals for ID
 	 
-	 .register_0_id_out(inRegistro0)
     
    );
 
    UartTx #(.DBIT(DBIT), .SB_TICK(SB_TICK)) callUartTx
       (.clk(clk),  
-		.tx_start(btn), //tiene que ser uno
+		.tx_start(flagTx), //tiene que ser uno
       .s_tick(tick), // se lo da el baud rate
-		.data_in(dato), //dato de entrada
+		.data_in(fifo_data_rd), //dato de entrada
 		
       .tx_done_tick(tx_done_tick), 
 		.tx(tx));

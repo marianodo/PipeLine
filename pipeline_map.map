@@ -11,7 +11,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Feb 06 17:17:06 2015
+Mapped Date    : Mon Feb 09 18:07:47 2015
 
 Mapping design into LUTs...
 Running directed packing...
@@ -20,198 +20,93 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 34 secs 
-Total CPU  time at the beginning of Placer: 21 secs 
+Total REAL time at the beginning of Placer: 7 secs 
+Total CPU  time at the beginning of Placer: 7 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:7afc0634) REAL time: 37 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:3555cfd0) REAL time: 8 secs 
 
 Phase 2.7  Design Feasibility Check
-WARNING:Place:1137 - This design is not guaranteed to be routable! This design
-   contains a global buffer instance,
-   <callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG>, driving the net,
-   <RegWriteMem>, that is driving the following (first 30) non-clock load pins.
-   < PIN: callForwardingUnit/Mmux_tmpB14.A3; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<352>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<353>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<372>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<373>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<381>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<374>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<354>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<375>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<382>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<361>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<376>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<383>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<377>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<355>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<378>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<356>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<379>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<357>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<380>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<358>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<359>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<360>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<362>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<363>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<364>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<365>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<366>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<367>1.A
-   5; >
-   < PIN:
-   callStageID/callInstDecode/register[0][31]_register[0][31]_mux_19_OUT<368>1.A
-   5; >
-   This is not a recommended design practice in Spartan-6 due to limitations in
-   the global routing that may cause excessive delay, skew or unroutable
-   situations.  It is recommended to only use a BUFG resource to drive clock
-   loads. Please pay extra attention to the timing and routing of this path to
-   ensure the design goals are met. This is normally an ERROR but the
-   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN
-   <callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG.O> allowing your design to
-   continue. This constraint disables all clock placer rules related to the
-   specified COMP.PIN.
-Phase 2.7  Design Feasibility Check (Checksum:7afc0634) REAL time: 38 secs 
+Phase 2.7  Design Feasibility Check (Checksum:3555cfd0) REAL time: 8 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:7afc0634) REAL time: 38 secs 
+Phase 3.31  Local Placement Optimization (Checksum:3555cfd0) REAL time: 8 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:1d62bbb) REAL time: 45 secs 
+(Checksum:9678cd8a) REAL time: 9 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:1d62bbb) REAL time: 45 secs 
+Phase 5.36  Local Placement Optimization (Checksum:9678cd8a) REAL time: 9 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:1d62bbb) REAL time: 45 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:9678cd8a) REAL time: 9 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:1d62bbb) REAL time: 46 secs 
+Phase 7.3  Local Placement Optimization (Checksum:9678cd8a) REAL time: 9 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:1d62bbb) REAL time: 46 secs 
+Phase 8.5  Local Placement Optimization (Checksum:9678cd8a) REAL time: 9 secs 
 
 Phase 9.8  Global Placement
+...
+................
 .......................
-....................................................................................................................................................................
-......................................................
-...........
-Phase 9.8  Global Placement (Checksum:cce6d08a) REAL time: 1 mins 4 secs 
+....
+Phase 9.8  Global Placement (Checksum:f4abaf97) REAL time: 9 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:cce6d08a) REAL time: 1 mins 4 secs 
+Phase 10.5  Local Placement Optimization (Checksum:f4abaf97) REAL time: 9 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:20a00bc7) REAL time: 1 mins 17 secs 
+Phase 11.18  Placement Optimization (Checksum:78fce6bf) REAL time: 10 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:20a00bc7) REAL time: 1 mins 17 secs 
+Phase 12.5  Local Placement Optimization (Checksum:78fce6bf) REAL time: 10 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:f54d89d8) REAL time: 1 mins 17 secs 
+Phase 13.34  Placement Validation (Checksum:783919f0) REAL time: 10 secs 
 
-Total REAL time to Placer completion: 1 mins 21 secs 
-Total CPU  time to Placer completion: 50 secs 
+Total REAL time to Placer completion: 10 secs 
+Total CPU  time to Placer completion: 10 secs 
 Running post-placement packing...
 Writing output files...
-WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
-   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
-   default, may be incorrect and should not be used.  For more information,
-   please reference Xilinx Answer Record 39999.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                   711 out of  18,224    3%
-    Number used as Flip Flops:                 423
-    Number used as Latches:                    288
+  Number of Slice Registers:                    35 out of  18,224    1%
+    Number used as Flip Flops:                  35
+    Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        679 out of   9,112    7%
-    Number used as logic:                      660 out of   9,112    7%
-      Number using O6 output only:             580
-      Number using O5 output only:              36
-      Number using O5 and O6:                   44
+  Number of Slice LUTs:                         34 out of   9,112    1%
+    Number used as logic:                       31 out of   9,112    1%
+      Number using O6 output only:              16
+      Number using O5 output only:               3
+      Number using O5 and O6:                   12
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:     19
-      Number with same-slice register load:     17
-      Number with same-slice carry load:         2
+    Number used exclusively as route-thrus:      3
+      Number with same-slice register load:      2
+      Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   299 out of   2,278   13%
-  Number of MUXCYs used:                        72 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:          941
-    Number with an unused Flip Flop:           265 out of     941   28%
-    Number with an unused LUT:                 262 out of     941   27%
-    Number of fully used LUT-FF pairs:         414 out of     941   43%
-    Number of unique control sets:              17
+  Number of occupied Slices:                    17 out of   2,278    1%
+  Number of MUXCYs used:                         8 out of   4,556    1%
+  Number of LUT Flip Flop pairs used:           38
+    Number with an unused Flip Flop:             9 out of      38   23%
+    Number with an unused LUT:                   4 out of      38   10%
+    Number of fully used LUT-FF pairs:          25 out of      38   65%
+    Number of unique control sets:               5
     Number of slice register sites lost
-      to control set restrictions:              17 out of  18,224    1%
+      to control set restrictions:              13 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -220,18 +115,24 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        12 out of     232    5%
-    Number of LOCed IOBs:                       12 out of      12  100%
+  Number of bonded IOBs:                        17 out of     232    7%
+    Number of LOCed IOBs:                       17 out of      17  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
-  Number of RAMB8BWERs:                          1 out of      64    1%
-  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
-  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
-    Number used as BUFGs:                        3
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
+    Number used as BUFGs:                        2
     Number used as BUFGMUX:                      0
-  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
   Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
   Number of OLOGIC2/OSERDES2s:                   0 out of     248    0%
@@ -248,11 +149,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.84
+Average Fanout of Non-Clock Nets:                3.02
 
-Peak Memory Usage:  288 MB
-Total REAL time to MAP completion:  1 mins 27 secs 
-Total CPU time to MAP completion:   53 secs 
+Peak Memory Usage:  259 MB
+Total REAL time to MAP completion:  10 secs 
+Total CPU time to MAP completion:   10 secs 
 
 Mapping completed.
 See MAP report file "pipeline_map.mrp" for details.

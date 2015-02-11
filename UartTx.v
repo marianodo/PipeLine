@@ -29,7 +29,7 @@ module UartTx
   
   //Cuerpo
   //Registros de datos y Estado de la FSMD
-  always @(posedge clk)
+  always @(negedge clk)
     begin
       state_reg <= state_next;
       s_reg <= s_next;

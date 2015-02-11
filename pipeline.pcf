@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Feb 06 17:18:30 2015
+// Written by: Map P.20131013 on Mon Feb 09 18:07:57 2015
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "rx" LOCATE = SITE "N17" LEVEL 1;
-COMP "tx" LOCATE = SITE "N18" LEVEL 1;
-COMP "clk" LOCATE = SITE "V10" LEVEL 1;
-COMP "btn" LOCATE = SITE "C4" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
 COMP "led<0>" LOCATE = SITE "U16" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "V16" LEVEL 1;
 COMP "led<2>" LOCATE = SITE "U15" LEVEL 1;
@@ -15,9 +15,10 @@ COMP "led<4>" LOCATE = SITE "M11" LEVEL 1;
 COMP "led<5>" LOCATE = SITE "N11" LEVEL 1;
 COMP "led<6>" LOCATE = SITE "R11" LEVEL 1;
 COMP "led<7>" LOCATE = SITE "T11" LEVEL 1;
-PIN callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG_pin<1> = BEL
-        "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG" PINNAME O;
-PIN "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG_pin<1>"
-        CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "btn" LOCATE = SITE "C4" LEVEL 1;
+COMP "clk100" LOCATE = SITE "V10" LEVEL 1;
+COMP "rx" LOCATE = SITE "N17" LEVEL 1;
+COMP "tx" LOCATE = SITE "N18" LEVEL 1;
+COMP "sseg" LOCATE = SITE "T17" LEVEL 1;
 SCHEMATIC END;
 

@@ -30,7 +30,7 @@ module InstDecode(
 reg [31:0] register[0:15];
 initial
 begin
-	register[0] <= 32'b01000001010000100100001111000010;
+	register[0] <= 32'b01000100000111000100010010011111;
 	register[1] <= 1;
 	register[2] <= 2;
 	register[3] <= 3;
@@ -47,18 +47,18 @@ begin
 	register[14] <= 1435224;
 	register[15] <= 32'b111111_00001_00011_00010_00000_100010;
 	
-	
+Registro0 = register[0];	
 	outInstDecodeRsReg = 0;
 	outInstDecodeRtReg = 0;
 end
- 
+
 always @(*)
 begin
 	
 	
 		
 			
-	Registro0 = register[0];
+	
 	if(RegWrite == 1)
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;

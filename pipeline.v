@@ -19,11 +19,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
-input clk,
+input clk100,
 input btn,
 input rx,
 output tx,
-output [7:0] led
+output [7:0] led,
+output [3:0] an,
+output sseg
   );
 
 // s i g n a l s
@@ -52,15 +54,21 @@ wire [1:0] ALUOp;
 //////////////////////
 
 ////
-wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId;
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId,outStep;
 wire [31:0] instruction,outMuxWb,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
-
+wire clk;
 wire [31:0]  Registro0;
 // i n s t a n t i a t i o n s
+
+	Clock10Mhz callClock10Mhz
+   (// Clock in ports
+    .CLK_IN1(clk100),      // IN
+    // Clock out ports
+    .CLK_OUT1(clk));    // OUT
 
 	StageIF callStageIF(
 	.Jump(Jump),
@@ -222,6 +230,9 @@ wire [31:0]  Registro0;
 	 .rx(rx),
 	 
 	 .rx_data_out_debug(led),
+	 .outStep(sseg),
 	 .tx(tx)
 	 );
+	 
+assign an = 4'b1110;
 endmodule

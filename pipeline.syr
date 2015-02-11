@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Reading design: pipeline.prj
 
@@ -108,85 +108,89 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\WordDividerMEM.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\Clock10Mhz.v" into library work
+Parsing module <Clock10Mhz>.
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\WordDividerMEM.v" into library work
 Parsing module <LoadWordDividerMEM>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\UartTx.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\UartTx.v" into library work
 Parsing module <UartTx>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\UartRx.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\UartRx.v" into library work
 Parsing module <UartRx>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StoreWordDividerMEM.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StoreWordDividerMEM.v" into library work
 Parsing module <StoreWordDividerMEM>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\SignExtend.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StepModule.v" into library work
+Parsing module <StepModule>.
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\SignExtend.v" into library work
 Parsing module <SignExtend>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ShiftIF.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ShiftIF.v" into library work
 Parsing module <ShiftIF>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ShiftID.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ShiftID.v" into library work
 Parsing module <ShiftID>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\program-counter.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\program-counter.v" into library work
 Parsing module <Pc>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxWB.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxWB.v" into library work
 Parsing module <MuxWB>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\muxPc.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\muxPc.v" into library work
 Parsing module <muxPc>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxJumpPc.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxJumpPc.v" into library work
 Parsing module <MuxJumpPc>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxID.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxID.v" into library work
 Parsing module <MuxRtRd>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxExForwardB.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxExForwardB.v" into library work
 Parsing module <MuxExForwardB>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxExForwardA.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxExForwardA.v" into library work
 Parsing module <MuxExForwardA>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxDataB_ALU.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxDataB_ALU.v" into library work
 Parsing module <MuxDataB_ALU>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MuxDataA_ALU.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MuxDataA_ALU.v" into library work
 Parsing module <MuxDataA_ALU>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\MEM_WB_Latch.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\MEM_WB_Latch.v" into library work
 Parsing module <MEM_WB_Latch>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ipcore_dir\DataMemory.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\DataMemory.v" into library work
 Parsing module <DataMemory>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\IPCoreAdapter.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\IPCoreAdapter.v" into library work
 Parsing module <IPCoreAdapter>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\InstructionMem.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\InstructionMem.v" into library work
 Parsing module <InstructionMem>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\InstDecode.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\InstDecode.v" into library work
 Parsing module <InstDecode>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\IF_ID_Latch.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\IF_ID_Latch.v" into library work
 Parsing module <IF_ID_Latch>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ID_EX_Latch.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ID_EX_Latch.v" into library work
 Parsing module <ID_EX_Latch>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\Fifo.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\Fifo.v" into library work
 Parsing module <Fifo>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\EX_MEM_Latch.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\EX_MEM_Latch.v" into library work
 Parsing module <EX_MEM_Latch>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\EqualBranch.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\EqualBranch.v" into library work
 Parsing module <EqualBranch>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ControlUnit.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ControlUnit.v" into library work
 Parsing module <ControlUnit>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\BaudGenerator.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\BaudGenerator.v" into library work
 Parsing module <BaudGenerator>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\AluEX.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\AluEX.v" into library work
 Parsing module <AluEX>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\addPc.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\addPc.v" into library work
 Parsing module <addPc>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\AddID.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\AddID.v" into library work
 Parsing module <AddID>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageWB.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StageWB.v" into library work
 Parsing module <StageWB>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageMEM.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StageMEM.v" into library work
 Parsing module <StageMEM>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageIF.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StageIF.v" into library work
 Parsing module <StageIF>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageID.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StageID.v" into library work
 Parsing module <StageID>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\StageEX.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\StageEX.v" into library work
 Parsing module <StageEX>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\HazardDetectionUnit.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\HazardDetectionUnit.v" into library work
 Parsing module <HazardDetectionUnit>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\ForwardingUnit.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\ForwardingUnit.v" into library work
 Parsing module <ForwardingUnit>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" into library work
 Parsing module <DebugUnit>.
-Analyzing Verilog file "C:\Users\Nano\Desktop\PipeLine\pipeline.v" into library work
+Analyzing Verilog file "C:\Users\Leo\Desktop\PipeLine\pipeline.v" into library work
 Parsing module <pipeline>.
 
 =========================================================================
@@ -194,6 +198,16 @@ Parsing module <pipeline>.
 =========================================================================
 
 Elaborating module <pipeline>.
+
+Elaborating module <Clock10Mhz>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=10.0,CLKFX_DIVIDE=20,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\Clock10Mhz.v" Line 126: Assignment to locked_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\Clock10Mhz.v" Line 127: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
 
 Elaborating module <StageIF>.
 
@@ -204,14 +218,14 @@ Elaborating module <addPc>.
 Elaborating module <InstructionMem>.
 
 Elaborating module <ShiftIF>.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\ShiftIF.v" Line 26: Net <tmpOutShift[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Leo\Desktop\PipeLine\ShiftIF.v" Line 26: Net <tmpOutShift[1]> does not have a driver.
 
 Elaborating module <muxPc>.
 
 Elaborating module <MuxJumpPc>.
 
 Elaborating module <IF_ID_Latch>.
-WARNING:HDLCompiler:1016 - "C:\Users\Nano\Desktop\PipeLine\StageID.v" Line 133: Port inoutAddBranch is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\Leo\Desktop\PipeLine\StageID.v" Line 133: Port inoutAddBranch is not connected to this instance
 
 Elaborating module <StageID>.
 
@@ -232,8 +246,8 @@ Elaborating module <ShiftID>.
 Elaborating module <AddID>.
 
 Elaborating module <ID_EX_Latch>.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\ID_EX_Latch.v" Line 56: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:552 - "C:\Users\Nano\Desktop\PipeLine\StageID.v" Line 133: Input port inoutAddBranch[31] is not connected on this instance
+WARNING:HDLCompiler:413 - "C:\Users\Leo\Desktop\PipeLine\ID_EX_Latch.v" Line 56: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:552 - "C:\Users\Leo\Desktop\PipeLine\StageID.v" Line 133: Input port inoutAddBranch[31] is not connected on this instance
 
 Elaborating module <StageEX>.
 
@@ -242,7 +256,7 @@ Elaborating module <MuxExForwardA>.
 Elaborating module <MuxExForwardB>.
 
 Elaborating module <MuxRtRd>.
-WARNING:HDLCompiler:872 - "C:\Users\Nano\Desktop\PipeLine\MuxID.v" Line 28: Using initial value of ra since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\Leo\Desktop\PipeLine\MuxID.v" Line 28: Using initial value of ra since it is never assigned
 
 Elaborating module <AluEX>.
 
@@ -255,7 +269,7 @@ Elaborating module <StoreWordDividerMEM>.
 Elaborating module <IPCoreAdapter>.
 
 Elaborating module <DataMemory>.
-WARNING:HDLCompiler:1499 - "C:\Users\Nano\Desktop\PipeLine\ipcore_dir\DataMemory.v" Line 39: Empty module <DataMemory> remains a black box.
+WARNING:HDLCompiler:1499 - "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\DataMemory.v" Line 39: Empty module <DataMemory> remains a black box.
 
 Elaborating module <LoadWordDividerMEM>.
 
@@ -268,34 +282,35 @@ Elaborating module <MuxWB>.
 Elaborating module <ForwardingUnit>.
 
 Elaborating module <HazardDetectionUnit>.
+WARNING:HDLCompiler:1016 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 58: Port q is not connected to this instance
 
 Elaborating module <DebugUnit>.
-WARNING:HDLCompiler:872 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 52: Using initial value of reset since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 52: Using initial value of reset since it is never assigned
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 57: Assignment to dato ignored, since the identifier is never used
 
-Elaborating module <BaudGenerator(M=163,N=8)>.
-WARNING:HDLCompiler:413 - "C:\Users\Nano\Desktop\PipeLine\BaudGenerator.v" Line 26: Result of 32-bit expression is truncated to fit in 8-bit target.
+Elaborating module <BaudGenerator(M=32,N=8)>.
+WARNING:HDLCompiler:413 - "C:\Users\Leo\Desktop\PipeLine\BaudGenerator.v" Line 26: Result of 32-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <UartRx(DBIT=8,SB_TICK=16)>.
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 76: Assignment to rx_done_tick ignored, since the identifier is never used
+
+Elaborating module <StepModule>.
 
 Elaborating module <Fifo(B=8)>.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\Fifo.v" Line 16: Net <array_reg[190][7]> does not have a driver.
-WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 90: Assignment to fifo_data_rd ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 93: Size mismatch in connection of port <current_pc>. Formal port size is 8-bit while actual signal size is 1-bit.
 
 Elaborating module <UartTx(DBIT=8,SB_TICK=16)>.
-WARNING:HDLCompiler:1127 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 110: Assignment to tx_fifo_not_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" Line 93: Net <current_pc> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 34: Net <sa[4]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 55: Net <zeroAluLatch> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\Nano\Desktop\PipeLine\pipeline.v" Line 203: Net <BranchEx> does not have a driver.
-WARNING:Xst:2972 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84. All outputs of instance <callFifo> of block <Fifo> are unconnected in block <DebugUnit>. Underlying logic will be removed.
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 111: Assignment to tx_done_tick ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" Line 115: Assignment to tx_fifo_not_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Users\Leo\Desktop\PipeLine\pipeline.v" Line 36: Net <sa[4]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Leo\Desktop\PipeLine\pipeline.v" Line 57: Net <zeroAluLatch> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Leo\Desktop\PipeLine\pipeline.v" Line 211: Net <BranchEx> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <pipeline>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\pipeline.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\pipeline.v".
 WARNING:Xst:653 - Signal <sa> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <zeroAluLatch> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <BranchEx> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -303,14 +318,20 @@ WARNING:Xst:653 - Signal <BranchEx> is used but never assigned. This sourceless 
 	no macro.
 Unit <pipeline> synthesized.
 
+Synthesizing Unit <Clock10Mhz>.
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ipcore_dir\Clock10Mhz.v".
+    Summary:
+	no macro.
+Unit <Clock10Mhz> synthesized.
+
 Synthesizing Unit <StageIF>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StageIF.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StageIF.v".
     Summary:
 	no macro.
 Unit <StageIF> synthesized.
 
 Synthesizing Unit <Pc>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\program-counter.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\program-counter.v".
         tam = 8
     Found 32-bit register for signal <tmpPc>.
     Summary:
@@ -318,7 +339,7 @@ Synthesizing Unit <Pc>.
 Unit <Pc> synthesized.
 
 Synthesizing Unit <addPc>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\addPc.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\addPc.v".
         tam = 5
     Found 32-bit adder for signal <tmp> created at line 31.
     Summary:
@@ -326,7 +347,7 @@ Synthesizing Unit <addPc>.
 Unit <addPc> synthesized.
 
 Synthesizing Unit <InstructionMem>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\InstructionMem.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\InstructionMem.v".
         tam = 32
 WARNING:Xst:647 - Input <inInstructionMem<31:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2999 - Signal 'memory', unconnected in block 'InstructionMem', is tied to its initial value.
@@ -336,7 +357,7 @@ WARNING:Xst:2999 - Signal 'memory', unconnected in block 'InstructionMem', is ti
 Unit <InstructionMem> synthesized.
 
 Synthesizing Unit <ShiftIF>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\ShiftIF.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ShiftIF.v".
 WARNING:Xst:647 - Input <inPostPc<27:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2935 - Signal 'tmpOutShift<1:0>', unconnected in block 'ShiftIF', is tied to its initial value (00).
     Summary:
@@ -344,20 +365,20 @@ WARNING:Xst:2935 - Signal 'tmpOutShift<1:0>', unconnected in block 'ShiftIF', is
 Unit <ShiftIF> synthesized.
 
 Synthesizing Unit <muxPc>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\muxPc.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\muxPc.v".
         tam = 8
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <muxPc> synthesized.
 
 Synthesizing Unit <MuxJumpPc>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxJumpPc.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxJumpPc.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxJumpPc> synthesized.
 
 Synthesizing Unit <IF_ID_Latch>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\IF_ID_Latch.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\IF_ID_Latch.v".
     Found 32-bit register for signal <outInstruction>.
     Found 32-bit register for signal <outPc>.
     Summary:
@@ -365,24 +386,25 @@ Synthesizing Unit <IF_ID_Latch>.
 Unit <IF_ID_Latch> synthesized.
 
 Synthesizing Unit <StageID>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StageID.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StageID.v".
 WARNING:Xst:2898 - Port 'inoutAddBranch', unconnected in block instance 'callID_EX_Latch', is tied to GND.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\StageID.v" line 133: Output port <outAddBranch> of the instance <callID_EX_Latch> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Leo\Desktop\PipeLine\StageID.v" line 133: Output port <outAddBranch> of the instance <callID_EX_Latch> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <StageID> synthesized.
 
 Synthesizing Unit <ControlUnit>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\ControlUnit.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ControlUnit.v".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	inferred  33 Multiplexer(s).
 Unit <ControlUnit> synthesized.
 
 Synthesizing Unit <InstDecode>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\InstDecode.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\InstDecode.v".
 WARNING:Xst:647 - Input <inInstDecodeRsReg<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <inInstDecodeRtReg<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <Registro0> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 32-bit 16-to-1 multiplexer for signal <outInstDecodeRsReg> created at line 67.
     Found 32-bit 16-to-1 multiplexer for signal <outInstDecodeRtReg> created at line 68.
 WARNING:Xst:737 - Found 1-bit latch for signal <register<0><30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -905,19 +927,19 @@ WARNING:Xst:737 - Found 1-bit latch for signal <register<0><31>>. Latches may be
 Unit <InstDecode> synthesized.
 
 Synthesizing Unit <MuxDataA_ALU>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxDataA_ALU.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxDataA_ALU.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxDataA_ALU> synthesized.
 
 Synthesizing Unit <MuxDataB_ALU>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxDataB_ALU.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxDataB_ALU.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxDataB_ALU> synthesized.
 
 Synthesizing Unit <EqualBranch>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\EqualBranch.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\EqualBranch.v".
     Found 32-bit comparator equal for signal <inDataAEq[31]_inDataBEq[31]_equal_1_o> created at line 32
     Summary:
 	inferred   1 Comparator(s).
@@ -925,19 +947,19 @@ Synthesizing Unit <EqualBranch>.
 Unit <EqualBranch> synthesized.
 
 Synthesizing Unit <SignExtend>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\SignExtend.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\SignExtend.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <SignExtend> synthesized.
 
 Synthesizing Unit <ShiftID>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\ShiftID.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ShiftID.v".
     Summary:
 	no macro.
 Unit <ShiftID> synthesized.
 
 Synthesizing Unit <AddID>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\AddID.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\AddID.v".
     Found 32-bit subtractor for signal <tmpOut> created at line 34.
     Found 32-bit adder for signal <PostPc[31]_outShift[31]_add_0_OUT> created at line 34.
     Summary:
@@ -945,7 +967,7 @@ Synthesizing Unit <AddID>.
 Unit <AddID> synthesized.
 
 Synthesizing Unit <ID_EX_Latch>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\ID_EX_Latch.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ID_EX_Latch.v".
 WARNING:Xst:647 - Input <inALUOp<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <MemRead>.
     Found 1-bit register for signal <MemWrite>.
@@ -971,38 +993,38 @@ WARNING:Xst:647 - Input <inALUOp<1:1>> is never used. This port will be preserve
 Unit <ID_EX_Latch> synthesized.
 
 Synthesizing Unit <StageEX>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StageEX.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StageEX.v".
 WARNING:Xst:647 - Input <inPc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <StageEX> synthesized.
 
 Synthesizing Unit <MuxExForwardA>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxExForwardA.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxExForwardA.v".
     Found 32-bit 4-to-1 multiplexer for signal <tmp> created at line 30.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxExForwardA> synthesized.
 
 Synthesizing Unit <MuxExForwardB>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxExForwardB.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxExForwardB.v".
     Found 32-bit 4-to-1 multiplexer for signal <inForwardB[1]_inDataRt[31]_wide_mux_0_OUT> created at line 37.
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <MuxExForwardB> synthesized.
 
 Synthesizing Unit <MuxRtRd>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxID.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxID.v".
     Found 5-bit 4-to-1 multiplexer for signal <outMuxRtRd> created at line 24.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxRtRd> synthesized.
 
 Synthesizing Unit <AluEX>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\AluEX.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\AluEX.v".
     Found 32-bit subtractor for signal <inOutMuxForwardA[31]_inOutMuxForwardB[31]_sub_10_OUT> created at line 74.
     Found 32-bit adder for signal <inOutMuxForwardA[31]_inOutMuxForwardB[31]_add_49_OUT> created at line 133.
-    Found 32-bit shifter logical left for signal <GND_536_o_sa[4]_shift_left_1_OUT> created at line 50
+    Found 32-bit shifter logical left for signal <GND_540_o_sa[4]_shift_left_1_OUT> created at line 50
     Found 32x32-bit multiplier for signal <n0082> created at line 50.
     Found 32-bit shifter arithmetic right for signal <inOutMuxForwardB[31]_sa[4]_shift_right_5_OUT> created at line 58
     Found 32-bit shifter logical right for signal <inOutMuxForwardB[31]_inOutMuxForwardA[31]_shift_right_6_OUT> created at line 62
@@ -1054,69 +1076,69 @@ Unit <AluEX> synthesized.
 Synthesizing Unit <div_32u_32u>.
     Related source file is "".
     Found 64-bit adder for signal <n3436> created at line 0.
-    Found 64-bit adder for signal <GND_538_o_b[31]_add_1_OUT> created at line 0.
+    Found 64-bit adder for signal <GND_542_o_b[31]_add_1_OUT> created at line 0.
     Found 63-bit adder for signal <n3440> created at line 0.
-    Found 63-bit adder for signal <GND_538_o_b[31]_add_3_OUT> created at line 0.
+    Found 63-bit adder for signal <GND_542_o_b[31]_add_3_OUT> created at line 0.
     Found 62-bit adder for signal <n3444> created at line 0.
-    Found 62-bit adder for signal <GND_538_o_b[31]_add_5_OUT> created at line 0.
+    Found 62-bit adder for signal <GND_542_o_b[31]_add_5_OUT> created at line 0.
     Found 61-bit adder for signal <n3448> created at line 0.
-    Found 61-bit adder for signal <GND_538_o_b[31]_add_7_OUT> created at line 0.
+    Found 61-bit adder for signal <GND_542_o_b[31]_add_7_OUT> created at line 0.
     Found 60-bit adder for signal <n3452> created at line 0.
-    Found 60-bit adder for signal <GND_538_o_b[31]_add_9_OUT> created at line 0.
+    Found 60-bit adder for signal <GND_542_o_b[31]_add_9_OUT> created at line 0.
     Found 59-bit adder for signal <n3456> created at line 0.
-    Found 59-bit adder for signal <GND_538_o_b[31]_add_11_OUT> created at line 0.
+    Found 59-bit adder for signal <GND_542_o_b[31]_add_11_OUT> created at line 0.
     Found 58-bit adder for signal <n3460> created at line 0.
-    Found 58-bit adder for signal <GND_538_o_b[31]_add_13_OUT> created at line 0.
+    Found 58-bit adder for signal <GND_542_o_b[31]_add_13_OUT> created at line 0.
     Found 57-bit adder for signal <n3464> created at line 0.
-    Found 57-bit adder for signal <GND_538_o_b[31]_add_15_OUT> created at line 0.
+    Found 57-bit adder for signal <GND_542_o_b[31]_add_15_OUT> created at line 0.
     Found 56-bit adder for signal <n3468> created at line 0.
-    Found 56-bit adder for signal <GND_538_o_b[31]_add_17_OUT> created at line 0.
+    Found 56-bit adder for signal <GND_542_o_b[31]_add_17_OUT> created at line 0.
     Found 55-bit adder for signal <n3472> created at line 0.
-    Found 55-bit adder for signal <GND_538_o_b[31]_add_19_OUT> created at line 0.
+    Found 55-bit adder for signal <GND_542_o_b[31]_add_19_OUT> created at line 0.
     Found 54-bit adder for signal <n3476> created at line 0.
-    Found 54-bit adder for signal <GND_538_o_b[31]_add_21_OUT> created at line 0.
+    Found 54-bit adder for signal <GND_542_o_b[31]_add_21_OUT> created at line 0.
     Found 53-bit adder for signal <n3480> created at line 0.
-    Found 53-bit adder for signal <GND_538_o_b[31]_add_23_OUT> created at line 0.
+    Found 53-bit adder for signal <GND_542_o_b[31]_add_23_OUT> created at line 0.
     Found 52-bit adder for signal <n3484> created at line 0.
-    Found 52-bit adder for signal <GND_538_o_b[31]_add_25_OUT> created at line 0.
+    Found 52-bit adder for signal <GND_542_o_b[31]_add_25_OUT> created at line 0.
     Found 51-bit adder for signal <n3488> created at line 0.
-    Found 51-bit adder for signal <GND_538_o_b[31]_add_27_OUT> created at line 0.
+    Found 51-bit adder for signal <GND_542_o_b[31]_add_27_OUT> created at line 0.
     Found 50-bit adder for signal <n3492> created at line 0.
-    Found 50-bit adder for signal <GND_538_o_b[31]_add_29_OUT> created at line 0.
+    Found 50-bit adder for signal <GND_542_o_b[31]_add_29_OUT> created at line 0.
     Found 49-bit adder for signal <n3496> created at line 0.
-    Found 49-bit adder for signal <GND_538_o_b[31]_add_31_OUT> created at line 0.
+    Found 49-bit adder for signal <GND_542_o_b[31]_add_31_OUT> created at line 0.
     Found 48-bit adder for signal <n3500> created at line 0.
-    Found 48-bit adder for signal <GND_538_o_b[31]_add_33_OUT> created at line 0.
+    Found 48-bit adder for signal <GND_542_o_b[31]_add_33_OUT> created at line 0.
     Found 47-bit adder for signal <n3504> created at line 0.
-    Found 47-bit adder for signal <GND_538_o_b[31]_add_35_OUT> created at line 0.
+    Found 47-bit adder for signal <GND_542_o_b[31]_add_35_OUT> created at line 0.
     Found 46-bit adder for signal <n3508> created at line 0.
-    Found 46-bit adder for signal <GND_538_o_b[31]_add_37_OUT> created at line 0.
+    Found 46-bit adder for signal <GND_542_o_b[31]_add_37_OUT> created at line 0.
     Found 45-bit adder for signal <n3512> created at line 0.
-    Found 45-bit adder for signal <GND_538_o_b[31]_add_39_OUT> created at line 0.
+    Found 45-bit adder for signal <GND_542_o_b[31]_add_39_OUT> created at line 0.
     Found 44-bit adder for signal <n3516> created at line 0.
-    Found 44-bit adder for signal <GND_538_o_b[31]_add_41_OUT> created at line 0.
+    Found 44-bit adder for signal <GND_542_o_b[31]_add_41_OUT> created at line 0.
     Found 43-bit adder for signal <n3520> created at line 0.
-    Found 43-bit adder for signal <GND_538_o_b[31]_add_43_OUT> created at line 0.
+    Found 43-bit adder for signal <GND_542_o_b[31]_add_43_OUT> created at line 0.
     Found 42-bit adder for signal <n3524> created at line 0.
-    Found 42-bit adder for signal <GND_538_o_b[31]_add_45_OUT> created at line 0.
+    Found 42-bit adder for signal <GND_542_o_b[31]_add_45_OUT> created at line 0.
     Found 41-bit adder for signal <n3528> created at line 0.
-    Found 41-bit adder for signal <GND_538_o_b[31]_add_47_OUT> created at line 0.
+    Found 41-bit adder for signal <GND_542_o_b[31]_add_47_OUT> created at line 0.
     Found 40-bit adder for signal <n3532> created at line 0.
-    Found 40-bit adder for signal <GND_538_o_b[31]_add_49_OUT> created at line 0.
+    Found 40-bit adder for signal <GND_542_o_b[31]_add_49_OUT> created at line 0.
     Found 39-bit adder for signal <n3536> created at line 0.
-    Found 39-bit adder for signal <GND_538_o_b[31]_add_51_OUT> created at line 0.
+    Found 39-bit adder for signal <GND_542_o_b[31]_add_51_OUT> created at line 0.
     Found 38-bit adder for signal <n3540> created at line 0.
-    Found 38-bit adder for signal <GND_538_o_b[31]_add_53_OUT> created at line 0.
+    Found 38-bit adder for signal <GND_542_o_b[31]_add_53_OUT> created at line 0.
     Found 37-bit adder for signal <n3544> created at line 0.
-    Found 37-bit adder for signal <GND_538_o_b[31]_add_55_OUT> created at line 0.
+    Found 37-bit adder for signal <GND_542_o_b[31]_add_55_OUT> created at line 0.
     Found 36-bit adder for signal <n3548> created at line 0.
-    Found 36-bit adder for signal <GND_538_o_b[31]_add_57_OUT> created at line 0.
+    Found 36-bit adder for signal <GND_542_o_b[31]_add_57_OUT> created at line 0.
     Found 35-bit adder for signal <n3552> created at line 0.
-    Found 35-bit adder for signal <GND_538_o_b[31]_add_59_OUT> created at line 0.
+    Found 35-bit adder for signal <GND_542_o_b[31]_add_59_OUT> created at line 0.
     Found 34-bit adder for signal <n3556> created at line 0.
-    Found 34-bit adder for signal <GND_538_o_b[31]_add_61_OUT> created at line 0.
+    Found 34-bit adder for signal <GND_542_o_b[31]_add_61_OUT> created at line 0.
     Found 33-bit adder for signal <n3560> created at line 0.
-    Found 33-bit adder for signal <GND_538_o_b[31]_add_63_OUT> created at line 0.
+    Found 33-bit adder for signal <GND_542_o_b[31]_add_63_OUT> created at line 0.
     Found 64-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 63-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 62-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -1157,7 +1179,7 @@ Synthesizing Unit <div_32u_32u>.
 Unit <div_32u_32u> synthesized.
 
 Synthesizing Unit <EX_MEM_Latch>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\EX_MEM_Latch.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\EX_MEM_Latch.v".
     Found 1-bit register for signal <outMemRead>.
     Found 1-bit register for signal <outMemWrite>.
     Found 2-bit register for signal <outMemtoReg>.
@@ -1172,33 +1194,33 @@ Synthesizing Unit <EX_MEM_Latch>.
 Unit <EX_MEM_Latch> synthesized.
 
 Synthesizing Unit <StageMEM>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StageMEM.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StageMEM.v".
     Summary:
 	no macro.
 Unit <StageMEM> synthesized.
 
 Synthesizing Unit <StoreWordDividerMEM>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StoreWordDividerMEM.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StoreWordDividerMEM.v".
     Found 32-bit 4-to-1 multiplexer for signal <tmpStoreWordDividerMEM> created at line 32.
     Summary:
 	inferred   3 Multiplexer(s).
 Unit <StoreWordDividerMEM> synthesized.
 
 Synthesizing Unit <IPCoreAdapter>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\IPCoreAdapter.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\IPCoreAdapter.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <IPCoreAdapter> synthesized.
 
 Synthesizing Unit <LoadWordDividerMEM>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\WordDividerMEM.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\WordDividerMEM.v".
     Found 32-bit 6-to-1 multiplexer for signal <tmpLoadWordDividerMEM> created at line 43.
     Summary:
 	inferred   3 Multiplexer(s).
 Unit <LoadWordDividerMEM> synthesized.
 
 Synthesizing Unit <MEM_WB_Latch>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MEM_WB_Latch.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MEM_WB_Latch.v".
     Found 32-bit register for signal <outAluLatch>.
     Found 5-bit register for signal <outMuxRtRd>.
     Found 1-bit register for signal <outRegWrite>.
@@ -1209,20 +1231,20 @@ Synthesizing Unit <MEM_WB_Latch>.
 Unit <MEM_WB_Latch> synthesized.
 
 Synthesizing Unit <StageWB>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\StageWB.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StageWB.v".
     Summary:
 	no macro.
 Unit <StageWB> synthesized.
 
 Synthesizing Unit <MuxWB>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\MuxWB.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\MuxWB.v".
     Found 32-bit 4-to-1 multiplexer for signal <outMuxWb> created at line 24.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <MuxWB> synthesized.
 
 Synthesizing Unit <ForwardingUnit>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\ForwardingUnit.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\ForwardingUnit.v".
     Found 5-bit comparator equal for signal <inRdEX_MEM[4]_inRs[4]_equal_2_o> created at line 36
     Found 5-bit comparator equal for signal <inRdMEM_WB[4]_inRs[4]_equal_5_o> created at line 43
     Found 5-bit comparator equal for signal <inRdEX_MEM[4]_inRt[4]_equal_9_o> created at line 52
@@ -1233,7 +1255,7 @@ Synthesizing Unit <ForwardingUnit>.
 Unit <ForwardingUnit> synthesized.
 
 Synthesizing Unit <HazardDetectionUnit>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\HazardDetectionUnit.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\HazardDetectionUnit.v".
     Found 5-bit comparator equal for signal <inID_EXRt[4]_inIF_IDRs[4]_equal_1_o> created at line 42
     Found 5-bit comparator equal for signal <inID_EXRt[4]_inIF_IDRt[4]_equal_2_o> created at line 43
     Summary:
@@ -1241,26 +1263,25 @@ Synthesizing Unit <HazardDetectionUnit>.
 Unit <HazardDetectionUnit> synthesized.
 
 Synthesizing Unit <DebugUnit>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v".
         DBIT = 8
         SB_TICK = 16
-        DVSR = 163
+        DVSR = 32
         DVSR_BIT = 8
         FIFO_W = 2
 WARNING:Xst:647 - Input <inPc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 60: Output port <q> of the instance <callBaudGenerator> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <r_data> of the instance <callFifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <full> of the instance <callFifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Nano\Desktop\PipeLine\DebugUnit.v" line 84: Output port <empty> of the instance <callFifo> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <current_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:647 - Input <btn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" line 61: Output port <q> of the instance <callBaudGenerator> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" line 71: Output port <rx_done_tick> of the instance <callUartRx> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Leo\Desktop\PipeLine\DebugUnit.v" line 105: Output port <tx_done_tick> of the instance <callUartTx> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <DebugUnit> synthesized.
 
 Synthesizing Unit <BaudGenerator>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\BaudGenerator.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\BaudGenerator.v".
         N = 8
-        M = 163
+        M = 32
     Found 8-bit register for signal <r_reg>.
     Found 9-bit adder for signal <n0013[8:0]> created at line 26.
     Summary:
@@ -1269,15 +1290,15 @@ Synthesizing Unit <BaudGenerator>.
 Unit <BaudGenerator> synthesized.
 
 Synthesizing Unit <UartRx>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\UartRx.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\UartRx.v".
         DBIT = 8
         SB_TICK = 16
     Found 4-bit register for signal <s_reg>.
     Found 3-bit register for signal <n_reg>.
     Found 8-bit register for signal <b_reg>.
     Found 2-bit register for signal <state_reg>.
-    Found 3-bit adder for signal <n_reg[2]_GND_585_o_add_17_OUT> created at line 81.
-    Found 4-bit adder for signal <s_reg[3]_GND_585_o_add_30_OUT> created at line 102.
+    Found 3-bit adder for signal <n_reg[2]_GND_589_o_add_17_OUT> created at line 81.
+    Found 4-bit adder for signal <s_reg[3]_GND_589_o_add_30_OUT> created at line 102.
     Found 2-bit 4-to-1 multiplexer for signal <state_next> created at line 48.
     Found 4-bit 4-to-1 multiplexer for signal <s_next> created at line 48.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <state_reg> would allow inference of a finite state machine and as consequence better performance and smaller area.
@@ -1287,8 +1308,28 @@ Synthesizing Unit <UartRx>.
 	inferred  20 Multiplexer(s).
 Unit <UartRx> synthesized.
 
+Synthesizing Unit <StepModule>.
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\StepModule.v".
+    Found 1-bit register for signal <tmp>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <StepModule> synthesized.
+
+Synthesizing Unit <Fifo>.
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\Fifo.v".
+        B = 8
+WARNING:Xst:647 - Input <register_0_id_out<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit register for signal <current_state>.
+    Found 4x1-bit Read Only RAM for signal <flagTmp>
+    HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <current_state> would allow inference of a finite state machine and as consequence better performance and smaller area.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <Fifo> synthesized.
+
 Synthesizing Unit <UartTx>.
-    Related source file is "C:\Users\Nano\Desktop\PipeLine\UartTx.v".
+    Related source file is "C:\Users\Leo\Desktop\PipeLine\UartTx.v".
         DBIT = 8
         SB_TICK = 16
     Found 4-bit register for signal <s_reg>.
@@ -1296,8 +1337,8 @@ Synthesizing Unit <UartTx>.
     Found 8-bit register for signal <b_reg>.
     Found 1-bit register for signal <tx_reg>.
     Found 2-bit register for signal <state_reg>.
-    Found 3-bit adder for signal <n_reg[2]_GND_587_o_add_18_OUT> created at line 93.
-    Found 4-bit adder for signal <s_reg[3]_GND_587_o_add_31_OUT> created at line 117.
+    Found 3-bit adder for signal <n_reg[2]_GND_592_o_add_18_OUT> created at line 93.
+    Found 4-bit adder for signal <s_reg[3]_GND_592_o_add_31_OUT> created at line 117.
     Found 2-bit 4-to-1 multiplexer for signal <state_next> created at line 51.
     Found 4-bit 4-to-1 multiplexer for signal <s_next> created at line 51.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <state_reg> would allow inference of a finite state machine and as consequence better performance and smaller area.
@@ -1311,8 +1352,9 @@ Unit <UartTx> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  32x32-bit single-port Read Only RAM                   : 1
+ 4x1-bit single-port Read Only RAM                     : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 74
@@ -1353,9 +1395,9 @@ Macro Statistics
  63-bit adder                                          : 2
  64-bit adder                                          : 2
  9-bit adder                                           : 1
-# Registers                                            : 45
- 1-bit register                                        : 11
- 2-bit register                                        : 8
+# Registers                                            : 47
+ 1-bit register                                        : 12
+ 2-bit register                                        : 9
  3-bit register                                        : 4
  32-bit register                                       : 11
  4-bit register                                        : 2
@@ -1402,7 +1444,7 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1109
+# Multiplexers                                         : 1112
  1-bit 2-to-1 multiplexer                              : 1020
  2-bit 2-to-1 multiplexer                              : 26
  2-bit 4-to-1 multiplexer                              : 2
@@ -1416,7 +1458,7 @@ Macro Statistics
  4-bit 4-to-1 multiplexer                              : 2
  5-bit 4-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
 # Logic shifters                                       : 4
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 1
@@ -1436,6 +1478,20 @@ Loading core <DataMemory> for timing and area information for instance <callData
 Synthesizing (advanced) Unit <BaudGenerator>.
 The following registers are absorbed into counter <r_reg>: 1 register on signal <r_reg>.
 Unit <BaudGenerator> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Fifo>.
+INFO:Xst:3231 - The small RAM <Mram_flagTmp> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 1-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <current_state> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <flagTmp>       |          |
+    -----------------------------------------------------------------------
+Unit <Fifo> synthesized (advanced).
 
 Synthesizing (advanced) Unit <InstructionMem>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_memory> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -1463,8 +1519,9 @@ Unit <UartTx> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  32x32-bit single-port distributed Read Only RAM       : 1
+ 4x1-bit single-port distributed Read Only RAM         : 1
 # Multipliers                                          : 1
  32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 39
@@ -1475,8 +1532,8 @@ Macro Statistics
 # Counters                                             : 3
  3-bit up counter                                      : 2
  8-bit up counter                                      : 1
-# Registers                                            : 440
- Flip-Flops                                            : 440
+# Registers                                            : 443
+ Flip-Flops                                            : 443
 # Comparators                                          : 43
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
@@ -1515,13 +1572,13 @@ Macro Statistics
  62-bit comparator lessequal                           : 1
  63-bit comparator lessequal                           : 1
  64-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1571
- 1-bit 2-to-1 multiplexer                              : 1500
+# Multiplexers                                         : 1605
+ 1-bit 2-to-1 multiplexer                              : 1532
  2-bit 2-to-1 multiplexer                              : 26
  2-bit 4-to-1 multiplexer                              : 2
  3-bit 2-to-1 multiplexer                              : 1
  32-bit 16-to-1 multiplexer                            : 2
- 32-bit 2-to-1 multiplexer                             : 16
+ 32-bit 2-to-1 multiplexer                             : 15
  32-bit 27-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
  32-bit 6-to-1 multiplexer                             : 1
@@ -1529,7 +1586,7 @@ Macro Statistics
  4-bit 4-to-1 multiplexer                              : 2
  5-bit 4-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
 # Logic shifters                                       : 4
  32-bit shifter arithmetic right                       : 2
  32-bit shifter logical left                           : 1
@@ -1545,6 +1602,10 @@ Macro Statistics
 WARNING:Xst:2677 - Node <Mmult_n00823> of sequential type is unconnected in block <AluEX>.
 
 Optimizing unit <pipeline> ...
+
+Optimizing unit <Clock10Mhz> ...
+
+Optimizing unit <DebugUnit> ...
 
 Optimizing unit <Pc> ...
 
@@ -1566,7 +1627,15 @@ Optimizing unit <StageMEM> ...
 
 Optimizing unit <MEM_WB_Latch> ...
 
-Optimizing unit <DebugUnit> ...
+Optimizing unit <Fifo> ...
+
+Optimizing unit <BaudGenerator> ...
+
+Optimizing unit <UartRx> ...
+
+Optimizing unit <StepModule> ...
+
+Optimizing unit <UartTx> ...
 
 Optimizing unit <callMuxPc> ...
 
@@ -1608,12 +1677,6 @@ Optimizing unit <LoadWordDividerMEM> ...
 
 Optimizing unit <IPCoreAdapter> ...
 
-Optimizing unit <BaudGenerator> ...
-
-Optimizing unit <UartRx> ...
-
-Optimizing unit <UartTx> ...
-
 Optimizing unit <callMuxWB> ...
 
 Optimizing unit <StageWB> ...
@@ -1621,32 +1684,40 @@ Optimizing unit <StageWB> ...
 Optimizing unit <ForwardingUnit> ...
 
 Optimizing unit <HazardDetectionUnit> ...
-WARNING:Xst:1710 - FF/Latch <outflagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callEX_MEM_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Branch> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <flagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outFunction_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_2> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRs_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outRegRt_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_9> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_8> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_7> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_6> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outImmediateLatch_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_30> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_28> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outInstruction_24> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_23> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_22> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_19> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_9> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_8> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_7> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_6> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <outInstruction_4> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_28> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_30> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_6> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_7> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_8> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outImmediateLatch_9> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRt_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_1> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_2> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outRegRs_3> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outFunction_4> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <flagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Branch> (without init value) has a constant value of 0 in block <callID_EX_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outflagLoadWordDividerMEM_0> (without init value) has a constant value of 0 in block <callEX_MEM_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_0> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_1> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_2> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_3> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_4> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_5> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_6> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <b_reg_7> (without init value) has a constant value of 0 in block <callUartTx>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <outInstruction_1> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_4> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_6> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_7> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_8> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_9> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_19> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_22> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <outInstruction_23> (without init value) has a constant value of 0 in block <callIF_ID_Latch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1290 - Hierarchical block <callMuxDataA_ALU> is unconnected in block <callStageID>.
    It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <callMuxDataB_ALU> is unconnected in block <callStageID>.
@@ -1659,10 +1730,13 @@ WARNING:Xst:2677 - Node <outFunction_5> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <Mmult_n0082> of sequential type is unconnected in block <callAluEx>.
 WARNING:Xst:2677 - Node <Mmult_n00821> of sequential type is unconnected in block <callAluEx>.
 WARNING:Xst:2677 - Node <Mmult_n00822> of sequential type is unconnected in block <callAluEx>.
-WARNING:Xst:1290 - Hierarchical block <inOutMuxForwardB[31]_GND_536_o_div_4> is unconnected in block <callAluEx>.
+WARNING:Xst:1290 - Hierarchical block <inOutMuxForwardB[31]_GND_540_o_div_4> is unconnected in block <callAluEx>.
    It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <callEqualBranch> is unconnected in block <callStageID>.
    It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <r_reg_5> (without init value) has a constant value of 0 in block <callBaudGenerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <r_reg_6> (without init value) has a constant value of 0 in block <callBaudGenerator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <r_reg_7> (without init value) has a constant value of 0 in block <callBaudGenerator>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1675,8 +1749,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 423
- Flip-Flops                                            : 423
+# Registers                                            : 415
+ Flip-Flops                                            : 415
 
 =========================================================================
 
@@ -1699,36 +1773,39 @@ Top Level Output File Name         : pipeline.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1566
-#      GND                         : 6
-#      INV                         : 4
-#      LUT1                        : 37
+# BELS                             : 1554
+#      GND                         : 8
+#      INV                         : 6
+#      LUT1                        : 34
 #      LUT2                        : 83
-#      LUT3                        : 97
-#      LUT4                        : 546
-#      LUT5                        : 174
+#      LUT3                        : 92
+#      LUT4                        : 547
+#      LUT5                        : 171
 #      LUT6                        : 281
-#      MUXCY                       : 69
-#      MUXF7                       : 130
+#      MUXCY                       : 66
+#      MUXF7                       : 129
 #      MUXF8                       : 64
-#      VCC                         : 3
-#      XORCY                       : 72
-# FlipFlops/Latches                : 967
-#      FD                          : 304
-#      FDE                         : 54
-#      FDE_1                       : 32
-#      FDR                         : 13
+#      VCC                         : 4
+#      XORCY                       : 69
+# FlipFlops/Latches                : 959
+#      FD                          : 291
+#      FD_1                        : 16
+#      FDE                         : 38
+#      FDE_1                       : 40
+#      FDR                         : 10
 #      FDRE                        : 20
 #      LD                          : 32
 #      LDE                         : 512
 # RAMS                             : 1
 #      RAMB8BWER                   : 1
-# Clock Buffers                    : 3
-#      BUFG                        : 2
-#      BUFGP                       : 1
-# IO Buffers                       : 11
-#      IBUF                        : 2
-#      OBUF                        : 9
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# IO Buffers                       : 16
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      OBUF                        : 14
+# DCMs                             : 1
+#      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -1737,25 +1814,25 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             967  out of  18224     5%  
- Number of Slice LUTs:                 1222  out of   9112    13%  
-    Number used as Logic:              1222  out of   9112    13%  
+ Number of Slice Registers:             959  out of  18224     5%  
+ Number of Slice LUTs:                 1214  out of   9112    13%  
+    Number used as Logic:              1214  out of   9112    13%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2122
-   Number with an unused Flip Flop:    1155  out of   2122    54%  
-   Number with an unused LUT:           900  out of   2122    42%  
-   Number of fully used LUT-FF pairs:    67  out of   2122     3%  
-   Number of unique control sets:        31
+ Number of LUT Flip Flop pairs used:   2114
+   Number with an unused Flip Flop:    1155  out of   2114    54%  
+   Number with an unused LUT:           900  out of   2114    42%  
+   Number of fully used LUT-FF pairs:    59  out of   2114     2%  
+   Number of unique control sets:        32
 
 IO Utilization: 
- Number of IOs:                          12
- Number of bonded IOBs:                  12  out of    232     5%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  15  out of    232     6%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     32     3%  
     Number using Block RAM only:          1
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1778,7 +1855,7 @@ Clock Information:
 -----------------------------------------+------------------------+-------+
 Clock Signal                             | Clock buffer(FF name)  | Load  |
 -----------------------------------------+------------------------+-------+
-clk                                      | BUFGP                  | 424   |
+clk100                                   | DCM_SP:CLKFX           | 416   |
 callStageMEM/callMEM_WB_Latch/outRegWrite| BUFG                   | 512   |
 callStageID/callID_EX_Latch/tmpAluop     | BUFG                   | 32    |
 -----------------------------------------+------------------------+-------+
@@ -1791,9 +1868,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 16.214ns (Maximum Frequency: 61.676MHz)
-   Minimum input arrival time before clock: 3.401ns
-   Maximum output required time after clock: 3.634ns
+   Minimum period: 1.646ns (Maximum Frequency: 607.591MHz)
+   Minimum input arrival time before clock: 2.405ns
+   Maximum output required time after clock: 3.668ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1801,27 +1878,27 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 16.214ns (frequency: 61.676MHz)
-  Total number of paths / destination ports: 20191 / 548
+Timing constraint: Default period analysis for Clock 'clk100'
+  Clock period: 1.646ns (frequency: 607.591MHz)
+  Total number of paths / destination ports: 19004 / 529
 -------------------------------------------------------------------------
-Delay:               8.107ns (Levels of Logic = 11)
-  Source:            callStageIF/callIF_ID_Latch/outInstruction_17 (FF)
+Delay:               8.229ns (Levels of Logic = 11)
+  Source:            callStageIF/callIF_ID_Latch/outInstruction_18 (FF)
   Destination:       callStageIF/callPc/tmpPc_0 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk falling
+  Source Clock:      clk100 rising 0.1X
+  Destination Clock: clk100 falling 0.1X
 
-  Data Path: callStageIF/callIF_ID_Latch/outInstruction_17 to callStageIF/callPc/tmpPc_0
+  Data Path: callStageIF/callIF_ID_Latch/outInstruction_18 to callStageIF/callPc/tmpPc_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q           133   0.447   1.964  outInstruction_17 (outInstruction_17)
-     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<17>'
-     end scope: 'callStageIF:outInstructionLatch<17>'
-     begin scope: 'callHazardDetectionUnit:inIF_IDRt<1>'
-     LUT2:I1->O            2   0.205   0.617  outStall6 (outStall6)
-     LUT6:I5->O            1   0.205   0.808  outStall14_SW0 (N4)
-     LUT6:I3->O           96   0.205   1.851  outStall14 (outStall)
+     FDRE:C->Q            70   0.447   2.024  outInstruction_18 (outInstruction_18)
+     end scope: 'callStageIF/callIF_ID_Latch:outInstruction<18>'
+     end scope: 'callStageIF:outInstructionLatch<18>'
+     begin scope: 'callHazardDetectionUnit:inIF_IDRt<2>'
+     LUT6:I1->O            1   0.203   0.684  outStall10 (outStall10)
+     LUT5:I3->O            1   0.203   0.808  outStall11 (outStall11)
+     LUT6:I3->O           96   0.205   1.851  outStall12 (outStall)
      end scope: 'callHazardDetectionUnit:outStall'
      begin scope: 'callStageID:inStall'
      begin scope: 'callStageID/callControlUnit:inStall'
@@ -1835,52 +1912,52 @@ Delay:               8.107ns (Levels of Logic = 11)
      begin scope: 'callStageIF/callPc:inPc<9>'
      FDE_1:D                   0.102          tmpPc_9
     ----------------------------------------
-    Total                      8.107ns (1.574ns logic, 6.533ns route)
-                                       (19.4% logic, 80.6% route)
+    Total                      8.229ns (1.570ns logic, 6.659ns route)
+                                       (19.1% logic, 80.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 19 / 19
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
+  Total number of paths / destination ports: 6 / 6
 -------------------------------------------------------------------------
-Offset:              3.401ns (Levels of Logic = 4)
+Offset:              2.405ns (Levels of Logic = 4)
   Source:            rx (PAD)
-  Destination:       callDebugUnit/callUartRx/state_reg_0 (FF)
-  Destination Clock: clk rising
+  Destination:       callDebugUnit/callUartRx/s_reg_1 (FF)
+  Destination Clock: clk100 falling 0.1X
 
-  Data Path: rx to callDebugUnit/callUartRx/state_reg_0
+  Data Path: rx to callDebugUnit/callUartRx/s_reg_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             6   1.222   0.745  rx_IBUF (rx_IBUF)
      begin scope: 'callDebugUnit:rx'
      begin scope: 'callDebugUnit/callUartRx:rx'
-     LUT5:I4->O            1   0.205   0.924  Mmux_state_next1_SW0 (N01)
-     LUT5:I0->O            1   0.203   0.000  Mmux_state_next1 (state_next<0>)
-     FD:D                      0.102          state_reg_0
+     LUT5:I4->O            1   0.205   0.000  Mmux_s_next23_F (N12)
+     MUXF7:I0->O           1   0.131   0.000  Mmux_s_next23 (s_next<1>)
+     FD_1:D                    0.102          s_reg_1
     ----------------------------------------
-    Total                      3.401ns (1.732ns logic, 1.669ns route)
-                                       (50.9% logic, 49.1% route)
+    Total                      2.405ns (1.660ns logic, 0.745ns route)
+                                       (69.0% logic, 31.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 9 / 9
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
+  Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 2)
+Offset:              3.668ns (Levels of Logic = 2)
   Source:            callDebugUnit/callUartRx/b_reg_7 (FF)
   Destination:       led<7> (PAD)
-  Source Clock:      clk rising
+  Source Clock:      clk100 falling 0.1X
 
   Data Path: callDebugUnit/callUartRx/b_reg_7 to led<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.447   0.616  b_reg_7 (b_reg_7)
+     FDE_1:C->Q            3   0.447   0.650  b_reg_7 (b_reg_7)
      end scope: 'callDebugUnit/callUartRx:dout<7>'
      end scope: 'callDebugUnit:rx_data_out_debug<7>'
      OBUF:I->O                 2.571          led_7_OBUF (led<7>)
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.668ns (3.018ns logic, 0.650ns route)
+                                       (82.3% logic, 17.7% route)
 
 =========================================================================
 
@@ -1892,7 +1969,7 @@ Clock to Setup on destination clock callStageID/callID_EX_Latch/tmpAluop
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.436|         |         |         |
+clk100         |    8.436|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock callStageMEM/callMEM_WB_Latch/outRegWrite
@@ -1900,30 +1977,30 @@ Clock to Setup on destination clock callStageMEM/callMEM_WB_Latch/outRegWrite
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    4.027|         |
+clk100         |         |         |    4.027|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock clk
+Clock to Setup on destination clock clk100
 -----------------------------------------+---------+---------+---------+---------+
                                          | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------------+---------+---------+---------+---------+
 callStageID/callID_EX_Latch/tmpAluop     |    1.179|         |         |         |
 callStageMEM/callMEM_WB_Latch/outRegWrite|         |    2.989|         |         |
-clk                                      |    6.952|    3.378|    8.107|         |
+clk100                                   |    7.074|    3.378|    8.229|         |
 -----------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 109.00 secs
-Total CPU time to Xst completion: 109.13 secs
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 40.13 secs
  
 --> 
 
-Total memory usage is 218000 kilobytes
+Total memory usage is 250752 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  617 (   0 filtered)
+Number of warnings :  631 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 
