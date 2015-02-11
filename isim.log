@@ -5,6 +5,7 @@ WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING: File "C:/Users/Nano/Desktop/PipeLine/pipeline.v" Line 62.  For instance uut/callDebugUnit/, width 32 of formal port inRegistro0 is not equal to width 8 of actual signal Registro0.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
@@ -14,10 +15,5 @@ Simulator is doing circuit initialization process.
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module Test.uut.callStageMEM.callDataMemory.inst.\native_mem_mapped_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-# restart
 # run all
-Simulator is doing circuit initialization process.
- Block Memory Generator CORE Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator CORE Generator module Test.uut.callStageMEM.callDataMemory.inst.\native_mem_mapped_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Finished circuit initialization process.
+Stopped at time : 10649500 ns : File "C:/Users/Nano/Desktop/PipeLine/Test.v" Line 58

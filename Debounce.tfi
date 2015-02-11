@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+Debounce instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .sw(sw), 
+    .db_level(db_level), 
+    .db_tick(db_tick)
+    );
+
+

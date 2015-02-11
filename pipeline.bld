@@ -2,11 +2,11 @@ Release 14.7 ngdbuild P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle
-ise -dd _ngo -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3 pipeline.ngc
-pipeline.ngd
+ise -dd _ngo -sd ipcore_dir -nt timestamp -uc pipeline.ucf -p xc6slx16-csg324-3
+pipeline.ngc pipeline.ngd
 
-Reading NGO file "D:/Facu/Arquitectura de Computadoras/pipeline/pipeline.ngc"
-...
+Reading NGO file "C:/Users/Nano/Desktop/PipeLine/pipeline.ngc" ...
+Loading design module "ipcore_dir/DataMemory.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -16,6 +16,206 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'enable' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'instruction<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'ALUOpId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'ALUOpId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'RegDstId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'RegDstId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'outPcLatch<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRsId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'dataRtId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'outImmediate<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'outAddId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRt<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRt<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRt<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRt<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRt<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRd<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRd<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRd<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRd<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'outRegRd<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'FunctionId<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'MemReadId' has no driver
+WARNING:NgdBuild:452 - logical net 'ALUSrcId' has no driver
+WARNING:NgdBuild:452 - logical net 'Jump' has no driver
+WARNING:NgdBuild:452 - logical net 'PCSrc' has no driver
+WARNING:NgdBuild:452 - logical net 'WriteReg<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'WriteReg<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'WriteReg<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'WriteReg<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'WriteReg<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'RegWriteMem' has no driver
+WARNING:NgdBuild:452 - logical net 'callStageIF/inIF_Flush' has no driver
+WARNING:NgdBuild:452 - logical net 'callStageEX/inEX_Flush' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -26,12 +226,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings: 200
 
-Total memory usage is 122252 kilobytes
+Total memory usage is 122256 kilobytes
 
 Writing NGD file "pipeline.ngd" ...
-Total REAL time to NGDBUILD completion:  17 sec
-Total CPU time to NGDBUILD completion:   11 sec
+Total REAL time to NGDBUILD completion:  10 sec
+Total CPU time to NGDBUILD completion:   10 sec
 
 Writing NGDBUILD log file "pipeline.bld"...

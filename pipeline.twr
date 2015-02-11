@@ -30,18 +30,49 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Tue Jan 20 09:13:09 2015 
+Setup/Hold to clock clk100
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+rx          |    3.194(R)|      SLOW  |   -1.428(R)|      FAST  |clk               |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk100 to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+led<0>      |         5.494(R)|      SLOW  |         3.387(R)|      FAST  |clk               |   0.000|
+led<1>      |         5.620(R)|      SLOW  |         3.488(R)|      FAST  |clk               |   0.000|
+led<2>      |         5.710(R)|      SLOW  |         3.515(R)|      FAST  |clk               |   0.000|
+led<3>      |         5.705(R)|      SLOW  |         3.519(R)|      FAST  |clk               |   0.000|
+led<4>      |         5.291(R)|      SLOW  |         3.207(R)|      FAST  |clk               |   0.000|
+led<5>      |         5.437(R)|      SLOW  |         3.289(R)|      FAST  |clk               |   0.000|
+led<6>      |         5.103(R)|      SLOW  |         3.106(R)|      FAST  |clk               |   0.000|
+led<7>      |         5.583(R)|      SLOW  |         3.419(R)|      FAST  |clk               |   0.000|
+tx          |         5.102(R)|      SLOW  |         3.080(R)|      FAST  |clk               |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk100
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk100         |    5.531|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Wed Feb 11 18:09:41 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 151 MB
+Peak Memory Usage: 152 MB
 
 
 

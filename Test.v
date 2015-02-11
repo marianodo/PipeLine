@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:22:43 02/04/2015
+// Create Date:   12:57:48 02/11/2015
 // Design Name:   pipeline
 // Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
@@ -25,78 +25,36 @@
 module Test;
 
 	// Inputs
-	reg clk;
+	reg clk100;
+	reg btn;
+	reg rx;
 
 	// Outputs
-	wire [31:0] outMuxWb;
+	wire tx;
+	wire [7:0] led;
 
 	// Instantiate the Unit Under Test (UUT)
 	pipeline uut (
-		.clk(clk), 
-		.outMuxWb(outMuxWb)
+		.clk100(clk100), 
+		.btn(btn), 
+		.rx(rx), 
+		.tx(tx), 
+		.led(led)
 	);
 
 	initial begin
-			clk = 0;
-#100;      
-clk = 1;
-#100;
+		// Initialize Inputs
+		clk100 = 0;
+		btn = 0;
+		rx = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
         
-// clock 2
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 3
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 4
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 5
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 6
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 7
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
-
-// clock 8
-clk = 0;
-#100;      
-clk = 1;
-#100;
+		// Add stimulus here
 
 	end
-      
+      always
+		# 100 clk100 = ~ clk100;
 endmodule
 

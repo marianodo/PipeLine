@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+pipeline instance_name (
+    .clk100(clk100), 
+    .btn(btn), 
+    .rx(rx), 
+    .tx(tx), 
+    .led(led), 
+    .an(an), 
+    .sseg(sseg)
+    );
+
+

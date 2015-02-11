@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj PipeLine -o C:/Users/Nano/Desktop/PipeLine/StageID.tfi -lib work C:/Users/Nano/Desktop/PipeLine//StageID.v -module StageID -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
