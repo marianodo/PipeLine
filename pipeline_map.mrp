@@ -11,40 +11,40 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Feb 11 18:08:43 2015
+Mapped Date    : Wed Feb 18 16:03:57 2015
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    0
+Number of warnings:    4
 Slice Logic Utilization:
-  Number of Slice Registers:                    54 out of  18,224    1%
-    Number used as Flip Flops:                  54
-    Number used as Latches:                      0
+  Number of Slice Registers:                 2,588 out of  18,224   14%
+    Number used as Flip Flops:               1,502
+    Number used as Latches:                  1,057
     Number used as Latch-thrus:                  0
-    Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         83 out of   9,112    1%
-    Number used as logic:                       80 out of   9,112    1%
-      Number using O6 output only:              58
-      Number using O5 output only:               6
-      Number using O5 and O6:                   16
+    Number used as AND/OR logics:               29
+  Number of Slice LUTs:                      3,058 out of   9,112   33%
+    Number used as logic:                    3,042 out of   9,112   33%
+      Number using O6 output only:           2,919
+      Number using O5 output only:              42
+      Number using O5 and O6:                   81
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      3
-      Number with same-slice register load:      2
-      Number with same-slice carry load:         1
+    Number used exclusively as route-thrus:     16
+      Number with same-slice register load:     13
+      Number with same-slice carry load:         3
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                    31 out of   2,278    1%
-  Number of MUXCYs used:                         8 out of   4,556    1%
-  Number of LUT Flip Flop pairs used:           87
-    Number with an unused Flip Flop:            38 out of      87   43%
-    Number with an unused LUT:                   4 out of      87    4%
-    Number of fully used LUT-FF pairs:          45 out of      87   51%
-    Number of unique control sets:               8
+  Number of occupied Slices:                 1,234 out of   2,278   54%
+  Number of MUXCYs used:                       124 out of   4,556    2%
+  Number of LUT Flip Flop pairs used:        4,104
+    Number with an unused Flip Flop:         1,539 out of   4,104   37%
+    Number with an unused LUT:               1,046 out of   4,104   25%
+    Number of fully used LUT-FF pairs:       1,519 out of   4,104   37%
+    Number of unique control sets:              44
     Number of slice register sites lost
-      to control set restrictions:              26 out of  18,224    1%
+      to control set restrictions:              25 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -58,15 +58,15 @@ IO Utilization:
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
-  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of RAMB8BWERs:                          1 out of      64    1%
   Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
     Number used as BUFIO2s:                      1
     Number used as BUFIO2_2CLKs:                 0
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
     Number used as BUFIO2FBs:                    1
     Number used as BUFIO2FB_2CLKs:               0
-  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
-    Number used as BUFGs:                        2
+  Number of BUFG/BUFGMUXs:                       4 out of      16   25%
+    Number used as BUFGs:                        4
     Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
     Number used as DCMs:                         1
@@ -87,11 +87,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.89
+Average Fanout of Non-Clock Nets:                3.85
 
-Peak Memory Usage:  260 MB
-Total REAL time to MAP completion:  20 secs 
-Total CPU time to MAP completion:   19 secs 
+Peak Memory Usage:  297 MB
+Total REAL time to MAP completion:  3 mins 29 secs 
+Total CPU time to MAP completion:   3 mins 19 secs 
 
 Table of Contents
 -----------------
@@ -114,264 +114,90 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Place:1137 - This design is not guaranteed to be routable! This design
+   contains a global buffer instance,
+   <callStageID/callID_EX_Latch/tmpAluop_BUFG>, driving the net, <ALUOpId<0>>,
+   that is driving the following (first 30) non-clock load pins.
+   < PIN: callDebugUnit/callFifo/n0062_1024.D; >
+   This is not a recommended design practice in Spartan-6 due to limitations in
+   the global routing that may cause excessive delay, skew or unroutable
+   situations.  It is recommended to only use a BUFG resource to drive clock
+   loads. Please pay extra attention to the timing and routing of this path to
+   ensure the design goals are met. This is normally an ERROR but the
+   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN
+   <callStageID/callID_EX_Latch/tmpAluop_BUFG.O> allowing your design to
+   continue. This constraint disables all clock placer rules related to the
+   specified COMP.PIN.
+WARNING:Place:1137 - This design is not guaranteed to be routable! This design
+   contains a global buffer instance,
+   <callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG>, driving the net,
+   <RegWriteMem>, that is driving the following (first 30) non-clock load pins.
+   < PIN: callStageID/callInstDecode/n1099<176>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<184>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<256>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<264>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<272>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<280>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<288>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<424>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<432>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<440>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<520>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<528>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<177>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<185>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<257>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<265>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<273>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<281>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<289>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<425>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<433>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<441>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<521>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<529>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<170>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<178>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<186>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<266>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<274>1.A4; >
+   < PIN: callStageID/callInstDecode/n1099<282>1.A4; >
+   This is not a recommended design practice in Spartan-6 due to limitations in
+   the global routing that may cause excessive delay, skew or unroutable
+   situations.  It is recommended to only use a BUFG resource to drive clock
+   loads. Please pay extra attention to the timing and routing of this path to
+   ensure the design goals are met. This is normally an ERROR but the
+   CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN
+   <callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG.O> allowing your design to
+   continue. This constraint disables all clock placer rules related to the
+   specified COMP.PIN.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net callDebugUnit/enableLatch_G
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network enable has no load.
-INFO:LIT:243 - Logical network instruction<25> has no load.
-INFO:LIT:243 - Logical network instruction<21> has no load.
-INFO:LIT:243 - Logical network instruction<20> has no load.
-INFO:LIT:243 - Logical network instruction<18> has no load.
-INFO:LIT:243 - Logical network instruction<17> has no load.
-INFO:LIT:243 - Logical network instruction<16> has no load.
-INFO:LIT:243 - Logical network instruction<26> has no load.
 INFO:LIT:243 - Logical network ALUOpId<1> has no load.
-INFO:LIT:243 - Logical network ALUOpId<0> has no load.
-INFO:LIT:243 - Logical network RegDstId<1> has no load.
-INFO:LIT:243 - Logical network RegDstId<0> has no load.
-INFO:LIT:243 - Logical network outPcLatch<31> has no load.
-INFO:LIT:243 - Logical network outPcLatch<30> has no load.
-INFO:LIT:243 - Logical network outPcLatch<29> has no load.
-INFO:LIT:243 - Logical network outPcLatch<28> has no load.
-INFO:LIT:243 - Logical network outPcLatch<27> has no load.
-INFO:LIT:243 - Logical network outPcLatch<26> has no load.
-INFO:LIT:243 - Logical network outPcLatch<25> has no load.
-INFO:LIT:243 - Logical network outPcLatch<24> has no load.
-INFO:LIT:243 - Logical network outPcLatch<23> has no load.
-INFO:LIT:243 - Logical network outPcLatch<22> has no load.
-INFO:LIT:243 - Logical network outPcLatch<21> has no load.
-INFO:LIT:243 - Logical network outPcLatch<20> has no load.
-INFO:LIT:243 - Logical network outPcLatch<19> has no load.
-INFO:LIT:243 - Logical network outPcLatch<18> has no load.
-INFO:LIT:243 - Logical network outPcLatch<17> has no load.
-INFO:LIT:243 - Logical network outPcLatch<16> has no load.
-INFO:LIT:243 - Logical network outPcLatch<15> has no load.
-INFO:LIT:243 - Logical network outPcLatch<14> has no load.
-INFO:LIT:243 - Logical network outPcLatch<13> has no load.
-INFO:LIT:243 - Logical network outPcLatch<12> has no load.
-INFO:LIT:243 - Logical network outPcLatch<11> has no load.
-INFO:LIT:243 - Logical network outPcLatch<10> has no load.
-INFO:LIT:243 - Logical network outPcLatch<9> has no load.
-INFO:LIT:243 - Logical network outPcLatch<8> has no load.
-INFO:LIT:243 - Logical network outPcLatch<7> has no load.
-INFO:LIT:243 - Logical network outPcLatch<6> has no load.
-INFO:LIT:243 - Logical network outPcLatch<5> has no load.
-INFO:LIT:243 - Logical network outPcLatch<4> has no load.
-INFO:LIT:243 - Logical network outPcLatch<3> has no load.
-INFO:LIT:243 - Logical network outPcLatch<2> has no load.
-INFO:LIT:243 - Logical network outPcLatch<1> has no load.
-INFO:LIT:243 - Logical network outPcLatch<0> has no load.
-INFO:LIT:243 - Logical network dataRsId<31> has no load.
-INFO:LIT:243 - Logical network dataRsId<30> has no load.
-INFO:LIT:243 - Logical network dataRsId<29> has no load.
-INFO:LIT:243 - Logical network dataRsId<28> has no load.
-INFO:LIT:243 - Logical network dataRsId<27> has no load.
-INFO:LIT:243 - Logical network dataRsId<26> has no load.
-INFO:LIT:243 - Logical network dataRsId<25> has no load.
-INFO:LIT:243 - Logical network dataRsId<24> has no load.
-INFO:LIT:243 - Logical network dataRsId<23> has no load.
-INFO:LIT:243 - Logical network dataRsId<22> has no load.
-INFO:LIT:243 - Logical network dataRsId<21> has no load.
-INFO:LIT:243 - Logical network dataRsId<20> has no load.
-INFO:LIT:243 - Logical network dataRsId<19> has no load.
-INFO:LIT:243 - Logical network dataRsId<18> has no load.
-INFO:LIT:243 - Logical network dataRsId<17> has no load.
-INFO:LIT:243 - Logical network dataRsId<16> has no load.
-INFO:LIT:243 - Logical network dataRsId<15> has no load.
-INFO:LIT:243 - Logical network dataRsId<14> has no load.
-INFO:LIT:243 - Logical network dataRsId<13> has no load.
-INFO:LIT:243 - Logical network dataRsId<12> has no load.
-INFO:LIT:243 - Logical network dataRsId<11> has no load.
-INFO:LIT:243 - Logical network dataRsId<10> has no load.
-INFO:LIT:243 - Logical network dataRsId<9> has no load.
-INFO:LIT:243 - Logical network dataRsId<8> has no load.
-INFO:LIT:243 - Logical network dataRsId<7> has no load.
-INFO:LIT:243 - Logical network dataRsId<6> has no load.
-INFO:LIT:243 - Logical network dataRsId<5> has no load.
-INFO:LIT:243 - Logical network dataRsId<4> has no load.
-INFO:LIT:243 - Logical network dataRsId<3> has no load.
-INFO:LIT:243 - Logical network dataRsId<2> has no load.
-INFO:LIT:243 - Logical network dataRsId<1> has no load.
-INFO:LIT:243 - Logical network dataRsId<0> has no load.
-INFO:LIT:243 - Logical network dataRtId<31> has no load.
-INFO:LIT:243 - Logical network dataRtId<30> has no load.
-INFO:LIT:243 - Logical network dataRtId<29> has no load.
-INFO:LIT:243 - Logical network dataRtId<28> has no load.
-INFO:LIT:243 - Logical network dataRtId<27> has no load.
-INFO:LIT:243 - Logical network dataRtId<26> has no load.
-INFO:LIT:243 - Logical network dataRtId<25> has no load.
-INFO:LIT:243 - Logical network dataRtId<24> has no load.
-INFO:LIT:243 - Logical network dataRtId<23> has no load.
-INFO:LIT:243 - Logical network dataRtId<22> has no load.
-INFO:LIT:243 - Logical network dataRtId<21> has no load.
-INFO:LIT:243 - Logical network dataRtId<20> has no load.
-INFO:LIT:243 - Logical network dataRtId<19> has no load.
-INFO:LIT:243 - Logical network dataRtId<18> has no load.
-INFO:LIT:243 - Logical network dataRtId<17> has no load.
-INFO:LIT:243 - Logical network dataRtId<16> has no load.
-INFO:LIT:243 - Logical network dataRtId<15> has no load.
-INFO:LIT:243 - Logical network dataRtId<14> has no load.
-INFO:LIT:243 - Logical network dataRtId<13> has no load.
-INFO:LIT:243 - Logical network dataRtId<12> has no load.
-INFO:LIT:243 - Logical network dataRtId<11> has no load.
-INFO:LIT:243 - Logical network dataRtId<10> has no load.
-INFO:LIT:243 - Logical network dataRtId<9> has no load.
-INFO:LIT:243 - Logical network dataRtId<8> has no load.
-INFO:LIT:243 - Logical network dataRtId<7> has no load.
-INFO:LIT:243 - Logical network dataRtId<6> has no load.
-INFO:LIT:243 - Logical network dataRtId<5> has no load.
-INFO:LIT:243 - Logical network dataRtId<4> has no load.
-INFO:LIT:243 - Logical network dataRtId<3> has no load.
-INFO:LIT:243 - Logical network dataRtId<2> has no load.
-INFO:LIT:243 - Logical network dataRtId<1> has no load.
-INFO:LIT:243 - Logical network dataRtId<0> has no load.
-INFO:LIT:243 - Logical network outImmediate<31> has no load.
-INFO:LIT:243 - Logical network outImmediate<30> has no load.
-INFO:LIT:243 - Logical network outImmediate<29> has no load.
-INFO:LIT:243 - Logical network outImmediate<28> has no load.
-INFO:LIT:243 - Logical network outImmediate<27> has no load.
-INFO:LIT:243 - Logical network outImmediate<26> has no load.
-INFO:LIT:243 - Logical network outImmediate<25> has no load.
-INFO:LIT:243 - Logical network outImmediate<24> has no load.
-INFO:LIT:243 - Logical network outImmediate<23> has no load.
-INFO:LIT:243 - Logical network outImmediate<22> has no load.
-INFO:LIT:243 - Logical network outImmediate<21> has no load.
-INFO:LIT:243 - Logical network outImmediate<20> has no load.
-INFO:LIT:243 - Logical network outImmediate<19> has no load.
-INFO:LIT:243 - Logical network outImmediate<18> has no load.
-INFO:LIT:243 - Logical network outImmediate<17> has no load.
-INFO:LIT:243 - Logical network outImmediate<16> has no load.
-INFO:LIT:243 - Logical network outImmediate<15> has no load.
-INFO:LIT:243 - Logical network outImmediate<14> has no load.
-INFO:LIT:243 - Logical network outImmediate<13> has no load.
-INFO:LIT:243 - Logical network outImmediate<12> has no load.
-INFO:LIT:243 - Logical network outImmediate<11> has no load.
-INFO:LIT:243 - Logical network outImmediate<10> has no load.
-INFO:LIT:243 - Logical network outImmediate<9> has no load.
-INFO:LIT:243 - Logical network outImmediate<8> has no load.
-INFO:LIT:243 - Logical network outImmediate<7> has no load.
-INFO:LIT:243 - Logical network outImmediate<6> has no load.
-INFO:LIT:243 - Logical network outImmediate<5> has no load.
-INFO:LIT:243 - Logical network outImmediate<4> has no load.
-INFO:LIT:243 - Logical network outImmediate<3> has no load.
-INFO:LIT:243 - Logical network outImmediate<2> has no load.
-INFO:LIT:243 - Logical network outImmediate<1> has no load.
-INFO:LIT:243 - Logical network outImmediate<0> has no load.
-INFO:LIT:243 - Logical network outAddId<31> has no load.
-INFO:LIT:243 - Logical network outAddId<30> has no load.
-INFO:LIT:243 - Logical network outAddId<29> has no load.
-INFO:LIT:243 - Logical network outAddId<28> has no load.
-INFO:LIT:243 - Logical network outAddId<27> has no load.
-INFO:LIT:243 - Logical network outAddId<26> has no load.
-INFO:LIT:243 - Logical network outAddId<25> has no load.
-INFO:LIT:243 - Logical network outAddId<24> has no load.
-INFO:LIT:243 - Logical network outAddId<23> has no load.
-INFO:LIT:243 - Logical network outAddId<22> has no load.
-INFO:LIT:243 - Logical network outAddId<21> has no load.
-INFO:LIT:243 - Logical network outAddId<20> has no load.
-INFO:LIT:243 - Logical network outAddId<19> has no load.
-INFO:LIT:243 - Logical network outAddId<18> has no load.
-INFO:LIT:243 - Logical network outAddId<17> has no load.
-INFO:LIT:243 - Logical network outAddId<16> has no load.
-INFO:LIT:243 - Logical network outAddId<15> has no load.
-INFO:LIT:243 - Logical network outAddId<14> has no load.
-INFO:LIT:243 - Logical network outAddId<13> has no load.
-INFO:LIT:243 - Logical network outAddId<12> has no load.
-INFO:LIT:243 - Logical network outAddId<11> has no load.
-INFO:LIT:243 - Logical network outAddId<10> has no load.
-INFO:LIT:243 - Logical network outAddId<9> has no load.
-INFO:LIT:243 - Logical network outAddId<8> has no load.
-INFO:LIT:243 - Logical network outAddId<7> has no load.
-INFO:LIT:243 - Logical network outAddId<6> has no load.
-INFO:LIT:243 - Logical network outAddId<5> has no load.
-INFO:LIT:243 - Logical network outAddId<4> has no load.
-INFO:LIT:243 - Logical network outAddId<3> has no load.
-INFO:LIT:243 - Logical network outAddId<2> has no load.
-INFO:LIT:243 - Logical network outAddId<1> has no load.
-INFO:LIT:243 - Logical network outAddId<0> has no load.
-INFO:LIT:243 - Logical network outRegRt<4> has no load.
-INFO:LIT:243 - Logical network outRegRt<3> has no load.
-INFO:LIT:243 - Logical network outRegRt<2> has no load.
-INFO:LIT:243 - Logical network outRegRt<1> has no load.
-INFO:LIT:243 - Logical network outRegRt<0> has no load.
-INFO:LIT:243 - Logical network outRegRd<4> has no load.
-INFO:LIT:243 - Logical network outRegRd<3> has no load.
-INFO:LIT:243 - Logical network outRegRd<2> has no load.
-INFO:LIT:243 - Logical network outRegRd<1> has no load.
-INFO:LIT:243 - Logical network outRegRd<0> has no load.
 INFO:LIT:243 - Logical network FunctionId<5> has no load.
-INFO:LIT:243 - Logical network FunctionId<4> has no load.
 INFO:LIT:243 - Logical network FunctionId<3> has no load.
 INFO:LIT:243 - Logical network FunctionId<2> has no load.
 INFO:LIT:243 - Logical network FunctionId<1> has no load.
 INFO:LIT:243 - Logical network FunctionId<0> has no load.
-INFO:LIT:243 - Logical network MemReadId has no load.
-INFO:LIT:243 - Logical network ALUSrcId has no load.
-INFO:LIT:243 - Logical network Jump has no load.
-INFO:LIT:243 - Logical network PCSrc has no load.
-INFO:LIT:243 - Logical network WriteReg<4> has no load.
-INFO:LIT:243 - Logical network WriteReg<3> has no load.
-INFO:LIT:243 - Logical network WriteReg<2> has no load.
-INFO:LIT:243 - Logical network WriteReg<1> has no load.
-INFO:LIT:243 - Logical network WriteReg<0> has no load.
-INFO:LIT:243 - Logical network RegWriteMem has no load.
+INFO:LIT:243 - Logical network IF_Flush has no load.
+INFO:LIT:243 - Logical network EX_Flush has no load.
 INFO:LIT:243 - Logical network btn_IBUF has no load.
-INFO:LIT:243 - Logical network callStageIF/inIF_Flush has no load.
-INFO:LIT:243 - Logical network callStageEX/inEX_Flush has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<31> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<30> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<29> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<28> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<27> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<26> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<25> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<24> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<23> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<22> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<21> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<20> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<19> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<18> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<17> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<16> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<15> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<14> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<13> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<12> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<11> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<10> has no
-   load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<9> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<8> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<7> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<6> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<5> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<4> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<3> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<2> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<1> has no load.
-INFO:LIT:243 - Logical network callStageMEM/callDataMemory/douta<0> has no load.
+INFO:LIT:243 - Logical network callStageIF/outShiftIF<1> has no load.
+INFO:LIT:243 - Logical network callStageIF/outShiftIF<0> has no load.
+INFO:LIT:243 - Logical network callStageID/outALUOp<1> has no load.
+INFO:LIT:243 - Logical network callStageID/outFunction<5> has no load.
+INFO:LIT:243 - Logical network callStageID/outFunction<3> has no load.
+INFO:LIT:243 - Logical network callStageID/outFunction<2> has no load.
+INFO:LIT:243 - Logical network callStageID/outFunction<1> has no load.
+INFO:LIT:243 - Logical network callStageID/outFunction<0> has no load.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -386,10 +212,10 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  73 block(s) removed
-   5 block(s) optimized away
-  72 signal(s) removed
-   8 Block(s) redundant
+   1 block(s) removed
+  17 block(s) optimized away
+   2 signal(s) removed
+  46 Block(s) redundant
 
 Section 5 - Removed Logic
 -------------------------
@@ -405,233 +231,38 @@ above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
 Loadless block "callStageID/callAddID/Msub_tmpOut31" (ROM) removed.
- The signal "PostPc<10>" is loadless and has been removed.
-  Loadless block "callStageIF/callIF_ID_Latch/XST_GND" (ZERO) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>1" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut" is loadless and has been removed.
-  Loadless block "callStageID/callAddID/XST_GND" (ZERO) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>10" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut9" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut9" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>11" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut10" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut10" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>12" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut11" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut11" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>13" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut12" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut12" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>14" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut13" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut13" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>15" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut14" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut14" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>16" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut15" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut15" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>17" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut16" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut16" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>18" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut17" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut17" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>19" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut18" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut18" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>2" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut1" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut1" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>20" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut19" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut19" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>21" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut20" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut20" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>22" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut21" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut21" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>23" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut22" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut22" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>24" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut23" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut23" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>25" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut24" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut24" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>26" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut25" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut25" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>27" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut26" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut26" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>28" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut27" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut27" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>29" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut28" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut28" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>3" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut2" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut2" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>30" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut29" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut29" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>31" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut30" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut30" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>4" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut3" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut3" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>5" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut4" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut4" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>6" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut5" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut5" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>7" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut6" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut6" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>8" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut7" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut7" (ROM) removed.
-Loadless block "callStageID/callAddID/Msub_tmpOut_lut<0>9" (ROM) removed.
- The signal "callStageID/callAddID/Msub_tmpOut8" is loadless and has been
-removed.
-  Loadless block "callStageID/callAddID/Msub_tmpOut8" (ROM) removed.
-The signal "callStageMEM/inMemWriteData<10>" is sourceless and has been removed.
-The signal "callStageMEM/inMemWriteData<19>" is sourceless and has been removed.
-The signal "callStageMEM/ReadWriteMEM<0>" is sourceless and has been removed.
-The signal "callStageMEM/clkNeg" is sourceless and has been removed.
-The signal "callStageMEM/callDataMemory/douta<31>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<30>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<29>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<28>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<27>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<26>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<25>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<24>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<23>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<22>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<21>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<20>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<19>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<18>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<17>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<16>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<15>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<14>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<13>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<12>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<11>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<10>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<9>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<8>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<7>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<6>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<5>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<4>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<3>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<2>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<1>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/douta<0>" is sourceless and has been
-removed.
-The signal "callStageMEM/callDataMemory/N0" is sourceless and has been removed.
-The signal "callStageMEM/callDataMemory/N1" is sourceless and has been removed.
-
-The trimmed logic reported below is either:
-   1. part of a cycle
-   2. part of disabled logic
-   3. a side-effect of other trimmed logic
-
-The signal "MemReadEx" is unused and has been removed.
- Unused block "callStageEX/callEX_MEM_Latch/XST_GND" (ZERO) removed.
-The signal "dataRtEx<0>" is unused and has been removed.
- Unused block "callStageEX/callEX_MEM_Latch/XST_VCC" (ONE) removed.
-Unused block
-"callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native
-_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.WIDE_PRIM9.ram"
-(RAMB8BWER) removed.
-Unused block "callStageMEM/callDataMemory/XST_GND" (ZERO) removed.
-Unused block "callStageMEM/callDataMemory/XST_VCC" (ONE) removed.
-Unused block "callStageMEM/callIPCoreAdapter/XST_GND" (ZERO) removed.
-Unused block "callStageMEM/callIPCoreAdapter/clkNegTmp1_INV_0" (BUF) removed.
-Unused block "callStageMEM/callStoreWordDividerMEM/XST_GND" (ZERO) removed.
-Unused block "callStageMEM/callStoreWordDividerMEM/XST_VCC" (ONE) removed.
+The signal "callStageIF/callIF_ID_Latch/N0" is sourceless and has been removed.
+The signal "callStageEX/callEX_MEM_Latch/N0" is sourceless and has been removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
 GND 		callClock10Mhz/XST_GND
+GND 		callDebugUnit/XST_GND
 GND 		callDebugUnit/callBaudGenerator/XST_GND
 VCC 		callDebugUnit/callBaudGenerator/XST_VCC
 GND 		callDebugUnit/callFifo/XST_GND
 VCC 		callDebugUnit/callFifo/XST_VCC
+GND 		callStageEX/callAluEx/XST_GND
+GND 		callStageEX/callEX_MEM_Latch/XST_GND
+GND 		callStageID/callAddID/XST_GND
+VCC 		callStageID/callAddID/XST_VCC
+GND 		callStageID/callEqualBranch/XST_GND
+VCC 		callStageID/callEqualBranch/XST_VCC
+GND 		callStageIF/callAddPc/XST_GND
+VCC 		callStageIF/callAddPc/XST_VCC
+GND 		callStageIF/callIF_ID_Latch/XST_GND
+GND 		callStageMEM/callDataMemory/XST_GND
+VCC 		callStageMEM/callDataMemory/XST_VCC
 
 Redundant Block(s):
 TYPE 		BLOCK
-INV 		callDebugUnit/callFifo/Mmux_r_data_1161_INV_0
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<1>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<2>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<3>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<4>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<5>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_cy<6>_rt
+LUT1 		callDebugUnit/callFifo/Mcount_r_ptr_reg_xor<7>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<1>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<2>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<3>_rt
@@ -639,6 +270,38 @@ LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<4>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<5>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<6>_rt
 LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_xor<7>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<1>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<2>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<3>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<4>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<5>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<6>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<7>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<8>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<9>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<10>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<11>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<12>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<13>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<14>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<15>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<16>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<17>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<18>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<19>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<20>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<21>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<22>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<23>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<24>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<25>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<26>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<27>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<28>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<29>_rt
+LUT1 		callStageIF/callAddPc/Madd_tmp_cy<30>_rt
+INV 		callStageEX/callAluEx/ALUOp[1]_ALUOp[1]_OR_164_o1_INV_0
+INV 		callStageMEM/callIPCoreAdapter/clkNegTmp1_INV_0
 
 Section 6 - IOB Properties
 --------------------------
@@ -720,33 +383,109 @@ PHASE_SHIFT = 0
 
 Section 12 - Control Set Information
 ------------------------------------
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Clock Signal | Reset Signal                                                    | Set Signal | Enable Signal                              | Slice Load Count | Bel Load Count |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| clk          |                                                                 |            |                                            | 12               | 22             |
-| clk          |                                                                 |            | callDebugUnit/callFifo/_n0122_inv          | 1                | 1              |
-| clk          |                                                                 |            | callDebugUnit/callUartRx/Mmux_state_next12 | 3                | 8              |
-| clk          |                                                                 |            | callDebugUnit/callUartRx/_n0121_inv        | 1                | 3              |
-| clk          |                                                                 |            | callDebugUnit/callUartTx/_n0112_inv        | 1                | 3              |
-| clk          |                                                                 |            | callDebugUnit/callUartTx/_n0130_inv1_cepot | 3                | 8              |
-| clk          | callDebugUnit/callStepModule/inDato[7]_GND_1102_o_equal_2_o_inv |            |                                            | 1                | 1              |
-| clk          | callDebugUnit/tick                                              |            |                                            | 2                | 8              |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal                 | Reset Signal       | Set Signal | Enable Signal                                                        | Slice Load Count | Bel Load Count |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ALUOpId<0>                   |                    |            |                                                                      | 8                | 32             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk                          |                    |            |                                                                      | 413              | 1059           |
+| clk                          |                    |            | callDebugUnit/callFifo/_n0085_inv                                    | 2                | 8              |
+| clk                          |                    |            | callDebugUnit/callUartRx/Mmux_state_next12                           | 4                | 8              |
+| clk                          |                    |            | callDebugUnit/callUartRx/_n0121_inv                                  | 1                | 3              |
+| clk                          |                    |            | callDebugUnit/callUartTx/_n0112_inv                                  | 1                | 3              |
+| clk                          |                    |            | callDebugUnit/callUartTx/_n0130_inv                                  | 5                | 8              |
+| clk                          |                    |            | callStageIF/callIF_ID_Latch/_n0030_inv                               | 19               | 64             |
+| clk                          |                    |            | enable                                                               | 139              | 309            |
+| clk                          | callDebugUnit/tick |            |                                                                      | 2                | 8              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<0>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<1>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<2>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<3>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<4>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<5>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<6>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<7>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<8>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<9>  | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<10> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<11> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<12> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<13> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<14> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<15> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<16> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<17> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<18> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<19> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<20> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<21> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<22> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<23> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<24> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<25> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<26> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<27> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<28> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<29> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<30> | 8                | 32             |
+| ~RegWriteMem                 |                    |            | callStageID/callInstDecode/inInstDecodeWriteReg[4]_Decoder_1_OUT<31> | 8                | 32             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ~callDebugUnit/enableLatch_G |                    |            |                                                                      | 1                | 1              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ~clk                         |                    |            | IF_IDWrite                                                           | 12               | 32             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 13 - Utilization by Hierarchy
 -------------------------------------
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Module              | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical Name                    |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| pipeline/           |           | 0/35          | 0/54          | 0/83          | 0/0           | 0/0       | 0/0     | 0/2   | 0/0   | 0/0   | 0/1   | 0/0       | pipeline                                  |
-| +callClock10Mhz     |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 2/2   | 0/0   | 0/0   | 1/1   | 0/0       | pipeline/callClock10Mhz                   |
-| +callDebugUnit      |           | 1/35          | 0/54          | 1/83          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit                    |
-| ++callBaudGenerator |           | 3/3           | 8/8           | 10/10         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callBaudGenerator  |
-| ++callFifo          |           | 9/9           | 9/9           | 25/25         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callFifo           |
-| ++callStepModule    |           | 3/3           | 2/2           | 4/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callStepModule     |
-| ++callUartRx        |           | 8/8           | 17/17         | 14/14         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartRx         |
-| ++callUartTx        |           | 11/11         | 18/18         | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartTx         |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module                                              | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical Name                                                                                                                                |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| pipeline/                                           |           | 0/1960        | 0/2559        | 0/3058        | 0/0           | 0/1       | 0/0     | 0/4   | 0/0   | 0/0   | 0/1   | 0/0       | pipeline                                                                                                                                              |
+| +callClock10Mhz                                     |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 2/2   | 0/0   | 0/0   | 1/1   | 0/0       | pipeline/callClock10Mhz                                                                                                                               |
+| +callDebugUnit                                      |           | 5/559         | 1/1098        | 7/427         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit                                                                                                                                |
+| ++callBaudGenerator                                 |           | 3/3           | 8/8           | 10/10         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callBaudGenerator                                                                                                              |
+| ++callFifo                                          |           | 530/530       | 1052/1052     | 372/372       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callFifo                                                                                                                       |
+| ++callStepModule                                    |           | 2/2           | 2/2           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callStepModule                                                                                                                 |
+| ++callUartRx                                        |           | 8/8           | 17/17         | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartRx                                                                                                                     |
+| ++callUartTx                                        |           | 11/11         | 18/18         | 17/17         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartTx                                                                                                                     |
+| +callForwardingUnit                                 |           | 11/11         | 0/0           | 20/20         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callForwardingUnit                                                                                                                           |
+| +callHazardDetectionUnit                            |           | 10/10         | 0/0           | 22/22         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callHazardDetectionUnit                                                                                                                      |
+| +callStageEX                                        |           | 0/92          | 0/111         | 0/101         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX                                                                                                                                  |
+| ++callAluEx                                         |           | 8/8           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callAluEx                                                                                                                        |
+| ++callEX_MEM_Latch                                  |           | 24/24         | 79/79         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callEX_MEM_Latch                                                                                                                 |
+| ++callMuxExForwardA                                 |           | 31/31         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxExForwardA                                                                                                                |
+| ++callMuxExForwardB                                 |           | 27/27         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxExForwardB                                                                                                                |
+| ++callMuxRtRd                                       |           | 2/2           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxRtRd                                                                                                                      |
+| +callStageID                                        |           | 0/1151        | 0/1182        | 0/2336        | 0/0           | 0/0       | 0/0     | 0/1   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID                                                                                                                                  |
+| ++callAddID                                         |           | 9/9           | 0/0           | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callAddID                                                                                                                        |
+| ++callControlUnit                                   |           | 8/8           | 0/0           | 14/14         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callControlUnit                                                                                                                  |
+| ++callEqualBranch                                   |           | 4/4           | 0/0           | 12/12         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callEqualBranch                                                                                                                  |
+| ++callID_EX_Latch                                   |           | 95/95         | 158/158       | 4/4           | 0/0           | 0/0       | 0/0     | 1/1   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callID_EX_Latch                                                                                                                  |
+| ++callInstDecode                                    |           | 980/980       | 1024/1024     | 2210/2210     | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callInstDecode                                                                                                                   |
+| ++callMuxDataA_ALU                                  |           | 28/28         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callMuxDataA_ALU                                                                                                                 |
+| ++callMuxDataB_ALU                                  |           | 27/27         | 0/0           | 31/31         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callMuxDataB_ALU                                                                                                                 |
+| +callStageIF                                        |           | 0/57          | 0/96          | 0/74          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF                                                                                                                                  |
+| ++callAddPc                                         |           | 8/8           | 0/0           | 4/4           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callAddPc                                                                                                                        |
+| ++callIF_ID_Latch                                   |           | 20/20         | 64/64         | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callIF_ID_Latch                                                                                                                  |
+| ++callInstruccionMem                                |           | 5/5           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callInstruccionMem                                                                                                               |
+| ++callMuxJumpPc                                     |           | 12/12         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callMuxJumpPc                                                                                                                    |
+| ++callPc                                            |           | 12/12         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callPc                                                                                                                           |
+| +callStageMEM                                       |           | 0/51          | 0/72          | 0/46          | 0/0           | 0/1       | 0/0     | 0/1   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM                                                                                                                                 |
+| ++callDataMemory                                    |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory                                                                                                                  |
+| +++U0                                               |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0                                                                                                               |
+| ++++xst_blk_mem_generator                           |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator                                                                                         |
+| +++++gnative_mem_map_bmg.native_mem_map_blk_mem_gen |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen                                          |
+| ++++++valid.cstr                                    |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr                               |
+| +++++++ramloop[0].ram.r                             |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r              |
+| ++++++++s6_init.ram                                 |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram  |
+| ++callIPCoreAdapter                                 |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callIPCoreAdapter                                                                                                               |
+| ++callLoadWordDividerMEM                            |           | 11/11         | 0/0           | 24/24         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callLoadWordDividerMEM                                                                                                          |
+| ++callMEM_WB_Latch                                  |           | 27/27         | 72/72         | 1/1           | 0/0           | 0/0       | 0/0     | 1/1   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callMEM_WB_Latch                                                                                                                |
+| ++callStoreWordDividerMEM                           |           | 12/12         | 0/0           | 20/20         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callStoreWordDividerMEM                                                                                                         |
+| +callStageWB                                        |           | 0/29          | 0/0           | 0/32          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageWB                                                                                                                                  |
+| ++callMuxWB                                         |           | 29/29         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageWB/callMuxWB                                                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * Slices can be packed with basic elements from multiple hierarchies.
   Therefore, a slice will be counted in every hierarchical module

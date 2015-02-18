@@ -14,7 +14,7 @@ module DebugUnit
    (
       input wire clk,
       input wire  rx,
-		
+		//Declarar los registros del InstDecode
       input wire  [31:0] Registro0,
 		input wire  [31:0] Registro1,
 		input wire  [31:0] Registro2,
@@ -47,13 +47,27 @@ module DebugUnit
 		input wire  [31:0] Registro29,
 		input wire  [31:0] Registro30,
 		input wire  [31:0] Registro31,
-			
+		//////
+		// Registros del Control Unit
+		input wire BranchId, MemReadId,MemWriteId,ALUSrcId, RegWriteId,
+		input wire [1:0] RegDstId, MemtoRegId,ALUOpId,
+		///////////////////////
+		//Registros del Stage EX
+		input wire  MemReadEx,MemWriteEx, RegWriteEx,
+		input wire [1:0]  MemtoRegEx,
+		/////////////
+		//Registros del Stage MEM
+		input wire   RegWriteMem,
+		input wire [1:0]  MemtoRegMem,
+		/////////////
+		input [31:0] InstructionLatch,
+		
 	   output wire  tx,
     
 	   output [7:0] rx_data_out,
 	   output enable
    );
-	reg enableLatch = 0;
+	reg enableLatch = 1;
 	reg reset = 0;
    // signal declaration
    wire tick, rx_done_tick, tx_done_tick,tx_full;
@@ -85,6 +99,7 @@ module DebugUnit
    .clk(clk), 
    .rd(tx_done_tick), 
    .wr(outStep),
+	//Entrada de los Registros del InstDecode
 	.Registro0(Registro0),
 	.Registro1(Registro1), 
 	.Registro2(Registro2), 
@@ -117,6 +132,27 @@ module DebugUnit
 	.Registro29(Registro29), 
 	.Registro30(Registro30), 
 	.Registro31(Registro31),
+	/////////////////////////
+	// Entrada de los registros de control del Stage Id
+	.RegDstId(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
+	.BranchId(BranchId),
+	.MemReadId(MemReadId),
+	.MemtoRegId(MemtoRegId),
+	.ALUOpId(ALUOpId),
+	.MemWriteId(MemWriteId),
+	.ALUSrcId(ALUSrcId),
+	.RegWriteId(RegWriteId),
+	/////////////////////
+	// Entrada de los registros de control del Stage Ex
+	.MemReadEx(MemReadEx),
+	.MemWriteEx(MemWriteEx),
+	.MemtoRegEx(MemtoRegEx),
+	.RegWriteEx(RegWriteEx),
+	//////////////////
+	// Entrada de los registros de control del Stage MEM
+	.MemtoRegMem(MemtoRegMem),
+	.RegWriteMem(RegWriteMem),
+	//////////////////
    .full(), 
    .empty(rx_empty), 
    .r_data(tx_fifo_out)
@@ -135,5 +171,27 @@ module DebugUnit
 
    assign tx_fifo_not_empty = ~rx_empty;
 	assign rx_data_out_debug = rx_data_out;
-	assign enable = enableLatch;
+	
+	reg [2:0]counttmp = 0 ;
+always @(*)
+//begin
+//	if(counttmp == 4)
+//		begin
+//			enableLatch = 0;
+//			
+//		end
+//	else
+//		begin
+//			enableLatch = 1;
+//			counttmp = counttmp + 1;
+//		end
+//	
+//end
+begin
+	if (InstructionLatch == 32'b111111_11111_11111_11111_11111_111111)
+		begin
+			enableLatch = 0;
+		end
+end
+assign enable = enableLatch;
 endmodule
