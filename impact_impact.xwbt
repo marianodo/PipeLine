@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=D:\Facu\Arquitectura de Computadoras\pipeline\impact.xsl
-OUTFILE=D:\Facu\Arquitectura de Computadoras\pipeline\impact.xsl
+INFILE=C:\Users\Nano\Desktop\PipeLine\impact.xsl
+OUTFILE=C:\Users\Nano\Desktop\PipeLine\impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=D:\Facu\Arquitectura de Computadoras\pipeline
+WORKINGDIR=C:\Users\Nano\Desktop\PipeLine
 LICENSE=iMPACT
 USER_INFO=iMPACT

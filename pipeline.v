@@ -135,10 +135,10 @@ wire [31:0]  Registro31;
 	
 	.outAddBranch(outAddId),
 	.outPcLatch(outPcLatch),
-	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
 	.outDataRs(dataRsId), //Salidas 
 	.outDataRt(dataRtId), //Datos de los registros
 	.outImmediateLatch(outImmediate), //Valor imediato de la instruccion, sale del sign extend
+	.RegDst(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
 	.Branch(BranchId),
 	.MemRead(MemReadId),
 	.MemtoReg(MemtoRegId),
@@ -329,7 +329,29 @@ wire [31:0]  Registro31;
 	.Registro28(Registro28), 
 	.Registro29(Registro29), 
 	.Registro30(Registro30), 
-	.Registro31(Registro31)
+	.Registro31(Registro31),
+	
+	// Entrada de los registros de control al debug. Viene del Stage ID
+	.RegDstId(RegDstId), // Valor del control en donde si es 1 es tipo R y si es 0 es tipo I
+	.BranchId(BranchId),
+	.MemReadId(MemReadId),
+	.MemtoRegId(MemtoRegId),
+	.ALUOpId(ALUOpId),
+	.MemWriteId(MemWriteId),
+	.ALUSrcId(ALUSrcId),
+	.RegWriteId(RegWriteId),
+	/////
+	// Entrada de los registros del debug. Viene del Stage EX
+	.MemReadEx(MemReadEx),
+	.MemWriteEx(MemWriteEx),
+	.MemtoRegEx(MemtoRegEx),
+	.RegWriteEx(RegWriteEx),
+	////////////////////////////////////
+	// Entrada de los registros del debug. Viene del Stage MEM
+	.MemtoRegMem(MemtoRegMem),
+	.RegWriteMem(RegWriteMem),
+	//////////////////////////////////////
+	.InstructionLatch(instruction)
     );
 
 

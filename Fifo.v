@@ -4,7 +4,7 @@ module Fifo
   )
   (
 		input wire clk,rd,wr,
-		
+		//Entrada de los registros del Instdecode
 		input wire  [31:0] Registro0,
 		input wire  [31:0] Registro1,
 		input wire  [31:0] Registro2,
@@ -37,23 +37,37 @@ module Fifo
 		input wire  [31:0] Registro29,
 		input wire  [31:0] Registro30,
 		input wire  [31:0] Registro31,
-	 
+		
+	/////////////////////////////
+	//Entrada de los registros de control del Control Unit
+		input wire BranchId, MemReadId,MemWriteId,ALUSrcId, RegWriteId,
+		input wire [1:0] RegDstId, MemtoRegId,ALUOpId,
+	//////////////////////////////
+	 //Registros del Stage EX
+		input wire  MemReadEx,MemWriteEx, RegWriteEx,
+		input wire [1:0]  MemtoRegEx,
+		/////////////
+		//Registros del Stage MEM
+		input wire   RegWriteMem,
+		input wire [1:0]  MemtoRegMem,
+		/////////////
 	 output wire full, empty,
 	 output wire [B-1:0] r_data
 	  
 	
   );
 
-  reg [B-1:0] array_reg [127:0];
+  reg [B-1:0] array_reg [131:0];
   reg [7:0] w_ptr_reg, w_ptr_next, w_ptr_succ;
   reg [7:0] r_ptr_reg, r_ptr_next, r_ptr_succ;
   reg full_reg, empty_reg, full_next, empty_next;
   wire wr_en;
   
-  
+  reg prueba = 1;
   //Banco de registros y memoria
   always @(posedge clk)
-	  if(wr_en && r_ptr_next != 3) begin
+	  //if(wr_en && r_ptr_next != 3) begin
+	  if(prueba) begin
 			//****************** Instruction Fetch ********************
 			array_reg[0] = Registro0[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
 			array_reg[1] = Registro0[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
@@ -215,6 +229,11 @@ module Fifo
 			array_reg[126] = Registro31[15:8];//Instrucción que se ejecutará (bits 31:24)
 			array_reg[127] = Registro31[7:0]; //Instrucción que se ejecutará (bits 23:16)
 			
+			array_reg[128] = {2'b00,RegDstId, MemtoRegId,ALUOpId}; //Señales de control de 2 bits en latch ID/EX
+			array_reg[129] = {3'b101,BranchId, MemReadId,MemWriteId,ALUSrcId, RegWriteId}; //Señales de control de 1 bit en latch ID/EX
+			array_reg[130] = {3'b010,MemReadEx,MemWriteEx,RegWriteEx,MemtoRegEx}; // Señales de control del Stage Ex
+			array_reg[131] = {5'b00110,RegWriteMem,MemtoRegMem};
+			
 	  end	
 
   assign r_data = array_reg[r_ptr_reg];
@@ -229,13 +248,13 @@ module Fifo
 	end
 	
 	
-	reg [6:0] aux;
+	reg [7:0] aux;
   //Logica del proximo estado
   always @*
   begin
 	  w_ptr_succ = w_ptr_reg;
 	  aux = r_ptr_reg + 1;
-	  r_ptr_succ = aux [6:0];
+	  r_ptr_succ = aux [7:0];
 	  full_next = full_reg;
 	  empty_next = empty_reg;
 	  w_ptr_next = w_ptr_reg;

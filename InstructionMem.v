@@ -30,14 +30,14 @@ initial
 begin
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b100011_10000_10001_10000_10000_100000; //Load de la memoria 0 en registro 0
-	memory[1] = 32'b100011_00001_00010_00001_00000_000100;  //Store en la memoria 1 lo q tiene reg 1
-	memory[2] = 32'b100011_00001_00011_00001_00000_001000;  //Store en la memoria 3 lo q tiene reg 
-	memory[3] = 32'b100011_00001_00100_00001_00000_000100;  //suma del registro 1 + 2 = 7
-	memory[4] = 32'b101011_00001_00100_00001_00000_000001; //Store en la memoria 0 lo q tiene reg 0
-	memory[5] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
-	memory[6] = 32'b000000_00001_00000_01011_00000_100001; //suma del registro 1 + 2 = 11
-	memory[7] = 32'b100011_00001_00110_00001_00000_000001; //Load de la memoria 0 en registro 0
+	memory[0] = 32'b000000_00001_00001_01001_00000_100001; //Load de la memoria 0 en registro 0
+	memory[1] = 32'b000000_00010_00011_00100_00000_100001;  //Store en la memoria 1 lo q tiene reg 1
+	memory[2] = 32'b000000_00001_00011_01000_00000_100001;  //Store en la memoria 3 lo q tiene reg 
+	memory[3] = 32'b000000_00001_00100_01110_00000_100001;  //suma del registro 1 + 2 = 7
+	memory[4] = 32'b111111_11111_11111_11111_11111_111111; //Store en la memoria 0 lo q tiene reg 0
+//	memory[5] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
+//	memory[6] = 32'b000000_00001_01000_01011_00000_100001; //suma del registro 1 + 2 = 11
+//	memory[7] = 32'b000000_00001_00110_00001_00000_000001; //Load de la memoria 0 en registro 0
 //	memory[4] = 32'b000000_00001_00010_00110_00000_100001; //suma del registro 1 + 2 = 6
 //	memory[5] = 32'b000000_00001_00010_00111_00000_100001; //suma del registro 1 + 2 = 7
 //	memory[6] = 32'b000000_00001_00010_01000_00000_100001; //suma del registro 1 + 2 = 4
