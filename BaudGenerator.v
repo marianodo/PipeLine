@@ -5,7 +5,7 @@ module BaudGenerator
               M=10 // mod-M
    )
    (
-    input wire clk, reset,
+    input wire clk,
     output wire max_tick,
     output wire [N-1:0] q
    );
@@ -16,10 +16,8 @@ module BaudGenerator
 
    // body
    // register
-   always @(posedge clk, posedge reset)
-      if (reset)
-         r_reg <= 0;
-      else
+   always @(posedge clk)
+      
          r_reg <= r_next;
 
    // next-state logic

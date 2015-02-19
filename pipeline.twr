@@ -37,7 +37,7 @@ Setup/Hold to clock clk100
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-rx          |    3.613(R)|      SLOW  |   -1.731(R)|      FAST  |clk               |   0.000|
+rx          |    3.358(R)|      SLOW  |   -1.328(R)|      FAST  |clk               |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk100 to Pad
@@ -45,15 +45,15 @@ Clock clk100 to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-led<0>      |         5.356(R)|      SLOW  |         3.265(R)|      FAST  |clk               |   0.000|
-led<1>      |         5.375(R)|      SLOW  |         3.277(R)|      FAST  |clk               |   0.000|
-led<2>      |         5.277(R)|      SLOW  |         3.276(R)|      FAST  |clk               |   0.000|
-led<3>      |         5.221(R)|      SLOW  |         3.209(R)|      FAST  |clk               |   0.000|
-led<4>      |         5.344(R)|      SLOW  |         3.266(R)|      FAST  |clk               |   0.000|
-led<5>      |         5.482(R)|      SLOW  |         3.334(R)|      FAST  |clk               |   0.000|
-led<6>      |         5.150(R)|      SLOW  |         3.153(R)|      FAST  |clk               |   0.000|
-led<7>      |         5.604(R)|      SLOW  |         3.406(R)|      FAST  |clk               |   0.000|
-tx          |         4.865(R)|      SLOW  |         2.934(R)|      FAST  |clk               |   0.000|
+led<0>      |         5.271(R)|      SLOW  |         3.244(R)|      FAST  |clk               |   0.000|
+led<1>      |         5.443(R)|      SLOW  |         3.336(R)|      FAST  |clk               |   0.000|
+led<2>      |         5.255(R)|      SLOW  |         3.243(R)|      FAST  |clk               |   0.000|
+led<3>      |         5.658(R)|      SLOW  |         3.513(R)|      FAST  |clk               |   0.000|
+led<4>      |         5.503(R)|      SLOW  |         3.348(R)|      FAST  |clk               |   0.000|
+led<5>      |         5.233(R)|      SLOW  |         3.162(R)|      FAST  |clk               |   0.000|
+led<6>      |         5.101(R)|      SLOW  |         3.101(R)|      FAST  |clk               |   0.000|
+led<7>      |         5.404(R)|      SLOW  |         3.310(R)|      FAST  |clk               |   0.000|
+tx          |         5.142(R)|      SLOW  |         3.123(R)|      FAST  |clk               |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk100
@@ -61,18 +61,18 @@ Clock to Setup on destination clock clk100
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk100         |    8.022|    2.994|         |    2.074|
+clk100         |   98.234|    4.313|   15.907|    4.390|
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Feb 18 15:10:24 2015 
+Analysis completed Thu Feb 19 12:22:04 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 166 MB
+Peak Memory Usage: 215 MB
 
 
 

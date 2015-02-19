@@ -24,7 +24,6 @@ input [5:0] instReg,
 input [4:0] sa,
 input [1:0] ALUOp,
 
-
 output reg [31:0] outAlu
     );
 //ALUOp 
@@ -131,6 +130,10 @@ initial
 		else if(ALUOp == 2'b00) //Load/Store (LW/SW)
 			begin
 				outAlu <= inOutMuxForwardA + inOutMuxForwardB;
+			end
+		else
+			begin
+				outAlu <= 0;
 			end
 		
 end		

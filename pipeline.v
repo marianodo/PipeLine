@@ -20,7 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 module pipeline(
 input clk100,
-input btn,
 input rx,
 output tx,
 output [7:0] led
@@ -52,7 +51,7 @@ wire [1:0] ALUOp;
 //////////////////////
 
 ////
-wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId,outStep;
+wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId,outStep,RegWriteMem;
 wire [31:0] instruction,outMuxWb,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
@@ -124,6 +123,7 @@ wire [31:0]  Registro31;
 	.rt(instruction[20:16]),
 	.rd(instruction[15:11]), //Entrada al mux id, el mux identifica si es tipo I o R
 	.immediate(instruction[15:0]),
+	.sa(instruction[10:6]), //Es el shift
 	.writeData(outMuxWb), //Dato a escribir en posicion rd
 	.writeReg(WriteReg), //VIENE DEL LATCH MEM/WB. PONERLE EL PARAMETRO
 	.inRegWrite(RegWriteMem), //VIENE DEL ULTIMO LATCH. PONERLE NOMBRE AL PARAMETRO
@@ -153,6 +153,7 @@ wire [31:0]  Registro31;
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
 	.outRegRs(outRegRs),
+	.outSa(sa),
 	.PCSrc(PCSrc),
 	////////////Salida de los Registros hacia la UART
 	.Registro0(Registro0),
@@ -204,7 +205,7 @@ wire [31:0]  Registro31;
 	.dataRs(dataRsId), //Entradas
 	.dataRt(dataRtId), //Lee los datos de los registros
 	.signExt(outImmediate), // Entrada del inmediato extendido en el mux
-	.sa(sa), //Shift CORREGIR
+	.sa(sa), //Shift 
 	.inRegRt(outRegRt),
 	.inRegRd(outRegRd),
 	.instReg(FunctionId), //Tipo de Instruccion, lo usa la alu
@@ -272,8 +273,7 @@ wire [31:0]  Registro31;
 	
 	HazardDetectionUnit callHazardDetectionUnit(
 	.inMemRead(MemReadId), //entrada que es salida del latch ID/EX
-	.inZeroAlu(zeroAluLatch), //en vez de usar PCSrc decidimos entrar ZeroAlu y Branch y hacer el AND dentro de este modulo
-	.inBranch(BranchEx),
+	.inPCSrc(PCSrc),
 	.inID_EXRt(outRegRt), //entrada que es salida del latch ID/EX
 	.inIF_IDRs(instruction[25:21]), //entradas que son salidas del latch IF/ID
 	.inIF_IDRt(instruction[20:16]),

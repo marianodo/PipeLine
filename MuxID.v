@@ -23,11 +23,11 @@ module MuxRtRd(
 	input [1:0] RegDst,
 	output reg [4:0] outMuxRtRd
     );
-reg [3:0] ra;
+
 
 initial
 begin
-	ra = 15;
+	
 	outMuxRtRd = 0;
 end
 always @(*)
@@ -43,7 +43,7 @@ begin
 		end
 	else if(RegDst == 2)
 		begin
-			outMuxRtRd = ra; //Selecciona direccion de retorno constante
+			outMuxRtRd = rd; //Selecciona direccion de retorno constante
 		end
 	else
 		begin

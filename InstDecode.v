@@ -59,14 +59,18 @@ module InstDecode(
     );
 
 
-reg [31:0] register[0:31];
-
+reg [31:0] register[31:0];
+integer i;
 
 initial
 begin
+	for(i = 0; i < 32; i = i+1)
+		begin
+			register[i] = 0;
+		end
 	register[0] =  32'b00000000000000000000000000000000;
-	register[1] =  32'b00000000000000000000000000000001;
-	register[2] =  32'b00000000000000000000000000000010;
+	register[1] =  32'b00000001000000110000000000000001;
+	register[2] =  32'b11000000000000000000011000000010;
 	register[3] =  32'b00000000000000000000000000000011;
 	register[4] =  32'b00000000000000000000000000000100;
 	register[5] =  32'b00000000000000000000000000000101;
@@ -108,6 +112,13 @@ begin
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;
 			
+		end
+	else
+		begin
+			for(i = 0; i < 32; i = i+1)
+		begin
+			register[i] = register[i]; // Lo hcaemos para que no haya latch
+		end
 		end
 		outInstDecodeRsReg = register[inInstDecodeRsReg]; //Saca el valor del registro
 		outInstDecodeRtReg = register[inInstDecodeRtReg];

@@ -1,11 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Feb 18 16:07:23 2015
+// Written by: Map P.20131013 on Thu Feb 19 12:07:26 2015
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "rx" LOCATE = SITE "N17" LEVEL 1;
 COMP "tx" LOCATE = SITE "N18" LEVEL 1;
-COMP "btn" LOCATE = SITE "C4" LEVEL 1;
 COMP "clk100" LOCATE = SITE "V10" LEVEL 1;
 COMP "led<0>" LOCATE = SITE "U16" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "V16" LEVEL 1;
@@ -19,9 +18,5 @@ PIN callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG_pin<1> = BEL
         "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG" PINNAME O;
 PIN "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG_pin<1>"
         CLOCK_DEDICATED_ROUTE = FALSE;
-PIN callStageID/callID_EX_Latch/tmpAluop_BUFG_pin<1> = BEL
-        "callStageID/callID_EX_Latch/tmpAluop_BUFG" PINNAME O;
-PIN "callStageID/callID_EX_Latch/tmpAluop_BUFG_pin<1>" CLOCK_DEDICATED_ROUTE =
-        FALSE;
 SCHEMATIC END;
 

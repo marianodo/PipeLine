@@ -23,11 +23,15 @@ input [31:0] inInstructionMem, // Es el PC
 output [31:0] outInstruction
     );
 
-reg [tam-1:0] memory[0:31];
+reg [tam-1:0] memory[0:2047];
 reg [31:0] tmp;
-
+integer i;
 initial
 begin
+for (i = 0; i < 2048; i=i+1)
+	begin
+		memory[i] = 32'b00000000_00000000_00000000_00000000;
+	end
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
 	memory[0] = 32'b000000_00001_00001_01001_00000_100001; //Load de la memoria 0 en registro 0

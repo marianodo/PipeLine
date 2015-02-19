@@ -68,7 +68,7 @@ module DebugUnit
 	   output enable
    );
 	reg enableLatch = 1;
-	reg reset = 0;
+	
    // signal declaration
    wire tick, rx_done_tick, tx_done_tick,tx_full;
    wire tx_empty, tx_fifo_not_empty, rx_empty;
@@ -78,10 +78,10 @@ module DebugUnit
 	wire db_tick;
    //body
    BaudGenerator #(.M(DVSR), .N(DVSR_BIT)) callBaudGenerator
-      (.clk(clk), .reset(reset), .q(), .max_tick(tick));
+      (.clk(clk), .q(), .max_tick(tick));
 
    UartRx #(.DBIT(DBIT), .SB_TICK(SB_TICK)) callUartRx
-      (.clk(clk), .reset(reset), .rx(rx), .s_tick(tick),
+      (.clk(clk), .rx(rx), .s_tick(tick),
        .rx_done_tick(rx_done_tick), .dout(rx_data_out));
 
 	StepModule callStepModule(
@@ -161,7 +161,6 @@ module DebugUnit
    UartTx #(.DBIT(DBIT), .SB_TICK(SB_TICK)) callUartTx
       (
 		.clk(clk), 
-		.reset(reset), 
 		.tx_start(tx_fifo_not_empty || tx_done_tick),
       .s_tick(tick), 
 		.din(tx_fifo_out),
@@ -170,7 +169,7 @@ module DebugUnit
 		.tx(tx));
 
    assign tx_fifo_not_empty = ~rx_empty;
-	assign rx_data_out_debug = rx_data_out;
+	
 	
 	reg [2:0]counttmp = 0 ;
 always @(*)
@@ -191,6 +190,10 @@ begin
 	if (InstructionLatch == 32'b111111_11111_11111_11111_11111_111111)
 		begin
 			enableLatch = 0;
+		end
+	else
+		begin
+			enableLatch = 1;
 		end
 end
 assign enable = enableLatch;
