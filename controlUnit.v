@@ -21,7 +21,8 @@
 module ControlUnit(
 	input [5:0] inOpcode, inFunction, //Opcode y Funcion
 	input clk,inStall,
-	output reg Branch,MemRead,MemWrite,RegWrite,ALUSrc,flagBranch,Jump,
+	
+	output reg Branch,MemRead,MemWrite,ALUSrc,flagBranch,Jump,RegWrite,
 	output reg [1:0] ALUOp, MemtoReg, RegDst,
 	output reg [2:0] flagLoadWordDividerMEM,
 	output reg [1:0] flagStoreWordDividerMEM,

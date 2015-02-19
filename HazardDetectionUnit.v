@@ -19,17 +19,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module HazardDetectionUnit(
-input inMemRead,inZeroAlu,inBranch,
+input inMemRead,inPCSrc,
 input [4:0] inID_EXRt,inIF_IDRs,inIF_IDRt,
 output reg outPCWrite,outIF_IDWrite,outIF_Flush,outEX_Flush,outStall
     );
-reg PCSrc;
+
 
 
 always@ (*)
 begin
-	PCSrc = inZeroAlu & inBranch;
-	if(PCSrc) //si se cumple que se realiza un branch...
+	if(inPCSrc) //si se cumple que se realiza un branch...
 	begin
 		outPCWrite = 1; //actualizo el PC
 		outIF_IDWrite = 1; //Permito el paso al latch

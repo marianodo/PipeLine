@@ -5,7 +5,7 @@ module UartRx
                SB_TICK = 16  // # ticks for stop bits
    )
    (
-    input wire clk, reset,
+    input wire clk,
     input wire rx, s_tick,
     output reg rx_done_tick,
     output wire [7:0] dout
@@ -26,15 +26,7 @@ module UartRx
 
    // body
    // FSMD state & data registers
-   always @(posedge clk, posedge reset)
-      if (reset)
-         begin
-            state_reg <= idle;
-            s_reg <= 0;
-            n_reg <= 0;
-            b_reg <= 0;
-         end
-      else
+   always @(posedge clk)
          begin
             state_reg <= state_next;
             s_reg <= s_next;

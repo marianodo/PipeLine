@@ -46,7 +46,8 @@ wire [31:0] outShiftIF;
 	
 	ShiftIF callShiftIF( //Shift y concatena. Es para el Jump
 	.inInstruction(outInstruction[25:0]),
-	.inPostPc(PostPc),
+	.inPostPc(PostPc[31:28]),
+	
 	.outShiftIF(outShiftIF)
 	);
 	

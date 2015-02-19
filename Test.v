@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   12:57:48 02/11/2015
+// Create Date:   13:01:45 02/19/2015
 // Design Name:   pipeline
-// Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
+// Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
 // Target Device:  
 // Tool versions:  
@@ -26,7 +26,6 @@ module Test;
 
 	// Inputs
 	reg clk100;
-	reg btn;
 	reg rx;
 
 	// Outputs
@@ -36,7 +35,6 @@ module Test;
 	// Instantiate the Unit Under Test (UUT)
 	pipeline uut (
 		.clk100(clk100), 
-		.btn(btn), 
 		.rx(rx), 
 		.tx(tx), 
 		.led(led)
@@ -45,7 +43,6 @@ module Test;
 	initial begin
 		// Initialize Inputs
 		clk100 = 0;
-		btn = 0;
 		rx = 0;
 
 		// Wait 100 ns for global reset to finish
@@ -54,7 +51,7 @@ module Test;
 		// Add stimulus here
 
 	end
-      always
-		# 100 clk100 = ~ clk100;
+	always #100 clk100 = ~clk100;
+      
 endmodule
 

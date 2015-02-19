@@ -57,17 +57,18 @@ module Fifo
 	
   );
 
-  reg [B-1:0] array_reg [131:0];
-  reg [7:0] w_ptr_reg, w_ptr_next, w_ptr_succ;
+  reg [B-1:0] array_reg [0:131];
+  reg [7:0] w_ptr_next, w_ptr_succ;
+  reg [7:0] w_ptr_reg = 0;
   reg [7:0] r_ptr_reg, r_ptr_next, r_ptr_succ;
   reg full_reg, empty_reg, full_next, empty_next;
   wire wr_en;
-  
-  reg prueba = 1;
+  integer i;
+
   //Banco de registros y memoria
   always @(posedge clk)
-	  //if(wr_en && r_ptr_next != 3) begin
-	  if(prueba) begin
+	  if(wr_en && r_ptr_next != 3) begin
+	  
 			//****************** Instruction Fetch ********************
 			array_reg[0] = Registro0[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
 			array_reg[1] = Registro0[23:16];//Valor del PC que se utilizará para calcular la dirección de destino

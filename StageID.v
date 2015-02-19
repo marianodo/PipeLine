@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module StageID(
 input clk, inRegWrite, inStall,ForwardAD,ForwardBD,enable,
-input [4:0] rs,rt,rd,writeReg,
+input [4:0] rs,rt,rd,writeReg,sa,
 input [5:0] opCode, inFunction,
 input [31:0] writeData, inPc,AluOut_EX_MEM,
 input [15:0] immediate,
@@ -30,7 +30,7 @@ output  [1:0] ALUOp, MemtoReg, RegDst,
 output  [2:0] flagLoadWordDividerMEM,
 output  [1:0] flagStoreWordDividerMEM, 
 output  [31:0] outPcLatch, outDataRs,outDataRt,outImmediateLatch,outAddBranch,
-output  [4:0] outRegRt,outRegRd,outRegRs,
+output  [4:0] outRegRt,outRegRd,outRegRs,outSa,
 output  [5:0] Function,
 
 //Salida de los Registros hacia la Uart
@@ -111,6 +111,7 @@ wire [5:0] outFunction;
 		.inInstDecodeWriteReg(writeReg), //entrada que viene del ultimo latch
 		.inInstDecodeWriteData(writeData),
 		.RegWrite(inRegWrite),
+		.clk(clk),
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt),
@@ -202,6 +203,7 @@ wire [5:0] outFunction;
 	.inRegRt(rt),
 	.inRegRd(rd),
 	.inRegRs(rs),
+	.inSa(sa),
 	.inRegDst(outRegDst), //entradas que vienen del control unit
 	.inMemRead(outMemRead),
 	.inMemtoReg(outMemtoReg),
@@ -221,6 +223,7 @@ wire [5:0] outFunction;
 	.outRegRt(outRegRt),
 	.outRegRd(outRegRd),
 	.outRegRs(outRegRs),
+	.outSa(outSa), //Salida del shift
 	.RegDst(RegDst), //salidas referentes al control unit
 	.MemRead(MemRead),
 	.MemtoReg(MemtoReg),
