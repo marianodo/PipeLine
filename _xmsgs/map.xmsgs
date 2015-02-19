@@ -26,38 +26,11 @@
 <msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
 </msg>
 
-<msg type="warning" file="Place" num="1137" delta="old" >This design is not guaranteed to be routable! This design contains a global buffer instance, &lt;<arg fmt="%s" index="1">callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG</arg>&gt;, driving the net, &lt;<arg fmt="%s" index="2">RegWriteMem</arg>&gt;, that is driving the following (first <arg fmt="%d" index="3">30</arg>) non-clock load pins.
-<arg fmt="%s" index="4">&lt; PIN: callStageID/callInstDecode/n1099&lt;932&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;933&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;942&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;934&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;943&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;935&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;840&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;952&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;944&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;936&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;841&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;953&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;945&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;937&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;850&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;842&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;898&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;954&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;946&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;938&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;851&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;843&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;899&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;955&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;947&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;939&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;748&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;860&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;852&gt;1.A5; &gt;
-&lt; PIN: callStageID/callInstDecode/n1099&lt;844&gt;1.A5; &gt;
-</arg>This is not a recommended design practice in Spartan-6 due to limitations in the global routing that may cause excessive delay, skew or unroutable situations.  It is recommended to only use a BUFG resource to drive clock loads. Please pay extra attention to the timing and routing of this path to ensure the design goals are met. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG</arg>.<arg fmt="%s" index="6">O</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN.
+<msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2410" delta="old" >This design is using one or more 9K Block RAMs (RAMB8BWER).  9K Block RAM initialization data, both user defined and default, may be incorrect and should not be used.  For more information, please reference Xilinx Answer Record 39999.
 </msg>
 
 </messages>
+

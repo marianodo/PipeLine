@@ -111,6 +111,7 @@ wire [5:0] outFunction;
 		.inInstDecodeWriteReg(writeReg), //entrada que viene del ultimo latch
 		.inInstDecodeWriteData(writeData),
 		.RegWrite(inRegWrite),
+		.clk(clk),
 		
 		.outInstDecodeRsReg(dataRs), //Salidas
 		.outInstDecodeRtReg(dataRt),

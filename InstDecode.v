@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module InstDecode(
 	input [4:0] inInstDecodeRsReg,inInstDecodeRtReg,inInstDecodeWriteReg,
-	input RegWrite,
+	input RegWrite,clk,
 	input [31:0] inInstDecodeWriteData,
 	output reg [31:0] outInstDecodeRsReg,outInstDecodeRtReg,
 	
@@ -69,7 +69,7 @@ begin
 			register[i] = 0;
 		end
 	register[0] =  32'b00000000000000000000000000000000;
-	register[1] =  32'b00000001000000110000000000000001;
+	register[1] =  32'b00000000000000000000000000000000;
 	register[2] =  32'b11000000000000000000011000000010;
 	register[3] =  32'b00000000000000000000000000000011;
 	register[4] =  32'b00000000000000000000000000000100;
@@ -105,10 +105,10 @@ begin
 	outInstDecodeRtReg = 0;
 end
 
-always @(*)
+always @(negedge clk)
 begin
 	
-	if(RegWrite == 1)
+	if(RegWrite)
 		begin
 			register[inInstDecodeWriteReg] = inInstDecodeWriteData;
 			

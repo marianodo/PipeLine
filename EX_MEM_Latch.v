@@ -26,7 +26,7 @@ module EX_MEM_Latch(
 	input [2:0] inflagLoadWordDividerMEM,
 	
 	output reg [31:0] outAlu, dataRt,
-	output reg outRegWrite,outMemRead,outMemWrite,
+	output reg outMemRead,outMemWrite,outRegWrite,
 	output reg [4:0] outMuxRtRd,
 	output reg [1:0] outMemtoReg, outflagStoreWordDividerMEM,
 	output reg [2:0] outflagLoadWordDividerMEM
@@ -59,4 +59,5 @@ if(enable)
 		
 	end
 end
+
 endmodule

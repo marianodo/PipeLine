@@ -12,5 +12,5 @@ NET "led[5]" LOC = N11;
 NET "led[6]" LOC = R11;
 NET "led[7]" LOC = T11;
 #PIN "callStageID/callID_EX_Latch/ALUOp_0_BUFG.O" CLOCK_DEDICATED_ROUTE = FALSE;
-PIN "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG.O" CLOCK_DEDICATED_ROUTE = FALSE;
-
+#PIN "callStageMEM/callMEM_WB_Latch/outRegWrite_BUFG.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#PIN "callStageMEM/callMEM_WB_Latch/tmp_BUFG.O" CLOCK_DEDICATED_ROUTE = FALSE;

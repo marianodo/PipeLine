@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   12:29:39 02/19/2015
+// Create Date:   13:01:45 02/19/2015
 // Design Name:   pipeline
-// Module Name:   C:/Users/Nano/Desktop/PipeLine/Test.v
+// Module Name:   C:/Users/Leo/Desktop/PipeLine/Test.v
 // Project Name:  PipeLine
 // Target Device:  
 // Tool versions:  
@@ -47,52 +47,11 @@ module Test;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		#100;
-      clk100 = 1;
-		
-		clk100 = 0;
-		rx = 0;
-
-		// Wait 100 ns for global reset to finish
-		
-		
+        
 		// Add stimulus here
 
 	end
+	always #100 clk100 = ~clk100;
       
 endmodule
 

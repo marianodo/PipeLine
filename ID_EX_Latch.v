@@ -30,13 +30,14 @@ output reg [31:0] outPcLatch,outImmediateLatch,
 output reg [4:0] outRegRt,outRegRd,outRegRs,outSa,
 output reg [2:0] flagLoadWordDividerMEM,
 output reg [1:0] RegDst,MemtoReg,flagStoreWordDividerMEM,
-output reg MemRead,MemWrite,ALUSrc,RegWrite,Branch,
+output reg MemRead,MemWrite,ALUSrc,Branch,RegWrite,
 output reg [5:0] outFunction,
 output reg [31:0] outDataRs,outDataRt,
 output reg [1:0] ALUOp
     );
 
 wire [31:0] outDataRsTmp, outDataRtTmp; 
+
 always @(posedge clk)
 begin
 	if(enable)
@@ -47,8 +48,8 @@ begin
 		ALUSrc = inALUSrc;
 		RegWrite = inRegWrite;
 		outPcLatch = inPc;
-		outDataRs <= dataRs;
-		outDataRt <= dataRt;
+		outDataRs = dataRs;
+		outDataRt = dataRt;
 		outImmediateLatch = inSignExtend;
 		outRegRt = inRegRt;
 		outRegRd = inRegRd;

@@ -40,7 +40,7 @@ begin
 			outRegWrite = inRegWrite;
 			outMemtoReg = inMemtoReg;
 		end
+	
 end
-
 
 endmodule
