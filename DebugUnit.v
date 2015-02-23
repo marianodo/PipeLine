@@ -60,14 +60,13 @@ module DebugUnit
 		input wire   RegWriteMem,
 		input wire [1:0]  MemtoRegMem,
 		/////////////
-		input [31:0] InstructionLatch,
+		input [31:0] InstructionLatch,PostPc,
 		
 	   output wire  tx,
     
 	   output [7:0] rx_data_out,
-	   output enable
+	   output enable,enablePc
    );
-	reg enableLatch = 1;
 	
    // signal declaration
    wire tick, rx_done_tick, tx_done_tick,tx_full;
@@ -87,7 +86,11 @@ module DebugUnit
 	StepModule callStepModule(
 	.clk(clk),
 	.inDato(rx_data_out), //tecla apretada
-	.outStep(outStep)
+	.InstructionLatch(InstructionLatch),
+
+	.outStep(outStep),
+	.outEnable(enable),
+	.outEnablePc(enablePc)
 	);
 	
 	
@@ -153,6 +156,10 @@ module DebugUnit
 	.MemtoRegMem(MemtoRegMem),
 	.RegWriteMem(RegWriteMem),
 	//////////////////
+	// Entrada de la instruccion y el PC en la etapa ID
+	.InstructionLatch(InstructionLatch),
+	.PostPc(PostPc),
+	//////////////////
    .full(), 
    .empty(rx_empty), 
    .r_data(tx_fifo_out)
@@ -171,30 +178,5 @@ module DebugUnit
    assign tx_fifo_not_empty = ~rx_empty;
 	
 	
-	reg [2:0]counttmp = 0 ;
-always @(*)
-//begin
-//	if(counttmp == 4)
-//		begin
-//			enableLatch = 0;
-//			
-//		end
-//	else
-//		begin
-//			enableLatch = 1;
-//			counttmp = counttmp + 1;
-//		end
-//	
-//end
-begin
-	if (InstructionLatch == 32'b111111_11111_11111_11111_11111_111111)
-		begin
-			enableLatch = 0;
-		end
-	else
-		begin
-			enableLatch = 1;
-		end
-end
-assign enable = enableLatch;
+
 endmodule
