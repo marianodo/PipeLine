@@ -51,13 +51,15 @@ module Fifo
 		input wire   RegWriteMem,
 		input wire [1:0]  MemtoRegMem,
 		/////////////
+		input wire [31:0] InstructionLatch,PostPc,
+		
 	 output wire full, empty,
 	 output wire [B-1:0] r_data
 	  
 	
   );
 
-  reg [B-1:0] array_reg [0:131];
+  reg [B-1:0] array_reg [0:255];
   reg [7:0] w_ptr_next, w_ptr_succ;
   reg [7:0] w_ptr_reg = 0;
   reg [7:0] r_ptr_reg, r_ptr_next, r_ptr_succ;
@@ -234,6 +236,21 @@ module Fifo
 			array_reg[129] = {3'b101,BranchId, MemReadId,MemWriteId,ALUSrcId, RegWriteId}; //Señales de control de 1 bit en latch ID/EX
 			array_reg[130] = {3'b010,MemReadEx,MemWriteEx,RegWriteEx,MemtoRegEx}; // Señales de control del Stage Ex
 			array_reg[131] = {5'b00110,RegWriteMem,MemtoRegMem};
+			
+			array_reg[132] = PostPc[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[133] = PostPc[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[134] = PostPc[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[135] = PostPc[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			array_reg[136] = InstructionLatch[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[137] = InstructionLatch[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[138] = InstructionLatch[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[139] = InstructionLatch[7:0]; //Instrucción que se ejecutará (bits 23:16)
+
+			for(i=140;i<256;i=i+1)
+			begin
+				array_reg[i] = 0;
+			end
 			
 	  end	
 

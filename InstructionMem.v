@@ -34,17 +34,18 @@ for (i = 0; i < 2048; i=i+1)
 	end
 //----------------opcode---rs----rt----rd----sa----Func--
 //-------------------------------5------4---------------
-	memory[0] = 32'b000000_00001_00011_00100_00000_100001; //Load de la memoria 0 en registro 0
-	memory[1] = 32'b000000_00011_00011_00101_00000_100001; //Load de la memoria 0 en registro 0
-	memory[2] = 32'b000000_00010_00011_00111_00000_100001; //Load de la memoria 0 en registro 0
-	memory[3] = 32'b000000_00001_00011_00100_00000_100001; //Load de la memoria 0 en registro 0
-	memory[4] = 32'b111111_11111_11111_11111_11111_111111; //Load de la memoria 0 en registro 0
-//	memory[5] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
-//	memory[6] = 32'b000000_00001_01000_01011_00000_100001; //suma del registro 1 + 2 = 11
-//	memory[7] = 32'b000000_00001_00110_00001_00000_000001; //Load de la memoria 0 en registro 0
-//	memory[4] = 32'b000000_00001_00010_00110_00000_100001; //suma del registro 1 + 2 = 6
-//	memory[5] = 32'b000000_00001_00010_00111_00000_100001; //suma del registro 1 + 2 = 7
-//	memory[6] = 32'b000000_00001_00010_01000_00000_100001; //suma del registro 1 + 2 = 4
+	memory[0] = 32'b000000_00001_00001_00011_00000_100001; //suma de reg1 + reg1 y guardamos en reg3
+	memory[1] = 32'b000000_00011_00010_01010_00000_100001; //suma de reg3 + reg2 y guardamos en reg10
+	memory[2] = 32'b100000_00000_10000_00000_00000_000010; //Load byte de mem0 y guardamos en reg16
+	memory[3] = 32'b000000_00000_01000_00100_00010_000000; //shift left 2 posiciones del reg8 y guardamos en el reg4
+	memory[4] = 32'b000000_01001_01010_01011_00000_100100; //and de reg9 y reg10 guardamos en reg11
+	memory[5] = 32'b000000_00101_10001_10010_00000_100101; //or de reg5 y reg17 guardamos en reg18
+	memory[6] = 32'b100011_00000_10100_00000_00000_000000; //Load de pos mem 0 y guardamos en reg20
+	memory[7] = 32'b000000_01001_00010_11110_00000_100001; //suma de reg9 + reg2 y guardamos en reg30
+	memory[8] = 32'b000000_00001_00010_11110_00000_100001; //suma de reg1 + reg2 y guardamos en reg30
+	memory[9] = 32'b000000_00001_00010_11111_00000_100001; //suma de reg1 + reg2 y guardamos en reg31
+	memory[10] = 32'b000000_00001_00010_00111_00000_100001; //suma del registro 1 + 2 = 7
+	memory[11] = 32'b111111_11111_11111_11111_11111_111111; //suma del registro 1 + 2 = 4
 //	memory[7] = 32'b000000_00001_00010_00101_00000_100001; //suma del registro 1 + 2 = 5
 //	memory[8] = 32'b000000_00001_00010_01010_00000_100001; //suma del registro 1 + 2 = 10
 //	memory[9] = 32'b000000_00001_00000_01011_00000_100001; //suma del registro 1 + 2 = 11

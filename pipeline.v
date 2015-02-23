@@ -57,7 +57,7 @@ wire [5:0] Function,FunctionId;
 wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
-wire clk, enable;
+wire clk, enable,enablePc;
 //Registros hacia el Debug Unit/////
 wire [31:0]  Registro0;
 wire [31:0]  Registro1;
@@ -107,7 +107,7 @@ wire [31:0]  Registro31;
 	.inPCWrite(PCWrite), //entrada que viene del hazard detection
 	.inIF_IDWrite(IF_IDWrite),// entrada que viene del hazard detection
 	.inIF_Flush(IF_Flush), // entrada que viene del hazard detection
-	.enable(enable),
+	.enablePc(enablePc),
 	
 	.outInstructionLatch(instruction),
 	.outPostPc(PostPc) //PostPc es la salida del latch IF/ID
@@ -296,6 +296,7 @@ wire [31:0]  Registro31;
    .tx(tx), 
    .rx_data_out(led),
 	.enable(enable),
+	.enablePc(enablePc),
 	
 //Entrada de los registros hacia el debug	
 	.Registro0(Registro0), 
@@ -351,7 +352,8 @@ wire [31:0]  Registro31;
 	.MemtoRegMem(MemtoRegMem),
 	.RegWriteMem(RegWriteMem),
 	//////////////////////////////////////
-	.InstructionLatch(instruction)
+	.InstructionLatch(instruction),
+	.PostPc(PostPc) //PostPc es la salida del latch IF/ID
     );
 
 

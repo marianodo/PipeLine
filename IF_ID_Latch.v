@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module IF_ID_Latch(
 
-input clk,inIF_IDWrite,inIF_Flush,enable,
+input clk,inIF_IDWrite,inIF_Flush,enablePc,
 input [31:0] inPc,inInstruction,
 output reg [31:0] outPc, outInstruction
     );
@@ -31,7 +31,7 @@ end
  
 always @(posedge clk)
 begin
-if(enable)
+if(enablePc)
 begin
 	if (inIF_IDWrite == 0)
 		begin

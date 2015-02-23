@@ -36,7 +36,7 @@ begin
 	end
 	else if(MemWrite) //convierto la señal a 1111 (Los 4 bloques de memoria para escritura)
 	begin
-		tmp = 15;
+		tmp = 4'b1111;
 	end
 	else
 	begin

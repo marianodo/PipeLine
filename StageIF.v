@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module StageIF(
-	input clk,Jump,inPCWrite,inIF_IDWrite,inIF_Flush,PCSrc,enable,
+	input clk,Jump,inPCWrite,inIF_IDWrite,inIF_Flush,PCSrc,enablePc,
 	input [31:0] outAddId,
 	output [31:0] outInstructionLatch,outPostPc
     );
@@ -31,11 +31,16 @@ wire [31:0] outShiftIF;
 	.inPc(PcMuxJump),
 	.clk(clk),
 	.inPCWrite(inPCWrite),
+	.enablePc(enablePc),
+	
 	.outPc(Pc)
 	);
 
 	addPc callAddPc (
 	.inAddPc(Pc),
+	.enablePc(enablePc),
+	.clk(clk),
+	
 	.outAddPc(PostPc)
 	);
 	
@@ -75,7 +80,7 @@ wire [31:0] outShiftIF;
 	.inPc(PostPc),
 	.inIF_IDWrite(inIF_IDWrite),
 	.inIF_Flush(inIF_Flush),
-	.enable(enable),
+	.enablePc(enablePc),
 	
 	.outInstruction(outInstructionLatch),
 	.outPc(outPostPc)

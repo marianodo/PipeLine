@@ -20,15 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 module addPc # (parameter tam=5)(
 	input [31:0] inAddPc,
+	input enablePc,clk,
 	output [31:0] outAddPc
     );
 	 
 	 reg [31:0] tmp = 0;
 
-always @(*)
+always @(posedge clk)
 begin
-
+	if(enablePc)
+		begin
 			tmp = inAddPc + 1;
+		end
 end
 assign outAddPc = tmp;
 endmodule
