@@ -24,13 +24,18 @@ input [31:0] inMemAddress, inStoreWordDividerMEM,
 input MemWrite,MemRead, clk,inRegWrite,enable,
 input [1:0] flagStoreWordDividerMEM,inMemtoReg,
 input [2:0] flagLoadWordDividerMEM,
-input [4:0] inMuxRtRd,
+input [4:0] inMuxRtRd,inRegRtMEM,
 	
 output [31:0] outLoadWordDividerMEM,outAluLatch,
 output [1:0] outMemtoReg,
 output outRegWrite,
-output [4:0] outWriteReg
+output [4:0] outWriteReg,outRegRtMEM,
 
+output  [31:0] memoria0,//salidas a la UART
+output  [31:0] memoria1,
+output  [31:0] memoria2,
+output  [31:0] memoria3,
+output  [31:0] memoria4
 );
 
 wire [31:0] outMemReadData, inMemWriteData,LoadWordDividerMEM;
@@ -48,6 +53,8 @@ wire clkNeg;
 	.MemWrite(MemWrite), //esto es porque salen 2 cables del control unit que entran a la memoria...
 	.MemRead(MemRead), //pero el IPCore necesita 4
 	.clk(clk),
+	//.flagLoadWordDividerMEM(flagLoadWordDividerMEM),
+	//.flagStoreWordDividerMEM(flagStoreWordDividerMEM),
 	
 	.outReadWriteMEM(ReadWriteMEM),
 	.outClkNeg(clkNeg)
@@ -62,14 +69,18 @@ wire clkNeg;
 	.douta(outMemReadData)
 	);
 	
-//	DataMemoryMEM callDataMemoryMEM(
-//	.inMemAddress(inMemAddress),
-//	.inMemWriteData(inMemWriteData),
-//	.MemWrite(MemWrite),
-//	.MemRead(MemRead),
-//	
-//	.outMemReadData(outMemReadData)
-//	);
+	bufferMEM callbufferMEM (
+   .inMemAddress(inMemAddress),
+	.inMemWriteData(inMemWriteData),
+	.clk(clk),
+	.MemWrite(MemWrite),
+	
+	.memoria0(memoria0),//salidas a la UART
+	.memoria1(memoria1),
+	.memoria2(memoria2),
+	.memoria3(memoria3),
+	.memoria4(memoria4)
+   );
 	
 	LoadWordDividerMEM callLoadWordDividerMEM(
 	.flagLoadWordDividerMEM(flagLoadWordDividerMEM), //Flag para identificar si es LB, LH, LW, etc
@@ -82,6 +93,7 @@ wire clkNeg;
 	.inLoadWordDividerMEM(LoadWordDividerMEM),
 	.inAluLatch(inMemAddress),
 	.inMuxRtRd(inMuxRtRd),
+	.inRegRtMEM(inRegRtMEM),
 	.inMemtoReg(inMemtoReg),
 	.inRegWrite(inRegWrite),
 	.clk(clk),
@@ -90,6 +102,7 @@ wire clkNeg;
 	.outLoadWordDividerMEM(outLoadWordDividerMEM),
 	.outAluLatch(outAluLatch),
 	.outMuxRtRd(outWriteReg),
+	.outRegRtMEM(outRegRtMEM),
 	.outMemtoReg(outMemtoReg),
 	.outRegWrite(outRegWrite)
 	);

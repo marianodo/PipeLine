@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj PipeLine -o C:/Users/Leo/Desktop/PipeLine/bufferMEM.tfi -lib work C:/Users/Leo/Desktop/PipeLine//bufferMEM.v -module bufferMEM -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

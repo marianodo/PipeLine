@@ -16,6 +16,16 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'regRtEX<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtEX<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtEX<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtEX<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtEX<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtMEM<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtMEM<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtMEM<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtMEM<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'regRtMEM<0>' has no driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outShiftIF<1>' has no driver
 WARNING:NgdBuild:452 - logical net 'callStageIF/outShiftIF<0>' has no driver
 
@@ -28,12 +38,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   2
+  Number of warnings:  12
 
-Total memory usage is 134400 kilobytes
+Total memory usage is 135616 kilobytes
 
 Writing NGD file "pipeline.ngd" ...
-Total REAL time to NGDBUILD completion:  8 sec
-Total CPU time to NGDBUILD completion:   7 sec
+Total REAL time to NGDBUILD completion:  9 sec
+Total CPU time to NGDBUILD completion:   8 sec
 
 Writing NGDBUILD log file "pipeline.bld"...

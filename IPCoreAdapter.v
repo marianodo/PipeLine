@@ -20,16 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 module IPCoreAdapter(
 input MemWrite, MemRead,clk,
+//input [2:0] flagLoadWordDividerMEM,
+//input [1:0] flagStoreWordDividerMEM,
+
 output [3:0] outReadWriteMEM,
 output outClkNeg
     );
 
 reg [3:0] tmp = 0;
-reg clkNegTmp;
 
-always @(*)
+
+always @(negedge clk)
 begin
-	clkNegTmp = ~clk;
+	
 	if(MemRead) //convierto la señal a 0000 (Los 4 bloques de memoria para lectura)
 	begin
 		tmp = 0;
@@ -45,5 +48,5 @@ begin
 end
 
 assign outReadWriteMEM = tmp;
-assign outClkNeg = clkNegTmp;
+assign outClkNeg = ~clk;
 endmodule

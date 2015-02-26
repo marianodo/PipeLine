@@ -11,40 +11,37 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon Feb 23 12:56:47 2015
+Mapped Date    : Thu Feb 26 11:33:20 2015
 
-Design Summary
---------------
-Number of errors:      0
-Number of warnings:    1
+Interim Summary
+---------------
 Slice Logic Utilization:
-  Number of Slice Registers:                 2,737 out of  18,224   15%
-    Number used as Flip Flops:               2,708
+  Number of Slice Registers:                 3,058 out of  18,224   16%
+    Number used as Flip Flops:               3,029
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:               29
-  Number of Slice LUTs:                      4,554 out of   9,112   49%
-    Number used as logic:                    4,367 out of   9,112   47%
-      Number using O6 output only:           3,747
-      Number using O5 output only:              38
-      Number using O5 and O6:                  582
+  Number of Slice LUTs:                      4,586 out of   9,112   50%
+    Number used as logic:                    4,584 out of   9,112   50%
+      Number using O6 output only:           3,968
+      Number using O5 output only:              36
+      Number using O5 and O6:                  580
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:    187
-      Number with same-slice register load:    185
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
       Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 1,550 out of   2,278   68%
   Number of MUXCYs used:                     1,112 out of   4,556   24%
-  Number of LUT Flip Flop pairs used:        5,307
-    Number with an unused Flip Flop:         2,773 out of   5,307   52%
-    Number with an unused LUT:                 753 out of   5,307   14%
-    Number of fully used LUT-FF pairs:       1,781 out of   5,307   33%
-    Number of unique control sets:              16
+  Number of LUT Flip Flop pairs used:        6,146
+    Number with an unused Flip Flop:         3,098 out of   6,146   50%
+    Number with an unused LUT:               1,560 out of   6,146   25%
+    Number of fully used LUT-FF pairs:       1,488 out of   6,146   24%
+    Number of unique control sets:              17
     Number of slice register sites lost
-      to control set restrictions:              36 out of  18,224    1%
+      to control set restrictions:              43 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -87,302 +84,3 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.79
-
-Peak Memory Usage:  331 MB
-Total REAL time to MAP completion:  2 mins 30 secs 
-Total CPU time to MAP completion:   2 mins 26 secs 
-
-Table of Contents
------------------
-Section 1 - Errors
-Section 2 - Warnings
-Section 3 - Informational
-Section 4 - Removed Logic Summary
-Section 5 - Removed Logic
-Section 6 - IOB Properties
-Section 7 - RPMs
-Section 8 - Guide Report
-Section 9 - Area Group and Partition Summary
-Section 10 - Timing Report
-Section 11 - Configuration String Information
-Section 12 - Control Set Information
-Section 13 - Utilization by Hierarchy
-
-Section 1 - Errors
-------------------
-
-Section 2 - Warnings
---------------------
-WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
-   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
-   default, may be incorrect and should not be used.  For more information,
-   please reference Xilinx Answer Record 39999.
-
-Section 3 - Informational
--------------------------
-INFO:LIT:243 - Logical network callStageIF/outShiftIF<1> has no load.
-INFO:LIT:243 - Logical network callStageIF/outShiftIF<0> has no load.
-INFO:MapLib:562 - No environment variables are currently set.
-INFO:LIT:244 - All of the single ended outputs in this design are using slew
-   rate limited output drivers. The delay on speed critical single ended outputs
-   can be dramatically reduced by designating them as fast outputs.
-INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
-   0.000 to 85.000 Celsius)
-INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
-   1.260 Volts)
-INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
-   (.mrp).
-INFO:Pack:1650 - Map created a placed design.
-
-Section 4 - Removed Logic Summary
----------------------------------
-   1 block(s) removed
-  16 block(s) optimized away
-  47 Block(s) redundant
-
-Section 5 - Removed Logic
--------------------------
-
-The trimmed logic report below shows the logic removed from your design due to
-sourceless or loadless signals, and VCC or ground connections.  If the removal
-of a signal or symbol results in the subsequent removal of an additional signal
-or symbol, the message explaining that second removal will be indented.  This
-indentation will be repeated as a chain of related logic is removed.
-
-To quickly locate the original cause for the removal of a chain of logic, look
-above the place where that logic is listed in the trimming report, then locate
-the lines that are least indented (begin at the leftmost edge).
-
-Loadless block "callStageID/callAddID/Msub_tmpOut31" (ROM) removed.
-
-Optimized Block(s):
-TYPE 		BLOCK
-GND 		callClock10Mhz/XST_GND
-GND 		callDebugUnit/callBaudGenerator/XST_GND
-VCC 		callDebugUnit/callBaudGenerator/XST_VCC
-VCC 		callDebugUnit/callFifo/XST_VCC
-GND 		callStageEX/callAluEx/XST_GND
-VCC 		callStageEX/callAluEx/XST_VCC
-GND 		callStageEX/callAluEx/inOutMuxForwardB[31]_GND_28_o_div_4/XST_GND
-VCC 		callStageEX/callAluEx/inOutMuxForwardB[31]_GND_28_o_div_4/XST_VCC
-GND 		callStageID/callAddID/XST_GND
-VCC 		callStageID/callAddID/XST_VCC
-GND 		callStageID/callEqualBranch/XST_GND
-VCC 		callStageID/callEqualBranch/XST_VCC
-GND 		callStageIF/callAddPc/XST_GND
-VCC 		callStageIF/callAddPc/XST_VCC
-GND 		callStageMEM/callDataMemory/XST_GND
-VCC 		callStageMEM/callDataMemory/XST_VCC
-
-Redundant Block(s):
-TYPE 		BLOCK
-INV 		callDebugUnit/callFifo/r_data<7>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<6>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<5>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<4>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<3>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<2>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<1>_inv1_INV_0
-INV 		callDebugUnit/callFifo/r_data<0>_inv1_INV_0
-INV 		callDebugUnit/callStepModule/clk_inv1_INV_0
-INV 		callStageMEM/callIPCoreAdapter/clkNegTmp1_INV_0
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<1>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<2>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<3>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<4>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<5>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_cy<6>_rt
-LUT1 		callDebugUnit/callBaudGenerator/Mcount_r_reg_xor<7>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<1>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<2>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<3>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<4>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<5>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<6>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<7>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<8>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<9>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<10>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<11>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<12>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<13>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<14>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<15>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<16>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<17>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<18>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<19>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<20>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<21>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<22>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<23>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<24>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<25>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<26>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<27>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<28>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<29>_rt
-LUT1 		callStageIF/callAddPc/Madd_inAddPc[31]_GND_8_o_add_1_OUT_cy<30>_rt
-
-Section 6 - IOB Properties
---------------------------
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
-|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| clk100                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| rx                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| tx                                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Section 7 - RPMs
-----------------
-
-Section 8 - Guide Report
-------------------------
-Guide not run on this design.
-
-Section 9 - Area Group and Partition Summary
---------------------------------------------
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-Area Group Information
-----------------------
-
-  No area groups were found in this design.
-
-----------------------
-
-Section 10 - Timing Report
---------------------------
-A logic-level (pre-route) timing report can be generated by using Xilinx static
-timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
-mapped NCD and PCF files. Please note that this timing report will be generated
-using estimated delay information. For accurate numbers, please generate a
-timing report with the post Place and Route NCD file.
-
-For more information about the Timing Analyzer, consult the Xilinx Timing
-Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
-Command Line Tools User Guide "TRACE" chapter.
-
-Section 11 - Configuration String Details
------------------------------------------
-DCM "callClock10Mhz/dcm_sp_inst":
-CLKDV_DIVIDE:2.0
-CLKIN_DIVIDE_BY_2:FALSE
-CLKOUT_PHASE_SHIFT:NONE
-CLK_FEEDBACK:1X
-DESKEW_ADJUST:5
-DFS_FREQUENCY_MODE:LOW
-DLL_FREQUENCY_MODE:LOW
-DSS_MODE:NONE
-DUTY_CYCLE_CORRECTION:TRUE
-STARTUP_WAIT:FALSE
-VERY_HIGH_FREQUENCY:FALSE
-CLKFX_DIVIDE = 1
-CLKFX_MULTIPLY = 4
-CLKIN_PERIOD = 10.000000
-PHASE_SHIFT = 0
-
-
-
-Section 12 - Control Set Information
-------------------------------------
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Clock Signal | Reset Signal                        | Set Signal | Enable Signal                                    | Slice Load Count | Bel Load Count |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| clk          |                                     |            |                                                  | 12               | 23             |
-| clk          |                                     |            | callDebugUnit/callFifo/wr_en_GND_47_o_AND_1157_o | 232              | 1107           |
-| clk          |                                     |            | callDebugUnit/callUartRx/Mmux_state_next12       | 3                | 8              |
-| clk          |                                     |            | callDebugUnit/callUartRx/_n0117_inv              | 1                | 3              |
-| clk          |                                     |            | callDebugUnit/callUartTx/_n0108_inv              | 1                | 3              |
-| clk          |                                     |            | callDebugUnit/callUartTx/_n0126_inv              | 1                | 8              |
-| clk          |                                     |            | callStageIF/callIF_ID_Latch/_n0027_inv           | 8                | 32             |
-| clk          |                                     |            | enable                                           | 98               | 316            |
-| clk          |                                     |            | enablePc                                         | 8                | 32             |
-| clk          | callDebugUnit/tick                  |            |                                                  | 2                | 8              |
-| clk          | callStageEX/callEX_MEM_Latch/_n0041 |            | enable                                           | 4                | 5              |
-| clk          | callStageIF/callIF_ID_Latch/_n0021  |            | callStageIF/callIF_ID_Latch/_n0030_inv           | 10               | 32             |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ~clk         |                                     |            |                                                  | 373              | 1095           |
-| ~clk         |                                     |            | callDebugUnit/callStepModule/_n01111             | 1                | 2              |
-| ~clk         |                                     |            | callDebugUnit/callStepModule/_n0177_inv          | 1                | 2              |
-| ~clk         |                                     |            | callStageIF/callPc/_n0013_inv                    | 9                | 32             |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Section 13 - Utilization by Hierarchy
--------------------------------------
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Module                                              | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48A1 | BUFG  | BUFIO | BUFR  | DCM   | PLL_ADV   | Full Hierarchical Name                                                                                                                                |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| pipeline/                                           |           | 0/1837        | 0/2708        | 0/4554        | 0/0           | 0/1       | 0/3     | 0/2   | 0/0   | 0/0   | 0/1   | 0/0       | pipeline                                                                                                                                              |
-| +callClock10Mhz                                     |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/0       | 0/0     | 2/2   | 0/0   | 0/0   | 1/1   | 0/0       | pipeline/callClock10Mhz                                                                                                                               |
-| +callDebugUnit                                      |           | 1/352         | 0/1171        | 1/579         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit                                                                                                                                |
-| ++callBaudGenerator                                 |           | 3/3           | 8/8           | 10/10         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callBaudGenerator                                                                                                              |
-| ++callFifo                                          |           | 321/321       | 1117/1117     | 514/514       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callFifo                                                                                                                       |
-| ++callStepModule                                    |           | 13/13         | 11/11         | 24/24         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callStepModule                                                                                                                 |
-| ++callUartRx                                        |           | 7/7           | 17/17         | 15/15         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartRx                                                                                                                     |
-| ++callUartTx                                        |           | 7/7           | 18/18         | 15/15         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callDebugUnit/callUartTx                                                                                                                     |
-| +callForwardingUnit                                 |           | 14/14         | 0/0           | 19/19         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callForwardingUnit                                                                                                                           |
-| +callHazardDetectionUnit                            |           | 3/3           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callHazardDetectionUnit                                                                                                                      |
-| +callStageEX                                        |           | 0/726         | 0/79          | 0/1988        | 0/0           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX                                                                                                                                  |
-| ++callAluEx                                         |           | 193/635       | 0/0           | 531/1894      | 0/0           | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callAluEx                                                                                                                        |
-| +++inOutMuxForwardB[31]_GND_28_o_div_4              |           | 442/442       | 0/0           | 1363/1363     | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callAluEx/inOutMuxForwardB[31]_GND_28_o_div_4                                                                                    |
-| ++callEX_MEM_Latch                                  |           | 34/34         | 79/79         | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callEX_MEM_Latch                                                                                                                 |
-| ++callMuxExForwardA                                 |           | 24/24         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxExForwardA                                                                                                                |
-| ++callMuxExForwardB                                 |           | 30/30         | 0/0           | 56/56         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxExForwardB                                                                                                                |
-| ++callMuxRtRd                                       |           | 3/3           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageEX/callMuxRtRd                                                                                                                      |
-| +callStageID                                        |           | 0/617         | 0/1258        | 0/1781        | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID                                                                                                                                  |
-| ++callAddID                                         |           | 9/9           | 0/0           | 33/33         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callAddID                                                                                                                        |
-| ++callControlUnit                                   |           | 11/11         | 0/0           | 22/22         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callControlUnit                                                                                                                  |
-| ++callEqualBranch                                   |           | 4/4           | 0/0           | 12/12         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callEqualBranch                                                                                                                  |
-| ++callID_EX_Latch                                   |           | 52/52         | 170/170       | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callID_EX_Latch                                                                                                                  |
-| ++callInstDecode                                    |           | 514/514       | 1088/1088     | 1680/1680     | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callInstDecode                                                                                                                   |
-| ++callMuxDataA_ALU                                  |           | 14/14         | 0/0           | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callMuxDataA_ALU                                                                                                                 |
-| ++callMuxDataB_ALU                                  |           | 13/13         | 0/0           | 16/16         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageID/callMuxDataB_ALU                                                                                                                 |
-| +callStageIF                                        |           | 0/56          | 0/128         | 0/105         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF                                                                                                                                  |
-| ++callAddPc                                         |           | 8/8           | 32/32         | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callAddPc                                                                                                                        |
-| ++callIF_ID_Latch                                   |           | 19/19         | 64/64         | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callIF_ID_Latch                                                                                                                  |
-| ++callInstruccionMem                                |           | 10/10         | 0/0           | 38/38         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callInstruccionMem                                                                                                               |
-| ++callMuxJumpPc                                     |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callMuxJumpPc                                                                                                                    |
-| ++callPc                                            |           | 10/10         | 32/32         | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageIF/callPc                                                                                                                           |
-| +callStageMEM                                       |           | 0/42          | 0/72          | 0/45          | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM                                                                                                                                 |
-| ++callDataMemory                                    |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory                                                                                                                  |
-| +++U0                                               |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0                                                                                                               |
-| ++++xst_blk_mem_generator                           |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator                                                                                         |
-| +++++gnative_mem_map_bmg.native_mem_map_blk_mem_gen |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen                                          |
-| ++++++valid.cstr                                    |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr                               |
-| +++++++ramloop[0].ram.r                             |           | 0/0           | 0/0           | 0/0           | 0/0           | 0/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r              |
-| ++++++++s6_init.ram                                 |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callDataMemory/U0/xst_blk_mem_generator/gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram  |
-| ++callIPCoreAdapter                                 |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callIPCoreAdapter                                                                                                               |
-| ++callLoadWordDividerMEM                            |           | 7/7           | 0/0           | 24/24         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callLoadWordDividerMEM                                                                                                          |
-| ++callMEM_WB_Latch                                  |           | 23/23         | 72/72         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callMEM_WB_Latch                                                                                                                |
-| ++callStoreWordDividerMEM                           |           | 11/11         | 0/0           | 20/20         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageMEM/callStoreWordDividerMEM                                                                                                         |
-| +callStageWB                                        |           | 0/27          | 0/0           | 0/32          | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageWB                                                                                                                                  |
-| ++callMuxWB                                         |           | 27/27         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0   | 0/0       | pipeline/callStageWB/callMuxWB                                                                                                                        |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-* Slices can be packed with basic elements from multiple hierarchies.
-  Therefore, a slice will be counted in every hierarchical module
-  that each of its packed basic elements belong to.
-** For each column, there are two numbers reported <A>/<B>.
-   <A> is the number of elements that belong to that specific hierarchical module.
-   <B> is the total number of elements from that hierarchical module and any lower level
-   hierarchical modules below.
-*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

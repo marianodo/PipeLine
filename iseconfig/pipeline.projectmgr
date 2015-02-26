@@ -10,6 +10,8 @@
          <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callDebugUnit - DebugUnit</ClosedNode>
          <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callStageEX - StageEX</ClosedNode>
          <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callStageID - StageID</ClosedNode>
+         <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callStageIF - StageIF</ClosedNode>
+         <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callStageMEM - StageMEM</ClosedNode>
          <ClosedNode>/pipeline C:|Users|Leo|Desktop|PipeLine|pipeline.v/callStageWB - StageWB</ClosedNode>
          <ClosedNode>/pipeline C:|Users|Nano|Desktop|PipeLine|pipeline.v/callStageEX - StageEX</ClosedNode>
          <ClosedNode>/pipeline C:|Users|Nano|Desktop|PipeLine|pipeline.v/callStageID - StageID</ClosedNode>
@@ -23,13 +25,13 @@
          <ClosedNode>/pipeline C:|Users|Nano|Google Drive|PipeLine|pipeline.v/callStageWB - StageWB</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>callStageMEM - StageMEM (C:/Users/Leo/Desktop/PipeLine/StageMEM.v)</SelectedItem>
+         <SelectedItem>pipeline (C:/Users/Leo/Desktop/PipeLine/pipeline.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >9</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000208000000020000000000000000000000000200000064ffffffff000000810000000300000002000002080000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001d3000000020000000000000000000000000200000064ffffffff000000810000000300000002000001d30000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>callStageMEM - StageMEM (C:/Users/Leo/Desktop/PipeLine/StageMEM.v)</CurrentItem>
+      <CurrentItem>pipeline (C:/Users/Leo/Desktop/PipeLine/pipeline.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -37,20 +39,20 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000181000000010000000100000000000000000000000064ffffffff000000810000000000000001000001810000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems/>
-      <ScrollbarPosition orientation="vertical" >11</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000a20000000100000000000000240000000100000000000000660000000100000000000001510000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
@@ -84,7 +86,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000181000000010000000100000000000000000000000064ffffffff000000810000000000000001000001810000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000170000000010000000100000000000000000000000064ffffffff000000810000000000000001000001700000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -197,15 +199,14 @@
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>CORE Generator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Manage Cores</SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000181000000010000000100000000000000000000000064ffffffff000000810000000000000001000001810000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Manage Cores</CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>

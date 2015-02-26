@@ -20,12 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 module MEM_WB_Latch(
 	input [31:0] inLoadWordDividerMEM, inAluLatch,
-	input [4:0] inMuxRtRd,
+	input [4:0] inMuxRtRd,inRegRtMEM,
    input inRegWrite,clk,enable,
 	input [1:0]inMemtoReg,
 	
 	output reg [31:0] outLoadWordDividerMEM,outAluLatch,
-	output reg [4:0] outMuxRtRd,
+	output reg [4:0] outMuxRtRd,outRegRtMEM,
 	output reg outRegWrite,
 	output reg [1:0] outMemtoReg
 	);
@@ -39,6 +39,7 @@ begin
 			outMuxRtRd = inMuxRtRd;
 			outRegWrite = inRegWrite;
 			outMemtoReg = inMemtoReg;
+			outRegRtMEM = inRegRtMEM;
 		end
 	
 end

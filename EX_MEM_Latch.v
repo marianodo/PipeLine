@@ -22,12 +22,12 @@ module EX_MEM_Latch(
 	input [31:0] inOutAlu,indataRt,
 	input inRegWrite,inMemRead,inMemWrite,clk,inEX_Flush,enable,
 	input [1:0] inMemtoReg,inflagStoreWordDividerMEM,
-   input [4:0] inOutMuxRtRd,
+   input [4:0] inOutMuxRtRd, inRegRt,
 	input [2:0] inflagLoadWordDividerMEM,
 	
 	output reg [31:0] outAlu, dataRt,
 	output reg outMemRead,outMemWrite,outRegWrite,
-	output reg [4:0] outMuxRtRd,
+	output reg [4:0] outMuxRtRd,outRegRt,
 	output reg [1:0] outMemtoReg, outflagStoreWordDividerMEM,
 	output reg [2:0] outflagLoadWordDividerMEM
 		);
@@ -50,7 +50,7 @@ if(enable)
 				outMemWrite = inMemWrite;
 				outMemtoReg = inMemtoReg;
 			end
-		
+		outRegRt = inRegRt;
 		outAlu = inOutAlu;
 		dataRt = indataRt;
 		outMuxRtRd = inOutMuxRtRd;
