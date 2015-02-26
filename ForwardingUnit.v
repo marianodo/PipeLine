@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ForwardingUnit(
-	input [4:0] inRs, inRt,inRdEX_MEM,inRdMEM_WB,
+	input [4:0] inRs, inRt,inRdEX_MEM,inRdMEM_WB,inRegRtMEM_WB,inRegRtEX_MEM,
 	input inRegWriteEX_MEM, inRegWriteMEM_WB,inBranch,
    output  [1:0] outForwardA, outForwardB,
 	output outForwardAD,outForwardBD
@@ -34,7 +34,13 @@ begin
 	if(inRegWriteEX_MEM
 	& (inRdEX_MEM != 0)
 	& (inRdEX_MEM == inRs))
-		tmpA = 2'b10;
+		tmpA = 2'b10; //top alu
+	
+//	//EX hazard para LOAD
+//	else if(inRegWriteEX_MEM
+//	& (inRegRtEX_MEM != 0)
+//	& (inRegRtEX_MEM == inRs))
+//		tmpA = 2'b10; //top alu
 	
 	//MEM hazard
 	else if(inRegWriteMEM_WB
@@ -42,6 +48,13 @@ begin
 	& (inRdEX_MEM != inRs)
 	& (inRdMEM_WB == inRs))
 		tmpA = 2'b01;
+	
+//	//MEM hazard para LOAD
+//	else if(inRegWriteMEM_WB
+//	& (inRegRtMEM_WB != 0)
+//	& (inRegRtEX_MEM != inRs)
+//	& (inRegRtMEM_WB == inRs))
+//		tmpA = 2'b01;
 		
 	else
 		tmpA = 2'b00;
@@ -50,7 +63,13 @@ begin
 	if(inRegWriteEX_MEM
 	& (inRdEX_MEM != 0)
 	& (inRdEX_MEM == inRt))
-		tmpB = 2'b10;
+		tmpB = 2'b10; //bottom alu
+		
+//	//EX hazard para LOAD
+//	else if(inRegWriteEX_MEM
+//	& (inRegRtEX_MEM != 0)
+//	& (inRegRtEX_MEM == inRt))
+//		tmpB = 2'b10; //bottom alu
 	
 	//MEM hazard	
 	else if(inRegWriteMEM_WB
@@ -58,6 +77,13 @@ begin
 	& (inRdEX_MEM != inRt)
 	& (inRdMEM_WB == inRt))
 		tmpB = 2'b01;
+		
+//	//MEM hazard para LOAD
+//	else if(inRegWriteMEM_WB
+//	& (inRegRtMEM_WB != 0)
+//	& (inRegRtEX_MEM != inRt)
+//	& (inRegRtMEM_WB == inRt))
+//		tmpB = 2'b01;
 
 	else
 		tmpB = 2'b00;

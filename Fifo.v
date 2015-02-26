@@ -51,6 +51,13 @@ module Fifo
 		input wire   RegWriteMem,
 		input wire [1:0]  MemtoRegMem,
 		/////////////
+		//Declarar los registros del bufferMEM
+      input wire  [31:0] memoria0,
+		input wire  [31:0] memoria1,
+		input wire  [31:0] memoria2,
+		input wire  [31:0] memoria3,
+		input wire  [31:0] memoria4,
+		//////////////////////////
 		input wire [31:0] InstructionLatch,PostPc,
 		
 	 output wire full, empty,
@@ -247,7 +254,33 @@ module Fifo
 			array_reg[138] = InstructionLatch[15:8];//Instrucción que se ejecutará (bits 31:24)
 			array_reg[139] = InstructionLatch[7:0]; //Instrucción que se ejecutará (bits 23:16)
 
-			for(i=140;i<256;i=i+1)
+			array_reg[140] = memoria0[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[141] = memoria0[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[142] = memoria0[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[143] = memoria0[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			array_reg[144] = memoria1[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[145] = memoria1[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[146] = memoria1[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[147] = memoria1[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			array_reg[148] = memoria2[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[149] = memoria2[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[150] = memoria2[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[151] = memoria2[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			array_reg[152] = memoria3[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[153] = memoria3[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[154] = memoria3[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[155] = memoria3[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			array_reg[156] = memoria4[31:24]; 	//Valor del PC que se ejecutará en la próxima instruccion
+			array_reg[157] = memoria4[23:16];//Valor del PC que se utilizará para calcular la dirección de destino
+			array_reg[158] = memoria4[15:8];//Instrucción que se ejecutará (bits 31:24)
+			array_reg[159] = memoria4[7:0]; //Instrucción que se ejecutará (bits 23:16)
+			
+			
+			for(i=160;i<256;i=i+1)
 			begin
 				array_reg[i] = 0;
 			end

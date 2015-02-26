@@ -60,6 +60,14 @@ module DebugUnit
 		input wire   RegWriteMem,
 		input wire [1:0]  MemtoRegMem,
 		/////////////
+		
+		//Declarar los registros del bufferMEM
+      input wire  [31:0] memoria0,
+		input wire  [31:0] memoria1,
+		input wire  [31:0] memoria2,
+		input wire  [31:0] memoria3,
+		input wire  [31:0] memoria4,
+		//////////////////////////
 		input [31:0] InstructionLatch,PostPc,
 		
 	   output wire  tx,
@@ -156,6 +164,13 @@ module DebugUnit
 	.MemtoRegMem(MemtoRegMem),
 	.RegWriteMem(RegWriteMem),
 	//////////////////
+	// Entradas que vienen del bufferMEM
+	.memoria0(memoria0),
+	.memoria1(memoria1),
+	.memoria2(memoria2),
+	.memoria3(memoria3),
+	.memoria4(memoria4),
+	///////////////////
 	// Entrada de la instruccion y el PC en la etapa ID
 	.InstructionLatch(InstructionLatch),
 	.PostPc(PostPc),

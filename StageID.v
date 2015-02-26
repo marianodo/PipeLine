@@ -22,7 +22,7 @@ module StageID(
 input clk, inRegWrite, inStall,ForwardAD,ForwardBD,enable,
 input [4:0] rs,rt,rd,writeReg,sa,
 input [5:0] opCode, inFunction,
-input [31:0] writeData, inPc,AluOut_EX_MEM,
+input [31:0] writeData, inPc,AluOut_EX_MEM, instruction,
 input [15:0] immediate,
 
 output  Branch,MemRead,MemWrite,ALUSrc,RegWrite,Jump,PCSrc,
@@ -80,6 +80,7 @@ wire [5:0] outFunction;
 	.clk(clk),
 	.inOpcode(opCode), //Entrada de Opcode
 	.inFunction(inFunction),
+	.instruction(instruction),
 	.inStall(inStall),
 	
 	.RegDst(outRegDst), //Salidas

@@ -54,7 +54,7 @@ wire [1:0] ALUOp;
 wire Jump,Branch, zeroAluLatch,RegWrite,MemRead,MemWrite,PCSrc,PCWrite,IF_IDWrite,IF_Flush,EX_Flush,Stall, ForwardAD,ForwardBD,BranchId,outStep,RegWriteMem;
 wire [31:0] instruction,outMuxWb,outAddId,PostPc,outAluLatch,dataRsId,dataRtId,outDataRt,dataRtEx,outAluLatchEx,outAluLatchMem;
 wire [5:0] Function,FunctionId;
-wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs;
+wire [4:0] outMuxRtRd,WriteReg,outRegRt,outRegRd,outRegRs,regRtEX,regRtMEM;
 wire [1:0] RegDstId,RegDstEx,MemtoRegId,MemtoRegEx,MemtoRegMem, ALUOpId,flagStoreWordDividerMEMId,flagStoreWordDividerMEMEx,forwardA,forwardB;
 wire [2:0] flagLoadWordDividerMEMId, flagLoadWordDividerMEMEx;
 wire clk, enable,enablePc;
@@ -91,6 +91,14 @@ wire [31:0]  Registro28;
 wire [31:0]  Registro29;
 wire [31:0]  Registro30;
 wire [31:0]  Registro31;
+
+//registros de memoria hacia el Debug Unit/////
+wire [31:0]  memoria0;
+wire [31:0]  memoria1;
+wire [31:0]  memoria2;
+wire [31:0]  memoria3;
+wire [31:0]  memoria4;
+
 // i n s t a n t i a t i o n s
 
 	Clock10Mhz callClock10Mhz
@@ -117,6 +125,7 @@ wire [31:0]  Registro31;
 	StageID callStageID(
 	.clk(clk), //ENTRADAS
 	.inPc(PostPc),
+	.instruction(instruction),
 	.inFunction(instruction[5:0]), 
 	.opCode(instruction[31:26]),
 	.rs(instruction[25:21]), 
@@ -218,6 +227,7 @@ wire [31:0]  Registro31;
 	.outAlu(outAluLatchEx), //Salida resultado
 	.outDataRt(dataRtEx),
 	.outMuxRtRd(outMuxRtRd),//Salida del Latch EX/MEM que es mux entre Rt y Rd para saber en que reg guardar.
+	.outRegRt(regRtEX),
 	.outMemRead(MemReadEx),
 	.outMemWrite(MemWriteEx),
 	.outMemtoReg(MemtoRegEx),
@@ -237,14 +247,22 @@ wire [31:0]  Registro31;
 	.inMemtoReg(MemtoRegEx),
 	.inRegWrite(RegWriteEx),
 	.inMuxRtRd(outMuxRtRd),
+	.inRegRtMEM(regRtEX),
 	.enable(enable),
 	
 	.outLoadWordDividerMEM(readDataMem), //Salida del data mem, que va a ser entrada del MUX
 	.outAluLatch(outAluLatchMem), //Sale del alu para entrar al ultimo MUX del stage WB
 	.outMemtoReg(MemtoRegMem),
 	.outRegWrite(RegWriteMem),
-	.outWriteReg(WriteReg) //Sale del latch de MEM/WB y entra al InstDecode
-	
+	.outWriteReg(WriteReg), //Sale del latch de MEM/WB y entra al InstDecode
+	.outRegRtMEM(regRtMEM),
+	////////////////////////////////////////
+	// Salidas a la UART del bufferMEM
+	.memoria0(memoria0),
+	.memoria1(memoria1),
+	.memoria2(memoria2),
+	.memoria3(memoria3),
+	.memoria4(memoria4)
 	);
 	
 	StageWB callStageWB(
@@ -264,6 +282,8 @@ wire [31:0]  Registro31;
 	.inRegWriteEX_MEM(RegWriteEx), //Flag de escritura del latch EX_MEM
 	.inRegWriteMEM_WB(RegWriteMem),
 	.inBranch(BranchId),
+	.inRegRtMEM_WB(regRtMEM),
+	.inRegRtEX_MEM(regRtEX),
 	
 	.outForwardA(forwardA),
 	.outForwardB(forwardB),
@@ -351,6 +371,14 @@ wire [31:0]  Registro31;
 	// Entrada de los registros del debug. Viene del Stage MEM
 	.MemtoRegMem(MemtoRegMem),
 	.RegWriteMem(RegWriteMem),
+	
+	////////////////////////////////////////
+	// Entradas que vienen del bufferMEM
+	.memoria0(memoria0),
+	.memoria1(memoria1),
+	.memoria2(memoria2),
+	.memoria3(memoria3),
+	.memoria4(memoria4),
 	//////////////////////////////////////
 	.InstructionLatch(instruction),
 	.PostPc(PostPc) //PostPc es la salida del latch IF/ID
